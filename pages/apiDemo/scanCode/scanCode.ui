@@ -1,0 +1,10 @@
+<!--scanCode.ui-->
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-text class="ui-text">扫码结果：</ui-text>
+      <ui-textarea ui:model="result" maxlength='-1' auto-height readonly></ui-textarea>
+      <ui-button type="primary" bindtap="scanCode">扫一扫</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

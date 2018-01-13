@@ -1,0 +1,34 @@
+<template>
+  <ui-page>
+    <ui-view class="sample_title">每次点击从头播放</ui-view>
+    <ui-view class="sample_content">
+      <ui-view class="voice" bindtap="playVoice" ui:show="{{ voice }}">
+        <ui-row type="flex">
+          <ui-col>
+            <ui-text>54''</ui-text>
+          </ui-col>
+          <ui-col width="50" align="right" vertical-align="middle">
+            <ui-view class="icon_voice {{ voiceClass }}"></ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+      <ui-view>{{ voice ? '' : '下载中...' }}</ui-view>
+    </ui-view>
+  </ui-view>
+  <ui-view class="sample_win">
+    <ui-view class="sample_title">每次点击从暂停处继续播放</ui-view>
+    <ui-view class="sample_content">
+      <ui-view class="voice2" bindtap="playVoice2" ui:show="{{ voice2 }}">
+        <ui-row type="flex">
+          <ui-col>
+            <ui-text>58''</ui-text>
+          </ui-col>
+          <ui-col width="50" align="right" vertical-align="middle">
+            <ui-view class="icon_voice {{ voiceClass2 }}"></ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+      <ui-view>{{ voice2 ? '' : '下载中...' }}</ui-view>
+    </ui-view>
+  </ui-page>
+</template>

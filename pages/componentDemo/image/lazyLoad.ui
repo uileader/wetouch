@@ -1,0 +1,16 @@
+<!--image3.ui-->
+<template>
+  <ui-page>
+    <ui-view ui:for="{{ list }}">
+      <ui-image
+        class="img"
+        src="{{item.src}}"
+        lazy-load
+        width="300"
+        height="200"
+        load-effect="fade"
+        >
+      </ui-image>
+    </ui-view>
+  </ui-page>
+</template>

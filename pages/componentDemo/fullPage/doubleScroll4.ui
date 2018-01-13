@@ -1,0 +1,42 @@
+<template>
+    <ui-page
+    top="0"
+    bindscroll="handleScroll"
+    >
+     <ui-nav-bar class="nab_bar" slot="nav-bar" style="{{{ 'background-color': `rgba(255, 255, 255, ${alpha})` }}}">
+      <ui-row height="46" class="{{ className }}">
+        <ui-col vertical-align="middle" align="center" width="35" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="18" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space="20">
+          <ui-view class="title">双滚动示例</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+        <ui-image
+        id="ui-image"
+        src="http://images.uileader.com/20171117/a1fa37d0-fbd7-4316-be27-1136a97b459b.jpg"
+        load-effect="fade"
+        height="{{ imgHeight }}"
+        ></ui-image>
+
+        <ui-scroll-view
+        scroll-y
+        height="{{height}}"
+        bindscroll="scroll"
+        bindtouchend="touchend"
+        bindtouchmove="touchmove" bindtouchstart="touchstart"
+        >
+        <ui-sticky class="header header1">
+          <ui-view class="title">本周精选活动</ui-view>
+        </ui-sticky>
+        <ui-view class="content_list" >
+          <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+            {{ item }}
+          </ui-view>
+        </ui-view>
+        </ui-scroll-view>
+    </ui-page>
+  </template>

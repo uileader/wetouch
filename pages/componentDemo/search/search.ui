@@ -1,0 +1,27 @@
+<!--search2.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar"  class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" space-left="15" bindtap="showFullScreenSearch">
+          <ui-view class="search">
+            <ui-icon name="magnifier" size="15" color="#fff"></ui-icon> 搜索
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50">
+          <ui-icon name="jd-cart" size="24" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+
+
+    
+    <!-- </ui-fixed-view> -->
+    <ui-fixed-view bindtap="navigateBack" class="back">返回上页</ui-fixed-view>
+  </ui-page>
+</template>

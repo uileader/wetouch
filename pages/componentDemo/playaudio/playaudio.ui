@@ -1,0 +1,64 @@
+<!--music.ui-->
+<template>
+    <ui-page>
+      <ui-view class="content" style="height:{{ height }}">
+          <ui-view class="songImg">
+            <ui-image src="{{imgSrc}}" alt="" width="100%"></ui-image>
+            <ui-view class="control_win">
+                <!-- 播放控件 -->
+                <ui-view class="songPlay">
+                    <ui-row class="play_win" type="flex">
+                        <ui-col align="center"></ui-col>
+                        <ui-col span='2' align="center" bindtap="onPrev">
+                            <ui-icon name="preaudio" size="16" color="#fff"></ui-icon>
+                        </ui-col>
+                        <ui-col span='2' align="center" bindtap="playMusic">
+                            <ui-icon name="{{play}}" size="16"></ui-icon>
+                        </ui-col>
+                        <ui-col span='2' align="center" bindtap="onNext">
+                            <ui-icon name="nextaudio" size="16"></ui-icon>
+                        </ui-col>
+                        <ui-col align="center"></ui-col>
+                    </ui-row>
+                </ui-view>
+                <!-- 进度条 -->
+                <ui-view class="songText2">
+                    <ui-view class="control">
+                        <ui-slider value-pos="left" :show-max-value="true" :show-value="true" ui:model="{{sliderValue}}" style="left:10%;width:80%"
+                            max-format="{{maxFormat}}"
+                            value-format="{{valueFormat}}"
+                            tooltip-format="{{tooltipFormat}}"
+                            thumb-class="music_slider"
+                            touch-down-class="touch_music_slider"
+                            background-color="#E4E4E4" 
+                            active-color="#FF7000" 
+                            slider-weight="2"
+                            min="{{sliderMin}}" 
+                            max="{{sliderMax}}"
+                            bindchange="sliderChange"
+                            >
+                        </ui-slider>
+                    </ui-view>
+                </ui-view>
+            </ui-view>
+          </ui-view>
+          <ui-view class="songList">
+            <ui-view class="list_content">
+                    <ui-view ui:for="{{musicList}}">
+                        <ui-view class="song_name" bindtap="listPlay(index)" :class="{nowSong:index===curIndex}">
+                            <ui-text class="songname">{{musicList[index].epname}}</ui-text>
+                            <ui-text class="singername">{{musicList[index].singer}}</ui-text>
+                        </ui-view>
+                    </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-view>
+        <ui-audio  src="{{ songSrc }}" id="myAudio" 
+          bindtimeupdate="playUpdate" 
+          bindplay="playStart"
+          bindpause="playPause"
+          bindended="playEnded"
+        ></ui-audio>
+    </ui-page>
+  </template>
+  

@@ -1,0 +1,14 @@
+<!--userFeedback.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">显示消息提示框</ui-view>
+    <ui-view class="sample_content">
+        <ui-button bindtap="showToast1">弹出默认Toast</ui-button>
+        <ui-button bindtap="showToast2()">弹出默认Toast（长文字）</ui-button>
+        <ui-button bindtap="showToast3()">弹出成功Toast</ui-button>
+        <ui-button bindtap="showToast4()">弹出Toast3秒</ui-button>
+        <ui-button bindtap="showToast5()">弹出加载Toast</ui-button>
+        <ui-button bindtap="hideToast()">隐藏Toast</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

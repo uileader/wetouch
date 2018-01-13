@@ -1,0 +1,53 @@
+
+.nav_bar{
+  border-bottom: 1px solid transparent;
+  &.active{
+    border-bottom: 1px solid #e8e8e8;
+    .title{
+      color: #646464;
+      transition: color .3s ease-in;
+    }
+    .ui-icon{
+      color: #646464!important;
+      transition: color .3s ease-in;
+    }
+  }
+  .title{
+    font-size: 16px;
+    color: #fff;
+  }
+}
+.content_wrap{
+  .top_content{
+    width: 100%;
+    // height: 100%;
+    position: absolute;
+    bottom:20px;
+    .ui-view{
+      .mix-flex-center();
+      color: #fff;
+      font-size: 16px;
+      .ui-image{
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+      .ui-icon{
+        margin-left: 10px;
+      }
+      &.name{
+        padding: 20px 0;
+      }
+      .ui-view{
+        display: inline-block;
+        padding: 5px;
+        border-radius: 25px;
+        border: 1px solid #fff;
+      }
+      &.card{
+        .ui-view{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<template>
+  <ui-page>
+    <ui-divider>横向滑动</ui-divider>
+    <ui-table
+    fixed-cell-height="{{false}}"
+    header="{{thisHeader}}"
+    ui:model="thisData"
+    alternating-row="{{true}}"
+    cell-height="80"
+    header-height='70'
+    ></ui-table>
+  </ui-page>
+</template>

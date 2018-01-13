@@ -1,0 +1,22 @@
+<!--waterfall2.ui-->
+<template>
+  <ui-page show-loading="false">
+    <ui-waterfall config="{{ config }}" fixed-height enable-reach-bottom-load> 
+      <template scope="props">
+        <ui-waterfall-item
+        width="{{getWidth(props.item.oldWidth)}}"
+        height="{{getHeight(props.item.oldHeight)}}"
+        move-class="item-move"
+        >
+          <ui-view class="item" index="{{ props.item.id }}">
+            <ui-view style="background-color:#fff">
+            <ui-image src="{{props.item.src}}"></ui-image>
+                <ui-text block class="goodsName">{{props.item.name}}</ui-text>
+                <ui-text block class="price">¥{{props.item.price}}</ui-text>
+            </ui-view>
+          </ui-view>
+        </ui-waterfall-item>
+      </template>
+    </ui-waterfall>
+  </ui-page>
+</template>

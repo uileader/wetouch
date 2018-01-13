@@ -1,0 +1,27 @@
+<!--getLocation.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_content">
+        <ui-row height="40" space="10">
+          <ui-col span="2" vertical-align="middle">
+            纬度： 
+          </ui-col>
+          <ui-col span="10">
+            <ui-input type="text" value="{{latitude}}"></ui-input>
+          </ui-col>
+        </ui-row>
+        <ui-row height="40" space="10">
+          <ui-col span="2" vertical-align="middle">
+            经度：
+          </ui-col>
+          <ui-col span="10">
+            <ui-input type="text" value="{{longitude}}"></ui-input>
+          </ui-col>
+        </ui-row>
+      <ui-button type="primary" bindtap="getLocation">获取位置</ui-button>
+      <ui-button bindtap="openLocation">查看位置</ui-button>
+      <ui-view class="tips">注：PC开发环境下由于没有GPS定位模块，建议在移动设备上查看效果</ui-view>
+    </ui-view>
+  </ui-page>
+</template>
+  

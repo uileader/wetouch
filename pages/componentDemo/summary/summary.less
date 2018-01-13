@@ -1,0 +1,58 @@
+// summary.less
+.title{
+  font-size: 16px;
+  font-weight: 500;
+}
+.ui-page-loading{
+  z-index: 999;
+}
+.collect_content{
+  padding: 10px 10px 10px 0;
+  background: #fff;
+  .mix-1px(0, 0, 1, 0, #ccc);
+  .title{
+    color: #212121;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .sales{
+    display: flex;
+    .ui-stars{
+      width: 85px;
+    }
+    .ui-text{
+      font-size: 12px;
+      color: #5C5C5C;
+    }
+  }
+  .bottom{
+    .ui-view{
+      font-size: 12px;
+      color: #646464;
+    }
+  }
+}
+.summary_wrap{
+  position: relative;
+  .ui-view{
+    font-size: 12px;
+    color: #A7A7A7;
+    line-height: 18px;
+  }
+  .activity{
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    .ui-icon{
+      display: inline-block;
+      transform:rotate(0deg);
+      transition: all .3s ease-in;
+      &.rotate{
+        transform:rotate(180deg);
+      }
+    }
+  }
+}

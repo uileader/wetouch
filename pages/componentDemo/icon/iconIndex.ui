@@ -1,0 +1,14 @@
+<!--icon.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">图标库索引</ui-view>
+    <ui-view class="icon_wrap">
+      <ui-view class="content" ui:for="{{ iconArry }}" ui:for-item="item">
+        <ui-view class="list">
+          <ui-icon name="{{ item.icon }}" size="32" color="#999"></ui-icon>
+          <ui-view>{{ item.name }}</ui-view>
+        </ui-view>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

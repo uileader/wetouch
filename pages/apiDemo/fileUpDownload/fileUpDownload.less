@@ -1,0 +1,71 @@
+// fileUpDownload.less
+.ui-tabs {
+  background-color: #f5f5f5;
+  &.type-common {
+    .swiper-slide {
+      padding: 10px;
+      transition: color .1s;
+    }
+  }
+  &.type-common {
+    .active {
+      border-bottom: 1px solid #39f;
+      color: #39f;
+    }
+  }
+
+}
+.content {
+  // height: 60px;
+  // line-height: 60px;
+
+  .swiper-slide {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+
+
+
+.songList {
+  padding: 10px;
+  .list_content{
+    height: 250px;
+    overflow: hidden;
+  }
+  .song_name{
+    width: 100%;
+    padding: 10px 0;
+    // border: 1px solid red;
+    position: relative;
+    .songname{
+      font-size: 14px;
+      color: #1E1E1E;
+    }
+    .singername{
+      font-size: 12px;
+      color: #8C8C8C;
+    }
+    .progress_win{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0 3px;
+    }
+  }
+  .nowSong{
+    .songname{
+      color: #FF7000;
+    }
+    .singername{
+      color: #FF7000;
+    }
+  }
+  .ui-button{
+    width: 80px;
+    margin-left: 5px;
+  }
+}
+

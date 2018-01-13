@@ -1,0 +1,169 @@
+
+<template>
+  <ui-page >
+    <ui-view class="sample_title">基本使用</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider style="left:10%;width:80%" show-value="true"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">设置初始值</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider style="left:10%;width:80%" value="20" show-value="true"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">外部改变值</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider
+      show-value="true"
+      style="left:10%;width:80%;margin-bottom:20px;" ui:model="value1"></ui-slider>
+      <ui-button bindtap="changeValue()">增加10</ui-button>
+    </ui-view>
+
+    <ui-view class="sample_title">change事件</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider
+      show-value="true"
+      style="left:10%;width:80%;margin-bottom:20px;" bindchange="sliderchange"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">显示当前值和总值</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider show-max-value="true" show-value="true" style="left:10%;width:80%"></ui-slider>
+    </ui-view>
+    <ui-view class="sample_title">设置上下限</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider
+      show-max-value="true"
+      show-value="true"
+      style="left:10%;width:80%"
+       min="100" max="300"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">自定义线的粗细</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider show-value="true" style="left:10%;width:80%" slider-weight="5"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">自定义线的颜色</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider show-value="true" value="30" style="left:10%;width:80%" background-color="#666666" active-color="#7dd43c"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">设置步长</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider show-value="true" style="left:10%;width:80%" max="1" step="0.1"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">设置刻度</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider style="left:10%;width:80%;height:30px" scale-line="20" max="100" show-value="true" show-max-value="true"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">双刻度和设置步长</ui-view>
+    <ui-view class="sliderbox" style="padding-bottom:35px;">
+      <ui-slider
+      style="left:10%;width:80%;height:30px"
+      step="10"
+      max="100"
+      scale-line="10"
+      key-scale-line="20"
+      show-max-value="true" show-value="true"
+      ></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">显示tooltip</ui-view>
+    <ui-view class="sliderbox" style="padding-top:40px;">
+      <ui-slider style="left:10%;width:80%" show-tooltip="true"></ui-slider>
+    </ui-view>
+
+     <ui-view class="sample_title">双滑块</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider style="left:10%;width:80%;margin:10px 0" value="{{value2}}" show-tooltip="true" min="1" max="15"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">自定义滑块样式</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider
+      show-max-value="true"
+      show-value="true"
+      style="left:10%;width:80%"
+      thumb-class="play-class"
+      touch-down-class="play-down-class"
+      ></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">自定义滑块图片和自定义Tooltip</ui-view>
+    <ui-view class="sliderbox" style="padding-bottom:40px;">
+      <ui-slider style="left:10%;width:80%" thumb-class="custom-image-class" step="10" show-tooltip="true" tooltip-class="tooltip-class" scale-line="10" key-scale-line="20"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">个性样式</ui-view>
+    <ui-view class="sliderbox" style="padding-bottom:40px;">
+      <ui-slider
+        style="left:10%;width:80%"
+        slider-weight="12"
+        active-color="#ed5565"
+        show-tooltip="true"
+        tooltip-class="custom-2-tooltip-class"
+        thumb-class="custom-2-class"
+        max="5000"
+        scale-line="625"
+        key-scale-line="1250"
+        tooltip-format="{{tooltipformat2}}"
+        bar-border-radius='2'
+      >
+      </ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">双滑块自定义样式</ui-view>
+    <ui-view style="padding:20px;">
+      <ui-row>
+        <ui-col width="45">
+          <ui-text>公里数</ui-text>
+        </ui-col>
+        <ui-col>
+          <ui-text style="color:#666">单位:（万公里）</ui-text>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+    <ui-view class="sliderbox">
+
+      <ui-slider style="left:10%;width:80%;margin:10px 0" ui:model="value2" thumb-class="custom-4-class" slider-weight="4" active-color="#f85426" show-tooltip="true" min="1" max="15"></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">显示值自定义格式</ui-view>
+    <ui-view class="sliderbox">
+      <ui-slider value-pos="left" show-max-value="true" show-value="true" style="left:10%;width:80%"
+        max-format="{{formatval}}"
+        value-format="{{formatval}}"
+        tooltip-format="{{tooltipformat}}"
+        show-tooltip="true"
+        tooltip-class="tooltip-far-class"
+        thumb-class="play-class"
+        ></ui-slider>
+    </ui-view>
+
+    <ui-view class="sample_title">仿腾讯视频进度条和缓冲控制</ui-view>
+    <ui-view class="sliderbox" style="margin-top:20px;">
+      <ui-slider style="left:10%;width:80%"
+                 max="202"
+                 buffer-color="#ccc"
+                 buffer-value="{{bufferValue}}"
+                 thumb-class="music_slider"
+                 touch-down-class="touch_music_slider"
+                 background-color="#999"
+                 active-color="#FF7000"
+                 show-value="true"
+                 show-max-value="true"
+                 value-pos="left"
+                max-format="{{formatval}}"
+                value-format="{{formatval}}"
+                tooltip-format="{{tooltipformat}}"
+                 ></ui-slider>
+      <ui-button bindtap="changeBufferValue()" style="margin-top:10px;">开始缓冲</ui-button>
+      <ui-text>实际使用时，由音乐或视频的进度来控制slider的进度</ui-text>
+      <ui-view>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

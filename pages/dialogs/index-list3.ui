@@ -1,0 +1,24 @@
+<template>
+  <ui-view class="ui-dialog-content">
+    <ui-nav-bar class="ui-dialog-header">
+      <ui-row height="46">
+        <ui-col align="center" vertical-align="middle" width="50" bindtap="hideWindow">
+          <ui-icon name="close" size="16"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space="10">
+          <ui-view class="head_title">
+            单选多选可切换
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="changeSelect">
+          {{selcetText}}
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-page class="ui-dialog-body">
+      <ui-view>
+        <ui-index-list data="{{list}}" color="red" checkbox="{{isSelect}}" bindsingleSelect="singleselect" bindmultiSelect="multiselect"></ui-index-list>
+      </ui-view>
+    </ui-page>
+  </ui-view>
+</template>

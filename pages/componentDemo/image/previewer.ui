@@ -1,0 +1,19 @@
+<!--previewer.ui-->
+<template>
+	<ui-page>
+		<ui-view class="sample_content" ui:for="{{value}}">
+				<ui-text>{{item.text2}}</ui-text>
+				<ui-view>
+					<ui-image src="{{ item.imgSmall }}" data-preview-src="{{ item.imgBig }}" data-preview-group="1"></ui-image>
+				</ui-view>
+		
+		</ui-view>
+	<ui-previewer bindopen="handleopen" bindclose="handleclose" bindchange="handlechange">
+			<!-- <ui-text class="text-font" block ui:show="textShow">{{text}}</ui-text> -->
+		</ui-previewer>
+
+		<ui-view class="selfpreviewer">
+			<ui-text class="text-font" block ui:show="textShow">{{text}}</ui-text>
+		</ui-view>
+	</ui-page>
+</template>

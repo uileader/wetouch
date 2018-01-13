@@ -1,0 +1,10 @@
+<template>
+ <ui-page>
+  <ui-view class="home-navigator">
+    <ui-view class="demo-title">关闭当前页面，返回上一页</ui-view>
+    <ui-view class="demo-content">
+      <ui-button bindtap="navigateBack" type="primary" plain="{{true}}">navigateBack</ui-button>
+    </ui-view>
+  </ui-view>
+ </ui-page>
+</template>

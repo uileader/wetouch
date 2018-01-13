@@ -1,0 +1,33 @@
+<template>
+    <ui-page scroll-position="{{scrollPosition}}">
+
+        <ui-image
+        id="ui-image"
+        src="http://images.uileader.com/20171117/a1fa37d0-fbd7-4316-be27-1136a97b459b.jpg"
+        load-effect="fade"
+        height="{{ imgHeight }}"
+        ></ui-image>
+        <ui-view class="sticky-in-relative-container" id="suggestion-title">
+            <ui-sticky class="header header1" stick-on-tap>
+              <ui-view>
+                <ui-view class="title">本周精选活动</ui-view>
+              </ui-view>
+            </ui-sticky>
+          </ui-view>
+        <ui-scroll-view
+        id="ui-scroller"
+        scroll-y
+        height="{{height}}"
+        bindscroll="scroll"
+        bindscrollstart="scrollstart"
+        bindscrollend="scrollend"
+         bindtouchstart="touchstart"
+        >
+        <ui-view class="content_list" >
+          <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+            {{ item }}
+          </ui-view>
+        </ui-view>
+        </ui-scroll-view>
+    </ui-page>
+  </template>

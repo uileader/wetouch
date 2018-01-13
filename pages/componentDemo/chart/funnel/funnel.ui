@@ -1,0 +1,51 @@
+<!--funnel.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">普通漏斗</ui-view>
+      <ui-funnel 
+      offset-left="60"
+      value="{{funnelValue}}"
+      height="200"
+      ></ui-funnel>
+
+      <ui-view class="sample_title">显示转化率</ui-view>
+      <ui-funnel
+      height="200"
+      offset-left="40"      
+        final-rect
+        show-conversion
+        value="{{funnelValue}}"
+      ></ui-funnel>
+
+      <ui-view class="sample_title">Slider</ui-view>
+      <ui-funnel
+      height="250"
+      offset-left="40" 
+      final-rect
+      show-conversion
+      show-slider
+      slider-x="300"
+      line-length="94"
+      show-legend
+      value="{{funnelValue}}"
+    ></ui-funnel>
+
+    <ui-view class="sample_title">金字塔</ui-view>
+    <ui-funnel
+    height="250"
+    offset-left="40"    
+    show-conversion="{{false}}"
+    value-position="left"
+    show-slider
+    final-rect="{{false}}"
+    up-side= "0"
+    down-side= "200"
+    slider-x= "300"
+    line-length= "94"
+    show-legend
+    value="{{funnelValue}}"
+  ></ui-funnel>
+
+    </ui-view>
+  </ui-page>
+</template>

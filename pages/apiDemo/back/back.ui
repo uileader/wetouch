@@ -1,0 +1,17 @@
+<!--back.ui-->
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-row height="40">
+        <ui-col width="130" vertical-align="middle">
+          安卓返回拦截状态：
+        </ui-col>
+        <ui-col vertical-align="middle">
+            <ui-view>{{type}}</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-button type="primary" bindtap="onBackButtonClick">开始拦截安卓返回按键</ui-button>
+      <ui-button bindtap="offBackButtonClick">取消拦截安卓返回按键</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

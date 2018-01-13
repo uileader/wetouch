@@ -1,0 +1,53 @@
+<!--setting.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10"  width="50" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">设置</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" >
+          
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-row height="50" class="user_content_list2" space-top="10" bindtap="accountSecurity">
+      <ui-col vertical-align="middle" space-left="15">
+        账户与安全
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+        <ui-icon name="arrow-right" size="18" color="#BAB9BF"></ui-icon>
+      </ui-col>
+    </ui-row>
+    <ui-navigator url="/pages/templeteDemo/userCenter/commonUse">
+      <ui-row height="50" class="user_content_list2" space-bottom="10">
+        <ui-col vertical-align="middle" space-left="15">
+          通用
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+          <ui-icon name="arrow-right" size="16" color="#BAB9BF"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-navigator>
+    <ui-navigator url="/pages/templeteDemo/userCenter/about">
+      <ui-row height="50" class="user_content_list2" space-bottom="10">
+        <ui-col vertical-align="middle" space-left="15">
+          关于TOUCH UI
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+          <ui-icon name="arrow-right" size="16" color="#BAB9BF"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-navigator>
+    <ui-row height="50" class="user_content_list2" space-top="20" bindtap="logOut">
+      <ui-col vertical-align="middle" align="center">
+        <ui-view class="log_out">退出登录</ui-view>
+      </ui-col>
+    </ui-row>
+
+  </ui-page>
+</template>

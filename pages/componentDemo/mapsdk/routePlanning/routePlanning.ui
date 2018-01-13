@@ -1,0 +1,39 @@
+<!--routePlanning.ui-->
+<template>
+  <ui-page>
+    <ui-view style="height:{{ mapHeight }}">
+      <ui-map 
+        id="map" 
+        class="map"
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}"
+        show-location="{{showLocation}}"
+        markers="{{markers}}"
+        polyline="{{polyline}}"
+        include-points="{{includePoints}}">
+      </ui-map>
+    </ui-view>
+
+    <ui-fixed-view class="map_text">
+      <ui-row height="45" space-bottom="10">
+        <ui-col span="3" algin="center" vertical-align="middle" space="10">
+          <ui-button type="primary" bindtap="walkNav">步行</ui-button>
+        </ui-col>
+        <ui-col span="3" algin="center" vertical-align="middle" space="10">
+          <ui-button type="primary" bindtap="driveNav">驾车</ui-button>
+        </ui-col>
+        <ui-col span="3" algin="center" vertical-align="middle" space="10">
+          <ui-button type="primary" bindtap="ridingNav">骑行</ui-button>
+        </ui-col>
+        <ui-col span="3" algin="center" vertical-align="middle" space="10">
+          <ui-button type="primary" bindtap="transitNav">公交</ui-button>
+        </ui-col>
+      </ui-row>
+      <ui-row>
+        <ui-col span="6" space="10">距离:{{distance}}米</ui-col>
+        <ui-col span="6" space="10">车费:{{cost}}元</ui-col>
+      </ui-row>
+    </ui-fixed-view>
+  </ui-page>
+</template>
+  

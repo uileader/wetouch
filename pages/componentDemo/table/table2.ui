@@ -1,0 +1,58 @@
+<template>
+  <ui-page>
+    <ui-divider>示例1</ui-divider>
+    <ui-view class="demo2">
+    <ui-table
+    fixed-cell-height="false"
+    header="{{thisHeader2}}"
+    ui:model="thisData2"
+    alternating-row="true"
+    cell-height="50"
+    header-height="80"
+    ></ui-table>
+    </ui-view>
+
+    <ui-divider>示例2</ui-divider>
+    <ui-view class="demo1">
+    <ui-table
+    header="{{thisHeader1}}"
+    ui:model="thisData1"
+    alternating-row="false"
+    cell-height="55"
+    header-height="60"
+    ></ui-table>
+    </ui-view>
+
+    <ui-divider>示例3</ui-divider>
+    <ui-view class="demo3">
+    <ui-table
+    fixed-cell-height="false"
+    header="{{thisHeader3}}"
+    ui:model="thisData3"
+    alternating-row="true"
+    cell-height="80"
+    header-height="66"
+    fixed-cell-height="{{false}}"
+    ></ui-table>
+    </ui-view>
+
+    <ui-divider>示例4</ui-divider>
+    <ui-view class="demo4">
+      <ui-table
+      header="{{thisHeader4}}"
+      ui:model="thisData4"
+      cell-height="60"
+      ></ui-table>
+    </ui-view>
+
+    <ui-divider>示例5</ui-divider>
+    <ui-view class="demo5">
+      <ui-table
+      header="{{thisHeader5}}"
+      ui:model="thisData5"
+      alternating-row="true"
+      cell-height="75"
+      ></ui-table>
+    </ui-view>
+  </ui-page>
+</template>

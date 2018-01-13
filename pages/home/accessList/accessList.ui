@@ -1,0 +1,44 @@
+<!--dataList.ui-->
+<template>
+    <ui-page native>
+      <ui-view  class="sample_list">
+        <ui-view class="group-title">
+          <ui-row >
+            <ui-col width="5" align="center" vertical-align="middle">
+              <ui-view class="sign"></ui-view>
+            </ui-col>
+            <ui-col align="left" vertical-align="middle" space-left="10">
+              <ui-view >接入</ui-view>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+        <ui-row-list border-left-indent bordered>
+            <ui-row url="/pages/apiDemo/share/share" tap-effect>
+              <ui-col space-left="10">分享</ui-col>
+              <ui-col align="right" width="30">
+                  <ui-icon name="arrow-right" size="18" color="#C5C5C5"></ui-icon>
+              </ui-col>
+            </ui-row>
+            <ui-row url="/pages/apiDemo/pushinfo/pushinfo" tap-effect>
+              <ui-col space-left="10">推送</ui-col>
+              <ui-col align="right" width="30">
+                  <ui-icon name="arrow-right" size="18" color="#C5C5C5"></ui-icon>
+              </ui-col>
+            </ui-row>
+            <!-- <ui-row bindtap="meiQia1" tap-effect>
+              <ui-col space-left="10">客服：H5版</ui-col>
+              <ui-col align="right" width="30">
+                  <ui-icon name="arrow-right" size="18" color="#C5C5C5"></ui-icon>
+              </ui-col>
+            </ui-row> -->
+            <ui-row bindtap="meiQia2" tap-effect>
+              <ui-col space-left="10">客服</ui-col>
+              <ui-col align="right" width="30">
+                  <ui-icon name="arrow-right" size="18" color="#C5C5C5"></ui-icon>
+              </ui-col>
+            </ui-row>
+        </ui-row-list>
+      </ui-view>
+    </ui-page>
+  </template>
+  

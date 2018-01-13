@@ -1,0 +1,71 @@
+<!--cascader.ui-->
+<template>
+      <ui-page>
+        <ui-view class="sample_title">默认调用</ui-view>
+        <ui-row height="40" border-top border-bottom>
+          <ui-col span="3" vertical-align="middle" align="right" space-right="10">
+            {{title0}}
+          </ui-col>
+          <ui-col span="9" bindtap="showPop1" vertical-align="middle">
+            {{title1}}
+          </ui-col>
+        </ui-row>
+        <ui-popup ui:model="{{show1}}" position="bottom" width="100%" height="300">
+          <ui-cascader ui:model="{{show1}}" done="{{select}}" data="{{cityData}}"  height="300"></ui-cascader>
+        </ui-popup>
+    
+        <ui-view class="sample_title">右侧弹出</ui-view>
+        <ui-row height="40" border-top border-bottom>
+          <ui-col span="3" vertical-align="middle" align="right" space-right="10">
+            {{title0}}
+          </ui-col>
+          <ui-col span="9" bindtap="showPop2" vertical-align="middle">
+            {{title2}}
+          </ui-col>
+        </ui-row>
+        <ui-popup ui:model="{{show2}}" position="right" width="80%" top="{{ popupTop }}" >
+          <ui-cascader ui:model="{{show2}}" done="{{select2}}" data="{{cityData2}}"></ui-cascader>
+        </ui-popup>
+    
+        <ui-view class="sample_title">自定义数据</ui-view> 
+        <ui-row height="40" border-top border-bottom>
+          <ui-col span="3" vertical-align="middle" align="right" space-right="10">
+            所属行业 :
+          </ui-col>
+          <ui-col span="9" bindtap="showPop3" vertical-align="middle">
+            {{title3}}
+          </ui-col>
+        </ui-row>
+        <ui-popup ui:model="{{show3}}" position="bottom" width="100%" height="300">
+          <ui-cascader ui:model="{{show3}}" done="{{select3}}" data="{{cityData3}}" height="300"></ui-cascader>
+        </ui-popup>
+
+
+        <ui-view class="sample_title">自定义颜色</ui-view>
+        <ui-row height="40" border-top border-bottom>
+          <ui-col span="3" vertical-align="middle" align="right" space-right="10">
+            所属行业 :
+          </ui-col>
+          <ui-col span="9" bindtap="showPop4" vertical-align="middle">
+            {{title4}}
+          </ui-col>
+        </ui-row>
+        <ui-popup ui:model="{{show4}}" position="bottom" width="100%" height="300">
+          <ui-cascader color="blue" ui:model="{{show4}}" done="{{select4}}" data="{{cityData2}}" height="300"></ui-cascader>
+        </ui-popup>
+        
+        <ui-view class="sample_title">二级菜单</ui-view> 
+        <ui-row height="40" border-top border-bottom>
+          <ui-col span="3" vertical-align="middle" align="right" space-right="10">
+            商圈 :
+          </ui-col>
+          <ui-col span="9" bindtap="showPop6" vertical-align="middle">
+            {{title6}}
+          </ui-col>
+        </ui-row>
+        <ui-popup ui:model="{{show6}}" position="bottom" width="100%" height="300">
+          <ui-cascader  class="sample_title_6"  ui:model="{{show6}}" done="{{select6}}" show-title="{{false}}" data="{{cityData4}}" height="300"></ui-cascader>
+        </ui-popup>
+
+      </ui-page>
+    </template>

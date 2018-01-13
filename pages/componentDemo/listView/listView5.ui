@@ -1,0 +1,171 @@
+<template>
+    <ui-page show-loading="false" top="0">
+        <ui-fixed-view top="0" left="0" right="0" style="{{{height:STATUS_BAR_HEIGHT+'px',backgroundColor:'#FF643F'}}}" ></ui-fixed-view>
+        <ui-row class="self-navbar" space-top="{{STATUS_BAR_HEIGHT}}">
+          <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+              <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+          </ui-col>
+        <ui-col>
+          <ui-view class="search">
+            <ui-view class="search_center" >
+              <ui-row height="30">
+                <ui-col align="right" vertical-align="middle" width="20">
+                  <ui-icon name="magnifier" size="18" color="#FF643F"></ui-icon>
+                </ui-col>
+                <ui-col align="left" vertical-align="middle" space-left="10" span="8" style="font-size:12px">
+                  附近热搜：首地大峡谷
+                </ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+        </ui-col>
+        <ui-col width="60"></ui-col>
+      </ui-row>
+        <ui-scroll-view
+        id="ui-scroller"
+        scroll-y
+        height="{{height}}"
+        bindtouchend="touchend"
+        bindtouchmove="touchmove"
+        bindtouchstart="touchstart"
+        >
+        <ui-list-view config="{{ config }}"
+        enable-reach-bottom-load>
+            <template scope="props">
+                <ui-list-view-item tap-effect>
+                  <ui-view>
+                    <ui-row class="list-view" ui:if="props.item.type=== '0'">
+                      <!-- 左侧文字 -->
+                      <ui-col space-right="15">
+                        <ui-row>
+                          <ui-col>
+                            <ui-text class="titlename">{{props.item.titleName}}</ui-text>
+                          </ui-col>
+                        </ui-row>
+                        <ui-row>
+                          <ui-col width="15" vertical-align="bottom" algin="left">
+                              <ui-view ui:if="props.item.dataType=== 'hot'">
+                                <ui-icon name="huo" size="10" color="#e60012"></ui-icon>
+                              </ui-view>
+                              <ui-view ui:elif="props.item.dataType=== 'music'">
+                                <ui-icon name="erji" size="10" color="#e60012"></ui-icon>
+                              </ui-view>
+                          </ui-col>
+                          <ui-col vertical-align="bottom">
+                            <ui-view>
+                              <ui-text class="color6 small-font">{{props.item.source}} ·</ui-text>
+                              <ui-text class="color6 small-font">{{props.item.datetime}}</ui-text>
+                            </ui-view>
+                          </ui-col>
+                          <ui-col vertical-align="bottom" align="right" width="50">
+                            <ui-view>
+                              <ui-text class="color6 small-font">{{props.item.collect}}收藏</ui-text>
+                            </ui-view>
+                          </ui-col>
+                        </ui-row>
+                      </ui-col>
+                      <!-- 右侧图片 -->
+                      <ui-col class="imgbox-1" vertical-align="middle"> 
+                        <ui-image width="100%" ui:for="{{props.item.imgarr}}"	 ui:for-item="image" src="{{image.imgsrc}}"></ui-image>
+                      </ui-col>
+                    </ui-row>
+                    <!-- 3图，上下结构 -->
+                    <ui-view class="list-view"  ui:if="props.item.type=== '1'">
+                      <ui-row space="20">
+                        <ui-col>
+                          <ui-text class="titlename">{{props.item.titleName}}</ui-text>
+                        </ui-col>
+                      </ui-row>
+                      <ui-row space="20">
+                        <ui-col space="10" ui:for="{{props.item.imgarr}}" ui:for-item="image" class="imgbox-2">
+                          <ui-image width="100%" height=""  src="{{image.imgsrc}}"  mode="aspectFill"></ui-image>
+                        </ui-col>
+                      </ui-row>
+                      <ui-row space="20">
+                        <ui-col vertical-align="bottom">
+                          <ui-view>
+                            <ui-text class="color6 small-font">{{props.item.source}} ·</ui-text>
+                            <ui-text class="color6 small-font">{{props.item.datetime}}</ui-text>
+                          </ui-view>
+                        </ui-col>
+                        <ui-col vertical-align="bottom" align="right" space-right="10">
+                          <ui-view>
+                            <ui-text class="color6 small-font">{{props.item.collect}}收藏</ui-text>
+                          </ui-view>
+                        </ui-col>
+                      </ui-row>
+                    </ui-view>
+                    <!-- 上下图结构，大图 -->
+                    <ui-view class="list-view"  ui:if="props.item.type=== '2'">
+                        <ui-row space="10">
+                          <ui-col>
+                            <ui-text class="titlename">{{props.item.titleName}}</ui-text>
+                          </ui-col>
+                        </ui-row>
+                        <ui-row space="10">
+                          <ui-col space="10" ui:for="{{props.item.imgarr}}" ui:for-item="image">
+                            <ui-image width="100%" height="150" mode="center" src="{{image.imgsrc}}"></ui-image>
+                          </ui-col>
+                        </ui-row>
+                        <ui-row space="10">
+                          <ui-col vertical-align="bottom">
+                            <ui-view>
+                              <ui-text class="color6 small-font">{{props.item.source}} ·</ui-text>
+                              <ui-text class="color6 small-font">{{props.item.datetime}}</ui-text>
+                            </ui-view>
+                          </ui-col>
+                          <ui-col vertical-align="bottom" align="right" space-right="10">
+                            <ui-view>
+                              <ui-text class="color6 small-font">{{props.item.collect}}收藏</ui-text>
+                            </ui-view>
+                          </ui-col>
+                        </ui-row>
+                    </ui-view>
+                    <!-- 广告 -->
+                    <ui-view class="list-view" ui:if="props.item.type=== '3'">
+                      <ui-row space="10">
+                          <ui-col>
+                            <ui-text class="titlename">{{props.item.titleName}}</ui-text>
+                          </ui-col>
+                        </ui-row>
+                        <ui-row space="10">
+                          <ui-col space="10" ui:for="{{props.item.imgarr}}" ui:for-item="image">
+                            <ui-image width="100%" height="150" mode="center" src="{{image.imgsrc}}"></ui-image>
+                          </ui-col>
+                        </ui-row>
+                        <ui-row space="10">
+                          <ui-col vertical-align="bottom" align="right" space-right="10">
+                            <ui-view>
+                              <ui-text ui:for="{{props.item.articleType}}" ui:for-item="articleType" style="{{{backgroundColor:articleType.backgroundColor,color:articleType.color}}}" class="articletype small-font">{{articleType.content}}</ui-text>
+                            </ui-view>
+                          </ui-col>
+                        </ui-row>
+                    </ui-view>
+                    <!-- 无图 -->
+                    <ui-view class="list-view" ui:if="props.item.type=== '4'">
+                      <ui-row>
+                        <ui-col>
+                          <ui-text class="titlename">{{props.item.titleName}}</ui-text>
+                        </ui-col>
+                      </ui-row>
+                      <ui-row space="10">
+                        <ui-col vertical-align="bottom">
+                          <ui-view>
+                            <ui-text class="color6 small-font">{{props.item.source}} ·</ui-text>
+                            <ui-text class="color6 small-font">{{props.item.datetime}}</ui-text>
+                          </ui-view>
+                        </ui-col>
+                        <ui-col vertical-align="bottom" align="right" space-right="10">
+                          <ui-view>
+                              <ui-text ui:for="{{props.item.articleType}}" ui:for-item="articleType" style="{{{backgroundColor:articleType.backgroundColor,color:articleType.color}}}" class="articletype small-font">{{articleType.content}}</ui-text>
+                          </ui-view>
+                        </ui-col>
+                      </ui-row>
+                    </ui-view>
+                  </ui-view>
+                </ui-list-view-item>
+            </template>
+        </ui-list-view>
+        </ui-scroll-view>
+    </ui-page>
+  </template>

@@ -1,0 +1,56 @@
+<!--draggable4.ui-->
+<template>
+  <ui-page top="0">
+    <ui-fixed-view top="0" left="0" right="0" style="{{{height:statusHeight+'px'}}}"></ui-fixed-view>
+    <ui-view class="win" style="{{{height:winHeight +'px'}}}">
+       <ui-view class="operate" style="{{{visibility:show}}}" >
+          <ui-row>
+            <ui-col align="center">
+              <ui-view style="position:absolute;top:0;"></ui-view>
+              <ui-icon name="fenxiang" size="24" color="{{bgcolor}}"></ui-icon>  
+            </ui-col>
+            <ui-col align="center">
+              <ui-icon name="delete" size="24" color="{{bgcolor2}}"></ui-icon>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      <ui-draggable-group>
+          <ui-draggable-area style="position:absolute;top:28" height="{{conHeight-90}}" col="{{4}}" 
+          ui:model="{{list}}" 
+          children-height="{{windowWidth/4}}"
+          width="{{windowWidth}}"
+          binddragstart="dragstart($event,'1')"
+          binddragmove="dragmove($event,'1')"
+          binddragend="dragend($event,'1')"
+          bindfail="failed"
+          >
+            <ui-draggable-view ui:for="{{list}}">
+                <ui-view class="draggable-view">
+                  <ui-image class="img-box" style="{{{'background-color':item.backgroundColor}}}" src="{{require(`#/images/draggable/${item.imgname}.svg`)}}"></ui-image>
+                  <ui-view>{{item.name}}</ui-view>
+                </ui-view>
+            </ui-draggable-view>
+          </ui-draggable-area>
+          <ui-draggable-area style="position:absolute;bottom:0px" height="{{90}}" col="4" ui:model="{{list2}}"
+          binddragstart="dragstart($event,'2')"
+          binddragmove="dragmove($event,'2')"
+          binddragend="dragend($event,'2')"
+          children-height="{{windowWidth/4}}"
+          width="{{windowWidth}}"
+          max-length="4"
+          bindfail="failed"
+          >
+            <ui-draggable-view ui:for="{{list2}}">
+                <ui-view class="draggable-view" style="text-align:center;height:100%;">
+                  <ui-image class="img-box" style="{{{'background-color':item.backgroundColor}}}" src="{{require(`#/images/draggable/${item.imgname}.svg`)}}"></ui-image>
+                  <ui-view class="draggable-text">{{item.name}}</ui-view>
+                </ui-view>
+            </ui-draggable-view>
+          </ui-draggable-area>
+      </ui-draggable-group>
+      <ui-fixed-view right="10" bottom="130">
+        <ui-text bindtap="navigateBack" block style="background-color:rgba(255,255,255,.8);color:#666;width:40px;height:40px;border-radius:50%;line-height:40px;text-align:center">返回</ui-text>
+      </ui-fixed-view>
+    </ui-view>
+  </ui-page>
+</template>

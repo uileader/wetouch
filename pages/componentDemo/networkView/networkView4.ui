@@ -1,0 +1,146 @@
+<template>
+  <ui-page show-loading="true" top="0"  bindscroll="handleScroll">
+    <ui-view class="img_wrap">
+      <ui-blur url="{{ require('#/images/tabs-2.png') }}" height="135"></ui-blur> 
+    </ui-view>
+    <ui-view style="{{{top:statusHeight+'px',position:'absolute'}}}">
+        <ui-row height="46" style="z-index:2;position:fixed;width:100%;height:46px;">
+            <ui-col vertical-align="middle" align="left" space-left="10"  width="70" bindtap="navigateBack">
+              <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+            </ui-col>
+            <ui-col vertical-align="middle" align="">
+              <ui-view class="titlename" style="{{{opacity:opacityText}}}">北京麦当劳芳菲路餐厅</ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center" width="35" >
+              <ui-icon name="jd-cart" size="24" color="#fff"></ui-icon>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center" width="35" >
+              <ui-icon name="more" size="24" color="#fff"></ui-icon>
+            </ui-col>
+          </ui-row>
+      <ui-row class="top-1">
+        <ui-view style="width:90px;height:90px;">  
+        <ui-image class="imgbox" mode="aspectFill" style="{{{opacity:opacity}}}" src="{{ require('#/images/tabs-2.png') }}"></ui-image>
+      </ui-view>  
+        <ui-col space-left="10">
+              <ui-view class="title">
+                  <ui-view class="f1" style="{{{opacity:opacity}}}">北京麦当劳芳菲路餐厅</ui-view>
+                  <ui-view class="f2" style="{{{opacity:opacity}}}">商家配送 | 28分钟送达 | 配送费￥9</ui-view>
+                  <ui-view class="mt15 f2" style="{{{opacity:opacity}}}">公告:欢迎光临，用餐高峰期请提前下单，谢谢</ui-view>
+                </ui-view>
+          </ui-col>
+        </ui-row>
+    </ui-view>
+
+          
+    
+
+
+  <ui-network-view style="{{{height:height - 135 +'px'}}}"  request="{{ requestval }}" ui:model="{{ empty }}" need-login="{{ needLogin }}">
+    <!--loading-->
+      <ui-loading slot="loading" show full-screen="{{ false }}" :mask-style="{ backgroundColor: 'rgb(255,255,255)' }">
+        <ui-view class="main">
+          <ui-view class="ui-loading-box">
+            <ui-view class="ui-loading-circle ui-loading-circle-1"></ui-view>
+            <ui-view class="ui-loading-circle ui-loading-circle-2"></ui-view>
+            <ui-view class="ui-loading-circle ui-loading-circle-3"></ui-view>
+        </ui-view>
+        </ui-view>
+
+      </ui-loading>
+      <!--错误失败-->
+      <ui-view slot="error" class="error">
+        <ui-view class="main">
+        <ui-view class="show_tip">
+            <ui-icon name="networkOffline" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="msgtitle">数据请求失败</ui-view>
+            <ui-button type="danger" prevent-default="false">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <!--超时-->
+      <ui-view slot="timeout" class="timeout">
+        <ui-view class="main">
+        <ui-view class="show_tip">
+            <ui-icon name="qingqiuchaoshi" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="msgtitle">数据请求超时</ui-view>
+            <ui-button type="danger" prevent-default="false">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <!--网络异常-->
+      <ui-view slot="offline" class="timeout">
+        <ui-view class="main">
+        <ui-view class="show_tip">
+            <ui-icon name="networkError" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="msgtitle">网络异常</ui-view>
+            <ui-button type="danger" prevent-default="false">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <!--空-->
+      <ui-view slot="empty" class="empty ui-network-view-tip">
+        <ui-view class="main">
+          <ui-view class="show_tip">
+            <ui-icon name="ico_nodata" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="msgtitle">商品未上架</ui-view>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <!--登录-->
+      <ui-view slot="login" class="login ui-network-view-tip">
+        <ui-view class="main">
+          <ui-view class="show_tip">
+              <ui-icon name="login" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="msgtitle">没有登录哦~~</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="loginfn">立即登录</ui-button>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <!--正常-->
+      <ui-view class="scroll_content" style="{{{ top: imgHeight +20 + 'px',height:height - imgHeight +89 -statusHeight + 'px' ,'background-color':'#fff'}}}">
+        <ui-row class="header header1">
+            <ui-col align="center">商品</ui-col>
+            <ui-col align="center">评价</ui-col>
+            <ui-col align="center">店铺</ui-col>
+        </ui-row>
+        <ui-view style="display:flex">
+            <ui-tabs vertical
+            height="{{ height-92}}"
+            class="tab-item"
+            index="{{ current }}"
+            probe=1
+            bindchange="handleChange($event, 'current')">
+            <ui-tab ui:for="{{ tabItems }}">
+              {{ item.name }}
+            </ui-tab>
+          </ui-tabs>
+      <ui-view class="tab-vertical">
+          <ui-scroll-view class="lists"
+            height="{{height-92}}" bindscroll="scroll($event, 'current')" probe="2" background-color="#fff" scroll-y scroll-into-view="{{toView}}">
+            <ui-view ui:for="{{datalist}}" ui:for-index="index" ui:for-item="swiperItem" id="{{swiperItem.id}}">
+              <ui-divider>{{swiperItem.name}}</ui-divider>
+              <ui-view class="list" ui:for="{{swiperItem.items}}" ui:for-item="item" ui:for-index="index" :class="{'active': item.subTitle}">
+                <ui-view class="img-box">
+                  <ui-image src="{{ item.imgSrc }}" width="80" height="80" mode="aspectFit"></ui-image>
+                </ui-view>
+                <ui-view class="text">
+                  <ui-text class="b">{{ item.title }}</ui-text>
+                  <div class="sub">{{ item.subTitle }}</div>
+                  <ui-text class="tips">{{ item.tips }}</ui-text>
+                  <ui-text class="price">{{ item.price }}</ui-text>
+                </ui-view>
+              </ui-view>
+            </ui-view>
+          </ui-scroll-view>
+        </ui-view> 
+      </ui-view>
+      </ui-view>
+  </ui-network-view>
+  </ui-page>
+</template>

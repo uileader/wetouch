@@ -1,0 +1,121 @@
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar">
+      <ui-row>
+        <ui-col vertical-align="middle" align="center" width="35" bindtap="navigateBack">
+            <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col>
+          <ui-tabs 
+          ink-bar-style="{{ { borderBottom: '2px solid #fff', width: '60%' } }}"
+          width="{{ tabsWidth }}" class="type-common" index="{{ current }}" bindchange="handleChange($event, 'current')" ink-bar>
+            <ui-tab>
+                  <ui-view class="">推荐</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">热点</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">视频</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">问答</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">社会</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">娱乐</ui-view>
+            </ui-tab>
+            <ui-tab>
+                    <ui-view class="">科技</ui-view>
+            </ui-tab>
+            <ui-tab>
+                <ui-view class="">汽车</ui-view>
+            </ui-tab>
+          </ui-tabs>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35">
+          <ui-icon name="more" size="16" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+
+    </ui-nav-bar>
+
+    <ui-swiper touch-angle="{{15}}" class="content" index="{{ current }}" bindchangeend="handleContentChange($event, 'current')">
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items0 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items1 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items2 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items3 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items4 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items5 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items6 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+      <ui-swiper-item>
+        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+          <ui-view class="content_list">
+            <ui-view ui:for="{{ items7 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+              {{ item }}
+            </ui-view>
+          </ui-view>
+        </ui-scroll-view>
+      </ui-swiper-item>
+
+    </ui-swiper>
+  </ui-page>
+</template>

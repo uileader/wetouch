@@ -1,0 +1,310 @@
+<!--tab-view2.ui-->
+<template>
+  <ui-page>
+    <ui-swiper
+    class="tab-content"
+    style="height: {{ height }}px"
+    boundary-swipe
+    vertical
+    bindchange="handleContentChange($event, 'current')">
+      <ui-swiper-item >
+        <ui-view class="" style="overflow: scroll;">
+          <ui-swiper pagination="{{ paginationFraction }}"  class="products_img">
+            <ui-swiper-item ui:for="{{ products }}" ui:for-item="item">
+              <ui-image
+              src="{{ item.src }}"
+              swiper-mode
+              ></ui-image>
+            </ui-swiper-item>
+          </ui-swiper>
+          <ui-view class="products_text">
+            <ui-view class="title">{{ shopName }}</ui-view>
+            <ui-view class="small_title">精选澳大利亚美利奴丝光羊毛，手感更柔滑细腻，蓬松保暖，减少起毛起球</ui-view>
+            <ui-row>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view class="money">¥ 399</ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="right">
+                <ui-view class="time">生产周期：15天
+                  <ui-icon name="prompt" size="15" color="#f33"></ui-icon>
+                </ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+          <ui-row class="service" height="45">
+            <ui-col vertical-align="middle" align="center" space-left="5">
+              <ui-view>
+                <ui-icon name="success" size="15" color="#8243a3"></ui-icon>七天无忧退换
+              </ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center">
+              <ui-view>
+                <ui-icon name="success" size="15" color="#8243a3"></ui-icon>先行赔付
+              </ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center">
+              <ui-view>
+                <ui-icon name="success" size="15" color="#8243a3"></ui-icon>超时赔偿
+              </ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center">
+              <ui-view>
+                <ui-icon name="success" size="15" color="#8243a3"></ui-icon>顺丰包邮
+              </ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right" width="20">
+              <ui-view>
+                <ui-icon name="arrow-right" color="#6D6D6D" size="15"></ui-icon>
+              </ui-view>
+            </ui-col>
+          </ui-row>
+
+          <ui-row-list border-left-indent bordered class="choice">
+            <ui-row height="40">
+              <ui-col vertical-align="middle" align="middle" width="60">
+                <ui-view>
+                  已选择：
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view>
+                  4205/灰色, L, 1件
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="right" width="20">
+                <ui-icon name="arrow-right" color="#6D6D6D" size="15"></ui-icon>
+              </ui-col>
+            </ui-row>
+            <ui-row height="40">
+              <ui-col vertical-align="middle" align="middle" width="60">
+                <ui-view>
+                  送至：
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view>
+                  <ui-icon name="map" size="14" color="#333"></ui-icon>北京市 丰台区
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="right" width="20">
+                <ui-icon name="arrow-right" color="#6D6D6D" size="15"></ui-icon>
+              </ui-col>
+            </ui-row>
+            <ui-row height="40">
+              <ui-col vertical-align="middle" align="middle">
+                <ui-view>
+                  尺码对照表
+                </ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="right" width="20">
+                <ui-icon name="arrow-right" color="#6D6D6D" size="15"></ui-icon>
+              </ui-col>
+            </ui-row>
+          </ui-row-list>
+          <ui-view class="cut_line">
+            <ui-divider>评论</ui-divider>
+          </ui-view>
+          <ui-view class="small_evaluate">
+            <ui-view class="title">商品评价（39）</ui-view>
+            <ui-row height="30">
+              <ui-col vertical-align="middle" align="center" width="30">
+                <ui-image
+                src="https://static.biyao.com/m/img/base/defult_userimg.png"
+                width="20"
+                height="20"
+                ></ui-image>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view>b***h</ui-view>
+              </ui-col>
+            </ui-row>
+            <ui-text block>产品不错，很合身</ui-text>
+            <ui-view class="all_evaluate">查看全部评论</ui-view>
+          </ui-view>
+          <ui-view class="shop_name">
+            <ui-row height="50">
+              <ui-col vertical-align="middle" align="center" width="60">
+                <ui-image
+                src="https://bfs.biyao.com/group1/M00/03/AE/rBACYVkUkI2APfwPAAC7nzwI-NA595.jpg"
+                width="40"
+                height="40"
+                ></ui-image>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left" border-right>
+                <ui-view>亓口男装</ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="center" width="80">
+                <ui-text block>69</ui-text>
+                <ui-text block>在售商品</ui-text>
+              </ui-col>
+            </ui-row>
+            <ui-scroll-view scroll-x height="200">
+              <ui-view class="other_shop">
+                <ui-view id="a1" class="item" ui:for="{{ otherShop }}" ui:for-item="item">
+                  <ui-image
+                  src="{{ item.src }}"
+                  width="100%"
+                  ></ui-image>
+                  <ui-view class="info">
+                    <ui-text block>{{ item.name }}</ui-text>
+                    <ui-view>{{ item.price }}</ui-view>
+                  </ui-view>
+                </ui-view>
+
+              </ui-view>
+            </ui-scroll-view>
+          </ui-view>
+          <ui-view class="bottom_tip">↑上拉显示详情页</ui-view>
+        </ui-view>
+      </ui-swiper-item>
+      <ui-swiper-item >
+        <ui-row height="46">
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="tabs_wrap">
+              <ui-tabs class="type-common" index="{{ current2 }}" bindchange="handleChange($event, 'current')">
+                <ui-tab>
+                  <ui-view class="item-list">
+                      <ui-view class="">商品</ui-view>
+                      <ui-view class="tab-line"></ui-view>
+                  </ui-view>
+                </ui-tab>
+                <ui-tab>
+                    <ui-view class="item-list">
+                        <ui-view class="">详情</ui-view>
+                        <ui-view class="tab-line"></ui-view>
+                    </ui-view>
+                </ui-tab>
+                <ui-tab>
+                    <ui-view class="item-list">
+                        <ui-view class="">评价</ui-view>
+                        <ui-view class="tab-line"></ui-view>
+                    </ui-view>
+                </ui-tab>
+              </ui-tabs>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-view class="" style="overflow: scroll;">
+          <!-- <ui-view class="bottom_tip">↓下拉显示产品页</ui-view> -->
+          
+          <ui-swiper class="content"  index="{{ current2 }}" touch-angle="15" bindchangeend="handleContentChange($event, 'current2')">
+            <ui-swiper-item>
+              <ui-scroll-view height="{{ contentHeight }}" scroll-y>
+                <ui-view class="details_img">
+                  <ui-view ui:for="{{ detailsImg }}" ui:for-item="item">
+                    <ui-view class="title">{{ item.title }}</ui-view>
+                    <ui-image
+                    src="{{ item.src }}"
+                    width="100%"
+                    ></ui-image>
+                  </ui-view>
+                </ui-view>
+                <ui-view class="details_problem">
+                  <ui-view class="problem_content" ui:for="{{ detailsProblem }}" ui:for-item="item">
+                    <ui-view class="title">{{ item.title }}</ui-view>
+                    <ui-text block ui:for="{{ item.problem }}" ui:for-item="item2">{{ item2 }}</ui-text>
+                  </ui-view>
+                </ui-view>
+              </ui-scroll-view>
+            </ui-swiper-item>
+            <ui-swiper-item>
+              <!-- 详情 -->
+              <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
+                <ui-row-list border-indent bordered class="shop_details">
+                  <ui-row ui:for="{{ details }}" ui:for-item="item">
+                    <ui-col vertical-align="middle" align="left" width="100">
+                      {{ item.name }}
+                    </ui-col>
+                    <ui-col vertical-align="middle" align="left">
+                      {{ item.content }}
+                    </ui-col>
+                  </ui-row>
+                </ui-row-list>
+                
+              </ui-scroll-view>
+            </ui-swiper-item>
+            <ui-swiper-item>
+              <!-- 评价 -->
+              <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
+                <ui-view class="evaluate_wrap">
+                  <ui-view class="title">
+                    <ui-row height="40">
+                      <ui-col vertical-align="middle" align="left" space-left="5">商品满意度</ui-col>
+                      <ui-col vertical-align="middle" align="right" space-right="5">4.9</ui-col>
+                    </ui-row>
+                    <ui-view class="all_shop">
+                      <ui-view>全部商品</ui-view>
+                    </ui-view>
+                  </ui-view>
+                  <ui-view class="evaluate_list" ui:for="{{ evaluate }}" ui:for-item="item">
+                    <ui-row height="40">
+                      <ui-col vertical-align="middle" align="center" width="40">
+                        <ui-image
+                        src="https://static.biyao.com/m/img/base/defult_userimg.png"
+                        width="30"
+                        height="30"
+                        ></ui-image>
+                      </ui-col>
+                      <ui-col vertical-align="middle" align="left">
+                        <ui-view>b***h</ui-view>
+                      </ui-col>
+                      <ui-col width="100" vertical-align="middle" align="right">
+                        <ui-view class="good_evaluate">
+                          <ui-icon name="phiz" size="24" color="#8243a3"></ui-icon>好评
+                        </ui-view>
+                      </ui-col>
+                    </ui-row>
+                    <ui-view class="center">{{ item.text }}</ui-view>
+                    <ui-row height="30" class="bottom">
+                      <ui-col vertical-align="middle" align="left">
+                        {{ item.size }}
+                      </ui-col>
+                      <ui-col vertical-align="middle" align="right">
+                        {{ item.time }}
+                      </ui-col>
+                    </ui-row>
+                  </ui-view>
+
+                </ui-view>
+              </ui-scroll-view>
+            </ui-swiper-item>
+          </ui-swiper>
+
+           
+        </ui-view>
+      </ui-swiper-item>
+    </ui-swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ui-fixed-view bottom="0" class="add_cart">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" border-right width="80">
+          <ui-icon name="comment" size="20" color="#8A8A8A"></ui-icon>
+          客服
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" border-right width="80" class="badge_wrap">
+          <ui-icon name="jd-cart" size="20" color="#8A8A8A"></ui-icon>
+          购物车
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="add">加入购物车</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="buy">立即购买</ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-fixed-view>
+  </ui-page>
+</template>

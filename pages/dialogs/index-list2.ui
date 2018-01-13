@@ -1,0 +1,32 @@
+<!--index-list2.ui-->
+<template>
+  <ui-page>
+    <!-- <ui-nav-bar
+      class="focus"
+      type="type2"
+      center-color="#fff"
+      right-color="rgb(48,193,170)">
+      <div class="nav-bar-center">
+        <div class="input-wrapper">
+          <i class="iconfont icon-search"></i>
+          <input type="text" placeholder="请输入汽车品牌" v-model="search" />
+          <i class="iconfont icon-talk"></i>
+        </div>
+      </div>
+      <div class="nav-bar-right" @click="closeModel">
+        <img src="./image/del.svg" width="20" style="vertical-align: middle;">
+      </div>
+    </ui-nav-bar> -->
+    <ui-view class="ui-dialog-content">
+    <ui-index-list data="{{list}}" bindsingleSelect="singleselect">
+      <ui-view slot="indexListTop">
+        <ui-view class="now-city">
+          <ui-view style="font-size:14px;">当前选择品牌</ui-view>
+          <ui-view class="tag1">{{marks}}</ui-view>
+        </ui-view>
+      </ui-view>
+    </ui-index-list>
+    </ui-view>
+  </ui-page>
+</template>
+<!-- 请输入汽车品牌 -->

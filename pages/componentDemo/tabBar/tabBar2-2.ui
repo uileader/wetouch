@@ -1,0 +1,7 @@
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-text class="title">使用icon性能更好</ui-text>
+    </ui-view>
+  </ui-page>
+</template>

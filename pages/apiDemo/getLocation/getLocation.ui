@@ -1,0 +1,26 @@
+<template>
+  <ui-page>
+    <ui-view class="container">
+      <ui-view class="page-body">
+        <ui-view class="page-section">
+          <ui-view class="page-body-info">
+            <ui-view class="page-body-text-small">当前位置经纬度</ui-view>
+            <ui-view ui:if="{{hasLocation === false}}">
+              <ui-view class="page-body-text">未获取</ui-view>
+            </ui-view>
+            <ui-view ui:if="{{hasLocation === true}}">
+              <ui-view class="page-body-text-location">
+                <ui-view>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</ui-view>
+                <ui-view>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</ui-view>
+              </ui-view>
+            </ui-view>
+          </ui-view>
+          <ui-view class="btn-area">
+            <ui-button type="primary" bindtap="getLocation">获取位置</ui-button>
+            <ui-button bindtap="clear">清空</ui-button>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

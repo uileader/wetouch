@@ -1,0 +1,59 @@
+.tab-content{
+  margin:1em;
+}
+
+.ui-tab-view {
+  height: 200px;
+}
+.ui-tab-view-item {
+  background-color: #eee;
+}
+.type-badge{
+  .ui-badge{
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    font-size:20rpx;
+    &.ui-badge-dot {
+      padding: 3px;
+    }
+  }
+}
+
+.type-icon{
+  &.ui-tab-view-header{
+    text-align:center
+    .item {
+      position: relative;
+      width: 60px;
+    }
+  }
+}
+
+
+.zoomIn {
+  .ui-tab-view-header-wrapper .ui-tab-view-header.active {
+    animation: zoomIn .3s;
+  }
+}
+
+.slideInDown {
+  .ui-tab-view-header-wrapper .ui-tab-view-header.active {
+    animation: slideInDown .3s;
+  }
+}
+
+
+.text-zoomIn{
+  .ui-tab-view-header-wrapper .ui-tab-view-header.active{
+    border:0;
+    animation: textzoomIn .2s;
+    animation-fill-mode:forwards
+  }
+}
+
+@keyframes textzoomIn
+{
+from {transform:scale(1)}
+to {transform:scale(1.1)}
+}

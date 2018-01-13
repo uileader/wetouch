@@ -1,0 +1,24 @@
+<template>
+  <ui-page>
+      <ui-view class="content">
+        <ui-row height="40">
+          <ui-col span="3" vertical-align="middle">
+            视频来源：
+          </ui-col>
+          <ui-col span="9" vertical-align="middle">
+              <ui-view>{{sourceType[sourceTypeIndex]}}</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-row height="40">
+          <ui-col span="3" vertical-align="middle">
+            摄像头：
+          </ui-col>
+          <ui-col span="9" vertical-align="middle">
+              <ui-view>{{camera[cameraIndex]}}</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-video class="video" controls src="{{src}}"></ui-video>
+        <ui-button ui:if="{{!src}}" type="primary" bindtap="chooseVideo">选择视频</ui-button>
+      </ui-view>
+  </ui-page>
+</template>

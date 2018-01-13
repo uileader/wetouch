@@ -1,0 +1,20 @@
+<!--page7.ui-->
+<template>
+    <ui-page pull-down="{{ pullDown }}">
+      <ui-view slot="pull-down" class="custom-pull-down-content">
+        <ui-view class="img-layer" ui:if="{{proportion < 1}}">
+          <ui-view class="img_content" style="{{{ height : proportion * 100+'px' }}}"></ui-view>
+        </ui-view>
+
+        <ui-view class="img-layer" ui:else>
+          <ui-view class="mt-ready" ui:if="{{state === 2}}"></ui-view>
+          <ui-view class="mt-loading" ui:show="{{state === 3 || state === 4}}"></ui-view>
+        </ui-view>
+      </ui-view>
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ item }}
+        </ui-view>
+      </ui-view>
+    </ui-page>
+</template>

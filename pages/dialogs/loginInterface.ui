@@ -1,0 +1,97 @@
+<template>
+  <ui-view class="ui-dialog-content">
+    <ui-nav-bar >
+      <ui-row height="46">
+          <ui-col vertical-align="middle" align="left" space-left="10" width="50" bindtap="hideWindow">
+              <ui-icon name="close" size="16" color="#A5A5A5"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="nav_title">手机快速登录／注册</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="50"></ui-col>
+        </ui-row>
+    </ui-nav-bar>
+    <ui-page>
+      <ui-swiper allow-touch-move="false" index="{{ currentNum }}" class="swiper_wrap" style="{{{ height : swiperHeight + 'px' }}}">
+        <ui-swiper-item>
+          <ui-view class="login_wrap">
+            <!-- 1 -->
+            <ui-view class="portrait">
+                <ui-icon name="user_img" color="#eee" size="80"></ui-icon>
+            </ui-view>
+            <!-- 2 -->
+            <ui-view class="login_content">
+              <ui-form bindsubmit="formSubmit">
+                <ui-view>
+                  <ui-input type="number" ui:model="{{ loginTel }}" name="name" placeholder="手机号" placeholder-style="color:#9C9C9C"></ui-input>
+                </ui-view>
+                <ui-view>
+                  <ui-input ui:model="{{ loginPassword }}" type="password" name="password" placeholder="登录密码" placeholder-style="color:#9C9C9C" ></ui-input>
+                </ui-view>
+                <ui-button formType="submit" type="primary" class="submit" bindtap="login">登录</ui-button>
+              </ui-form>
+            </ui-view>
+            <!-- 3 -->
+            <ui-view class="third_party_wrap">
+              <ui-divider>第三方账号登录</ui-divider>
+              <ui-row height="60" class="third_party">
+                <ui-col align="right" vertical-align="middle" space-right="20">
+                  <ui-view class="weixin">
+                    <ui-icon name="wexin" color="#7EDE40" size="25"></ui-icon>
+                  </ui-view>
+                </ui-col>
+                <ui-col align="left" vertical-align="middle" space-left="20">
+                  <ui-view class="qq">
+                    <ui-icon name="qq_img" color="#25A6F1" size="25"></ui-icon>
+                  </ui-view>
+                </ui-col>
+              </ui-row>
+            </ui-view>
+            <!-- 4 -->
+            <ui-view class="login_bottom">
+              <ui-row height="40">
+                <ui-col align="right" vertical-align="top" space-right="10">
+                  <ui-view class="forget_password">忘记密码</ui-view>
+                </ui-col>
+                <ui-col align="left" vertical-align="top" space-left="10" bindtap="loginPage1">
+                    <ui-view>快速注册</ui-view>
+                </ui-col>
+              </ui-row>
+            </ui-view>
+
+          </ui-view>
+
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="login_content2">
+            <ui-form bindsubmit="formSubmit">
+              <ui-row height="50" border-bottom>
+                <ui-col vertical-align="bottom">
+                  <ui-input type="number" ui:model="{{ registerTel }}" name="tel" placeholder="请输入您的手机号码" maxlength="11" placeholder-style="color:#9C9C9C"></ui-input>
+                </ui-col>
+              </ui-row>
+              <ui-row height="50" border-bottom>
+                <ui-col vertical-align="bottom">
+                  <!-- <ui-input name="code" placeholder="请输入验证码" maxlength="8" placeholder-style="color:#9C9C9C" ></ui-input> -->
+                  <ui-sms-code ui:model="{{ code }}" second="30" initText="获取验证码" bindsend="smsCode"></ui-sms-code>
+                </ui-col>
+                <!-- <ui-col width="80" align="center" vertical-align="middle">
+                  <ui-view>获取验证码<ui-view>
+                </ui-col> -->
+              </ui-row>
+              <ui-row height="50" border-bottom>
+                <ui-col vertical-align="bottom">
+                  <ui-input ui:model="{{ registerPassword }}" type="password" name="pwd" placeholder="请输入密码" placeholder-style="color:#9C9C9C" ></ui-input>
+                </ui-col>
+              </ui-row>
+              <!-- <ui-view class="submit">下一步</ui-view> -->
+              <ui-button formType="submit" type="primary" class="submit" bindtap="register">注册</ui-button>
+              <ui-view class="have_account" bindtap="loginPage2">已有账户，点击登录</ui-view>
+            </ui-form>
+          </ui-view>
+        </ui-swiper-item>
+      </ui-swiper>
+    </ui-page>
+  </ui-view>
+
+</template>

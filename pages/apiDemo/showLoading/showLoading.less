@@ -1,0 +1,73 @@
+// loading.less
+// 美团loading
+.mt-mascot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 107px;
+  background: url('~images/mt_run.png') no-repeat;
+  animation: mt-loading steps(8, end) .3s infinite;
+  zoom: 0.5;
+}
+
+@keyframes mt-loading {
+  100% {
+    background-position: -656px 0;
+  }
+}
+// 支付宝loading
+
+.alipay-loading {
+  width: 100px;
+  height: 100px;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+  padding-top: 20px;
+  .img-loading-circle{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background: url('~static/img/alipay_loading.png') no-repeat center center;
+    background-size: 100%;
+    animation: loading .9s linear infinite;
+  }
+  .text {
+    margin-top: 10px;
+    text-align: center;
+    color: #bcbcbc;
+    font-size: 14px;
+  }
+}
+
+// 图片旋转loading
+.img-loading {
+  width: 100px;
+  height: 100px;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+  padding-top: 15px;
+  .img-loading-circle{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background: url('~static/img/rotate_img.png') no-repeat center center;
+    background-size: 100%;
+    animation: loading .9s linear infinite;
+  }
+  .text {
+    margin-top: 10px;
+    text-align: center;
+    color: #bcbcbc;
+    font-size: 14px;
+  }
+}
+// 旋转动画
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

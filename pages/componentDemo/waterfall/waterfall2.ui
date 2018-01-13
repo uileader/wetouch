@@ -1,0 +1,74 @@
+<!--waterfall2.ui-->
+<template>
+  <ui-page show-loading="false">
+    <ui-waterfall config="{{ config }}" fixed-height="true" enable-reach-bottom-load bindchange="handleListViewChange" custom-tip> 
+      <template scope="props">
+        <ui-waterfall-item
+        width="{{getWidth(props.item.oldWidth)}}"
+        height="{{getHeight(props.item.oldHeight)}}"
+        move-class="item-move"
+        >
+          <ui-view class="item" index="{{ props.item.id }}">
+            <ui-view style="background-color:#fff">
+            <ui-image src="{{props.item.src}}"></ui-image>
+                <ui-text block class="goodsName">{{props.item.name}}</ui-text>
+                <ui-text block class="price">¥{{props.item.price}}</ui-text>
+            </ui-view>
+          </ui-view>
+        </ui-waterfall-item>
+      </template>
+      
+    </ui-waterfall>
+
+    <ui-view class="ui-waterfall-tip">
+      <ui-view class="loading-content" v-if="status === 0 && isflag === false">
+        <ui-view class="loading"></ui-view>
+        <span class="loading-text">加载中...</span>
+      </ui-view>
+      
+      <ui-view class="offline" ui:if="status === 2 && isflag === false" bindtap="handleReload">网络异常....</ui-view>
+      <ui-view class="timeout" ui:if="status === 3 && isflag === false" bindtap="handleReload">请求超时...</ui-view>
+      <ui-view class="error" ui:if="status === 4 && isflag === false" bindtap="handleReload">请求失败...</ui-view>
+      <ui-view class="nomore" ui:if="status === 10 && isflag === false">没有更多了...</ui-view>
+    </ui-view>
+      
+   
+      <ui-view v-if="status === 0 && isflag" class="self-loading main" style="{{{height:height+'px'}}}">
+        <ui-view class="loading-content show_tip">
+          <ui-view class="loading"></ui-view>
+          <span class="loading-text">加载中...</span>
+        </ui-view>
+      </ui-view>
+
+      <ui-view ui:if="status === 5 && isflag" class="main" style="{{{height:height+'px'}}}">
+          <ui-view class="show_tip">
+            <ui-icon name="ico_nodata" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">没有数据</ui-view>
+          </ui-view>
+        </ui-view>
+    
+        <ui-view ui:if="status === 3 && isflag" class="main" style="{{{height:height+'px'}}}">
+          <ui-view class="show_tip">
+            <ui-icon name="qingqiuchaoshi" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">超时</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="handleReload">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+    
+        <ui-view ui:if="status === 4 && isflag" class="main" style="{{{height:height+'px'}}}">
+          <ui-view class="show_tip">
+            <ui-icon name="networkOffline" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">请求失败啦</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="handleReload">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+    
+        <ui-view ui:if="status === 2 && isflag" class="main" style="{{{height:height+'px'}}}">
+          <ui-view class="show_tip">
+            <ui-icon name="networkError" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">网络无法连接，请检查您的网络</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="handleReload">点击重试</ui-button>
+          </ui-view>
+        </ui-view>
+  </ui-page>
+</template>

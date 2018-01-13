@@ -1,0 +1,67 @@
+<!--picker.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">单列选择器</ui-view>
+    <ui-view class="sample_content">
+      <ui-picker title="单列选择器" range="{{ list00 }}" value="{{ value00 }}" bindchange="handleChange"></ui-picker>
+      <ui-button bindtap="resetPicker00">将选项重置为第一项</ui-button>
+    </ui-view>
+
+    <ui-view class="sample_title">单列选择器(range-key)</ui-view>
+    <ui-view class="sample_content">
+      <ui-picker title="单列选择器" range="{{ list01 }}" range-key="name" value="{{ value01 }}" bindchange="handleChange"></ui-picker>
+      <ui-button bindtap="resetPicker01">将选项重置为第一项</ui-button>
+    </ui-view>
+
+    <ui-view class="sample_title">多列选择器</ui-view>
+    <ui-view class="sample_content">
+      <ui-divider>不联动示例</ui-divider>
+      <ui-picker mode="multiSelector" value="{{ value1 }}" range="{{ phones }}"></ui-picker>
+
+      <ui-divider>二级联动示例</ui-divider>
+      <ui-picker mode="multiSelector" is-chain value="{{ value2 }}" range="{{ departments }}" range-key="text" bindchange="handleChange2"></ui-picker>
+
+      <ui-divider>三级联动示例</ui-divider>
+      <ui-picker mode="multiSelector" is-chain value="{{ value3 }}" range="{{ relaxes }}" range-key="text" bindchange="handleChange3"></ui-picker>
+    </ui-view>
+
+    <ui-view class="sample_title">时间选择器</ui-view>
+    <ui-view class="sample_content">
+      <ui-picker title="选择出发时间" mode="time" start="11:10" end="15:24" value="{{ timeValue }}" bindchange="handleChange4"></ui-picker>
+      <ui-button  bindtap="resetPicker2">将时间重置为00:00</ui-button>
+    </ui-view>
+
+    <ui-view class="sample_title">日期选择器</ui-view>
+    <ui-view class="sample_content">
+      <ui-divider>format：YYYY-MM-DD</ui-divider>
+      <ui-picker fields="year" mode="date" start="2017-09-01" disabled end="2018-09-30" value="{{ dataValue }}" bindchange="handleChange5"></ui-picker>
+
+      <ui-divider>format：YYYY/MM/DD</ui-divider>
+      <ui-picker mode="date" start="2017-09-01" end="2018-09-30" value="{{ dataValue }}" date-format="YYYY/MM/DD" bindchange="handleChange5"></ui-picker>
+
+      <ui-divider>format：YYYY年MM月DD日</ui-divider>
+      <ui-picker mode="date" start="2017-09-01" end="2018-09-30" value="{{ dataValue }}" date-format="YYYY年MM月DD日" bindchange="handleChange5"></ui-picker>
+
+      <ui-divider>format：YYYY年M月D日</ui-divider>
+      <ui-picker mode="date" start="2017-09-01" end="2018-09-30" value="{{ dataValue }}" date-format="YYYY年M月D日" bindchange="handleChange5"></ui-picker>
+
+      <ui-divider>format：MMMM Do, YYYY</ui-divider>
+      <ui-picker mode="date" start="2017-09-01" end="2018-09-30" value="{{ dataValue }}" date-format="MMMM Do, YYYY" bindchange="handleChange5"></ui-picker>
+
+      <ui-divider>format：dddd MMMM Do, YYYY</ui-divider>
+      <ui-picker mode="date" start="2017-09-01" end="2018-09-30" value="{{ dataValue }}" date-format="dddd MMMM Do, YYYY" bindchange="handleChange5"></ui-picker>
+      <ui-button  bindtap="resetPicker3">将日期设置为今天</ui-button>
+    </ui-view>
+
+    <ui-view class="sample_title">地址选择器</ui-view>
+    <ui-view class="sample_content">
+        <ui-divider>省市区选择</ui-divider>
+        <ui-picker mode="region" value="{{ cityValue1 }}" range="{{ cityValue }}" bindchange="handleChange6"></ui-picker>
+        <ui-button  bindtap="resetPicker4">将地区设置为北京市丰台区</ui-button>
+
+        <ui-divider>省市选择</ui-divider>
+        <ui-picker mode="region" value="{{ cityValue2 }}" range="{{ cityValue }}" hide-district bindchange="handleChange7"></ui-picker>
+        <ui-button  bindtap="resetPicker5">将地区设置为广东省深圳市</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

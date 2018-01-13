@@ -1,0 +1,27 @@
+<!--timeline.ui-->
+<template>
+  <ui-page>
+    <ui-view class="wrap">
+      <ui-timeline style="width:100%">
+        <ui-timeline-item 
+          ui:for="{{list}}"  
+          wx:key="index" 
+          point-color="{{index <= 2 ? '#3399ff' : '#8a8a8a'}}"  
+          line-color="{{index<=1?'#3399ff':''}}"
+          shadow-class="{{index === 2 ? 'shadow-class' : ''}}"
+          show-line="{{index === (list.length - 1) ? false : true}}"
+          >
+        <ui-row class="zindex">
+          <ui-col span=12 class="continer">
+            <ui-row class="list">
+            <ui-col span=6 class="item" style="color:#AAAAAA;" :style="{'color': index === 2 ? '#3399ff' : '#AAAAAA','font-weight':index === 2 ? 600 : ''}">{{item.time}}
+              </ui-col>
+            <ui-col span=6 class="item" style="text-align: left">{{item.content}} </ui-col>
+            </ui-row>
+          </ui-col>
+        </ui-row>
+        </ui-timeline-item>
+      </ui-timeline>
+    </ui-view>
+  </ui-page>
+</template>

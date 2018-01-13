@@ -1,0 +1,59 @@
+<!--fileUpDownload.ui-->
+<template>
+    <ui-page>
+      <ui-tabs class="type-common" index="{{ current1 }}" bounce="false" bindchange="handleChange($event, 'current1')"  ink-bar>
+        <ui-tab>选项卡一</ui-tab>
+        <ui-tab>选项卡二</ui-tab>
+      </ui-tabs>
+
+      <ui-swiper class="content" touch-angle="{{15}}" index="{{ current1 }}" bindchange="handleContentChange($event, 'current1')">
+        <ui-swiper-item>
+          <ui-view class="songList">
+            <ui-view class="list_content">
+              <ui-view ui:for="{{musicList}}">
+                <ui-view class="song_name" :class="{nowSong:index===curIndex}">
+                  <ui-row space-bottom="0">
+                    <ui-col vertical-align="middle">
+                        <ui-view class="songname">{{musicList[index].epname}}</ui-view>
+                        <ui-text class="singername">{{musicList[index].singer}}</ui-text>
+                    </ui-col>
+                    <ui-col width="85">
+                      <ui-button type="primary"  bindtap="downFile(index)" disabled={{musicList[index].disabled}}>{{musicList[index].disabled ? '已' : ''}}下载</ui-button>
+                    </ui-col>
+                  </ui-row>
+                  <ui-view class="progress_win">
+                    <ui-progress percent="{{ progress }}" stroke-width="3" color="#ff4949"></ui-progress>
+                  </ui-view>
+                </ui-view>
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-swiper-item>
+        <ui-swiper-item>
+          <ui-view class="songList">
+            <ui-view class="list_content">
+              <ui-view ui:for="{{musicList2}}">
+                <ui-view class="song_name" :class="{nowSong:index===curIndex}">
+                  <ui-row type="flex">
+                    <ui-col vertical-align="middle">
+                        <ui-view class="songname">{{musicList2[index].epname}}</ui-view>
+                        <ui-text class="singername">{{musicList2[index].singer}}</ui-text>
+                    </ui-col>
+                    <ui-col width="90">
+                      <ui-button type="primary" bindtap="playMusic(index)">{{isPlay ? '暂停' : '播放'}}</ui-button>
+                    </ui-col>
+                    <ui-col width="90">
+                      <ui-button type="primary" bindtap="deleteSong">删除</ui-button>
+                    </ui-col>
+                  </ui-row>
+                </ui-view>
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-swiper-item>
+      </ui-swiper>
+
+
+    </ui-page>
+  </template>
+  

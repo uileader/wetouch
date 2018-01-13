@@ -1,0 +1,8 @@
+<!--detail.ui-->
+<template>
+  <ui-page>
+    <ui-view class="detail-wrap">
+      <ui-button bindtap="open">{{textDatas.address}}</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

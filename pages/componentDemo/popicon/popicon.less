@@ -1,0 +1,50 @@
+// popicon.less
+.pop-icon-demo1 {
+  .icon_view{
+    height: 100%;
+    z-index: 999;
+    .mix-flex-center();
+  }
+}
+.togglebtn{
+  width:50px;
+  height:50px;
+  margin:0 auto;
+  line-height:50px;
+  text-align:center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color:#fff
+}
+.openstyle{
+  display: block !important;
+  z-index:701;
+  animation: open .5s;
+  animation-fill-mode:forwards;
+  animation-delay:.2s;
+}
+
+@keyframes open {
+  0% {
+    display: block;
+    transform:rotate(0);
+   }
+   100% {
+    display: block;
+    transform:rotate(45deg);
+   }
+}
+
+.closestyle{
+  z-index:701;
+  animation: close .5s;
+  animation-fill-mode:forwards;
+}
+@keyframes close {
+  0% {
+    transform:rotate(45deg);
+   }
+   100% {
+    transform:rotate(0);
+   }
+}

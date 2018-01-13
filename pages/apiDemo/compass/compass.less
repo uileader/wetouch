@@ -1,0 +1,56 @@
+// compass.less
+.page-section_center {
+  text-align: center;
+}
+
+.page-body-div {
+  padding-top: 20px;
+  font-size: 20px;
+  color: #666666;
+}
+
+.direction {
+  position: relative;
+  margin: auto;
+  margin-top: 70rpx;
+  width: 540rpx;
+  height: 540rpx;
+  justify-content: center;
+}
+
+.direction-value {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 180rpx;
+  color: #353535;
+  z-index: 1;
+  &::after{
+    content: '°';
+    position: absolute;
+    width: 0.5em;
+    right: -0.5em;
+    top: 0;
+  }
+}
+
+.bg-compass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540rpx;
+  height: 540rpx;
+  transition: .1s;
+}
+
+.bg-compass-line {
+  position: absolute;
+  left: 267rpx;
+  top: -10rpx;
+  width: 6rpx;
+  height: 56rpx;
+  background-color: #1AAD19;
+  border-radius: 999rpx;
+  z-index: 1;
+}

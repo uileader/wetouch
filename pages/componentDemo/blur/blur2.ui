@@ -1,0 +1,29 @@
+<!--image8.ui-->
+<template>
+  <ui-page>
+    <ui-view class="swiper_wrap">
+      <ui-blur url="{{ url }}">
+        <ui-swiper centered-slides slides-per-view="4" index="{{ index }}" bindchangestart="handleSwiperChange" binditemtap="handleChangeSlide">
+          <ui-swiper-item ui:for="{{items2}}" ui:for-item="item" ui:for-index="index">
+            <ui-image src="{{ item.src }}"></ui-image>
+          </ui-swiper-item>
+        </ui-swiper>
+      </ui-blur>
+      <ui-view class="current">
+        <ui-view class="desc">
+          <span class="name">
+            {{ items2[index].title }}
+          </span>
+          <span class="score">
+            <span class="number">
+              {{ items2[index].score }}
+            </span>
+            <span class="text">
+              分
+            </span>
+          </span>
+        </ui-view>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

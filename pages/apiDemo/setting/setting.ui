@@ -1,0 +1,16 @@
+<!--getSetting.ui-->
+<template>
+  <ui-page>
+    <ui-view class="setting">
+      <ui-view class="btn-area">
+        <ui-view class="title">获取用户的当前设置</ui-view>
+        <ui-button type="primary" bindtap="showConfirm('scope.camera')">相机</ui-button>
+        <ui-button type="primary" bindtap="showConfirm('scope.notifition')">推送通知</ui-button>
+        <ui-button type="primary" bindtap="showConfirm('scope.userLocation')">地理位置</ui-button>
+        <ui-button type="primary" bindtap="showConfirm('scope.address')">通讯地址</ui-button>
+        <ui-button type="primary" bindtap="showConfirm('scope.record')">录音功能</ui-button>
+        <ui-button type="primary" bindtap="showConfirm('scope.writePhotosAlbum')">访问相册 </ui-button>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

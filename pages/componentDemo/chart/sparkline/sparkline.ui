@@ -1,0 +1,67 @@
+<!--sparkline.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">基本使用</ui-view>
+    <ui-sparkline
+    value="{{data}}"
+    width="{{winWidth}}"
+    height="{{winWidth/4}}"
+    is-animated="{{true}}"
+    duration=3500
+    ></ui-sparkline>
+
+    <ui-view class="sample_title">应用场景</ui-view>
+    <ui-view style="padding:10px 30px">
+    <ui-text style="font-size:16px;color:#333;margin:20px 0;" block>销售数据</ui-text>
+    <ui-row>
+      <ui-col align="left" vertical-align="middle">
+        <ui-row>
+            <ui-text style="font-size:12px;color:#666">今年销售额总计：</ui-text>
+        </ui-row>
+        <ui-row>
+            <ui-text style="font-size:20px;">¥14,231.44</ui-text>
+        </ui-row>
+        <ui-row space="20">
+            <ui-text style="font-size:12px;color:#4aa37b">+4.2% </ui-text>
+            <ui-text style="font-size:12px;color:#666"> 今年对比去年</ui-text>
+        </ui-row>
+      </ui-col>
+      <ui-col align="center"  vertical-align="middle">
+          <ui-sparkline
+          value="{{data}}"
+          width="{{100}}"
+          height="{{50}}"
+          is-animated="{{true}}"
+          duration=1500
+          dateLabel = "date"
+          line-gradient="{{gradient}}"
+          ></ui-sparkline>
+      </ui-col>
+    </ui-row>
+    <ui-row>
+      <ui-col align="left" vertical-align="middle">
+        <ui-row>
+            <ui-text style="font-size:12px;color:#666">销售数量</ui-text>
+        </ui-row>
+        <ui-row>
+            <ui-text style="font-size:20px;">1354</ui-text>
+        </ui-row>
+        <ui-row space="20">
+            <ui-text style="font-size:12px;color:#e60012">+0.3% </ui-text>
+            <ui-text style="font-size:12px;color:#666"> 今年对比去年</ui-text>
+        </ui-row>
+      </ui-col>
+      <ui-col align="center"  vertical-align="middle">
+          <ui-mini-circular
+            animate-after-show="false"
+            size="60"
+            line-width="2"
+            color="#62d7bd"
+            value="{{miniCircular}}"
+          ></ui-mini-circular>
+          <ui-text class="content">{{miniCircular}}%</ui-text>
+      </ui-col>
+    </ui-row>
+  </ui-view>
+  </ui-page>
+</template>

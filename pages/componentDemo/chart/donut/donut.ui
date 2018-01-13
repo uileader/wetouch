@@ -1,0 +1,53 @@
+<!--donut.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">默认选中一项</ui-view>
+    <ui-view style="text-align: center">
+      <ui-donut
+      value="{{donut.data}}"
+      width="300"
+      height="300"
+      external-radius="100"
+      internal-radius="50"
+      is-animated="true"
+      color-schema="{{donut.colorSchema}}"
+      highlight-slice-byId="{{2}}"
+      ></ui-donut>
+      <ui-legend
+      value="{{legendData.legend}}"
+      width="{{winWidth}}"
+      height="50"
+      is-horizontal="{{true}}"
+      is-animated="{{true}}"
+      text-size="{{legendData.textSize}}"
+      text-letter-spacing ="0.5"
+      color-schema="{{legendData.colorSchema}}"
+    ></ui-legend>
+    </ui-view>
+
+    <ui-view class="sample_title">默认不选中</ui-view>
+    <ui-view style="text-align: center">
+      <ui-donut
+      value="{{donut.data}}"
+      width="300"
+      height="300"
+      external-radius="100"
+      internal-radius="50"
+      is-animated="true"
+      color-schema="{{donut.colorSchema}}"
+      ></ui-donut>
+      <ui-legend
+      value="{{legendData.legend}}"
+      width="{{winWidth}}"
+      height="50"
+      is-horizontal="{{true}}"
+      is-animated="{{true}}"
+      text-size="{{legendData.textSize}}"
+      text-letter-spacing ="0.5"
+      color-schema="{{legendData.colorSchema}}"
+    ></ui-legend>
+    </ui-view>
+
+  </ui-page>
+</template>
+  

@@ -1,0 +1,8 @@
+<!--tabBar7-1.ui-->
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-text class="title">演示7-1</ui-text>
+    </ui-view>
+  </ui-page>
+</template>

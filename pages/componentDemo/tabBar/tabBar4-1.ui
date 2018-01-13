@@ -1,0 +1,14 @@
+<!--tabBar7.ui-->
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-text class="title">演示4-1</ui-text>
+      <ui-button type="success" bindtap="handleSetBadge1">设置选项卡1角标</ui-button>
+      <ui-button type="success" bindtap="handlePlusBadge1">选项卡1角标数字+1</ui-button>
+      <ui-button type="success" bindtap="handleMinusBadge1">选项卡1角标数字-1</ui-button>
+      <ui-button type="success" bindtap="handleRemoveBadge1">删除选项卡1角标</ui-button>
+      <ui-button type="info" bindtap="handleRemoveBadge2">选项卡2删除角标</ui-button>
+      <ui-button type="info" bindtap="handleSetBadge2">选项卡2添加角标</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

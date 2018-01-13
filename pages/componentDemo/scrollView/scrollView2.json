@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "下拉与到底加载",
+  "disableScroll":true,
+  "navigationBarBorderColor": "rgba(231, 231, 231, 0.6)",
+  "navigationBarBackgroundColor":"#FFFFFF",
+  "navigationBarTextColor":"black",
+  "statusBarColor":"black"
+}

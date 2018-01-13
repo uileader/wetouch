@@ -1,0 +1,81 @@
+
+.pull-down-content {
+  height: 60px;
+  margin-top: -60px;
+  display: flex;
+  align-items:flex-end;
+  padding-bottom: 8px;
+}
+
+.img-layer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img_content{
+    width: 82px;
+    background: url('~images/mt_run.png') no-repeat;
+    background-position: -2px center;
+    background-size: 1149px 100%;
+    zoom: 0.5;
+  }
+}
+
+.mt-ready {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 107px;
+  background: url('~images/mt_run.png') no-repeat;
+  animation: mt-ready steps(5, end) 300ms;
+  zoom: 0.5;
+}
+
+.mt-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 107px;
+  background: url('~images/mt_run.png') no-repeat;
+  animation: mt-loading steps(1, end) 300ms infinite;
+  zoom: 0.5;
+}
+
+@keyframes mt-ready {
+
+  100% {
+    background-position: -410px center;
+  }
+}
+
+@keyframes mt-loading {
+  0%{
+    background-position: -495px center;
+  }
+
+  20%{
+    background-position: -576px center;
+  }
+
+  40%{
+    background-position: -658px center;
+  }
+  50%{
+    background-position: -740px center;
+  }
+  60%{
+    background-position: -823px center;
+  }
+  80%{
+    background-position: -905px center;
+  }
+  90%{
+    background-position: -986px center;
+  }
+
+  100% {
+    background-position: -1068px center;
+  }
+}

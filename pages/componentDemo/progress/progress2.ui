@@ -1,0 +1,36 @@
+<!--progress.ui-->
+<template>
+  <ui-page>
+    <ui-view class="manage_money" ui:for="{{ manageList }}" ui:for-item="item">
+      <ui-view class="title">{{ item.title }}</ui-view>
+      <ui-row height="100">
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="left_content">
+            <ui-view class="left_01">
+              {{ item.num1 }}<ui-text>+{{ item.num2 }}%</ui-text>
+            </ui-view>
+            <ui-view class="left_02">年化利率</ui-view>
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="right_contetn">
+            <ui-view class="right_01">期限{{ item.days }}天</ui-view>
+            <ui-row space-top="20">
+              <ui-col vertical-align="middle" align="left">
+                <ui-view class="right_02">已售 {{ item.soldOut }}%</ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-progress 
+                percent="{{ item.soldOut }}" 
+                stroke-width="3"
+                active
+                active-color="#3A77FF,#3DA6FF"
+                ></ui-progress>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+  </ui-page>
+</template>

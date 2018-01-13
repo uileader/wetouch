@@ -1,0 +1,18 @@
+<!--swiper2.ui-->
+<template>
+  <ui-page>
+    <ui-divider>异步加载</ui-divider>
+    <ui-swiper pagination lazy>
+      <ui-swiper-item ui:for="{{items}}" ui:for-item="item" ui:for-index="index">
+        <ui-image mode="simple" lazy-load src="{{ item.src }}"></ui-image>
+      </ui-swiper-item>
+    </ui-swiper>
+
+    <ui-divider>模拟杂志/漫画场景</ui-divider>
+    <ui-swiper pagination="{{ pagination }}" space-between="5" lazy style="width:60%">
+      <ui-swiper-item ui:for="{{items2}}" ui:for-item="item" ui:for-index="index">
+        <ui-image mode="simple" lazy-load src="{{ item.src }}"></ui-image>
+      </ui-swiper-item>
+    </ui-swiper>
+  </ui-page>
+</template>

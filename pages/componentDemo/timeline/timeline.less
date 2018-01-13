@@ -1,0 +1,36 @@
+// timeline.less
+.wrap{
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 4px;
+  width: 80%;
+  margin: 50px auto;
+  .continer{
+    padding: 42px;
+    position: relative;
+    .list{
+      position: absolute;
+      top: -5px;
+      width: 100%;
+      left: 40px;
+      .item{
+        font-size: 15px;
+      }
+    }
+  }
+}
+.shadow-class {
+  &:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(51, 153, 255,.3);
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 1;
+  }
+}

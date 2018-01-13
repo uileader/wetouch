@@ -1,0 +1,139 @@
+<!--userinfo.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10"  width="50" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">账户信息</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-row height="50" class="userInfo_list2" space-top="10" bindtap="uploadPhoto">
+      <ui-col vertical-align="middle" space-left="15">
+        头像
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="portrait">
+        <ui-image
+        src="{{ portraitUrl }}"
+        width="40"
+        height="40"
+        ></ui-image>
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list">
+      <ui-col vertical-align="middle" space-left="15">
+        <ui-navigator url="/pages/templeteDemo/userCenter/commonUse">
+        用户名
+        </ui-navigator>
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active">TOUCH UI</ui-view>
+      </ui-col>
+    </ui-row>
+
+    <ui-view class="list_title">账号绑定</ui-view>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col width="50" vertical-align="middle" align="center">
+        <ui-icon name="api-equipment" color="#1E94FF" size="20"></ui-icon>
+      </ui-col>
+      <ui-col vertical-align="middle">
+        手机
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active">137****9999
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col width="50" vertical-align="middle" align="center">
+        <ui-icon name="wexin" color="#37B431" size="20"></ui-icon>
+      </ui-col>
+      <ui-col vertical-align="middle">
+        微信
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active">已绑定
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col width="50" vertical-align="middle" align="center">
+        <ui-icon name="qq_img" color="#1F96FF" size="20"></ui-icon>
+      </ui-col>
+      <ui-col vertical-align="middle">
+        QQ
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active2">未绑定
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col width="50" vertical-align="middle" align="center">
+        <ui-icon name="weibo" color="#DD0022" size="20"></ui-icon>
+      </ui-col>
+      <ui-col vertical-align="middle">
+        微博
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active2">未绑定
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list">
+      <ui-col width="50" vertical-align="middle" align="center">
+        <ui-icon name="taobao" color="#F41E07" size="20"></ui-icon>
+      </ui-col>
+      <ui-col vertical-align="middle">
+        淘宝
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active2">未绑定
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+
+    <ui-view class="list_title">安全设置</ui-view>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col vertical-align="middle" space-left="15">
+        登录密码
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active">修改
+          <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list2">
+      <ui-col vertical-align="middle" space-left="15">
+        支付密码
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-view class="active2">未设置
+          <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+        </ui-view>
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="userInfo_list">
+      <ui-col vertical-align="middle" space-left="15">
+        小额免密支付
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        <ui-icon name="arrow-right" size="16" color="#656565"></ui-icon>
+      </ui-col>
+    </ui-row>
+  </ui-page>
+</template>

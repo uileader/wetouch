@@ -1,0 +1,28 @@
+<!--timeline3.ui-->
+<template>
+  <ui-page>
+    <ui-timeline>
+      <ui-timeline-item
+        ui:for="{{list}}"
+        ui:key="index"
+        point-color="#df4f3c"
+        line-color="#dfe2e5"
+        show-line="{{true}}">
+        <ui-view class="item-content">
+          <ui-view class="title">
+            <ui-view class="title-info">{{item.time}}</ui-view>
+            <ui-view class="title-date">{{item.date}}</ui-view>
+          </ui-view>
+          <ui-view class="head">
+            <ui-view class="head-info">{{item.title}}</ui-view>
+            <em class="head-tag">{{item.tag}}</em>
+          </ui-view>
+          <ui-view class="content">
+            <ui-view class="content-info">{{item.info}}</ui-view>
+          </ui-view>
+        </ui-view>
+      </ui-timeline-item>
+    </ui-timeline>
+  </ui-page>
+</template>
+  

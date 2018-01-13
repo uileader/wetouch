@@ -1,0 +1,39 @@
+<template>
+    <ui-page top="0">
+        <ui-fixed-view top="0" left="0" right="0" style="{{{height:STATUS_BAR_HEIGHT+'px',backgroundColor:'#FF643F'}}}" ></ui-fixed-view>
+        <ui-row class="self-navbar" space-top="{{STATUS_BAR_HEIGHT}}">
+          <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+              <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+          </ui-col>
+        <ui-col>
+          <ui-view class="search">
+            <ui-view class="search_center" >
+              <ui-row height="30">
+                <ui-col align="right" vertical-align="middle" width="20">
+                  <ui-icon name="magnifier" size="18" color="#FF643F"></ui-icon>
+                </ui-col>
+                <ui-col align="left" vertical-align="middle" space-left="10" span="8" style="font-size:12px">
+                  附近热搜：首地大峡谷
+                </ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+        </ui-col>
+        <ui-col width="60"></ui-col>
+      </ui-row>
+        <ui-scroll-view
+        id="ui-scroller"
+        scroll-y
+        height="{{height}}"
+        bindtouchend="touchend"
+        bindtouchmove="touchmove"
+        bindtouchstart="touchstart"
+        >
+        <ui-view class="content_list" >
+          <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+            {{ item }}
+          </ui-view>
+        </ui-view>
+        </ui-scroll-view>
+    </ui-page>
+  </template>

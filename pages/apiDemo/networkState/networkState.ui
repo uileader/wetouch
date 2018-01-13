@@ -1,0 +1,19 @@
+<!--networkState.ui-->
+<template>
+  <ui-page>
+    <ui-view class="page-body-info">
+      <ui-view class="page-body-title">网络状态</ui-view>
+      <ui-view ui:if="{{hasNetworkType === false}}">
+        <ui-view class="page-body-text">未获取</ui-view>
+        <ui-view class="page-body-text">点击蓝色按钮可获取网络状态</ui-view>
+      </ui-view>
+      <ui-view ui:if="{{hasNetworkType === true}}">
+        <ui-view class="page-body-text-network-type">{{networkType}}</ui-view>
+      </ui-view>
+    </ui-view>
+    <ui-view class="btn-area">
+      <ui-button type="primary" bindtap="getNetworkType">获取手机网络状态</ui-button>
+      <ui-button bindtap="clear">清空</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

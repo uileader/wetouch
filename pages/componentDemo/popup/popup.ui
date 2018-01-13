@@ -1,0 +1,84 @@
+<!--popup.ui-->
+<template>
+  <ui-page>
+      <!-- <ui-view class="sample_title">Input</ui-view> -->
+      <ui-view class="sample_content">
+        <ui-button bindtap="openPopup1">默认popup（高度由内容决定）</ui-button>
+        <ui-button bindtap="openPopup8">打开两秒后自动关闭</ui-button>
+        <ui-button bindtap="openPopup2">自定义高度</ui-button>
+        <ui-button bindtap="openPopup3">全屏popup</ui-button>
+        <ui-button bindtap="openPopup4">遮罩透明</ui-button>
+        <ui-button bindtap="openPopup5">自定义内容区域</ui-button>
+        <ui-button bindtap="openPopup6">自定义方向（右侧）</ui-button>
+        <ui-button bindtap="openPopup7">自定义方向（上方）</ui-button>
+
+
+      </ui-view>
+
+      <ui-popup value="{{show1}}" bindhide="log('hide')" bindshow="log('show')" bindinit="log('init')">
+        <ui-view class="popup0">
+          <ui-row border-bottom>
+            <ui-switch title="开关" ui:model="{{ show1 }}"></ui-switch>
+          </ui-row>
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show2 }}" position="bottom" height="300">
+        <ui-view style="padding: 15px;">
+          <ui-button bindtap="handleShow('show2')" plain type="primary">关闭</ui-button>
+          
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show3 }}" height="100%">
+        <ui-view class="popup1">
+          <ui-button bindtap="handleShow('show3')" plain type="primary">关闭</ui-button>
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show4 }}" position="bottom" height="300" mask-style="{{{ backgroundColor: 'transparent' }}}"  hide-on-tap="false">
+        <ui-view class="popup4">
+          <ui-button bindtap="handleShow('show4')" plain type="primary">关闭</ui-button>
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show5 }}" height="270" background="transparent">
+        <ui-view class="popup5">
+          <ui-row height="40" border-bottom>
+            <ui-col vertical-align="middle" space-left="20">动漫APP</ui-col>
+            <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow('show5')">
+              <ui-icon name="x" size="18" color="#FC8950"></ui-icon>
+            </ui-col>
+          </ui-row>
+          <ui-view>更新更快、流量超省、内容更全</ui-view>
+          <ui-row height="50">
+            <ui-col space-left="20" space-right="10" vertical-align="middle">
+              <ui-button>继续阅读</ui-button>
+            </ui-col>
+            <ui-col space-left="10" space-right="20" vertical-align="middle">
+              <ui-button type="primary" bindtap="handleShow('show5')">安装享福利</ui-button>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show6 }}" position="right">
+        <ui-view style="width:80vw;">
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show7 }}" position="top" top="{{ poptpTop }}" mask-style="{{{ top: '198px' }}}">
+        <ui-view class="top_pop">
+            <ui-tags data="{{list00}}" bindchange="singleTap" width="{{ tagsWidth }}"  fixed-width
+             ></ui-tags>
+        </ui-view>
+      </ui-popup>
+
+      <ui-popup ui:model="{{ show8 }}" hide-on-tap="false" >
+        <ui-view class="popup2">
+          这是一段通知消息！
+        </ui-view>
+      </ui-popup>
+
+  </ui-page>
+</template>

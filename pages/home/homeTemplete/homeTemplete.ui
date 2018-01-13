@@ -1,0 +1,80 @@
+<!--homeTemplete.ui-->
+<template>
+  <ui-page>
+    <ui-view class="template_content">
+      <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/musicPlayer/musicPlayer">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/template_01.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">音乐播放器</ui-view>
+            <ui-view class="list_text">
+              涵盖了音频播放控制、滑动条控制、曲目管理、系统的音频面板控制等功能点
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view>
+
+      <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/friendCircle/friendCircle">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/template_02.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">微信朋友圈</ui-view>
+            <ui-view class="list_text">
+              涵盖了图片9宫格布局、预览、点赞与评论、拍照与选择相册、图片和文本的上传等功能点
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view>
+
+      <ui-view class="template_list" bindtap="loginInterface">
+        <ui-view class="list_top">
+          <ui-image 
+          src="{{ require('#/images/template_03.jpg') }}"
+          mode="aspectFit"
+          width="100%"
+          load-effect="fade"
+          ></ui-image>
+        </ui-view>
+        <ui-view class="list_bottom">
+          <ui-view class="list_title">登录／注册</ui-view>
+          <ui-view class="list_text">
+            完整展示了登录与注册所涉及的各种功能点
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/userCenter/userCenter">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/template_04.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">用户中心</ui-view>
+            <ui-view class="list_text">
+              涵盖了用户中心界面布局、头像上传、客服、通讯录调用、位置调用等功能点
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

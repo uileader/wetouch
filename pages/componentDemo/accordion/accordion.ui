@@ -1,0 +1,32 @@
+<!--accordion.ui-->
+<template>
+  <ui-page>
+    <ui-accordion bindchange="slide" ui:for="{{ accordion }}">
+      <ui-view slot="header">
+        <ui-row height="50" border-bottom class="title">
+          <ui-col vertical-align="middle" align="left" space-left="10">
+            {{ item.title }}
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="60">
+            {{ item.number }}项
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="60">
+            <ui-view class="state {{ item.state }}" ui:if="{{ item.state==='abnormal' }}">{{ item.stateNum }}项异常</ui-view>
+            <ui-view class="state {{ item.state }}" ui:else>全部正常</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="30"></ui-col>
+        </ui-row>
+      </ui-view>
+      <ui-view slot="content">
+        <ui-row height="40" ui:for="{{ item.content }}" ui:for-item="item2" class='content'>
+          <ui-col vertical-align="middle" align="left" space-left="10">{{ item2.title }}</ui-col>
+          <ui-col vertical-align="middle" align="center" width="50">
+            <ui-icon name="{{ item.state==='abnormal' ? 'error':'success' }}" size="16" color="{{ item.state==='abnormal' ? '#F5AC29':'#2AA744' }}"></ui-icon>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+    </ui-accordion>
+    
+
+  </ui-page>
+</template>

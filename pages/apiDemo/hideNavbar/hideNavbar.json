@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "隐藏导航栏",
+  "navigationBarVisible": false,
+  "statusBarColor":"black"
+}

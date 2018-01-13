@@ -1,0 +1,38 @@
+// maskTip.less
+
+.mask_wrap {
+  .photo {
+    padding: 0;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    .ui-image {
+      display: block;
+      width: 100%;
+    }
+    .ui-icon {
+      display: block;
+      text-align: center;
+      // transform: translateY(10px);
+      font-size: 96rpx;
+      color: #fff;
+    }
+    .icon_top{
+      text-align: right;
+    }
+    .top_view{
+      position: relative;
+      // border: 1px solid red;
+      .top_line{
+        position: absolute;
+        bottom:0rpx;
+        right: 48rpx;
+        width: 2px;
+        height: 36rpx;
+        background-color: #fff;
+      }
+    }
+  }
+}

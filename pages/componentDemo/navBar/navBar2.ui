@@ -1,0 +1,51 @@
+<!--navBar3.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar class="nab_bar" slot="nav-bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" width="70" bindtap="navigateBack">
+          <ui-view class="nav_left">
+              <ui-icon name="arrow-left" size="16" color="#2DBAAA"></ui-icon>返回
+          </ui-view>
+          
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">影院</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35" bindtap="msgTap">
+          <ui-icon name="{{collect}}" size="22" color="#2DBAAA"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35" bindtap="popSwitch">
+          <ui-icon name="share2" size="22" color="#2DBAAA"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+
+    <ui-popup ui:model="{{ show }}" bindhide="log('hide')" bindshow="log('show')" class="popup">
+      <ui-row height="110">
+        <ui-col align="center" vertical-align="middle">
+            <ui-image src="{{imgSrc.weixin_message}}" alt="" width="48" bindtap="share('weixin_message')"></ui-image>
+            <ui-view>微信</ui-view>
+        </ui-col>
+        <ui-col align="center" vertical-align="middle">
+            <ui-image src="{{imgSrc.weixin_timeline}}" alt="" width="48" height="48" bindtap="share('weixin_timeline')"></ui-image>
+            <ui-view>朋友圈</ui-view>
+        </ui-col>
+        <ui-col align="center" vertical-align="middle">
+            <ui-image src="{{imgSrc.qq}}" alt="" width="48" bindtap="share('qq')"></ui-image>
+            <ui-view>QQ</ui-view>
+        </ui-col>
+        <ui-col align="center" vertical-align="middle">
+            <ui-image src="{{imgSrc.weibo}}" alt="" width="48" bindtap="share('weibo')"></ui-image>
+            <ui-view>微博</ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-popup>
+
+  </ui-page>
+</template>

@@ -1,0 +1,184 @@
+<!--bar.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">柱状图：基本使用</ui-view>
+    <ui-view style="text-align: center">
+      <ui-bar
+      value="{{bar1.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      between-bars-padding = 0.3
+      color-schema="{{bar1.colorSchema}}"
+      y-unit="/人"
+      ></ui-bar>
+    </ui-view>
+
+    <ui-view class="sample_title">柱状图：点击事件</ui-view>
+    <ui-view style="text-align: center">
+      <ui-bar
+      value="{{bar1.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      between-bars-padding = 0.3
+      is-darker="true"
+      color-schema="{{bar1.colorSchema}}"
+      bindcustomclick="customclick"
+      ></ui-bar>
+      <ui-text block>{{clickText}}</ui-text>
+    </ui-view>
+
+    <ui-view class="sample_title">柱状图：使用tooltip</ui-view>
+    <ui-view>
+      <ui-bar
+      value="{{bar1.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-darker="true"
+      between-bars-padding = 0.3
+      colorSchema="{{bar1.colorSchema}}"
+      tooltip="true"
+      body-fill-color="rgba(0,0,0,.7)"
+      value-text-fill-color="#fff"
+      name-text-fill-color="#fff"
+      ></ui-bar>
+    </ui-view>
+
+
+    <ui-view class="sample_title">柱状图：使用不同颜色</ui-view>
+    <ui-view style="height:210px;">
+    <ui-bar
+    value="{{bar2.data}}"
+    height="200"
+    width="{{width}}"
+    is-animated="true"
+    between-bars-padding = 0.3
+    percentage-label-margin="{{1}}"
+    color-schema="{{bar2.colorSchema}}"
+    y-axis-padding-between-chart="{{12}}"
+    ></ui-bar>
+  </ui-view>
+
+    <ui-view class="sample_title">柱状图：使用图例</ui-view>
+    <ui-view style="">
+      <ui-bar
+      value="{{bar2.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      between-bars-padding = 0.3
+      color-schema="{{bar2.colorSchema}}"
+      ></ui-bar>
+      <ui-legend
+      value="{{legendData.legend}}"
+      width="{{width-100}}"
+      height="300"
+      is-animated="true"
+      textSize="{{legendData.textSize}}"
+      textLetterSpacing ="0.5"
+    ></ui-legend>
+    </ui-view>
+
+    <ui-view class="sample_title">条形图：基本使用</ui-view>
+    <ui-view style="text-align: center;margin-top:20px;height:210px;">
+      <ui-bar
+      value="{{bar3.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-horizontal = "true"
+      percentage-axis-to-max-ratio=2
+      between-bars-padding = 0.3
+      margin="{{bar3.margin}}"
+      has-percentage="true"
+      enable-percentage-labels="true"
+      ></ui-bar>
+    </ui-view>
+    <ui-view class="sample_title">条形图：使用tooltip</ui-view>
+    <ui-view style="text-align: center;margin-top:20px;height:210px;">
+      <ui-bar
+      value="{{bar3.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-horizontal = "true"
+      percentage-axis-to-max-ratio=2
+      margin="{{bar3.margin}}"
+      is-darker="true"
+      between-bars-padding = 0.3
+      has-percentage="true"
+      enable-percentage-labels="true"
+      tooltip="true"
+      body-fill-color="rgba(0,0,0,.7)"
+      value-text-fill-color="#fff"
+      name-text-fill-color="#fff"
+      ></ui-bar>
+    </ui-view>
+
+    <ui-view class="sample_title">条形图：点击事件</ui-view>
+    <ui-view style="text-align: center;">
+      <ui-bar
+      value="{{bar3.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-horizontal = "true"
+      percentage-axis-to-max-ratio=2
+      between-bars-padding = 0.3
+      margin="{{bar3.margin}}"
+      is-darker="true"
+      has-percentage="true"
+      enable-percentage-labels="true"
+      bindcustomclick="customclick1"
+      ></ui-bar>
+      <ui-text block>{{clickText1}}</ui-text>
+    </ui-view>
+
+    <ui-view class="sample_title">条形图：使用不同颜色</ui-view>
+    <ui-view style="text-align: center;margin-top:20px;height:210px;">
+      <ui-bar
+      value="{{bar3.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-horizontal = "true"
+      percentage-axis-to-max-ratio=2
+      between-bars-padding = 0.3
+      margin="{{bar3.margin}}"
+      color-schema="{{bar2.colorSchema}}"
+      between-bars-padding = 0.6
+      has-percentage="true"
+      enable-percentage-labels="true"
+      ></ui-bar>
+    </ui-view>
+
+    <ui-view class="sample_title">条形图：使用图例</ui-view>
+    <ui-view>
+      <ui-bar
+      value="{{bar3.data}}"
+      height="200"
+      width="{{width}}"
+      is-animated="true"
+      is-horizontal = "true"
+      percentage-axis-to-max-ratio=2
+      between-bars-padding = 0.3
+      margin="{{bar3.margin}}"
+      color-schema="{{bar2.colorSchema}}"
+      is-darker="false"
+      between-bars-padding = 0.6
+      has-percentage="true"
+      enable-percentage-labels="true"
+      ></ui-bar>
+      <ui-legend
+      value="{{legendData2.legend}}"
+      width="{{width-100}}"
+      height="200"
+      is-animated="true"
+      textSize="{{legendData.textSize}}"
+      textLetterSpacing ="0.5"
+    ></ui-legend>
+    </ui-view>
+  </ui-page>
+</template>

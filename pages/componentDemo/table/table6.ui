@@ -1,0 +1,30 @@
+<!--table3.ui-->
+<template>
+  <ui-page show-loading="false">
+      <ui-image width="100%" height="{{imgHeight}}" src="http://images.uileader.com/20171110/e5b64484-b5e0-472a-bf52-ac95fb5685d3.jpg"></ui-image>
+      <ui-scroll-view
+      scroll-y
+      height="{{height}}"
+      bindscroll="scroll"
+      bindtouchend="touchend"
+      bindtouchmove="touchmove" bindtouchstart="touchstart"
+      >      
+        <ui-table
+            startRefresh.sync ="{{startRefresh}}"
+            url="http://www.uileader.com/touchui-backstage/listUser.do" 
+            header="{{thisHeader}}"
+            sort-name="id"
+            sort-order="desc"
+            ui:model="thisData"
+            page-size="20"
+            bindrowtap="showname"
+            bindsorting="sortloading"
+            alternatingRow="true"
+            tap-effect
+            is-login="true"
+            sticky="true"
+            >
+        </ui-table>
+      </ui-scroll-view>
+    </ui-page>
+</template>

@@ -1,0 +1,427 @@
+// cloudHome.less
+
+.pull-down-content {
+    height: 60px;
+    margin-top: -60px;
+    .mix-flex-center();
+}
+  
+  
+.img-layer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .touch_ui{
+      width: 120px;
+      height:90px;
+      background: url('~images/logo-light.png') no-repeat;
+      background-position: center 0;
+      background-size: 100%;
+    }
+}
+.statusBar{
+    width: 100%;
+    transition: all .25s ease-in;
+}
+
+
+
+
+.win{
+  height: 100%;
+  .top_content{
+    overflow: hidden;
+    display:flex;
+    flex-direction:column;
+    height: 200px;
+    padding-bottom: 10px;
+    background: linear-gradient(45deg, #4364DF, #39A6ED);
+    position:relative;
+    .sun{
+      position: absolute;
+      left: -4.2rem;
+      top: -3.6rem;
+      width: 7.5rem;
+      height: 6.67rem;
+      background: url(~images/sun.png) no-repeat;
+    
+      background-size: 7.5rem;
+      opacity: 0;
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+      -webkit-animation: sun1 8s linear infinite;
+      animation: sun1 8s linear infinite;
+    }
+    @keyframes sun1 {
+      0% {
+           opacity: .2;
+           -webkit-transform: translate(0) scale(1.3) rotate(0deg);
+           transform: translate(0) scale(1.3) rotate(0deg)
+       }
+   
+       25% {
+           opacity: .72;
+           -webkit-transform: translate(.17rem,.14rem) scale(1.56);
+           transform: translate(.17rem,.14rem) scale(1.56)
+       }
+   
+       50% {
+           opacity: 1;
+           -webkit-transform: translate(.53rem,.45rem) scale(2.15);
+           transform: translate(.53rem,.45rem) scale(2.15)
+       }
+   
+       to {
+           opacity: 0;
+           -webkit-transform: translate(1.06rem,.89rem) scale(3) rotate(-20deg);
+           transform: translate(1.06rem,.89rem) scale(3) rotate(-20deg)
+       }
+   }
+    .sun2 {
+      position: absolute;
+      left: -4.12rem;
+      top: -3.48rem;
+      width: 7.5rem;
+      height: 6.67rem;
+      background: url(~images/sun.png) no-repeat;
+      background-size: 7.5rem;
+      opacity: 0;
+      -webkit-animation: sun2 6s linear infinite;;
+      animation: sun2 6s linear infinite;
+    }
+    @-webkit-keyframes sun2 {
+      0% {
+          opacity: .27;
+          -webkit-transform: translate(0) scale(1.3);
+          transform: translate(0) scale(1.3)
+      }
+  
+      75% {
+          opacity: 1;
+          -webkit-transform: translate(.79rem,.69rem) scale(2.36);
+          transform: translate(.79rem,.69rem) scale(2.36)
+      }
+  
+      to {
+          opacity: 0;
+          -webkit-transform: translate(1.13rem,.98rem) scale(2.82);
+          transform: translate(1.13rem,.98rem) scale(2.82)
+      }
+    }
+    .sun3 {
+        position: absolute;
+        left: -5.72rem;
+        top: -5.14rem;
+        width: 7.5rem;
+        height: 6.67rem;
+        background: url(~images/sun.png) no-repeat;
+        background-size: 7.5rem;
+        opacity: 0;
+        -webkit-animation: sun3 3s linear infinite;;
+        animation: sun3 3s linear infinite;
+    }
+
+    @-webkit-keyframes sun3 {
+        0% {
+            opacity: .2;
+            -webkit-transform: translate(0) scale(2);
+            transform: translate(0) scale(2)
+        }
+
+        to {
+            opacity: 0;
+            -webkit-transform: translate(2.25rem,2.07rem) scale(2);
+            transform: translate(2.25rem,2.07rem) scale(2)
+        }
+      }
+    .yun {
+        position: absolute;
+        left: -.68rem;
+        top: .56rem;
+        width: 5.62rem;
+        height: 2.34rem;
+        background: url(~images/cloud.png) no-repeat;
+        background-size: 5.62rem;
+        opacity: 0;
+        -webkit-animation: secondCloudAnimation1 10.5s linear infinite;;
+        animation: secondCloudAnimation1 10.5s linear infinite;
+    }
+    
+    @keyframes secondCloudAnimation1 {
+        0% {
+            opacity: .3;
+            -webkit-transform: translate(0) scale(.4);
+            transform: translate(0) scale(.4)
+        }
+    
+        to {
+            opacity: .13;
+            -webkit-transform: translate(-3.12rem,.46rem) scale(.2);
+            transform: translate(-3.12rem,.46rem) scale(.2)
+        }
+      }
+
+      .yun2 {
+        position: absolute;
+        left: -.44rem;
+        top: 1.38rem;
+        width: 5.62rem;
+        height: 2.34rem;
+        background: url(~images/cloud.png) no-repeat;
+        background-size: 5.62rem;
+        opacity: 0;
+        -webkit-animation: secondCloudAnimation2 5.4s linear infinite;;
+        animation: secondCloudAnimation2 5.4s linear infinite;
+    }
+    
+      @keyframes secondCloudAnimation2 {
+          0% {
+              opacity: 0;
+              -webkit-transform: translate(0) scale(.8);
+              transform: translate(0) scale(.8)
+          }
+      
+          to {
+              opacity: 1;
+              -webkit-transform: translate(-2.96rem,-3.25rem) scale(1.7);
+              transform: translate(-2.96rem,-3.25rem) scale(1.7)
+          }
+      }
+
+      .yun3 {
+        position: absolute;
+        left: -.86rem;
+        top: 1.66rem;
+        width: 5.62rem;
+        height: 2.34rem;
+        background: url(~images/cloud.png) no-repeat;
+        background-size: 5.62rem;
+        opacity: 0;
+        -webkit-animation: secondCloudAnimation3 8.5s linear infinite; 
+        animation: secondCloudAnimation3 8.5s linear infinite;
+    }
+
+    @-webkit-keyframes secondCloudAnimation3 {
+      0% {
+          opacity: 0;
+          -webkit-transform: translate(0) scale(.5);
+          transform: translate(0) scale(.5)
+      }
+  
+      to {
+          opacity: 1;
+          -webkit-transform: translate(-3.54rem,-5rem) scale(1.8);
+          transform: translate(-3.54rem,-5rem) scale(1.8)
+      }
+  }
+
+    .yun4 {
+      position: absolute;
+      left: -.14rem;
+      top: .24rem;
+      width: 5.62rem;
+      height: 2.34rem;
+      background: url(~images/cloud.png) no-repeat;
+      background-size: 5.62rem;
+      opacity: 0;
+      -webkit-animation: secondCloudAnimation4 10.5s linear infinite;;
+      animation: secondCloudAnimation4 10.5s linear infinite;
+  }
+
+    @-webkit-keyframes secondCloudAnimation4 {
+        0% {
+            opacity: .71;
+            -webkit-transform: translate(0) scale(.8);
+            transform: translate(0) scale(.8)
+        }
+
+        to {
+            -webkit-transform: translate(-5.93rem,-1.24rem) scale(1.48);
+            transform: translate(-5.93rem,-1.24rem) scale(1.48)
+        }
+    }
+
+    .yun5 {
+      position: absolute;
+      left: 2.4rem;
+      top: 1.58rem;
+      width: 5.62rem;
+      height: 2.34rem;
+      background: url(~images/cloud.png) no-repeat;
+      background-size: 5.62rem;
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      transform: scale(.7);
+      -webkit-animation: secondCloudAnimation5 8s linear infinite; 
+      animation: secondCloudAnimation5 8s linear infinite;
+  }
+  
+  @-webkit-keyframes secondCloudAnimation5 {
+      0% {
+          opacity: 0;
+          -webkit-transform: translate(0) scale(.5);
+          transform: translate(0) scale(.5)
+      }
+  
+      to {
+          opacity: .8;
+          -webkit-transform: translate(2.41rem,-3.71rem) scale(1.5);
+          transform: translate(2.41rem,-3.71rem) scale(1.5)
+      }
+  }
+  
+      .yun6{
+        position: absolute;
+        left: -3.62rem;
+        top: .74rem;
+        width: 5.62rem;
+        height: 2.34rem;
+        background: url(~images/cloud.png) no-repeat;
+        background-size: 5.62rem;
+        opacity: 0;
+        -webkit-animation: secondCloudAnimation6 20s linear infinite;;
+        animation: secondCloudAnimation6 20s linear infinite;;
+    }
+
+    @-webkit-keyframes secondCloudAnimation6 {
+        0% {
+            opacity: .33;
+            -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1)
+        }
+
+        to {
+            opacity: .47;
+            -webkit-transform: translate(-2.1rem,.13rem) scale(.7);
+            transform: translate(-2.1rem,.13rem) scale(.7)
+        }
+    }
+
+      
+
+  }
+  .top_text{
+    flex: 1;
+    height: 1px;
+    padding: 100px 10px 10px 10px;
+    .ui-text{
+      color: #fff;
+      font-size: 36rpx;
+    }
+  }
+  .top_bottom{
+    flex: 0 0 40px;
+    text-align: right;
+    .ui-text{
+      color: #fff;
+    }
+  }
+  
+  
+}
+
+
+//启动页样式
+.splash_wrap {
+  width: 100%;
+  height: 100%;
+  background: #fff url('~images/splash_bg.jpg') no-repeat center center;
+  background-size: 100%;
+  z-index: 999;
+  // opacity: 1;
+  // transition: opacity .3s ease-in;
+  // &.splash_active{
+  //   opacity: 0;
+  // }
+  .splash_swiper{
+    width: 100%;
+    height: 100%;
+    .swiper-pagination-bullets, 
+    .swiper-pagination-custom, 
+    .swiper-pagination-fraction{
+      bottom:20px;
+    }
+  }
+  .swiper-slide {
+    height: 100%;
+  }
+  .splash_swiper_content{
+    width: 100%;
+    height: 100%;
+  }
+  .splash_swiper01{
+    background: url('~images/splash_swiper01.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper02{
+    background: url('~images/splash_swiper02.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper03{
+    background: url('~images/splash_swiper03.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_swiper04{
+    background: url('~images/splash_swiper04.png') no-repeat center center;
+    background-size: 100%;
+  }
+  .splash_into{
+    width: 300rpx;
+    height: 80rpx;
+    position: absolute;
+    bottom: 140rpx;
+    left: 50%;
+    margin-left: -150rpx;
+    border-radius: 5px;
+    border: 1px solid #14A3FF;
+    color: #14A3FF;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 76rpx;
+  }
+}
+// api主页导航样式
+.home_content {
+    background-color: #fff;
+    border-radius: 5px;
+    // box-shadow: 0px 0px 13px 0px #E0E9F0;
+    // margin-bottom: 15px;
+    padding: 5px 0;
+    .ui-text {
+        color: #121212;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .application {
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        line-height: 60px;
+        border-radius: 5px;
+    }
+    .application_01 {
+        background-color: #FDA32B;
+    }
+    .application_02 {
+        background-color: #44BBFC;
+    }
+    .application_03 {
+        background-color: #5DC663;
+    }
+    .application_04 {
+        background-color: #3CBAFF;
+    }
+    .application_05 {
+        background-color: #35C094;
+    }
+    .application_06 {
+        background-color: #34C9E3;
+    }
+    .application_07 {
+        background-color: #4EC1FF;
+    }
+    .application_08 {
+        background-color: #2B94ED;
+    }
+}

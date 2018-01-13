@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+}
+.swiper-slide {
+  overflow: scroll;
+}
+
+.goods-list .ui-divider{
+  padding:60rpx;
+}
+
+.ui-tabs {
+  padding-bottom: 1px;
+  width: 88px;
+  flex: 0 0 88px;
+  &.tab-item {
+    .swiper-slide {
+      width: 88px;
+      padding: 15px;
+      transition: color .1s;
+      .mix-1px(0, 0, 1, 0, #ddd);
+    }
+
+    .active {
+      border-left: 1px solid #f37c26;
+      color: #f37c26;
+      border-bottom:0
+    }
+
+    .ui-icon {
+      margin: 0 5px;
+      font-size: 16px;
+    }
+  }
+}
+
+.tab-content {
+  flex: 1;
+  color: #999;
+  .swiper-slide {
+    padding:1em;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.imgbox{
+  .ui-image{
+    width:100%
+  }
+}
+
+.small-title{
+  font-size: 24rpx;
+  text-align:center;
+  margin-top:5px;
+}
+.tabcontent{
+  display: flex;
+  flex-wrap:wrap;
+  .tabcontent-1{
+    flex:0 0 33.33%
+  }
+}

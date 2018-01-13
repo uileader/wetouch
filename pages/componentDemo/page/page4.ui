@@ -1,0 +1,15 @@
+<template>
+    <ui-page
+    bindscroll="handleScroll"
+    bindscrollstart="handleScrollStart"
+    bindscrollend="handleScrollEnd">
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+    <ui-fixed-view class="{{ className }}">
+      <ui-icon name="service" size="28" color="#fff"></ui-icon>
+    </ui-fixed-view>
+  </ui-page>
+</template>

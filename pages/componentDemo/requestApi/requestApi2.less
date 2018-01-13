@@ -1,0 +1,114 @@
+@loading-color: #3399ff;
+.win{display:flex;
+  flex-direction:column;
+  justify-content:space-between;}
+.main{
+    flex-grow:1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center; 
+    text-align: center;
+    flex-grow:1;
+}
+.show_tip{
+    height: 160px;
+    .ui-icon{
+      line-height: 1.1;
+    }
+  }
+.selfrequestbtn{
+  background-color: #41ad72;
+  color:#fff;
+  border-color:#41ad72
+}
+.selfrequestbtn-hover{
+  background-color:#318a59;
+  border-color:#318a59
+}
+
+
+.ui-loading-circle {
+  width: 20rem/75;
+  height: 20rem/75;
+  background: @loading-color;
+  border-radius: 50%;
+  margin-left: 15rem/75;
+  display: inline-block;
+}
+
+.ui-loading-circle-1 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+}
+
+.ui-loading-circle-2 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.ui-loading-circle-3 {
+  -webkit-animation: circle 1s linear infinite alternate;
+  animation: circle 1s linear infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.btnbox{
+  padding:0 10px;
+  }
+.title{
+  color:#A5A5A4;
+  font-size:14px;}
+.selfbtn{
+  padding:0 5px;
+}
+
+@keyframes rotate{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+.top_tip{
+  overflow: scroll;
+  .ui-row{
+    background-color: #fff;
+  }
+  .left_icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#FCB300; 
+    text-align: center;
+    line-height: 50px;
+  }
+  .left_icon2{
+    background-color: #FF7360;
+  }
+  .left_icon3{
+    background-color: #39CCC5;
+  }
+  .text{
+    .ui-text{
+      font-size: 16px;
+      color: #313338;
+    }
+    .ui-view{
+      color: #9C9FA4;
+      font-size: 12px;
+      .mix-text-overflow ()
+    }
+  }
+}

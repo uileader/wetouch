@@ -1,0 +1,264 @@
+.img_wrap {
+  width:100%;
+  position: fixed;
+  z-index: 1;
+  transform: translate(0, 0);
+  will-change: transform;
+  height:165px;
+}
+
+.scroll_content {
+  position: relative;
+  top: 380px;
+  width: 100%;
+  z-index: 2;
+  // display: flex;
+}
+
+
+.ui-tabs {
+  position:relative;
+  background-color: #f5f5f5;
+  padding-bottom: 1px;
+  width: 100px;
+  flex: 0 0 100px;
+
+  &.tab-item {
+    .swiper-slide {
+      width: 100px;
+      padding: 20px;
+      transition: color .1s;
+      .mix-1px(0, 0, 1, 0, #ddd);
+    }
+
+    .active {
+      border-left: 1px solid #39f;
+      color: #39f;
+      background-color:#fff
+    }
+
+    .ui-icon {
+      margin: 0 5px;
+      font-size: 32rpx;
+    }
+  }
+}
+
+.imgbox{
+  position:relative;
+  bottom:-15px;
+  left:10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px -2px #9a9a9a;
+  .ui-image{
+    width:100%;
+  }
+}
+.titlename{
+  font-size:16px;
+  color:#fff;
+  text-align:center;
+}
+
+.top-1{
+  z-index:1;
+  margin-top:46px;
+}
+.title {
+  color: #fff;
+  padding:0 5px;
+  .f1 {
+    font-size: 18px;
+  }
+  .f2{
+    font-size: 12px;
+  }
+
+  .mt15 {
+    margin-top: 15rpx;
+  }
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #fff;
+}
+
+
+.header {
+  padding: 0 15px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.header1 {
+  background-color: #fff;
+  .mix-1px(0, 0, 1, 0, #ccc);
+}
+
+
+.container {
+  display: flex;
+  background-color: #fff;
+  z-index:1001
+}
+
+.ui-tabs {
+  position:relative;
+  background-color: #f5f5f5;
+  padding-bottom: 1px;
+  width: 100px;
+  flex: 0 0 100px;
+
+  &.tab-item {
+    .swiper-slide {
+      width: 100px;
+      padding: 20px;
+      transition: color .1s;
+      .mix-1px(0, 0, 1, 0, #ddd);
+    }
+
+    .active {
+      border-left: 1px solid #39f;
+      color: #39f;
+      background-color:#fff;
+      border-bottom:0;
+    }
+
+    .ui-icon {
+      margin: 0 5px;
+      font-size: 32rpx;
+    }
+  }
+}
+
+.tab-content {
+  flex: 1;
+  color: #999;
+  .swiper-slide {
+    padding-left: 1em;
+    padding-top: 1em;
+  }
+}
+
+.list {
+  border-bottom: 1px solid #efefef;
+  height: 84px;
+  overflow: hidden;
+  .text {
+    padding: 10px 0;
+  }
+}
+
+.ui-text {
+  padding-left: 10px;
+  color: #333;
+  font-size:14px;
+
+  &.b {
+    font-weight: 600;
+  }
+
+  &.tips {
+    font-size:12px;
+  }
+
+  &.price {
+    color: #f22;
+  }
+}
+
+.ui-view.list {
+  display: flex;
+  .img-box {
+    .img {
+      width: 80px;
+      height: 80px;
+      vertical-align: middle;
+    }
+  }
+
+  .text {
+    flex: 1;
+  }
+}
+
+.ui-scroll-view{
+  background-color:#fff;
+  position:relative;
+}
+.ui-scroller{
+  background-color:#fff;
+  position:relative;
+}
+.top-bg{
+  height:146px;
+  // background-color:#39f;
+  .imgbox{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 0px #4c4c4c;
+    .ui-image{
+      width:100%
+    }
+  }
+}
+
+// 麦当劳头部
+.titlename{
+  font-size:16px;
+  color:#fff;
+  text-align:center;
+}
+.title {
+  color: #fff;
+  padding:0 5px;
+  .f1 {
+    font-size: 16px;
+  }
+  .f2{
+    font-size: 12px;
+  }
+
+  .mt15 {
+    margin-top: 15rpx;
+  }
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #fff;
+}
+
+.bg_blue{
+  position: absolute;
+  width: 100%;
+  // height: 240px;
+  background-color: #0099F8;
+}
+
+.header {
+  padding: 0 15px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.header1 {
+  background-color: #fff;
+  .mix-1px(0, 0, 1, 0, #ccc);
+}
+
+.stopscroll{
+  .ui-scroll-view.ui-scroll-view-y{
+    overflow-y:hidden;
+  }
+}

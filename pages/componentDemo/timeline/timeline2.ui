@@ -1,0 +1,25 @@
+<!--timeline2.ui-->
+<template>
+  <ui-page>
+    <ui-view class="timeline-demo2">
+    <ui-view style="padding: 60px 20px">
+        <ui-timeline mode="row">
+          <ui-timeline-item ui:for="{{list}}" 
+            point-color="{{index <= thisIndex ? '#3399ff' : '#8a8a8a'}}" 
+            line-color="{{index<thisIndex?'#3399ff':''}}"
+            shadow-class="{{index === thisIndex ? 'shadow-class' : ''}}"
+            show-line="{{index === list.length-1 ? false : true}}">
+            <ui-view class="continer">
+              <ui-view class="gary" :style="{'color': index === thisIndex ? '#3399ff' : '#8a8a8a'}">{{item.content}}</ui-view>
+              <ui-view class="pos">{{item.pos}}</ui-view>
+            </ui-view>
+          </ui-timeline-item>
+        </ui-timeline>
+      </ui-view>
+    </ui-view>
+    <ui-view style="padding: 0 50px; ">
+      <ui-button  bindtap="Previous">上一步</ui-button>
+      <ui-button bindtap="Next">下一步</ui-button>
+    </ui-view>
+  </ui-page>  
+</template>

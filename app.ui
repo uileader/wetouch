@@ -1,0 +1,121 @@
+<template>
+  <ui-view id="ui-app">
+    <!-- 通用导航栏 -->
+    <ui-nav-bar
+      ui:if="pageConfig"
+      ui:show="navigationBarVisible"
+      title="{{ pageConfig.navigationBarTitleText }}"
+      style="{{ navStyle }}">
+      <!-- 通用导航栏左侧图标区域 -->
+      <ui-view class="nav-bar-left" slot="left">
+        <span class="back" bindtap="handleBack" ui:show="showBack">
+          <ui-icon name="arrow-left" font-size="24"></ui-icon>返回
+        </span>
+      </ui-view>
+      <!-- 通用导航栏右侧图标区域 -->
+      <ui-view class="nav-bar-right" slot="right"></ui-view>
+    </ui-nav-bar>
+
+    <!-- 页面路由 -->
+    <router-view class="router-view">
+    </router-view>
+
+    <!-- 底部标签栏 -->
+    <ui-tab-bar
+    bindbeforechange="handleTabBeforeChange"
+    bindchange="handleTabChange"
+    ui:if="isTabBar"
+    ui:model="tabIndex"
+    style="{{ tabBarStyle }}"
+    id="{{ tabBar.id }}"
+    group-id="{{ tabBar.groupId }}"
+    icon-size="{{ tabBar.iconSize }}"
+    font-size="{{ tabBar.fontSize }}"
+    position="{{ tabBar.position }}"
+    list="{{ tabBarList }}"
+    paths="{{ tabBar.paths }}"
+    background-color="{{ tabBar.backgroundColor }}"
+    border-color="{{ tabBar.borderColor }}"
+    color="{{ tabBar.color }}"
+    selected-color="{{ tabBar.selectedColor }}">
+  </ui-tab-bar>
+
+  <!-- tabbar个性按钮示例用到：弹出图标导航菜单 -->
+  <ui-fixed-view top="0" left="0" right="0" style="{{{ 'z-index': '1000' ,'display':tabbaricon}}}">
+    <ui-pop-icon mask-hide-delay="500" blur="light" hide-on-tap="{{hideOnTap}}"  bindhide="hidepopicon($event)" bindmaskhide="popiconMaskhide"  left="{{offsetX}}" ui:model="toggle" class="pop-icon-demo" animate="bounce" >
+      <ui-pop-icon-item item-color="#f9dc66" top="-85" left="{{0 - offsetX / 2 - 48}}">
+        <ui-view class="icon_view">
+          <ui-image src="{{require('./images/icon1.png')}}" width="30"></ui-image>
+        </ui-view>
+      </ui-pop-icon-item>
+      <ui-pop-icon-item item-color="#f9dc66" top="-85" left="{{0 - 24}}">
+        <ui-view class="icon_view">
+          <ui-image src="{{require('./images/icon2.png')}}" width="30"></ui-image>
+        </ui-view>
+      </ui-pop-icon-item>
+      <ui-pop-icon-item item-color="#f9dc66" top="-85" left="{{0 + offsetX / 2}}">
+        <ui-view class="icon_view">
+          <ui-image src="{{require('./images/icon3.png')}}" width="30"></ui-image>
+        </ui-view>
+      </ui-pop-icon-item>
+    </ui-pop-icon>
+  </ui-fixed-view>
+  <ui-fixed-view bottom="25" left="0" right="0" style="{{fixedzindex}}">
+    <ui-view class="{{togglestyle}}" style="text-align:center;width:35px;height:35px;margin:0 auto" bindtap="hidepopicon($event)">
+      <ui-icon name="plus" color="#555" size="24"></ui-icon>
+    </ui-view>
+  </ui-fixed-view>
+
+  <!-- 搜索 -->
+  <ui-mask class="full-screen-box" top="0" ui:model="searchShow"  bindhide="searchHideHandle" bindshow="searchShowHandle">
+      <ui-view class="bar" style="{{{ height:barHeight+'px' }}}"></ui-view>
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" space-left="15">
+          <ui-view class="search">
+            <ui-row height="30">
+              <ui-col vertical-align="middle" align="center" width="30">
+                <ui-icon name="magnifier" size="16" color="#B5B5B5"></ui-icon>
+              </ui-col>
+              <ui-col vertical-align="middle">
+                <ui-form bindsubmit="searchSubmit" action="/search">
+                  <ui-input type="search" name="search" ui:model="{{ searchValue }}"  placeholder="搜索" focus="{{ searchShow }}" show-clear="false"></ui-input>
+                </ui-form>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="hideFullScreenSearch">
+          <ui-view class="cancel">取消</ui-view>
+        </ui-col>
+      </ui-row>
+      <ui-view class="search_content" style="{{{ height:height+'px' }}}">
+        <!-- 历史搜索 -->
+        <ui-view class="search_history" ui:if="{{ historyContent.length<1 ? false : true }}">
+          <ui-row height="20" space-bottom="20">
+            <ui-col vertical-align="middle">历史搜索</ui-col>
+            <ui-col vertical-align="middle" align="right" width="30" bindtap="deleteHistory">
+              <ui-icon name="delete2" size="16" color="#C9C9C9"></ui-icon>
+            </ui-col>
+          </ui-row>
+          <ui-view class="history_content">
+            <ui-view ui:for="{{ historyContent }}" bindtap="historyTap(index)">{{ item }}</ui-view>
+          </ui-view>
+        </ui-view>
+        <ui-view class="search_history">
+          <ui-row height="20" space-bottom="20">
+            <ui-col vertical-align="middle">大家都在搜</ui-col>
+          </ui-row>
+          <ui-view class="history_content">
+            <ui-tags
+            data="{{ hotList }}"
+            bindchange="hotTap"
+            selected-class="select-class"
+            ></ui-tags>
+          </ui-view>
+        </ui-view>
+      </ui-view>
+    </ui-mask>
+  </ui-view>
+
+
+</template>

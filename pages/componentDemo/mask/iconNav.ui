@@ -1,0 +1,93 @@
+<!--circleMenu4.ui-->
+<template>
+  <ui-page>
+
+    <ui-nav-bar title="" slot="nav-bar" class="nav_bg">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" width="35" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="18" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">TOUCH UI</ui-col>
+        <ui-col vertical-align="middle" align="center" width="40" bindtap="handleShowMask" space-right="10">
+          <ui-view class="nav_switch">
+            <ui-view class="{{rotate1}}"></ui-view>
+            <ui-view class="middle {{rotate2}}"></ui-view>
+            <ui-view class="{{rotate3}}"></ui-view>
+          </ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+  
+
+
+    <ui-view class="sample_content" style="height:{{ height }}"></ui-view>
+
+    <ui-mask ui:model="showMask" class="mask" top="46" blur="light" hide-on-tap="false" bindhide="maskHide">
+      <!-- <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask(false)">关闭遮罩</ui-button>
+      </ui-view> -->
+      <ui-view class="nav_content">
+        <ui-row height="100">
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_1"></ui-icon>
+            <ui-view>首页</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_2"></ui-icon>
+            <ui-view>装修公司</ui-view>
+          </ui-col> 
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_3"></ui-icon>
+            <ui-view>设计师</ui-view>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="100">
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_4"></ui-icon>
+            <ui-view>装修案例</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_5"></ui-icon>
+            <ui-view>装修楼盘</ui-view>
+          </ui-col> 
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_6"></ui-icon>
+            <ui-view>装修图库</ui-view>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="100">
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_7"></ui-icon>
+            <ui-view>装修攻略</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_8"></ui-icon>
+            <ui-view>装修报价</ui-view>
+          </ui-col> 
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_9"></ui-icon>
+            <ui-view>计算器</ui-view>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="100">
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_10"></ui-icon>
+            <ui-view>APP下载</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-icon name="liwu" size="24" color="#fff" class="nav_11"></ui-icon>
+            <ui-view>商家入驻</ui-view>
+          </ui-col> 
+          <ui-col vertical-align="middle" align="center">
+            
+          </ui-col>
+        </ui-row>
+
+      </ui-view>
+    </ui-mask>
+  </ui-page>
+</template>

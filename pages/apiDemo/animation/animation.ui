@@ -1,0 +1,14 @@
+<!--animation.ui-->
+<template>
+  <ui-page native>
+    <ui-view class="container">
+      <ui-view class="name">
+          <ui-text class="animated {{animateClass}}">TOUCH UI</ui-text>
+      </ui-view>
+      <ui-view class="picker_win">
+        <ui-picker mode="multiSelector" is-chain value="{{ value }}" range="{{ departments }}" bindchange="handleChange"></ui-picker>
+        <ui-button type="primary" class="animateIt" bindtap="againAnimate"> 再动一次 </ui-button>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

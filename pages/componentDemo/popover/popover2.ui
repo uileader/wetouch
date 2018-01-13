@@ -1,0 +1,398 @@
+<!--popover4.ui-->
+<template>
+  <ui-page>
+    <ui-divider>scale</ui-divider>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show1" mask-style="{{ maskStyle }}" effect="scale">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow1" class="text">上方scale</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show2" position="bottom" mask-style="{{ maskStyle }}" effect="scale">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow2" class="text">下方scale</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show3" position="right" mask-style="{{ maskStyle }}" effect="scale">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow3" class="text">右方scale</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show4" position="left" mask-style="{{ maskStyle }}" effect="scale">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow4" class="text">左方scale</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+    <ui-divider>slide</ui-divider>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show5" mask-style="{{ maskStyle }}" effect="slide">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow5" class="text">上方slide</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show6" position="bottom" mask-style="{{ maskStyle }}" effect="slide">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow6" class="text">下方slide</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show7" position="right" mask-style="{{ maskStyle }}" effect="slide">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow7" class="text">右方slide</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show8" position="left" mask-style="{{ maskStyle }}" effect="slide">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow8" class="text">左方slide</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+    <ui-divider>fade</ui-divider>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show9" mask-style="{{ maskStyle }}" effect="fade">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow9" class="text">上方fade</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show10" position="bottom" mask-style="{{ maskStyle }}" effect="fade">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow10" class="text">下方fade</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+    <ui-row>
+      <ui-col span="2">
+        <ui-popover ui:model="show11" position="right" mask-style="{{ maskStyle }}" effect="fade">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow11" class="text">右方fade</ui-view>
+        </ui-popover>
+      </ui-col>
+      <ui-col span="2"></ui-col>
+      <ui-col span="2">
+        <ui-popover ui:model="show12" position="left" mask-style="{{ maskStyle }}" effect="fade">
+          <ui-view slot="overlay">
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="scan-qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('收付款')" border-bottom>
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="qrcode"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5" vertical-align="middle" space-left="5">收付款</ui-col>
+              </ui-row>
+            </ui-view>
+            <ui-view class="popover_item">
+              <ui-row height="35" bindtap="handleHide('帮助')">
+                <ui-col vertical-align="middle" align="center" width="30">
+                  <ui-icon name="help"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+          <ui-view bindtap="handleShow12" class="text">左方fade</ui-view>
+        </ui-popover>
+      </ui-col>
+    </ui-row>
+  </ui-page>
+</template>

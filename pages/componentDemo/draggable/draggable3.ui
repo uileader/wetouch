@@ -1,0 +1,46 @@
+<template>
+    <ui-page>
+      <ui-checkbox-group bindchange="checkchange">
+      <ui-draggable-area
+      height="{{300}}"
+      col="{{1}}"
+      width="{{windowWidth}}"
+      children-height="{{50}}"
+      ui:model="{{list}}"
+      direction="vertical"
+      longtap-style="none"
+      binddragstart="dragstart"
+      binddragend="dragend"
+      >
+      <ui-draggable-view ui:for="{{list}}" >
+      <ui-swipe-out ref="swipe" operate-width="100" height="{{ item.height }}" ui:model="{{item.switcher}}"  bindchange="changeHandler1(index)" can-swipe="{{item.canSwipe}}">
+          <ui-view slot="content">
+              <ui-row class="listbox">
+                <ui-col width="50" vertical-align="middle">
+                    <ui-checkbox value="{{item.value}}"></ui-checkbox>
+                </ui-col>
+                <ui-col vertical-align="middle">
+                  <ui-view class="{{item.state}}">{{item.name}}</ui-view>
+                </ui-col>
+              </ui-row>
+        </ui-view>
+        <ui-view slot="operate">
+          <ui-row>
+            <ui-col>
+              <ui-view class="know" bindtap="play">
+                <ui-icon name="playmusic" size="24" color="#fff"></ui-icon>
+              </ui-view>
+            </ui-col>
+            <ui-col>
+              <ui-view class="delete" bindtap="del(index)">
+                <ui-icon name="delete" size="24" color="#fff"></ui-icon>
+              </ui-view>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+        </ui-swipe-out>
+      </ui-draggable-view>
+      </ui-draggable-area>
+      </ui-checkbox-group>
+    </ui-page>
+  </template>

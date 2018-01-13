@@ -1,0 +1,48 @@
+<!--ruler.ui-->
+<template>
+  <ui-page>
+    <ui-view class="ruler_wrap">
+      <ui-view class="title1">金额</ui-view>
+      <ui-view class="title2">我要转入(元)</ui-view>
+      <ui-ruler
+        height="35"
+        key-line-height="10"
+        line-height="5"
+        min="0"
+        max="100000"
+        key-step="1000"
+        number-size="12"
+        line-width="1"
+        step-width='5'
+        color="#E0E0E0"
+        pointer-width="1"
+        number-color="#E0E0E0"
+        number-padding="20"
+      ></ui-ruler>
+    </ui-view>
+
+    <ui-view class="ruler_wrap ruler_wrap2">
+      <ui-view class="title1">身高</ui-view>
+      <ui-view class="title2">选择我的身高(CM)</ui-view>
+      <ui-ruler
+        height="35"
+        key-line-height="10"
+        line-height="5"
+        min="150"
+        max="190"
+        step="1"
+        value="170"
+        key-step="5"
+        number-size="12"
+        line-width="1"
+        step-width='10'
+        color="#E0E0E0"
+        pointer-width="1"
+        number-color="#E0E0E0"
+        number-padding="20"
+        mode="top"
+      ></ui-ruler>
+    </ui-view>
+    
+  </ui-page>
+</template>

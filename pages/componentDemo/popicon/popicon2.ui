@@ -1,0 +1,43 @@
+<template>
+    <ui-page>
+      <ui-fixed-view style="z-index:1000" top="0">
+        <ui-pop-icon mask-hide-delay="300" hide-on-tap="false" bindhide="dismiss" bindmaskhide="maskhide" blur="dark" left="{{offsetX}}" top="{{thisTop -70 }}" ui:model="toggle" class="pop-icon-demo2" animate="none" >
+            <ui-pop-icon-item item-color="#ff6767" top="0" left="-91.75">
+              <ui-view class="icon_view">
+                <ui-icon name="bell"></ui-icon>
+              </ui-view>
+            </ui-pop-icon-item>
+            <ui-pop-icon-item item-color="#599de9" top="-55" left="-55.75">
+              <ui-view class="icon_view">
+                <ui-icon name="wexin"></ui-icon>
+              </ui-view>
+            </ui-pop-icon-item>
+            <ui-pop-icon-item item-color="#fd9d21" top="-76" left="{{0}}">
+              <ui-view class="icon_view">
+                <ui-icon name="my"></ui-icon>
+              </ui-view>
+            </ui-pop-icon-item>
+            <ui-pop-icon-item item-color="#f9dc66" top="-55" left="56.75">
+              <ui-view class="icon_view">
+                <ui-icon name="gift"></ui-icon>
+              </ui-view>
+            </ui-pop-icon-item>
+            <ui-pop-icon-item item-color="#4dc6ee" top="0" left="85.75">
+              <ui-view class="icon_view">
+                <ui-icon name="api-network"></ui-icon>
+              </ui-view>
+            </ui-pop-icon-item>
+          </ui-pop-icon>
+        </ui-fixed-view>
+            <ui-fixed-view left="0" right="0" bottom = "10" style="z-index:1000">
+              <ui-view class="togglebtn {{toggleicon}}" bindtap="togglepopicon">
+                <ui-icon name="plus" color="#555" size="24"></ui-icon>
+              </ui-view>
+            </ui-fixed-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+    </ui-page>
+  </template>

@@ -1,0 +1,27 @@
+<template>
+    <ui-page>
+      <ui-nav-bar slot="nav-bar">
+        <ui-row>
+          <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+              <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+          </ui-col>
+          <ui-col>
+            <ui-view>{{date}}</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="60">
+          </ui-col>
+        </ui-row>
+      </ui-nav-bar>
+      <ui-view class="bg-blue">
+          <ui-calendar
+          type="weekly"
+          ui:model="date"
+          select-range-mode="{{false}}"
+          bindchange="selectedHandler($event)"
+        ></ui-calendar>
+      <ui-wave style="position:absolute;bottom:0" canvas-id="waterball" height="64"></ui-wave>
+
+      </ui-view>
+      <ui-text block style="margin-top:10px;text-align:center">当前选中的日期是{{dateDay}}</ui-text>
+    </ui-page>
+</template>

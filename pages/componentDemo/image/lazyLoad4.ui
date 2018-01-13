@@ -1,0 +1,20 @@
+<!--image5.ui-->
+<template>
+    <ui-page>
+      <ui-view ui:for="{{ list }}">
+        <ui-image
+          class="img"
+          src="{{item.src}}"
+          lazy-load
+          width="300"
+          height="200"
+          mode="aspectFill"
+          load-effect="fade"
+          >
+          <ui-view class="custom-placeholder">
+            <ui-icon name="img" color="#EDEDED" size="72"></ui-icon>
+          </ui-view>
+        </ui-image>
+      </ui-view>
+    </ui-page>
+  </template>

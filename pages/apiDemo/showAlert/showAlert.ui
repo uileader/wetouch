@@ -1,0 +1,11 @@
+<!--showAlert.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">显示警告框</ui-view>
+    <ui-view class="sample_content">
+        <ui-button bindtap="showAlert1">显示Alert</ui-button>
+        <ui-button bindtap="showAlert2">点击Alert框触发按钮事件</ui-button>
+        <ui-button bindtap="showAlert3">Alert内容为html，Alert按钮样式自定义</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

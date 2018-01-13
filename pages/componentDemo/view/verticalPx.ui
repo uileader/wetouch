@@ -1,0 +1,16 @@
+<!--verticalPx.ui-->
+<template>
+  <ui-page>
+    <ui-view class="win" style="{{ { height: height + 'px'} }}">
+      <ui-view class="top">
+        高度固定：150px
+      </ui-view>
+      <ui-view class="content">
+        高度自适应
+      </ui-view>
+      <ui-view class="bottom">
+        高度固定：150px
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

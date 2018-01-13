@@ -1,0 +1,29 @@
+<!--screenBrightness.ui-->
+<template>
+    <ui-page>
+      <ui-view class="content">
+        <ui-row height="40" space-bottom="30">
+          <ui-col span="3" vertical-align="middle">
+            当前亮度：
+          </ui-col>
+          <ui-col span="9" vertical-align="middle">
+              <ui-view>{{value+'%'}}</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-view class="slider_win">
+          <ui-slider ui:model="value" bindchange="sliderChange"></ui-slider>
+        </ui-view>
+        <ui-row height="40" space-top="30">
+          <ui-col span="3" vertical-align="middle">
+            常亮：
+          </ui-col>
+          <ui-col span="9" vertical-align="middle">
+              <ui-view>{{isKeep?'是':'否'}}</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-button type="primary" bindtap="keep">设置屏幕常亮</ui-button>
+        <ui-button bindtap="cancel">取消屏幕常亮</ui-button>
+      </ui-view>
+    </ui-page>
+  </template>
+  

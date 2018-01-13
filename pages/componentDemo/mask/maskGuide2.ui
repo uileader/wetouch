@@ -1,0 +1,147 @@
+<!--userCenter.ui-->
+<template>
+  <ui-view>
+    <ui-view class="bg_blue"></ui-view> 
+    <ui-page 
+    pull-down="{{ pullDown }}"
+    >
+    
+      <ui-view slot="pull-down"></ui-view>
+      <ui-nav-bar slot="nav-bar"  class="nav_bar">
+        <ui-row height="46">
+          <ui-col vertical-align="middle" align="center" width="50">
+            <ui-icon name="ring" size="24" color="#fff"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="nav_title">我的</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="50">
+            <ui-icon name="setting" size="24" color="#fff"></ui-icon>
+          </ui-col>
+        </ui-row>
+      </ui-nav-bar>
+      <ui-view class="user_content">
+        <ui-row height="90" class="header_top">
+          <ui-col vertical-align="middle" align="center" width="90">
+            <ui-view class="head_portrait">
+              <!-- <ui-icon name="user_portrait" color="#D0EDFF" size="50"></ui-icon> -->
+            </ui-view>
+            <ui-image
+            src="{{ portraitUrl }}"
+            mode='aspectFill'
+            width="60"
+            height="60"
+            class="head_portrait"
+            ></ui-image>
+          </ui-col>
+          <ui-col vertical-align="middle" align="left">
+            <ui-view class="login">立即登录</ui-view>
+            <ui-view class="login_after">登录后可享受更多特权</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="18" color="#fff"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <ui-row height="90" class="money_wrap" space-bottom="10">
+          <ui-col vertical-align="middle" align="center">
+            
+            <ui-icon name="user_money01" color="#1981FF" size="30"></ui-icon>
+            <ui-view>钱包</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+           
+            <ui-icon name="user_money02" color="#F53808" size="30"></ui-icon>
+            <ui-view>优惠</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            
+            <ui-icon name="user_money03" color="#FAAA08" size="30"></ui-icon>
+            <ui-view>金币</ui-view>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="50" class="user_content_list2">
+          <ui-col width="50" vertical-align="middle" align="center">
+            <ui-icon name="map" color="#388EEC" size="28"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            收货地址
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="18" color="#BAB9BF"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <ui-row height="50" class="user_content_list" space-bottom="10">
+          <ui-col width="50" vertical-align="middle" align="center">
+            <ui-icon name="praiseafter" color="#F66542" size="24"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            我的收藏
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="16" color="#BAB9BF"></ui-icon>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="50" class="user_content_list" space-bottom="10">
+          <ui-col width="50" vertical-align="middle" align="center">
+            <ui-icon name="user_market" color="#84D43A" size="24"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            软件商城
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="16" color="#BAB9BF"></ui-icon>
+          </ui-col>
+        </ui-row>
+
+        <ui-row height="50" class="user_content_list2">
+          <ui-col width="50" vertical-align="middle" align="center">
+            <ui-icon name="service" color="#3F93EB" size="24"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            我的客服
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="18" color="#BAB9BF"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <ui-row height="50" class="user_content_list2">
+          <ui-col width="50" vertical-align="middle" align="center">
+            <ui-icon name="user_grade" color="#3F93EB" size="24"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            欢迎评分
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="50" space-right="15">
+            <ui-icon name="arrow-right" size="16" color="#BAB9BF"></ui-icon>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+      <ui-fixed-view bindtap="navigateBack" class="back">返回上页</ui-fixed-view>
+      <ui-mask ui:model="showMask" class="mask" background="rgba(0, 0, 0, 0)" >
+        <ui-canvas
+            style="position:absolute"
+            canvas-id="myCanvas"
+            width="{{winWidth}}"
+            height="{{winHeight}}"
+          ></ui-canvas>
+        <ui-view>
+          
+          <ui-view >
+            <ui-view class="finger-swiper" style="{{{ top : statusHeight+'px' }}}">
+              <ui-view class="up" >点击更多展开常用小工具</ui-view>
+              <ui-view class="content"></ui-view>
+              <ui-text class="down">点击可以查看省钱明细啦</ui-text>
+              <ui-view class="up-image"></ui-view>
+              <ui-view class="down-image"></ui-view>
+              <ui-view class="btn_know">
+                <ui-button class="know" full-width="false" bindtap="handleShowMask(false)">我知道了</ui-button>
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-view>
+      </ui-mask>
+    </ui-page>
+  <ui-view>
+</template>

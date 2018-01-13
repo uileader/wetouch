@@ -1,0 +1,17 @@
+<!--page8.ui-->
+<template>
+    <ui-page pull-down="{{ pullDown }}">
+      
+    <ui-view slot="pull-down" class="pull-down-content">
+
+      <ui-view class="img-layer">
+        <ui-view class="touch_ui" ></ui-view>
+      </ui-view>
+    </ui-view>
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

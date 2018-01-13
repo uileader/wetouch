@@ -1,0 +1,68 @@
+<!--stackedArea.ui-->
+<template>
+  <ui-page>
+  
+    <ui-view class="sample_title">面积图</ui-view>
+    <ui-stacked-area
+    value="{{areaChartData.data}}"
+    width="{{winWidth}}"
+    height="300"
+    is-animated="true"
+    grid="horizontal"
+    color-schema="{{areaChartData.colorSchema}}"
+    body-fill-color="rgba(252,158,8,.7)"
+    tooltip-width="150"
+    title-fill-color="#fff"
+    text-fill-color="#fff"
+    tooltip-text-color="#fff"
+    border-stroke-color="#fff"
+    area-opacity="{{0.1}}"
+    show-circle="false"
+    curve="true"
+    ></ui-stacked-area>
+
+
+    <ui-view class="sample_title">堆叠面积图</ui-view>
+    <ui-stacked-area
+    value="{{areaChartData2.data}}"
+    width="{{winWidth}}"
+    height="300"
+    is-animated="true"
+    grid="horizontal"
+    color-schema="{{colorSchema}}"
+    body-fill-color="rgba(0,0,0,.7)"
+    tooltip-width="150"
+    title-fill-color="#fff"
+    text-fill-color="#fff"
+    tooltip-text-color="#fff"
+    border-strokeColor="#fff"
+    show-circle="false"
+    ></ui-stacked-area>
+    
+
+    <ui-view class="sample_title">使用图例</ui-view>
+    <ui-stacked-area
+    value="{{tempAreaData}}"
+    width="{{winWidth}}"
+    height="300"
+    grid="horizontal"
+    color-schema="{{colorSchema}}"
+    body-fill-color="rgba(0,0,0,.7)"
+    tooltip-width="150"
+    title-fill-color="#fff"
+    text-fill-color="#fff"
+    tooltip-text-color="#fff"
+    border-strokeColor="#fff"
+    show-circle="false"
+    ></ui-stacked-area>
+  <ui-view style="padding-left:10px">
+    <ui-tags 
+    data="{{list}}" 
+    bindchange="tagsChange"
+    selected-class="tag-after-5"
+    icon-class="icon-class"
+    ></ui-tags>
+  </ui-view>
+    
+  </ui-page>
+</template>

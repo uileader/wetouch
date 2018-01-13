@@ -1,0 +1,20 @@
+<!--page9.ui-->
+<template>
+  <ui-view>
+    <ui-view class="top_content" style="{{{ top: headerTop }}}">
+        <ui-tags
+        data="{{list00}}"
+        bindchange="singleTap"
+        fixed-width
+        col-number="4"></ui-tags>
+    </ui-view>
+    <ui-page top="176" backgroundColor="#F5F5F5" pull-down="{{ pullDown }}" >
+
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ tagName }}：{{ item }}
+        </ui-view>
+      </ui-view>
+    </ui-page>
+  </ui-view>
+</template>

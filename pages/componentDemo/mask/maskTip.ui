@@ -1,0 +1,36 @@
+<!--maskTip.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_content">
+      <ui-button type="primary" bindtap="handleShowMask1(true)">关闭按钮在下方</ui-button>
+      <ui-button type="primary" bindtap="handleShowMask2(true)">关闭按钮在右上方</ui-button>
+      <ui-button type="primary" bindtap="handleShowMask3(true)">关闭按钮在右上方，有线</ui-button>
+    </ui-view>
+
+
+    <ui-mask ui:model="showMask1" hide-on-tap="false" class="mask_wrap" background="rgba(51, 51, 51, 0.9)">
+      <ui-view class="photo">
+        <ui-image src="{{imgSrc1}}" ></ui-image>
+        <ui-icon name="cancel" bindtap="handleShowMask1(false)"></ui-icon>
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask2" hide-on-tap="false" class="mask_wrap" background="rgba(51, 51, 51, 0.9)">
+      <ui-view class="photo">
+        <ui-icon name="cancel" bindtap="handleShowMask2(false)" class="icon_top"></ui-icon>
+        <ui-image src="{{imgSrc2}}" ></ui-image>
+        
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask3" hide-on-tap="false" class="mask_wrap" background="rgba(51, 51, 51, 0.9)">
+      <ui-view class="photo">
+        <ui-view class="top_view">
+          <ui-icon name="cancel" bindtap="handleShowMask3(false)" class="icon_top"></ui-icon>
+          <ui-view class="top_line"></ui-view>
+        </ui-view>
+        <ui-image src="{{imgSrc3}}" ></ui-image>
+      </ui-view>
+    </ui-mask>
+  </ui-page>
+</template>

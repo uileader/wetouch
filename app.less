@@ -1,0 +1,353 @@
+@import './static/css/animate.css';
+@import './static/font/iconfont.css';
+@import './static/css/loading.less';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+  -webkit-touch-callout: none;
+}
+
+html,
+body {
+  font-size: 12px;
+}
+
+#ui-app {
+  width: 100%;
+  height: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.ui-nav-bar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  .nav-bar-left {
+    position: relative;
+  }
+  .back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    i {
+      margin-left: 10px;
+    }
+  }
+}
+
+.ui-tab-bar {
+  &.div-scroll {
+    position: absolute;
+  }
+  &.body-scroll {
+    position: fixed;
+  }
+}
+
+.router-view {
+  width: 100%;
+}
+
+// 示例列表样式
+.sample_list {
+  .ui-row {
+    font-size: 14px;
+    height: 46px;
+    line-height: 46px;
+    color: #333;
+    padding: 0 15px;
+  }
+  .group-title {
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #168AFD;
+    .sign {
+      width: 5px;
+      height: 16px;
+      background-color: #168AFD;
+      border-radius: 5px;
+    }
+    .ui-row {
+      padding: 0 10px;
+      color: #168AFD;
+      .ui-view {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// 示例title和内容
+.sample_title {
+  background-color: #F7F9FB;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  padding-left: 20px;
+}
+
+.sample_content {
+  padding: 10px 20px;
+  line-height: 30px;
+}
+
+.content_list {
+  list-style: none;
+  z-index: 10;
+  position: relative;
+  background-color: #fff;
+  .ui-view {
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #eee;
+  }
+  .grey-bg {
+    background-color: #f5f5f5;
+  }
+}
+
+// tabbar示例动画
+#tab-bar-3 {
+  .ui-tab-bar-item:nth-child(3) {
+    .icon {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(231, 231, 231, 0.8);
+      background-color: #fff;
+    }
+  }
+  .ui-tab-bar-item.active {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: zoomIn;
+  }
+}
+
+#tab-bar-5 {
+  .ui-tab-bar-item:nth-child(3) {
+    .icon {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(231, 231, 231, 0.8);
+      background-color: #fff;
+      background-color: #fbd954;
+      box-shadow: 0px -2px 1px #eee;
+      border: 4px solid #fff;
+    }
+    .text {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: -13px;
+    }
+  }
+}
+
+.pop-icon-demo {
+  .icon_view {
+    height: 100%;
+    z-index: 999;
+    .mix-flex-center();
+  }
+}
+
+.default {
+  display: none;
+}
+
+.openstyle {
+  z-index: 701;
+  animation: open .5s;
+  animation-fill-mode: forwards;
+  animation-delay: .2s;
+}
+
+@keyframes open {
+  0% {
+    display: block;
+    transform: rotate(0);
+  }
+  100% {
+    display: block;
+    transform: rotate(45deg);
+  }
+}
+
+.closestyle {
+  z-index: 701;
+  animation: close .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes close {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+//全屏搜索
+.full-screen-box {
+  z-index: 500;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  .mix-1px(0, 0, 1, 0, #ccc);
+  .bar {
+    background-color: #fff;
+  }
+  .search {
+    width: 100%;
+    background: #F4F4F4;
+    border-radius: 3px;
+    .ui-input {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      .ui-input-inner {
+        height: 30px;
+      }
+    }
+    .cancel {
+      color: #909090;
+      font-size: 14px;
+    }
+  }
+
+  .search_content {
+    background-color: #F1F1F1;
+    .search_history {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 5px;
+      .ui-col {
+        font-size: 14px;
+        color: #868686;
+      }
+      .history_content {
+        .ui-view {
+          display: inline-flex;
+          padding: 5px 18px;
+          border-radius: 4px;
+          background-color: #F1F1F1;
+          color: #6B6B6B;
+          font-size: 13px;
+          margin: 10px 5px 0 0;
+          &.hot {
+            color: #E51C2F;
+          }
+        }
+        .tag-before {
+          padding: 5px 18px;
+          border-radius: 4px;
+          background-color: #F1F1F1;
+          color: #6B6B6B;
+          font-size: 13px;
+          margin: 5px 5px 0 0;
+          &.hot {
+            color: #E51C2F;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.rect_wrap {
+  margin: 0px auto;
+  width: 50px;
+  height: 60px;
+  text-align: center;
+  font-size: 10px;
+  .ui-view {
+    background-color: #57C499;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+  }
+  div {
+    background-color: #57C499;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+  }
+  .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+}
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
+  20% { -webkit-transform: scaleY(1.0) }
+}
+@keyframes stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}

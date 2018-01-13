@@ -1,0 +1,69 @@
+// popicon4.less
+.circle1{
+  display: none;
+  width:340px;
+  height:340px;
+  border-radius:50%; 
+  padding:20px;
+  position:absolute;
+  top:-233px;
+  left:-196px;
+  box-shadow:rgba(220, 234, 244,.8) -1px -3px 3px;
+  background-color:rgba(236, 245, 252,.5)
+}
+
+.circle2{
+  display: none;
+  width:540px;
+  height:540px;
+  border-radius:50%; 
+  padding:20px;
+  position:absolute;
+  top:-334px;
+  left:-284px;
+  box-shadow:rgba(220, 234, 244,.8) -1px -3px 3px;
+  background-color:rgba(236, 245, 252,.5)
+}
+.ui-icon-item{
+  color:#fff;
+  .ui-view{
+    line-height:1.4
+  }
+}
+.togglebtn{
+  width:53px;
+  height:53px;
+  background-color:#fdd15c;
+  line-height:53px;
+  color:#fff;
+  text-align:center;
+  border-radius:50%;
+
+}
+.openstyle{
+  animation: open .5s;
+  animation-fill-mode:forwards;
+  animation-delay:.1s;
+}
+
+@keyframes open {
+  0% {
+    transform:rotate(0);
+   }
+   100% {
+    transform:rotate(45deg);
+   }
+}
+
+.closestyle{
+  animation: close .5s;
+  animation-fill-mode:forwards;
+}
+@keyframes close {
+  0% {
+    transform:rotate(45deg);
+   }
+   100% {
+    transform:rotate(0);
+   }
+}

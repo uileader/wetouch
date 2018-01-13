@@ -1,0 +1,9 @@
+<!--tabBar10.ui-->
+<template>
+  <ui-page page-load="{{pageload2}}">
+    <ui-view class="content">
+      <ui-text block class="title">演示5-2</ui-text>
+      {{ pageloadText }}
+    </ui-view>
+  </ui-page>
+</template>

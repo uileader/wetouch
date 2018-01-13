@@ -1,0 +1,116 @@
+<template>
+  <ui-page>
+    <ui-tab-view fixed-header bindchange="handleChange"
+      on-begin="{{ handleBegin }}" 
+      on-active="{{ handleActive }}"
+      on-after="{{ handleAfter }}"
+      pull-down-distance="60"
+      >
+      <ui-view slot="pull-down" class="pull-down-content" ui:show="{{proportion}}">
+        <ui-view class="img-layer" ui:if="{{proportion < 1}}">
+          <ui-view class="img_content" style="{{{ height : proportion * 100+'px' }}}"></ui-view>
+        </ui-view>
+
+        <ui-view class="img-layer" ui:else>
+          <ui-view class="mt-ready" ui:if="{{state === 2}}"></ui-view>
+          <ui-view class="mt-loading" ui:show="{{state === 3 || state === 4}}"></ui-view>
+        </ui-view>
+      </ui-view>
+
+      <template slot="header">
+        <ui-tab-view-header>推荐</ui-tab-view-header>
+        <ui-tab-view-header>热点</ui-tab-view-header>
+        <ui-tab-view-header>视频</ui-tab-view-header>
+        <ui-tab-view-header>问答</ui-tab-view-header>
+        <ui-tab-view-header>社会</ui-tab-view-header>
+        <ui-tab-view-header>娱乐</ui-tab-view-header>
+        <ui-tab-view-header>科技</ui-tab-view-header>
+        <ui-tab-view-header>汽车</ui-tab-view-header>
+        <ui-tab-view-header>体育</ui-tab-view-header>
+      </template>
+      <template slot="body">
+        <ui-tab-view-body enable-pull-down-refresh enable-reach-bottom-load on-load-more="{{ handleLoadMore }}">
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items0 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items1 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items2 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items3 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items4 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items5 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items6 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items7 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+        <ui-tab-view-body enable-pull-down-refresh>
+          <ui-view>
+            <ui-view class="content_list">
+              <ui-view ui:for="{{ items8 }}" :class="{'grey-bg': index % 2 == 0}">
+                {{ item }}
+              </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-tab-view-body>
+      </template>
+    </ui-tab-view>
+  </ui-page>
+</template>

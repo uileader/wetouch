@@ -1,0 +1,40 @@
+<!--segment2.ui-->
+<template>
+  <ui-page>
+      <ui-nav-bar slot="nav-bar" class="nav_bar">
+        <ui-row>
+          <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+            <ui-icon name="arrow-left" size="16" color="#0dc1ae"></ui-icon>
+          </ui-col>
+          <ui-col vertical-align="middle">
+            <ui-segment bindchange="changTab">
+              <ui-segment-item>
+                好友去哪
+              </ui-segment-item>
+              <ui-segment-item>
+                我的好友
+              </ui-segment-item>
+            </ui-segment>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" width="60" >
+            <ui-view class="set" ui:show="{{setShow}}">设置</ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-nav-bar>
+
+    <ui-view class="tabContent" ui:show="{{contentshow === 0}}">
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items0 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ item }}
+        </ui-view>
+      </ui-view>
+    </ui-view>
+    <ui-view class="tabContent" ui:show="{{contentshow === 1}}">
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items1 }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ item }}
+        </ui-view>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

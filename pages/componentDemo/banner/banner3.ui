@@ -1,0 +1,50 @@
+<!--banner3.ui-->
+<!--navBar4.ui-->
+<template>
+  <ui-page 
+  top="0" 
+  bindscroll="handleScroll"
+  >
+    <ui-nav-bar class="nab_bar" slot="nav-bar" style="{{{ 'background-color': `rgba(255, 255, 255, ${alpha})` }}}">
+      <ui-row height="46" class="{{ className }}">
+        <ui-col vertical-align="middle" align="center" width="70">
+          <ui-view class="city">
+            <ui-icon name="map" size="18" color="#fff"></ui-icon>北京市
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space="20">
+          <ui-view class="search">
+            <ui-row height="35">
+              <ui-col vertical-align="middle" align="center" width="40">
+                <ui-icon name="magnifier" size="18" color="#fff"></ui-icon>
+              </ui-col>
+              <ui-col vertical-align="middle" align="left">
+                <ui-view>0元保养</ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35">
+          <ui-icon name="scan-qrcode" size="20" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="35">
+          <ui-icon name="comment" size="22" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+      
+    </ui-nav-bar>
+      <ui-swiper pagination loop="loop" style="height: {{ swiperHeight }}px;">
+        <ui-swiper-item ui:for="{{items1}}" ui:for-item="item" ui:for-index="index">
+          <ui-image src="{{ item.src }}" swiper-mode
+          ></ui-image>
+        </ui-swiper-item>
+      </ui-swiper>
+
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ item }}
+        </ui-view>
+      </ui-view>
+    <ui-fixed-view bindtap="navigateBack">返回上页</ui-fixed-view>
+  </ui-page>
+</template>

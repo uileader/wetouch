@@ -1,0 +1,12 @@
+<!--video.ui-->
+<template>
+  <ui-page>
+    <ui-view class="btn-area">
+      <ui-view>
+        <ui-video id="myVideo" style="width:100%" src="{{ videoSrc }}"
+          danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></ui-video>
+      </ui-view>
+      <ui-button type="primary" bindtap="bindSendDanmu">发送弹幕</ui-button>
+    </ui-view>
+  </ui-page>
+</template>

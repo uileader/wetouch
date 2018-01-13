@@ -1,0 +1,48 @@
+<!--view.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">横向flex排列</ui-view>
+    <ui-view class="sample_content">
+      <ui-view class="flex-wrp" style="flex-direction:row;">
+        <ui-view class="flex-item bc_green">1</ui-view>
+        <ui-view class="flex-item bc_red">2</ui-view>
+        <ui-view class="flex-item bc_blue">3</ui-view>
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="sample_title">横向float排列</ui-view>
+    <ui-view class="sample_content">
+      <ui-view class="float-wrp">
+        <ui-view class="float-item bc_green">1</ui-view>
+        <ui-view class="float-item bc_red">2</ui-view>
+        <ui-view class="float-item bc_blue">3</ui-view>
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="sample_title">纵向flex排列</ui-view>
+    <ui-view class="sample_content">
+      <ui-view class="flex-wrp" style="height: 300px;flex-direction:column;">
+        <ui-view class="flex-item bc_green">1</ui-view>
+        <ui-view class="flex-item bc_red">2</ui-view>
+        <ui-view class="flex-item bc_blue">3</ui-view>
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="sample_title">点击反馈效果</ui-view>
+    <ui-view class="sample_content">
+      <ui-view hover-class="touch_end" class="touch_wrap">
+        <ui-icon name="api-event" size="40" color="#7CC422"></ui-icon>
+      </ui-view>
+      <ui-view hover-class="touch_end2" class="touch_wrap">
+        <ui-icon name="arrow-left" color="#666"></ui-icon>返回
+      </ui-view>
+    </ui-view>
+
+    <ui-view class="sample_title">手指松开后点击态保留2s</ui-view>
+    <ui-view class="sample_content">
+      <ui-view  class="touch_wrap" hover-class="touch_end" hover-stay-time=2000>
+        <ui-icon name="api-event" size="40" color="#7CC422"></ui-icon>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

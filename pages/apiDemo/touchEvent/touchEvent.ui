@@ -1,0 +1,38 @@
+<!--touchEvent.ui-->
+<template>
+  <ui-page>
+      <ui-view class="sample_title">触摸事件</ui-view>
+      <ui-view class="sample_content">
+        <div class="demo-text" bindtouchstart="bindtouchstart" bindtouchmove="bindtouchmove" bindtouchend="bindtouchend">
+          触摸
+          <i>{{touchText}}</i>
+        </div>
+      </ui-view>
+      <ui-view class="sample_title">长按事件</ui-view>
+      <ui-view class="sample_content">
+        <div class="demo-text" bindlongtap="bindlongtap">
+          长按
+          <i>{{longtapText}}</i>
+        </div>
+      </ui-view>
+      <ui-view class="sample_title">点击事件</ui-view>
+      <ui-view class="sample_content">
+        <ui-view class="demo-text" bindtap="bindtap">
+          点击
+          <i>{{tapText}}</i>
+        </ui-view>
+      </ui-view>
+      <ui-view class="sample_title">滑动事件</ui-view>
+      <ui-view class="sample_content">
+        <ui-view class="demo-text demo-text-large" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+          滑动
+          <i>{{scrollText}}</i>
+        </ui-view>
+      </ui-view>
+      <ui-view class="sample_title">长按图片</ui-view>
+      <ui-view class="sample_content">
+          <ui-image src="{{imgUrl}}" width="300" height="400" mode="aspectFill" bindlongtap="bindlongtap2" class="img"></ui-image>
+      </ui-view>
+      
+  </ui-page>
+</template>

@@ -1,0 +1,13 @@
+<!--savepictures.ui-->
+<template>
+  <ui-page>
+    <ui-view class="win">
+      <ui-view class="img_win">
+        <ui-image src="{{ imageSrc }}" height="200" ></ui-image>
+      </ui-view>
+      <ui-view>
+        <ui-button type="primary" bindtap="saveImg">保存到手机相册</ui-button>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

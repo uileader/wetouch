@@ -1,0 +1,73 @@
+<!--mask.ui-->
+<template>
+  <ui-page>
+    <ui-view>
+      <ui-view class="sample_title">基础示例</ui-view>
+      <ui-view class="sample_content">
+        <ui-button type="primary" bindtap="handleShowMask1(true)">打开全屏遮罩</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask2(true)">遮罩导航栏以下的区域</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask3(true)">点击遮罩不关闭</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask4(true)">自定义遮罩背景</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask5(true)">全透明遮罩</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask6(true)">遮罩动画（由小变大）</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask9(true)">遮罩动画（由大变小）</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask7(true)">白色毛玻璃效果（仅IOS）</ui-button>
+        <ui-button type="primary" bindtap="handleShowMask8(true)">黑色毛玻璃效果（仅IOS）</ui-button>
+      </ui-view>
+    </ui-view>
+    <ui-mask ui:model="showMask1" hide-delay="500">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask1(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+    <ui-mask ui:model="showMask2" top="{{ top2 }}">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask2(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+    <ui-mask ui:model="showMask3" hide-on-tap="false">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask3(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+    <ui-mask ui:model="showMask4" background="rgba(255, 255, 255, 0.8)">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask4(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+
+
+    <ui-mask ui:model="showMask5" background="rgba(255, 255, 255, 0)" hide-on-tap="false">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask5(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask6" class="mask6" animation>
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask6(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask7" blur="light">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask7(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask8" blur="dark">
+      <ui-view class="content">
+        <ui-button type="success" bindtap="handleShowMask8(false)">关闭遮罩</ui-button>
+      </ui-view>
+    </ui-mask>
+
+    <ui-mask ui:model="showMask9" class="mask9" animation>
+      <ui-view class="content content2" bindtap="handleShowMask9(false)">
+        <ui-image src="{{imgSrc1}}" width="300"></ui-image>
+        <!-- <ui-button type="success" bindtap="handleShowMask9(false)">关闭遮罩</ui-button> -->
+      </ui-view>
+    </ui-mask>
+
+
+  </ui-page>
+</template>

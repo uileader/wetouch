@@ -1,0 +1,21 @@
+<template>
+    <ui-page>
+        <ui-view class="container">
+        <ui-tabs vertical
+          height="{{ height }}"
+          class="tab-item"
+          index="{{ current }}"
+          bindchange="handleChange($event, 'current')">
+          <ui-tab ui:for="{{ tabItems }}">
+            {{ item.name }}
+          </ui-tab>
+        </ui-tabs>
+        <ui-view class="goods-box">
+            <ui-view class="goods-list" ui:for="{{tabContentData.subCategoryList}}" ui:for-index="idx">
+                <ui-image class="imgbox" src="{{item.imageUrl}}"></ui-image>
+                <ui-view class="small-title">{{item.categoryName}}</ui-view>
+            </ui-view>
+        </ui-view>
+        </ui-view>
+    </ui-page>
+  </template>

@@ -1,0 +1,24 @@
+<template>
+  <ui-view class="ui-dialog-content">
+    <ui-nav-bar class="ui-dialog-header">
+      <ui-row height="46">
+        <ui-col  align="center" vertical-align="middle" width="80">
+
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space="20">
+          <ui-view class="head_title">
+              单选多选均可
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="80" bindtap="hideWindow">
+            关闭
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-page class="ui-dialog-body">
+      <ui-view>
+        <ui-index-list data="{{list}}"  bindchangeBtnState="clickBtn"></ui-index-list>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

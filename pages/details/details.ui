@@ -1,0 +1,85 @@
+<!--details.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10"  width="40" bindtap="navigateBack">
+           <ui-icon name="arrow-left" size="16" color="#4E4E4E"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="10">
+          <ui-view class="title">动态详情</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" width="40"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    
+    <ui-fixed-view bottom="0" class="input_box">
+      <ui-row class="input_box" height="46" bindtap="openPopup">
+        <ui-col vertical-align="middle" align="left" space-left="10">
+          <!-- <ui-input placeholder="输入评论" placeholder-style="color:#A8A8A8"></ui-input> -->
+          <!-- <ui-form action="/search" bindsubmit="commentSubmit">
+            <ui-input type="search" name="search" ui:model="{{ commentValue }}" placeholder="输入评论" placeholder-style="color:#A8A8A8"></ui-input>
+          </ui-form> -->
+          <ui-view>输入评论</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="60">
+          <ui-icon name="praise" size="24" color="#A3A3A3"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-fixed-view>
+
+
+
+    <!-- 全片输入框 -->
+
+    <ui-mask ui:model="{{ popupShow }}" height="100%" background="#F2F2F2" bindinit="popupInit">
+      <ui-view class="wrap" style="{{{ 'padding-top':statusBar+'px' }}}">
+        <ui-row height="46" class="head">
+          <ui-col vertical-align="middle" align="left" space-left="10" width="40" bindtap="cancel">
+            <ui-view>取消</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="title">评论</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="publish">
+            <ui-view class="publish {{ className }}">发布</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-textarea maxlength="-1" show-counter="false" focus="{{ popupShow }}" height="120" placeholder="发表评论" placeholder-style="color:#A8A8A8" value="{{ textareaValue }}" bindinput="changeTextarea"></ui-textarea>
+        <!-- <ui-input focus="{{ searchShow }}" height="120" placeholder="发表评论" placeholder-style="color:#A8A8A8" value="{{ textareaValue }}" bindinput="changeTextarea"></ui-input>
+        <ui-input type="search" name="search" ui:model="{{ textareaValue }}" placeholder="百人记" placeholder-style="color:#CECECE" focus="{{ searchShow }}"></ui-input> -->
+        <ui-view class="choose">
+          <ui-row height="50" bindtap="showActionSheet">
+            <ui-col vertical-align="middle" align="left" space-left="10">
+              <ui-view class="left">选择发布身份</ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right">
+              <ui-view class="right">{{ identity }}</ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="right" width="30" space-right="10">
+              <ui-icon name="arrow-right" size="14" color="#DFDDDF"></ui-icon>
+            </ui-col>
+          </ui-row>
+        </ui-view>
+      </ui-view>
+    </ui-mask>
+    
+    <!-- <ui-mask class="full-screen-box" top="0" ui:model="popupShow" background="#fff">
+      <ui-view class="wrap" style="{{{ 'padding-top':statusBar+'px' }}}">
+        <ui-row height="46" class="head">
+          <ui-col vertical-align="middle" align="left" space-left="10" width="40" bindtap="cancel">
+            <ui-view>取消</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center">
+            <ui-view class="title">评论</ui-view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="publish">
+            <ui-view class="publish {{ className }}">发布</ui-view>
+          </ui-col>
+        </ui-row>
+        <ui-input type="search" name="search" placeholder="百人记" placeholder-style="color:#CECECE" focus="{{ popupShow }}" show-clear="false"></ui-input>
+      </ui-view>
+    </ui-mask> -->
+
+  </ui-page>
+</template>

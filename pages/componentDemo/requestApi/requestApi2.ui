@@ -1,0 +1,67 @@
+<!--requestApi2.ui-->
+<template>
+  <ui-page show-loading="{{isloading}}" auto-hide-loading="false" pull-down="{{ pullDown }}" class="win">
+    <ui-view ui:show={{isnormal}} class="ui-view top_tip">
+      <ui-row ui:for="{{datalist}}" ui:for-item="datalist" height="80" border-bottom>
+          <ui-col width="80" align="center" vertical-align="middle">
+            <ui-view class="left_icon left_icon1" style="{{datalist.iconcolor}}">
+                <ui-icon name="{{datalist.iconfont}}" color="#fff" size="20"></ui-icon>
+            </ui-view>
+          </ui-col>
+          <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <ui-view style="width: 100%;">
+              <ui-row height="30">
+                <ui-col align="left" vertical-align="middle">
+                  <ui-text>{{datalist.title}}</ui-text>
+                </ui-col>
+                <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                  <ui-text>{{datalist.datatime}}</ui-text>
+                </ui-col>
+              </ui-row>
+              <ui-view>{{datalist.describe}}</ui-view>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>   
+
+    <ui-view ui:show="{{isnull}}" class="main" style="{{ { height: height + 'px'} }}">
+          <ui-view class="show_tip">
+            <ui-icon name="ico_nodata" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">暂时还没有任何通知</ui-view>
+          </ui-view>
+
+      </ui-view>
+
+      <ui-view ui:show="{{overtime}}" class="main" style="{{ { height: height + 'px'} }}">
+        <ui-view class="show_tip">
+            <ui-icon name="qingqiuchaoshi" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">请求超时</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="InitiatingRequest('normal')">点击重试</ui-button>
+          </ui-view>
+      </ui-view>
+
+      <ui-view ui:show="{{isconnect}}" class="main" style="{{ { height: height + 'px'} }}">
+        <ui-view class="show_tip">
+            <ui-icon name="networkError" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">网络无法连接，请检查您的网络</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="InitiatingRequest('normal')">点击重试</ui-button>
+          </ui-view>
+      </ui-view>
+
+      <ui-view ui:show="{{isfail}}" class="main" style="{{ { height: height + 'px'} }}">
+        <ui-view class="show_tip">
+            <ui-icon name="networkOffline" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">请求失败啦</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="failedRequest()">点击重试</ui-button>
+          </ui-view>
+      </ui-view>
+
+      <ui-view ui:show="{{islogin}}" class="main" style="{{ { height: height + 'px'} }}">
+        <ui-view class="show_tip">
+            <ui-icon name="login" size="80" color="#d2d3d3"></ui-icon>
+            <ui-view class="title">请先登录</ui-view>
+            <ui-button type="primary" class="selfrequestbtn" bindtap="loginfn">立即登录</ui-button>
+          </ui-view>
+      </ui-view>
+  </ui-page>
+</template>

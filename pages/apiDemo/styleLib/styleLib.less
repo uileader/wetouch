@@ -1,0 +1,59 @@
+// styleLib.less
+
+.text{
+  line-height: 40px;
+}
+.title{
+  width: 50px;
+  height: 50px;
+  background: #F6FAFE;
+} 
+.title1{
+  .mix-1px(1, 0, 0, 0, #ccc);
+}
+.title2{
+  .mix-1px(0, 1, 0, 0, #ccc);
+}
+.title3{
+  .mix-1px(0, 0, 1, 0, #ccc);
+}
+.title4{
+  .mix-1px(0, 0, 0, 1, #ccc);
+}
+.title5{
+  .mix-1px(1, 0, 1, 0, #ccc);
+}
+.title6{
+  .mix-1px(0, 1, 0, 1, #ccc);
+}
+.title7{
+  .mix-1px(1, 1, 1, 1, #ccc);
+}
+.box{
+  height: 50px;
+  .mix-1px(1, 1, 1, 1, #ccc);
+}
+.box1{
+  .mix-flex-x-center();
+}
+.box2{
+  .mix-flex-y-center()
+}
+.box3{
+  .mix-flex-center()
+}
+.over{
+  .mix-1px(1, 1, 1, 1, #ccc);
+  height: 30px;
+  &.over1{
+    .mix-text-overflow();
+  }
+  &.over2{
+    height: 90px;
+    // display: -webkit-box;
+    // -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 3;
+    // overflow: hidden;
+    .ellipsis-line(3);
+  }
+}

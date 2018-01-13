@@ -1,0 +1,13 @@
+<!--image2.ui-->
+<template>
+  <ui-page>
+    <ui-view class="container">
+      <ui-view class="top">
+        <ui-image src="{{ src }}" mode="aspectFit"></ui-image>
+      </ui-view>
+      <ui-view class="bottom">
+        固定400px高度
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

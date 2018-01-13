@@ -1,0 +1,13 @@
+<!--mapSearchTips.ui-->
+<template>
+  <ui-page>
+    <ui-view class="prevent-screen" hidden="{{!prevent}}"></ui-view>
+    <ui-view class="section">
+      <ui-input bindinput="bindInput" placeholder="搜索" ui:model={{keywords}}></ui-input>
+    </ui-view>
+    <ui-view bindtap="bindSearch" data-keywords="{{item.name}}" class="text_box"
+      v-for="(item, index) in tips" :key="index">
+      {{item.name}}
+    </ui-view>
+  </ui-page>
+</template>

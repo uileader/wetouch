@@ -1,0 +1,115 @@
+<!--slideView.ui-->
+<template>
+    <ui-page>
+        <ui-view class="sample_title">文字按钮</ui-view>
+        <ui-swipe-out operate-width="80" ref="swipe" can-swipe="{{item.canSwipe}}" class="swipe-out-dome-1" value="{{item.switcher}}" bindchange="changeHandler1(index)" ui:for="{{list1}}"  height="{{ item.height}}">
+          <ui-view slot="content">
+            <ui-row height="80" class="top_tip">
+              <ui-col width="80" align="center" vertical-align="middle">
+                <ui-view class="left_icon left_icon1" style="{{{ 'background-color':item.color }}}">
+                    <ui-icon name="{{ item.icon }}" color="#fff" size="20"></ui-icon>
+                </ui-view>
+              </ui-col>
+              <ui-col class="text" align="left" vertical-align="middle" space="20">
+                <ui-view style="width: 100%;">
+                  <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                      <ui-text>票房总结</ui-text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                      <ui-text>09-18</ui-text>
+                    </ui-col>
+                  </ui-row>
+                  <ui-view>{{ item.text }}</ui-view>
+                </ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+          <ui-view slot="operate">
+            <ui-view class="delete" bindtap="del(index)">删除</ui-view>
+          </ui-view>
+        </ui-swipe-out>
+
+
+        <ui-view class="sample_title">图标按钮</ui-view>
+        <ui-swipe-out ref="swipe2" operate-width="180" bindchange="changeHandler2(index)" value="{{item.switcher}}" ui:for="{{list2}}">
+          <ui-view slot="content">
+            <ui-row height="60" class="tel_list">
+              <ui-col vertical-align="middle" align="left" space-left="15">
+                <ui-view class="name">{{ item.name }}</ui-view>
+                <ui-view class="address">{{ item.address }}</ui-view>
+              </ui-col>
+              <ui-col vertical-align="middle" align="right" space-right="15">
+                <ui-view class="time">{{ item.time }}</ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-view>
+          <ui-view slot="operate">
+            <ui-view class="dome_operate">
+              <ui-row height="60">
+                <ui-col bindtap="tap('QQ')" vertical-align="middle" align="center">
+                  <ui-icon name="QQ" size="24px" color="#fff"></ui-icon>
+                </ui-col>
+                <ui-col bindtap="tap('微博')" vertical-align="middle" align="center">
+                  <ui-icon name="weibo" size="24px" color="#fff"></ui-icon>
+                </ui-col>
+                <ui-col bindtap="tap('微信')" vertical-align="middle" align="center">
+                  <ui-icon name="wexin" size="24px" color="#fff"></ui-icon>
+                </ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-view>
+        </ui-swipe-out>
+
+        <ui-view class="sample_title">个性化样式</ui-view>
+        <ui-view class="swipe-out-dome-3">
+          <ui-swipe-out operate-width="180" class="swipe-out-wrap" ui:for="{{list3}}">
+            <ui-view slot="content">
+              <ui-view class="collect">
+                <ui-row height="40">
+                  <ui-col vertical-align="middle"  align="center" width="60">
+                    <ui-image
+                    src="{{ item.head }}"
+                    width="30"
+                    height="30"
+                    ></ui-image>
+                  </ui-col>
+                  <ui-col vertical-align="middle">
+                    <ui-view class="name">{{ item.name }}</ui-view>
+                  </ui-col>
+                  <ui-col vertical-align="middle" align="right" space-right="15">
+                    <ui-view class="time">{{ item.time }}</ui-view>
+                  </ui-col>
+                </ui-row>
+                <ui-row height="80">
+                  <ui-col vertical-align="middle" align="center" width="80">
+                    <ui-image
+                    src="{{ item.img }}"
+                    width="50"
+                    height="50"
+                    ></ui-image>
+                  </ui-col>
+                  <ui-col vertical-align="middle" space-right="15">
+                    <ui-view class="content">{{ item.text }}</ui-view>
+                  </ui-col>
+                </ui-row>
+              </ui-view>
+            </ui-view>
+            <ui-view slot="operate">
+              <ui-row class="dome2_operate" height="125">
+                <ui-col vertical-align="middle" align="center">
+                  <ui-image src="{{ require('#/images//save.png') }}" width="35" height="35" bindtouchstart="handletap('收藏')"></ui-image>
+                </ui-col>
+                <ui-col vertical-align="middle" align="center">
+                  <ui-image src="{{ require('#/images//del.png') }}" width="35" height="35" bindtouchstart="handletap('删除')"></ui-image>
+                </ui-col>
+                <ui-col vertical-align="middle" align="center">
+                  <ui-image src="{{ require('#/images//share.png') }}" width="35" height="35" bindtouchstart="handletap('分享')"></ui-image>
+                </ui-col>
+              </ui-row>
+            </ui-view>
+          </ui-swipe-out>
+        </ui-view>
+    </ui-page>
+  </template>
+  

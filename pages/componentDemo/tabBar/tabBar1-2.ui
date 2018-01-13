@@ -1,0 +1,14 @@
+<!--tabBar2.ui-->
+<template>
+  <ui-page>
+    <ui-view class="content">
+      <ui-text class="title">演示1-2</ui-text>
+      <ui-button bindtap="tabresult">跳转到上一个标签</ui-button>
+    </ui-view>
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

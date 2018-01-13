@@ -1,0 +1,10 @@
+<!--page6.ui-->
+<template>
+    <ui-page pull-down="{{ pullDown }}">
+      <ui-view class="content_list">
+        <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+          {{ item }}
+        </ui-view>
+      </ui-view>
+  </ui-page>
+</template>

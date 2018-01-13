@@ -1,0 +1,28 @@
+<!--navBar9.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar class="nav_bar" slot="nav-bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="msgTap">
+          <ui-view class="msg">
+            <ui-icon name="ring" size="22" color="#fff"></ui-icon>
+            <ui-badge class="num-dat" ui:show="{{ show }}" text="1"></ui-badge>
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">我的</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="setTap">
+          <ui-icon name="setting" size="20" color="#fff"></ui-icon>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-view class="content_list">
+      <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
+        {{ item }}
+      </ui-view>
+    </ui-view>
+    <ui-fixed-view bindtap="navigateBack">返回上页</ui-fixed-view>
+    
+  </ui-page>
+</template>

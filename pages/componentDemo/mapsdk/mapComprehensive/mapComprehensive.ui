@@ -1,0 +1,41 @@
+<!--mapComprehensive.ui-->
+<template>
+  <ui-page>
+    <ui-view class="map_container" style="height:{{ mapHeight }}">
+      <ui-map 
+        class="map" 
+        id="map" 
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}" 
+        scale="14" 
+        markers="{{markers}}"
+        controls="{{controls}}"
+        bindcontroltap="controltap"
+        show-location="true"
+        bindmarkertap="makertap"> 
+      </ui-map>
+    </ui-view>
+    <ui-view class="bot">
+      <ui-view class="map_text border" bindtap="toDetail">
+        <ui-view class="pic">
+          <ui-image src="{{src}}"></ui-image>
+        </ui-view>
+        <ui-view class="shop-info">
+          <ui-view class="shop-name">{{textData.name}}</ui-view>
+          <ui-view class="judge">
+            <ui-mini-star value="4.1" width="73"></ui-mini-star>
+          </ui-view>
+          <ui-view class="shop-addr">{{textData.address}}</ui-view>
+        </ui-view>
+      </ui-view>
+      <ui-row height="50" bindtap="open">
+        <ui-col space-left="10" vertical-align="middle">
+          <ui-view>预计到达时间10分钟</ui-view>
+        </ui-col>
+        <ui-col space-right="10" vertical-align="middle" width="100">
+          <ui-button type="primary">查看路线</ui-button>
+        </ui-col>
+      </ui-row>
+    </ui-view>
+  </ui-page>
+</template>

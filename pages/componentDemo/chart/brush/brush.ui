@@ -1,0 +1,13 @@
+<!--brush.ui-->
+<template>
+  <ui-page>
+    <ui-brush
+    value="{{brushData}}"
+    width="{{winWidth}}"
+    height="100"
+    color-schema="{{colorSchema}}"
+    gradient="{{['#000','red']}}"
+    >
+    </ui-brush>
+  </ui-page>
+</template>

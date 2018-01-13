@@ -1,0 +1,24 @@
+<!--draggable5.ui-->
+<template>
+  <ui-page page-load="{{ pageLoad }}">
+    <ui-view class="sample_title">首页应用</ui-view>
+    <ui-view style="height:250px;width:100%;background-color:white;margin-top:20px;">
+        <ui-view
+          ui:for="{{list}}">
+        <ui-view class="draggable-plus">
+            <ui-view class="draggable-warp2" style="{{{background:'#fff',height:windowWidth/(3*1.5)}}}">
+              <ui-icon color="{{item.color}}" name="{{item.imgname}}" size="22"></ui-icon>
+              <ui-text class="draggable-text ">{{item.name}}</ui-text>
+            </ui-view>
+        </ui-view>
+      </ui-view>
+      <ui-view class="draggable-plus">
+          <ui-view bindtap="navigateTo" class="draggable-warp2" style="{{{background:'#fff',height:windowWidth/(3*1.5)}}}">
+            <ui-icon name="qrcode2" size="22"></ui-icon>
+            <ui-text class="draggable-text ">更多</ui-text>
+          </ui-view>
+      </ui-view>
+    </ui-view>
+    （点击更多按钮进行编辑）
+  </ui-page>
+</template>

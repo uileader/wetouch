@@ -1,0 +1,28 @@
+<!--distanceCalculation.ui-->
+<template>
+  <ui-page>
+    
+    <ui-view style="height:{{ mapHeight }}">
+      <ui-map id="navi_map" 
+        class="map"
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}" 
+        scale="15" markers="{{markers}}" >
+      </ui-map>
+    </ui-view>
+    <ui-fixed-view class="map_text">
+      <ui-row height="30">
+        <ui-col span="3">起点坐标：</ui-col>
+        <ui-col span="9">{{froms.longitude}} - {{froms.latitude}}</ui-col>
+      </ui-row>
+      <ui-row height="30">
+        <ui-col span="3">终点坐标：</ui-col>
+        <ui-col span="9">{{to.longitude}} - {{to.latitude}}</ui-col>
+      </ui-row>
+      <ui-row height="30">
+        <ui-col span="3">相隔距离：</ui-col>
+        <ui-col span="9">{{distance}}米</ui-col>
+      </ui-row>
+    </ui-fixed-view>
+  </ui-page>
+</template>

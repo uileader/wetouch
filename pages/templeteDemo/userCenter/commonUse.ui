@@ -1,0 +1,48 @@
+<!--commonUse.ui-->
+<template>
+  <ui-page>
+    <ui-nav-bar slot="nav-bar"  class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" space-left="10" width="50"bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">设置</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" >
+          
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-row height="50" class="user_content_list2" space-top="10" bindtap="clearCache">
+      <ui-col vertical-align="middle" space-left="15">
+        清除图片缓存
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        0MB
+      </ui-col>
+    </ui-row>
+    <ui-row height="50" class="user_content_list" space-bottom="10" bindtap="imgQuality">
+      <ui-col vertical-align="middle" space-left="15">
+        非WIFI下图片质量
+      </ui-col>
+      <ui-col vertical-align="middle" align="right" space-right="15">
+        {{ imageQuality }}
+      </ui-col>
+    </ui-row>
+
+    <ui-row height="50" class="user_content_list">
+      
+      <!-- <ui-col vertical-align="middle">
+        金币商城
+      </ui-col> -->
+      <!-- <ui-col vertical-align="middle" align="right" space-right="15">
+        
+      </ui-col> -->
+      <ui-switch title="摇一摇，截屏反馈问题" color="#32C432"></ui-switch>
+    </ui-row>
+
+
+  </ui-page>
+</template>

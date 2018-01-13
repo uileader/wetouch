@@ -1,0 +1,38 @@
+<!--step.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">基本使用</ui-view>
+    <ui-step
+    value="{{data}}"
+    width="{{winWidth}}"
+    height="180"
+    color-schema="{{colorSchema}}"
+    ></ui-step>
+
+    <ui-view class="sample_title">点击事件</ui-view>
+    <ui-view style="text-align:center">
+      <ui-step
+      value="{{data}}"
+      width="{{winWidth}}"
+      height="180"
+      color-schema="{{colorSchema}}"
+      bindcustomclick="customclick"
+      ></ui-step>
+      <ui-text block style="margin:5px auto">{{clickText}}</ui-text>
+    </ui-view>
+  
+
+    <ui-view class="sample_title">使用tooltip</ui-view>
+    <ui-step
+    value="{{data}}"
+    width="{{winWidth}}"
+    height="180"
+    color-schema="{{colorSchema}}"
+    tooltip="{{true}}"
+    bodyFillColor="rgba(0,0,0,.7)"
+    valueTextFillColor="#fff"
+    nameTextFillColor="#fff"
+    ></ui-step>
+
+  </ui-page>
+</template>
