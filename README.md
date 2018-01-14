@@ -24,5 +24,5 @@
 
 实际效果截图
 
- <img src="http://images.uileader.com/20180114/4299ad6c-d430-4173-9176-46b9fb4e5951.png" />
+ <img src="http://images.uileader.com/20180114/61fe18d1-aa86-46fd-a699-88f54d322602.png" />
 
