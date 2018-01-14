@@ -2,7 +2,7 @@
 
 请配合VSCode的touchui插件使用。详见开发文档。
 
-注意：由于工程里示例页面非常多（超过1200个页面），对IDE的编译速度是一个很大的挑战，第一次启动和编译要十几分钟，请耐心等待。也可以在启动服务前把app.json里的页面配置项先删除一般以上，需要看那个示例再加那个的页面配置项，这样编译会比较快。
+注意：由于工程里示例页面非常多（超过1200个页面），对IDE的编译速度是一个很大的挑战，第一次启动和编译要十几分钟，请耐心等待。也可以在启动服务前把app.json里的页面配置项先从后往前删除一半以上，需要看那个示例再加那个的页面配置项，这样编译会比较快。
 
 如果在ios下，打开应用时，提示未受信任的企业级开发者，查看 <a herf="http://www.uileader.com/touchui_doc/quickstart/iosPublish/trust" target="_blank">http://www.uileader.com/touchui_doc/quickstart/iosPublish/trust</a>
 
