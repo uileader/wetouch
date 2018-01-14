@@ -19,3 +19,10 @@
 ##### 安卓下载：
 
  <img src="http://images.uileader.com/20180113/d3550b65-39ec-4eef-898c-16e0bce0c23a.png" />
+
+
+
+实际效果截图
+
+ <img src="http://images.uileader.com/20180114/4299ad6c-d430-4173-9176-46b9fb4e5951.png" />
+
