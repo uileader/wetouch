@@ -81,7 +81,7 @@ export default {
       }
 
       
-    let closeTime = ui.IS_IOS ? 2000 : 500
+    let closeTime = ui.IS_IOS ? 1500 : 500
     // 初始化完成后，关闭启动页面
     window.setTimeout(() => {
       ui.closeSplashscreen()
