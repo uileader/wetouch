@@ -1,6 +1,6 @@
 <!--summary.ui-->
 <template>
-  <ui-page  auto-hide-loading="false">
+  <ui-page>
     <ui-view class="sample_title">基本使用</ui-view>
     <ui-view class="sample_content">
       <ui-view class="title">电影简介</ui-view>

@@ -40,6 +40,6 @@ export default {
     this.ctx.stroke()
     this.ctx.clip()
     this.ctx.clearRect(0,0,ui.WIN_WIDTH * 2, ui.WIN_HEIGHT * 2)
-    }, 1000)
+    }, 500)
   }
 }

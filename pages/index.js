@@ -73,22 +73,25 @@ export default {
     let environment = ui.IS_APP
     if (environment) {
       //首屏引导页
-      // var splashShow = ui.getStorageSync('splash')
-      // if (splashShow === 'show') {
-      //   this.isSplashSwiper = false
-      // } else {
-      //   this.isSplashSwiper = true
-      // }
+      var splashShow = ui.getStorageSync('splash')
+      if (splashShow === 'show') {
+        this.isSplashSwiper = false
+      } else {
+        this.isSplashSwiper = true
+      }
 
       
-    let closeTime = ui.IS_IOS ? 1000 : 500
+    let closeTime = ui.IS_IOS ? 1500 : 500
     // 初始化完成后，关闭启动页面
+    window.setTimeout(() => {
+      ui.closeSplashscreen()
+    }, closeTime)
+
     window.setTimeout(() => {
       ui.setStatusBarStyle({
         style: 'light'
       })
-      ui.closeSplashscreen()
-    }, closeTime)
+    }, 3000)
 
     } else {
       this.isSplashSwiper = false
