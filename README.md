@@ -18,7 +18,7 @@
 
 ##### 安卓下载：
 
- <img src="http://images.uileader.com/20180113/d3550b65-39ec-4eef-898c-16e0bce0c23a.png" />
+ <img src="http://images.uileader.com/20180115/6b6457e8-74b8-4e31-b643-ef43991eacc4.png" />
 
 
 
