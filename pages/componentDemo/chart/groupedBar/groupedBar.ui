@@ -36,7 +36,7 @@
         color-schema="{{groupData.colorSchema}}"
         is-darker="true"
         margin="{{groupData.margin}}"
-        bindcustommove="custommove"
+        bindcustomclick="custommove"
         is-darker="true"
         group-darker="true"
         ></ui-grouped-bar>
@@ -156,7 +156,7 @@
         group-darker="true"
         color-schema="{{groupData.colorSchema}}"
         is-horizontal="true"
-        bindcustommove="custommove2"
+        bindcustomclick="custommove2"
         ></ui-grouped-bar>
         <ui-legend
         value="{{legendData.legend}}"

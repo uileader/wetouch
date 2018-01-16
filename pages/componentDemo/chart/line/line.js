@@ -13,6 +13,49 @@ export default {
       data: {
         dataByTopic: [
           {
+            topicName: '热度值',
+            topic: 123,
+            dates: [
+              {
+                date: '2017-08-01',
+                value: 21
+              },
+              {
+                date: '2017-08-02',
+                value: 23
+              },
+              {
+                date: '2017-08-03',
+                value: 22
+              },
+              {
+                date: '2017-08-04',
+                value: 19
+              },
+              {
+                date: '2017-08-05',
+                value: 17
+              },
+              {
+                date: '2017-08-06',
+                value: 21
+              },
+              {
+                date: '2017-08-07',
+                value: 25
+              },
+              {
+                date: '2017-08-08',
+                value: 23
+              }
+            ]
+          }
+        ],
+        colorSchema: ['#e60012']
+      },
+      data3: {
+        dataByTopic: [
+          {
             topicName: '猩球崛起3:终极之战',
             topic: 123,
             dates: [
@@ -59,7 +102,7 @@ export default {
             ]
           }
         ],
-        colorSchema: ['#e60012']
+        colorSchema: ['#e60012', '#e60012']
       },
       data2: {
         dataByTopic: [

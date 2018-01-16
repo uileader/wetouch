@@ -3,7 +3,7 @@
   <ui-page>
     <ui-view class="sample_title">堆积柱状图：基本使用</ui-view>
     <ui-stacked-bar
-    value="{{stackedBarData.data}}"
+    value="{{stackedBarDataEn.data}}"
     width="{{winWidth}}"
     height="250"
     is-animated="{{true}}"
@@ -24,8 +24,8 @@
     width="{{winWidth}}"
     height="250"
     is-animated="{{true}}"
-    is-darker="{{true}}"
-    bindcustommove="custommove"
+    isDarker="{{true}}"
+    bindcustomclick="custommove"
     colorSchema="{{stackedBarData.colorSchema}}"
     ></ui-stacked-bar>
     <ui-legend

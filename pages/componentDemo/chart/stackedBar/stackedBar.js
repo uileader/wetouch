@@ -9,62 +9,74 @@ export default {
           {
             'stack': 'Direct',
             'value': 3,
-            'name': '2011-01-05'
+            'name': '2011-01-05',
+            'color': '#3399ff'
           },
           {
             'stack': 'Eventbrite',
             'value': 23,
-            'name': '2011-01-05'
+            'name': '2011-01-05',
+            'color': '#54cd72'
           },
           {
             'stack': 'Email',
             'value': 10,
-            'name': '2011-01-05'
+            'name': '2011-01-05',
+            'color': '#fdd210'
           },
           {
             'stack': 'Direct',
             'value': 10,
-            'name': '2011-01-06'
+            'name': '2011-01-06',
+            'color': '#3399ff'
           },
           {
             'stack': 'Eventbrite',
             'value': 16,
-            'name': '2011-01-06'
+            'name': '2011-01-06',
+            'color': '#54cd72'
           },
           {
             'stack': 'Email',
             'value': 20,
-            'name': '2011-01-06'
+            'name': '2011-01-06',
+            'color': '#fdd210'
           },
           {
             'stack': 'Direct',
             'value': 16,
-            'name': '2011-01-07'
+            'name': '2011-01-07',
+            'color': '#3399ff'
           },
           {
             'stack': 'Eventbrite',
             'value': 10,
-            'name': '2011-01-07'
+            'name': '2011-01-07',
+            'color': '#54cd72'
           },
           {
             'stack': 'Email',
             'value': 26,
-            'name': '2011-01-07'
+            'name': '2011-01-07',
+            'color': '#fdd210'
           },
           {
             'stack': 'Direct',
             'value': 23,
-            'name': '2011-01-08'
+            'name': '2011-01-08',
+            'color': '#3399ff'
           },
           {
             'stack': 'Eventbrite',
             'value': 0,
-            'name': '2011-01-08'
+            'name': '2011-01-08',
+            'color': '#54cd72'
           },
           {
             'stack': 'Email',
             'value': 33,
-            'name': '2011-01-08'
+            'name': '2011-01-08',
+            'color': '#fdd210'
           }
         ],
         colorSchema: ['#3399ff', '#54cd72', '#fdd210']

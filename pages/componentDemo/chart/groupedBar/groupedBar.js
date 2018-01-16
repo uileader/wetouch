@@ -9,75 +9,75 @@ export default {
         data: [
           {
             group: '北京',
-            name: 'Direct1',
             value: 3,
-            date: '2011-01-05'
+            date: '2011-01-05',
+            "color": "#3399ff"
           },
           {
             group: '上海',
-            name: 'Eventbrite1',
             value: 23,
-            date: '2011-01-05'
+            date: '2011-01-05',
+            "color": "#54cd72"
           },
           {
             group: '深圳',
-            name: 'Email1',
             value: 10,
-            date: '2011-01-05'
+            date: '2011-01-05',
+            "color": "#fdd210"
           },
           {
             group: '北京',
-            name: 'Direct2',
             value: 10,
-            date: '2011-01-06'
+            date: '2011-01-06',
+            "color": "#3399ff"
           },
           {
             group: '上海',
-            name: 'Eventbrite2',
             value: 16,
-            date: '2011-01-06'
+            date: '2011-01-06',
+            "color": "#54cd72"
           },
           {
             group: '深圳',
-            name: 'Email2',
             value: 20,
-            date: '2011-01-06'
+            date: '2011-01-06',
+            "color": "#fdd210"
           },
           {
             group: '北京',
-            name: 'Direct3',
             value: 16,
-            date: '2011-01-07'
+            date: '2011-01-07',
+            "color": "#3399ff"
           },
           {
             group: '上海',
-            name: 'Eventbrite3',
             value: 10,
-            date: '2011-01-07'
+            date: '2011-01-07',
+            "color": "#54cd72"
           },
           {
             group: '深圳',
-            name: 'Email3',
             value: 26,
-            date: '2011-01-07'
+            date: '2011-01-07',
+            "color": "#fdd210"
           },
           {
             group: '北京',
-            name: 'Direct4',
             value: 23,
-            date: '2011-01-08'
+            date: '2011-01-08',
+            "color": "#3399ff"
           },
           {
             group: '上海',
-            name: 'Eventbrite4',
             value: 4,
-            date: '2011-01-08'
+            date: '2011-01-08',
+            "color": "#54cd72"
           },
           {
             group: '深圳',
-            name: 'Email4',
             value: 33,
-            date: '2011-01-08'
+            date: '2011-01-08',
+            "color": "#fdd210"
           }
         ],
         colorSchema: ['#3399ff', '#54cd72', '#fdd210'],

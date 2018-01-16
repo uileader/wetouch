@@ -18,7 +18,6 @@
     border-stroke-color="#fff"
     area-opacity="{{0.1}}"
     show-circle="false"
-    curve="true"
     ></ui-stacked-area>
 
 
@@ -37,6 +36,7 @@
     tooltip-text-color="#fff"
     border-strokeColor="#fff"
     show-circle="false"
+    curve="true"
     ></ui-stacked-area>
     
 
@@ -54,6 +54,7 @@
     tooltip-text-color="#fff"
     border-strokeColor="#fff"
     show-circle="false"
+    curve="true"
     ></ui-stacked-area>
   <ui-view style="padding-left:10px">
     <ui-tags 

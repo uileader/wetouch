@@ -1,16 +1,16 @@
 <template>
   <ui-page>
-      <ui-view class="sample_title">折线图</ui-view>
+      <ui-view class="sample_title">折线图（含圆点）</ui-view>
       <ui-view style="text-align: center;">
         <ui-line
         value="{{data}}"
         width="{{winWidth}}"
         height="250"
+        circle-joint-radius="{{2}}"
         is-animated="true"
-        color-schema = "{{data.colorSchema}}"
+        color-schema = "{{['purple']}}"
         grid="full"
-        line-width = "1"
-        tooltip="true"
+        line-width = "2"
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
@@ -20,44 +20,82 @@
         ></ui-line>
       </ui-view>
 
-      <ui-view class="sample_title">曲线图</ui-view>
+      <ui-view class="sample_title">多条折线图（无圆点）</ui-view>
       <ui-view style="text-align: center;">
         <ui-line
-        value="{{data}}"
+        value="{{data2}}"
         width="{{winWidth}}"
         height="250"
         is-animated="true"
-        color-schema = "{{data.colorSchema}}"
+        color-schema = "{{data2.colorSchema}}"
         grid="full"
         line-width = "1"
-        tooltip="true"
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
+        text-fill-color="#fff"
         tooltip-text-color="#fff"
-        border-stroke-color="#fff"
-        xAxisFormat="custom"
-        xTicks="{{50}}"
+        border-stroke-color="none"
+        ></ui-line>
+      </ui-view>  
+
+      <ui-view class="sample_title">多条折线图（不含tootip）</ui-view>
+      <ui-view style="text-align: center;">
+        <ui-line
+        value="{{data2}}"
+        width="{{winWidth}}"
+        height="250"
+        is-animated="true"
+        color-schema = "{{data2.colorSchema}}"
+        grid="full"
+        line-width = "1"
+        tooltip = "false"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        text-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="none"
+        ></ui-line>
+      </ui-view>
+
+
+      <ui-view class="sample_title">多条曲线图</ui-view>
+      <ui-view style="text-align: center;">
+        <ui-line
+        value="{{data2}}"
+        width="{{winWidth}}"
+        height="250"
+        is-animated="true"
+        color-schema = "{{data2.colorSchema}}"
+        grid="full"
+        line-width = "1"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        text-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="none"
         line-curve="basis"
         ></ui-line>
       </ui-view>
 
-      <ui-view class="sample_title">梯子图</ui-view>
+      <ui-view class="sample_title">多条梯子图</ui-view>
       <ui-view style="text-align: center;">
         <ui-line
-        value="{{data}}"
+        value="{{data2}}"
         width="{{winWidth}}"
         height="250"
         is-animated="true"
-        color-schema = "{{data.colorSchema}}"
+        color-schema = "{{data2.colorSchema}}"
         grid="full"
         line-width = "1"
-        tooltip="true"
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
+        text-fill-color="#fff"
         tooltip-text-color="#fff"
-        border-stroke-color="#fff"
+        border-stroke-color="none"
         line-curve="step"
         ></ui-line>
       </ui-view>
@@ -89,6 +127,98 @@
       ></ui-legend>
     </ui-view>
 
+      <!-- <ui-view class="sample_title">折线图</ui-view>
+      <ui-view style="text-align: center;">
+        <ui-line
+        value="{{data}}"
+        width="{{winWidth}}"
+        height="250"
+        circle-joint-radius="{{2}}"
+        is-animated="true"
+        tooltip="false"
+        color-schema = "{{['#00CCDD']}}"
+        grid="full"
+        line-width = "1"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        text-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="none"
+        ></ui-line>
+      </ui-view> -->
+
+      <!-- <ui-view class="sample_title">曲线图</ui-view>
+      <ui-view style="text-align: center;">
+        <ui-line
+        value="{{data}}"
+        width="{{winWidth}}"
+        height="250"
+        is-animated="true"
+        circle-joint-radius="{{2}}"
+        color-schema = "{{['#00CCDD']}}"
+        grid="full"
+        line-width = "1"
+        tooltip="true"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="#fff"
+        xAxisFormat="custom"
+        xTicks="{{50}}"
+        line-curve="basis"
+        ></ui-line>
+      </ui-view> -->
+
+      <!-- <ui-view class="sample_title">梯子图</ui-view>
+      <ui-view style="text-align: center;">
+        <ui-line
+        value="{{data}}"
+        width="{{winWidth}}"
+        height="250"
+        is-animated="true"
+        color-schema = "{{['#00CCDD']}}"
+        grid="full"
+        line-width = "1"
+        tooltip="true"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="#fff"
+        line-curve="step"
+        ></ui-line>
+      </ui-view> -->
+
+      <!-- <ui-view class="sample_title">使用图例</ui-view>
+      <ui-view style="text-align: center">
+          <ui-line
+          value="{{data2}}"
+          width="{{winWidth}}"
+          height="250"
+          is-animated="true"
+          circle-joint-radius="{{2}}"
+          color-schema = "{{data2.colorSchema}}"
+          grid="full"
+          line-width = "1"
+          tooltip="true"
+          body-fill-color="rgba(0,0,0,.7)"
+          tooltip-width="150"
+          title-fill-color="#fff"
+          tooltip-text-color="#fff"
+          border-stroke-color="#fff"
+          ></ui-line>
+        <ui-legend
+        value="{{legendData.legend}}"
+        width="{{winWidth}}"
+        height="50"
+        is-animated="true"
+        is-horizontal="true"
+        color-schema="{{legendData.colorSchema}}"
+      ></ui-legend>
+    </ui-view> -->
+
     <ui-view class="sample_title">使用图例控制显隐</ui-view>
         <ui-line
         value="{{newLineData2}}"
@@ -112,7 +242,7 @@
         ></ui-tags>
       </ui-view>
 
-      <ui-view class="sample_title">指定范围</ui-view>
+      <ui-view class="sample_title">配合刷子图指定范围</ui-view>
       <ui-view style="text-align: center">
         <ui-line
         value="{{newLineData}}"
