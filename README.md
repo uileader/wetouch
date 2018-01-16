@@ -10,7 +10,7 @@
 
 ##### web访问：
 
- <img src="http://images.uileader.com/20180113/d6a59884-1975-467c-bad9-f356573701c8.png" />
+ <img src="http://images.uileader.com/20180116/95611b08-f421-4741-8ce6-1c3cc529a0dd.png" />
 
 ##### ios下载：
 
