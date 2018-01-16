@@ -73,12 +73,12 @@ export default {
     let environment = ui.IS_APP
     if (environment) {
       //首屏引导页
-      // var splashShow = ui.getStorageSync('splash')
-      // if (splashShow === 'show') {
-      //   this.isSplashSwiper = false
-      // } else {
-      //   this.isSplashSwiper = true
-      // }
+      var splashShow = ui.getStorageSync('splash')
+      if (splashShow === 'show') {
+        this.isSplashSwiper = false
+      } else {
+        this.isSplashSwiper = true
+      }
 
       
     let closeTime = ui.IS_IOS ? 1500 : 500

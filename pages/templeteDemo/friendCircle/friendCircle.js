@@ -1,7 +1,5 @@
 const textUrl = '/touchui-backstage/insertCircle.do'
-const imageUrl = 'http://www.uileader.com/touchui-backstage/uploadThumbnail.do'
-// const textUrl = 'http://192.168.1.109:8080/touchui-backstage/insertCircle.do'
-// const imageUrl = 'http://192.168.1.109:8080/touchui-backstage/uploadThumbnail.do'
+const imageUrl = '图片上传地址'
 
 const sourceType = [['camera'], ['album'], ['camera', 'album']]
 const sizeType = [['compressed'], ['original'], ['compressed', 'original']]

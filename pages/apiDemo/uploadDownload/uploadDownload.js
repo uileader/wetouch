@@ -1,6 +1,5 @@
 // uploadDownload.js
-const uploadFileUrl = 'http://www.uileader.com/touchui-backstage/uploadImgSubmit.do'
-// const uploadFileUrl = 'http://192.168.1.109:8080/touchui-backstage/uploadImgSubmit.do'
+const uploadFileUrl = '图片上传地址'
 var uploadTask
 export default {
   data () {
