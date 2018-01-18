@@ -1,8 +1,8 @@
 // userinfo.js
 const sourceType = [['camera'], ['album'], ['camera', 'album']]
 const sizeType = [['compressed'], ['original'], ['compressed', 'original']]
-const uploadFileUrl = '图片上传地址'
-const updataHeadUrl = '头像上传地址'
+const uploadFileUrl = 'http://www.uileader.com/touchui-backstage/uploadImgSubmit.do'
+const updataHeadUrl = 'http://www.uileader.com/touchui-backstage/updateHead.do'
 export default {
   data () {
     return {

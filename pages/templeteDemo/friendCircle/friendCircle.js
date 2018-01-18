@@ -1,5 +1,5 @@
 const textUrl = '/touchui-backstage/insertCircle.do'
-const imageUrl = '图片上传地址'
+const imageUrl = 'http://www.uileader.com/touchui-backstage/uploadImgSubmit.do'
 
 const sourceType = [['camera'], ['album'], ['camera', 'album']]
 const sizeType = [['compressed'], ['original'], ['compressed', 'original']]

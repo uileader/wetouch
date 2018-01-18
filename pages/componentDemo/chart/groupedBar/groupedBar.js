@@ -88,89 +88,6 @@ export default {
           left: 50
         }
       },
-      groupDataEn: {
-        data: [
-          {
-            group: 'Direct',
-            name: 'Direct1',
-            value: 3,
-            date: '2011-01-05'
-          },
-          {
-            group: 'Eventbrite',
-            name: 'Eventbrite1',
-            value: 23,
-            date: '2011-01-05'
-          },
-          {
-            group: 'Email',
-            name: 'Email1',
-            value: 10,
-            date: '2011-01-05'
-          },
-          {
-            group: 'Direct',
-            name: 'Direct2',
-            value: 10,
-            date: '2011-01-06'
-          },
-          {
-            group: 'Eventbrite',
-            name: 'Eventbrite2',
-            value: 16,
-            date: '2011-01-06'
-          },
-          {
-            group: 'Email',
-            name: 'Email2',
-            value: 20,
-            date: '2011-01-06'
-          },
-          {
-            group: 'Direct',
-            name: 'Direct3',
-            value: 16,
-            date: '2011-01-07'
-          },
-          {
-            group: 'Eventbrite',
-            name: 'Eventbrite3',
-            value: 10,
-            date: '2011-01-07'
-          },
-          {
-            group: 'Email',
-            name: 'Email3',
-            value: 26,
-            date: '2011-01-07'
-          },
-          {
-            group: 'Direct',
-            name: 'Direct4',
-            value: 23,
-            date: '2011-01-08'
-          },
-          {
-            group: 'Eventbrite',
-            name: 'Eventbrite4',
-            value: 4,
-            date: '2011-01-08'
-          },
-          {
-            group: 'Email',
-            name: 'Email4',
-            value: 33,
-            date: '2011-01-08'
-          }
-        ],
-        colorSchema: ['#3399ff', '#54cd72', '#fdd210'],
-        margin: {
-          top: 40,
-          right: 20,
-          bottom: 60,
-          left: 50
-        }
-      },
       legendData: {
         legend: [
           {
@@ -187,27 +104,6 @@ export default {
             id: 3,
             quantity: 234,
             name: '深圳'
-          }
-        ],
-        textSize: 16,
-        colorSchema: ['#3399ff', '#54cd72', '#fdd210']
-      },
-      legendDataEn: {
-        legend: [
-          {
-            id: 1,
-            quantity: 134,
-            name: 'Direct'
-          },
-          {
-            id: 2,
-            quantity: 100,
-            name: 'Eventbrite'
-          },
-          {
-            id: 3,
-            quantity: 234,
-            name: 'Email'
           }
         ],
         textSize: 16,
