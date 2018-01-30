@@ -1,8 +1,8 @@
 <template>
   <ui-page>
-  <!-- 自定义nav-bar -->
-  <ui-nav-bar class="nab_bar" slot="nav-bar">
-      <ui-row height="46" >
+    <!-- 自定义nav-bar -->
+    <ui-nav-bar class="nab_bar" slot="nav-bar">
+       <ui-row height="46" >
         <ui-col vertical-align="middle" align="left" space-left="10" width="70" bindtap="navigateBack">
           <ui-view >
             <ui-icon name="arrow-left" size="18" color="#fff"></ui-icon>
@@ -10,7 +10,7 @@
         </ui-col>
         <ui-col vertical-align="middle" align="center">
           <ui-view>
-            朋友圈
+            消息列表(长按出现菜单)
           </ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="right" space-right="10" width="70">
@@ -19,175 +19,36 @@
       </ui-row>
     </ui-nav-bar>
 
-    <ui-list-view style="min-height: 621px;" config="{{ config }}" enable-reach-bottom-load bindchange="handleListViewChange">
-        <template scope="props">
-          <ui-list-view-item>
-
-            <ui-row class="content"
-            border-bottom
-            ui:show="{{ props.length<1 ? false : true }}"
-            >
-                <ui-col width="70" align="right" space-right="10">
-                    <ui-view class="portrait">
-                        <ui-image
-                        src="{{props.item.head}}"
-                        mode='aspectFill'
-                        width="100%"
-                        >
-                        </ui-image>
-                    </ui-view>
-                </ui-col>
-                <ui-col space-right="15">
-
-                    <ui-view class="name"> {{props.item.name}}</ui-view>
-                    <ui-view class="text"> {{props.item.content}} </ui-view>
-
-                    <ui-view class="img_content">
-                        <ui-view
-                        ui:for="{{ props.item.imgList }}"
-                        ui:for-item="item2"
-                        style="{{{
-                            width:props.item.imgList.length>1 ? imgWidth+'px' : 150+'px',
-                            height:props.item.imgList.length>1 ? imgHeight+'px' : '',
-                            'max-height':props.item.imgList.length>1 ? '' : '250px',
-                            'margin-right': props.item.imgList.length===4 && index===1 ? '70px' : '5px'
-                        }}}"
-                        >
-                            <ui-image
-                            src="{{ item2.thumbnailUrl }}"
-                            mode="aspectFill"
-                            width="{{props.item.imgList.length>1 ? imgWidth : 150}}"
-                            height="{{props.item.imgList.length>1 ? imgHeight : ''}}"
-                            data-preview-group="{{props.item.circleId}}"
-                            data-preview-src="{{ item2.imgUrl}}"
-                            ></ui-image>
-                        </ui-view>
-                    </ui-view>
-
-                    <ui-view>
-                        <ui-row height="40">
-                            <ui-col vertical-align="middle" align="left">
-                                <ui-view class="time">{{ getLocalTime(props.item.createTime) }}</ui-view>
-                            </ui-col>
-                            <ui-col vertical-align="middle" align="right" width="40" bindtap="popoverShow">
-                                <ui-icon name="review" size="16" color="#8599C5"></ui-icon>
-                            </ui-col>
-                        </ui-row>
-                    </ui-view>
-
-                    <ui-view class="comment" ui:show="{{ comment[props.index] }}">
-                        <ui-view class="triangle"></ui-view>
-                        <ui-icon name="praiseago" size="14" color="#67769A" class="support"></ui-icon>
-                        <ui-view class="use_name">{{ props.item.name }}</ui-view>
-                    </ui-view>
-                </ui-col>
-            </ui-row>
-
-            </ui-list-view-item>
-        </template>
-    </ui-list-view>
+    <ui-row height="70" class="list" space-bottom="1" tap-effect bindlongtap="popoverShow" ui:for="{{item}}">
+        <ui-col vertical-align="middle" align="center" width="70">
+            <ui-image 
+                src="{{ item.head }}"
+                width="50"
+                height="50"
+            ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-right="10">
+            <ui-view>
+                <ui-row height="30">
+                    <ui-col vertical-align="middle" align="left">
+                        <ui-view class="title">{{ item.title }}</ui-view>
+                    </ui-col>
+                    <ui-col vertical-align="middle" align="right">
+                        <ui-view class="time">{{ item.time }}</ui-view>
+                    </ui-col>
+                </ui-row>
+                <ui-view class="content">{{ item.content }}</ui-view>
+            </ui-view>
+        </ui-col>
+    </ui-row>
+   
 
     <!-- popover -->
-    <ui-popover hide-on-touch="true" ref="popover" mask-style="{{ maskStyle }}" class="custom">
-        <ui-view>
-            <ui-row height="30">
-                <ui-col border-right vertical-align="middle" align="center" bindtap="giveSupport">
-                    <ui-view>
-                    <ui-icon name="praiseago" color="#fff" size="16"></ui-icon>赞
-                    </ui-view>
-                </ui-col>
-                <ui-col vertical-align="middle" align="center">
-                    <ui-view>
-                    <ui-icon name="comment" color="#fff" size="17"></ui-icon>评论
-                    </ui-view>
-                </ui-col>
-            </ui-row>
-        </ui-view>
+    <ui-popover hide-on-touch="true" ref="popover" show-arrow="false" mask-style="{{ maskStyle }}" class="custom">
+        <ui-view bindtap="showTitle('标为未读')" hover-class="touch_end">标为未读</ui-view>
+        <ui-view bindtap="showTitle('置顶聊天')" hover-class="touch_end">置顶聊天</ui-view>
+        <ui-view bindtap="showTitle('删除该聊天')" hover-class="touch_end">删除该聊天</ui-view>
     </ui-popover>
-
-
-    <!-- 图片预览容器 -->
-    <ui-previewer>
-    </ui-previewer>
-
-
-
-    <ui-popup ui:model="{{ popupShow }}" height="100%" background="#EBEBF2">
-        <ui-row class="popup_navBar" height="{{ popupNav }}" style="{{{ 'padding-top':popupBar+'px' }}}">
-            <ui-col vertical-align="middle" align="left"  width="60" class="left_nav" bindtap="leftNav">
-                <ui-view hover-class="touch_end1">取消</ui-view>
-            </ui-col>
-            <ui-col vertical-align="middle"></ui-col>
-            <ui-col vertical-align="middle" align="right"  width="60" class="right_nav" bindtap="publish">
-                <ui-view hover-class="touch_end2">发表</ui-view>
-            </ui-col>
-        </ui-row>
-        <ui-textarea ui:model="{{ value }}" maxlength="200" name="detail" placeholder="这一刻的想法..." show-counter="{{ false }}"></ui-textarea>
-        <ui-view class="img_content img_content2">
-            <ui-view
-            ui:for="{{ imageSrc }}"
-            ui:for-item="item"
-
-            >
-                <ui-image
-                src="{{item}}"
-                mode='aspectFill'
-                width="90"
-                height="90"
-                bindload="imageLoad"
-                ></ui-image>
-            </ui-view>
-            <ui-view
-            class="add_photo"
-            ui:if="{{ imageSrc.length>8 ? false : true }}"
-            bindtap="addPhoto"
-            >
-                <ui-icon name="plus" size="50" color="#CECECF"></ui-icon>
-            </ui-view>
-        </ui-view>
-        <ui-row height="50" class="map">
-            <ui-col vertical-align="middle" width="40" align="center">
-                <ui-icon name="map" size="18" color="#757575"></ui-icon>
-            </ui-col>
-            <ui-col vertical-align="middle">
-                所在位置
-            </ui-col>
-            <ui-col vertical-align="middle" width="40">
-                <ui-icon name="arrow-right" size="18" color="#757575"></ui-icon>
-            </ui-col>
-        </ui-row>
-
-        <ui-row height="50" class="map map2" space-top="20" bindtap="look">
-            <ui-col vertical-align="middle" width="40" align="center">
-                <ui-icon name="globe" size="18" color="#767676"></ui-icon>
-            </ui-col>
-            <ui-col vertical-align="middle">
-                谁可以看
-            </ui-col>
-            <ui-col vertical-align="middle" width="100" align="right" space-right="20">
-                <ui-view>
-                    {{ lookText }}<ui-icon name="arrow-right" size="18" color="#757575"></ui-icon>
-                </ui-view>
-            </ui-col>
-        </ui-row>
-        <ui-row height="50" class="map map3" bindtap="remind">
-            <ui-col vertical-align="middle" width="40" align="center">
-                <ui-view class="remind_icon">@</ui-view>
-            </ui-col>
-            <ui-col vertical-align="middle">
-                提醒谁看
-            </ui-col>
-            <ui-col vertical-align="middle" width="100" align="right" space-right="20">
-                <ui-view>
-                    {{ remindText }}<ui-icon name="arrow-right" size="18" color="#757575"></ui-icon>
-                </ui-view>
-            </ui-col>
-        </ui-row>
-        <ui-view class="qzone" bindtap="qzone">
-            <ui-icon name="qzone" size="18" color="{{ qzoneColor}}"></ui-icon>
-        </ui-view>
-    </ui-popup>
-
 
 
   </ui-page>

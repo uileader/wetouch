@@ -80,7 +80,7 @@
                         </ui-image>
                     </ui-view>
                 </ui-col>
-                <ui-col space-right="15">
+                <ui-col>
 
                     <ui-view class="name"> {{props.item.name}}</ui-view>
                     <ui-view class="text"> {{props.item.content}} </ui-view>
@@ -112,12 +112,11 @@
                             <ui-col vertical-align="middle" align="left">
                                 <ui-view class="time">{{ getLocalTime(props.item.createTime) }}</ui-view>
                             </ui-col>
-                            <ui-col vertical-align="middle" align="right" width="40" bindtap="popoverShow">
+                            <ui-col vertical-align="middle" align="right" width="40" space-right="10" bindtap="popoverShow($event,props.index)">
                                 <ui-icon name="review" size="16" color="#8599C5"></ui-icon>
                             </ui-col>
                         </ui-row>
                     </ui-view>
-
                     <ui-view class="comment" ui:show="{{ comment[props.index] }}">
                         <ui-view class="triangle"></ui-view>
                         <ui-icon name="praiseago" size="14" color="#67769A" class="support"></ui-icon>
@@ -136,7 +135,7 @@
             <ui-row height="30">
             <ui-col border-right vertical-align="middle" align="center" bindtap="giveSupport">
                 <ui-view>
-                <ui-icon name="praiseago" color="#fff" size="16"></ui-icon>赞
+                <ui-icon name="praiseago" color="#fff" size="16"></ui-icon>{{ comment[propsIndex]?'取消':'赞' }}
                 </ui-view>
             </ui-col>
             <ui-col vertical-align="middle" align="center">

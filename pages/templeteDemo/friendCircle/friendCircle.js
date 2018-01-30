@@ -27,6 +27,7 @@ export default {
       popoverText: [],
       support: [],
       comment: [],
+      propsIndex:null,
       maskStyle: { backgroundColor: 'transparent' },
       supportText: '赞',
       previewerShow: false,
@@ -194,13 +195,14 @@ export default {
       })
     },
     // 点赞
-    popoverShow (e) {
-      console.log(e)
+    popoverShow (e,index) {
+      console.log(e,index)
       // this.popover = []
       // this.popover[index] = true
       // if (this.popoverText[index] === undefined) {
       //   this.popoverText[index] = '赞'
       // }
+      this.propsIndex=index
       this.$refs.popover.showPopover({
         el: e.target,
         position: 'left',
@@ -208,17 +210,16 @@ export default {
       })
     },
     // 点赞后
-    giveSupport (index) {
-      // this.popover = []
-      // this.support = []
-      // if (!this.comment[index]) {
-      //   this.comment[index] = true
-      //   this.popoverText[index] = '取消'
-      // } else {
-      //   this.comment[index] = false
-      //   this.popoverText[index] = '赞'
-      // }
-      
+    giveSupport () {
+      if (!this.comment[this.propsIndex]) {
+        this.comment.splice(this.propsIndex,1,true)
+        // this.popoverText[this.propsIndex] = '取消'
+      } else {
+        this.comment.splice(this.propsIndex,1,false)
+        // this.popoverText[this.propsIndex] = '赞'
+      }
+      this.$refs.popover.hidePopover()
+      console.log(this.comment)
     },
     look () {
       let itemList = [
