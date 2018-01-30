@@ -49,6 +49,7 @@ export default {
               { title: '基本示例', link: '/pages/componentDemo/sticky/sticky' },
               { title: '多个吸顶容器共用', link: '/pages/componentDemo/sticky/sticky2' },
               { title: '应用案例', link: '/pages/componentDemo/sticky/sticky3' },
+              { title: 'tabs与list-view结合', link: '/pages/componentDemo/sticky/sticky5' },
               { title: '在scroll-view中使用', link: '/pages/componentDemo/sticky/sticky4' }
           ]
         },

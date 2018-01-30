@@ -6,18 +6,17 @@
       <ui-tab>选项卡一</ui-tab>
       <ui-tab>选项卡二</ui-tab>
     </ui-tabs>
-
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current1 }}" bindchange="handleContentChange($event, 'current1')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current1 }}" bindchange="handleContentChange($event, 'current1')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
 
-    <ui-divider>changeend触发+ink-bar</ui-divider>
+    <ui-divider>ink-bar</ui-divider>
     <ui-tabs class="type-ink" index="{{ current2 }}"  bindchange="handleChange($event, 'current2')" ink-bar ink-bar-style="{{ { borderBottom: '1px solid red', width: '60%' } }}">
       <ui-tab>选项卡一</ui-tab>
       <ui-tab>选项卡二</ui-tab>
@@ -25,46 +24,44 @@
       <ui-tab>选项卡四</ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current2 }}" bindchangeend="handleContentChange($event, 'current2')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content"  index="{{ current2 }}" bindchange="handleContentChange($event, 'current2')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容三
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容四
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
 
 
     <ui-divider>居中显示</ui-divider>
     <ui-view style="background-color:#f5f5f5">
-    <ui-view style="width:217px;margin:0 auto">
-      <ui-tabs class="type-center" index="{{ current3 }}"  bindchange="handleChange($event, 'current3')">
-        <ui-tab>
-          <ui-view class="item item-right">精选</ui-view>
-        </ui-tab>
-        <ui-tab>
-          <ui-view class="item item-left">订阅</ui-view>
-        </ui-tab>
-      </ui-tabs>
+      <ui-view style="width:217px;margin:0 auto">
+        <ui-tabs class="type-center" index="{{ current3 }}"  bindchange="handleChange($event, 'current3')">
+          <ui-tab>
+            <ui-view class="item item-right">精选</ui-view>
+          </ui-tab>
+          <ui-tab>
+            <ui-view class="item item-left">订阅</ui-view>
+          </ui-tab>
+        </ui-tabs>
+      </ui-view>
     </ui-view>
-  </ui-view>
-
-
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current3 }}" bindchange="handleContentChange($event, 'current3')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current3 }}" bindchange="handleContentChange($event, 'current3')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
     <ui-divider>结合角标使用</ui-divider>
     <ui-tabs class="type-center" index="{{ current4 }}"  bindchange="handleChange($event, 'current4')">
@@ -79,14 +76,14 @@
       </ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current4 }}" bindchange="handleContentChange($event, 'current4')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current4 }}" bindchange="handleContentChange($event, 'current4')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
     <ui-divider>与图标结合使用：图标在左</ui-divider>
     <ui-tabs class="type-icon" index="{{ current5 }}"  bindchange="handleChange($event, 'current5')">
@@ -107,17 +104,17 @@
       </ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current5 }}" bindchange="handleContentChange($event, 'current5')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current5 }}" bindchange="handleContentChange($event, 'current5')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容三
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
     <ui-divider>与图标结合使用：图标在右</ui-divider>
     <ui-tabs class="type-icon" index="{{ current6 }}"  bindchange="handleChange($event, 'current6')">
@@ -138,17 +135,17 @@
       </ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current6 }}" bindchange="handleContentChange($event, 'current6')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current6 }}" bindchange="handleContentChange($event, 'current6')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容三
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
     <ui-divider>外部触发切换</ui-divider>
     <ui-tabs class="type-common" index="{{ current7 }}"  bindchange="handleChange($event, 'current7')">
@@ -156,44 +153,38 @@
       <ui-tab>选项卡二</ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current7 }}" bindchange="handleContentChange($event, 'current7')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content" index="{{ current7 }}" bindchange="handleContentChange($event, 'current7')">
+      <ui-mini-swiper-item>
         <ui-button type="primary" bindtap="handleChange(1, 'current7')">切换到第二项</ui-button>
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
     <ui-divider>只支持点击标签切换</ui-divider>
-    <ui-tabs class="type-common" index="{{ current8 }}"  bindchange="handleChange($event, 'current8')">
-        <ui-tab>选项卡一</ui-tab>
-        <ui-tab>选项卡二</ui-tab>
-      </ui-tabs>
+    <ui-tabs class="type-common" index="{{ current8 }}"  bindchange="handleChange8($event, 'current8')">
+      <ui-tab>选项卡一</ui-tab>
+      <ui-tab>选项卡二</ui-tab>
+    </ui-tabs>
+    <ui-view class="swiper_content" ui:show="{{ show8_1 }}">选项卡一</ui-view>
+    <ui-view class="swiper_content" ui:show="{{ show8_2 }}">选项卡二</ui-view>
 
-      <ui-swiper class="content" touch-angle="{{15}}" index="{{ current8 }}" allow-touch-move="false" bindchange="handleContentChange($event, 'current8')">
-        <ui-swiper-item>
-          内容一
-        </ui-swiper-item>
-        <ui-swiper-item>
-          内容二
-        </ui-swiper-item>
-      </ui-swiper>
 
     <ui-divider>自定义颜色</ui-divider>
     <ui-tabs class="type-color"  index="{{ current9 }}"  bindchange="handleChange($event, 'current9')">
-        <ui-tab>选项卡一</ui-tab>
-        <ui-tab>选项卡二</ui-tab>
-      </ui-tabs>
+      <ui-tab>选项卡一</ui-tab>
+      <ui-tab>选项卡二</ui-tab>
+    </ui-tabs>
 
-      <ui-swiper class="content" touch-angle="{{15}}" index="{{ current9 }}" bindchange="handleContentChange($event, 'current9')">
-        <ui-swiper-item>
-          内容一
-        </ui-swiper-item>
-        <ui-swiper-item>
-          内容二
-        </ui-swiper-item>
-      </ui-swiper>
+    <ui-mini-swiper class="content" index="{{ current9 }}" bindchange="handleContentChange($event, 'current9')">
+      <ui-mini-swiper-item>
+        内容一
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
+        内容二
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
 
 
@@ -209,32 +200,32 @@
       <ui-tab>选项卡八</ui-tab>
     </ui-tabs>
 
-    <ui-swiper class="content" touch-angle="{{15}}" index="{{ current11 }}" bindchange="handleContentChange($event, 'current11')">
-      <ui-swiper-item>
+    <ui-mini-swiper class="content"index="{{ current11 }}" bindchange="handleContentChange($event, 'current11')">
+      <ui-mini-swiper-item>
         内容一
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容二
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容三
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容四
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容五
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容六
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容七
-      </ui-swiper-item>
-      <ui-swiper-item>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
         内容八
-      </ui-swiper-item>
-    </ui-swiper>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
 
   </ui-page>
 </template>

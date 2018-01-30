@@ -15,6 +15,17 @@ export default {
       ui.navigateBack()
     },
     uploadPhoto () {
+      // ui.showActionSheet({
+      //   itemList: [
+      //     '拍摄',
+      //     '从手机相册选择'
+      //   ],
+      //   success: (index) => {
+      //     if (index > -1) {
+      //       this.chooseImage(index)
+      //     }
+      //   }
+      // })
       this.chooseImage(2)
     },
     chooseImage (index) {

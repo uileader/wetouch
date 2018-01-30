@@ -3,5 +3,9 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+    handleBack () {
+      ui.navigateBack()
+    }
+  }
 }

@@ -11,7 +11,7 @@
       internal-radius="50"
       is-animated="true"
       color-schema="{{donut.colorSchema}}"
-      highlight-slice-byId="{{2}}"
+      highlight-slice-by-id="{{2}}"
       ></ui-donut>
       <ui-legend
       value="{{legendData.legend}}"
@@ -19,8 +19,6 @@
       height="50"
       is-horizontal="{{true}}"
       is-animated="{{true}}"
-      text-size="{{legendData.textSize}}"
-      text-letter-spacing ="0.5"
       color-schema="{{legendData.colorSchema}}"
     ></ui-legend>
     </ui-view>
@@ -42,8 +40,6 @@
       height="50"
       is-horizontal="{{true}}"
       is-animated="{{true}}"
-      text-size="{{legendData.textSize}}"
-      text-letter-spacing ="0.5"
       color-schema="{{legendData.colorSchema}}"
     ></ui-legend>
     </ui-view>

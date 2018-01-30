@@ -3,7 +3,7 @@
   <ui-page>
     <ui-view class="sample_title">单列选择器</ui-view>
     <ui-view class="sample_content">
-      <ui-picker title="单列选择器" range="{{ list00 }}" value="{{ value00 }}" bindchange="handleChange"></ui-picker>
+      <ui-picker title="单列选择器" range="{{ list00 }}" value="{{ value }}" bindchange="handleChange"></ui-picker>
       <ui-button bindtap="resetPicker00">将选项重置为第一项</ui-button>
     </ui-view>
 

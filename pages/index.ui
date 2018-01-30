@@ -1,6 +1,7 @@
 <template>
   <ui-page
   top="0"
+  pull-down="{{ pullDown }}"
   bindscroll="handleScroll"
   >
     <!-- 下拉容器 -->
@@ -186,21 +187,21 @@
 
 
     <ui-fixed-view top="0" left="0" class="splash_wrap" ui:if="{{ isSplashSwiper }}" >
-      <ui-swiper pagination bindinit="swiperInit" interval="{{interval}}" duration="{{duration}}" class="splash_swiper" bindchange="changeSwiper" >
-        <ui-swiper-item>
+      <ui-mini-swiper pagination fullscreen class="splash_swiper" bindchange="changeSwiper" >
+        <ui-mini-swiper-item>
           <ui-view class="splash_swiper_content splash_swiper01"></ui-view>
-        </ui-swiper-item>
-        <ui-swiper-item>
+        </ui-mini-swiper-item>
+        <ui-mini-swiper-item>
           <ui-view class="splash_swiper_content splash_swiper02"></ui-view>
-        </ui-swiper-item>
-        <ui-swiper-item>
+        </ui-mini-swiper-item>
+        <ui-mini-swiper-item>
           <ui-view class="splash_swiper_content splash_swiper03"></ui-view>
-        </ui-swiper-item>
-        <ui-swiper-item>
+        </ui-mini-swiper-item>
+        <ui-mini-swiper-item>
           <ui-view class="splash_swiper_content splash_swiper04"></ui-view>
           <ui-view class="splash_into" bindtap="splashInto">点击进入</ui-view>
-        </ui-swiper-item>
-      </ui-swiper>
+        </ui-mini-swiper-item>
+      </ui-mini-swiper>
 
     </ui-fixed-view>
 

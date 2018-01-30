@@ -12,9 +12,9 @@
         <ui-col vertical-align="middle" width="40"></ui-col>
       </ui-row>
     </ui-nav-bar>
-    
+
     <ui-fixed-view bottom="0" class="input_box">
-      <ui-row class="input_box" height="46" bindtap="openPopup">
+      <ui-row class="input_box" height="46" bindclick="openPopup">
         <ui-col vertical-align="middle" align="left" space-left="10">
           <!-- <ui-input placeholder="输入评论" placeholder-style="color:#A8A8A8"></ui-input> -->
           <!-- <ui-form action="/search" bindsubmit="commentSubmit">
@@ -63,7 +63,7 @@
         </ui-view>
       </ui-view>
     </ui-mask>
-    
+
     <!-- <ui-mask class="full-screen-box" top="0" ui:model="popupShow" background="#fff">
       <ui-view class="wrap" style="{{{ 'padding-top':statusBar+'px' }}}">
         <ui-row height="46" class="head">

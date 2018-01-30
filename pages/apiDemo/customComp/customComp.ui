@@ -1,0 +1,11 @@
+<!--customComp.ui-->
+<template>
+  <ui-page>
+    <ui-view style="padding:30px;">
+      <ui-divider>请输入验证码</ui-divider>
+      <ui-view style="width:250px;margin:10px auto;">
+        <InputCode code="{{code}}" input-color="#333" span-color="#333"></InputCode>
+      </ui-view>
+    </ui-view>
+  </ui-page>
+</template>

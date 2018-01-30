@@ -5,7 +5,7 @@
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show1" mask-style="{{ maskStyle }}" effect="scale">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -31,13 +31,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow1" class="text">上方scale</ui-view>
+          <ui-view slot="content" bindtap="handleShow1" class="text">上方scale</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show2" position="bottom" mask-style="{{ maskStyle }}" effect="scale">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -63,14 +63,14 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow2" class="text">下方scale</ui-view>
+          <ui-view slot="content" bindtap="handleShow2" class="text">下方scale</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show3" position="right" mask-style="{{ maskStyle }}" effect="scale">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -96,13 +96,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow3" class="text">右方scale</ui-view>
+          <ui-view slot="content" bindtap="handleShow3" class="text">右方scale</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show4" position="left" mask-style="{{ maskStyle }}" effect="scale">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -128,7 +128,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow4" class="text">左方scale</ui-view>
+          <ui-view slot="content" bindtap="handleShow4" class="text">左方scale</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -136,7 +136,7 @@
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show5" mask-style="{{ maskStyle }}" effect="slide">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -162,13 +162,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow5" class="text">上方slide</ui-view>
+          <ui-view slot="content" bindtap="handleShow5" class="text">上方slide</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show6" position="bottom" mask-style="{{ maskStyle }}" effect="slide">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -194,14 +194,14 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow6" class="text">下方slide</ui-view>
+          <ui-view slot="content" bindtap="handleShow6" class="text">下方slide</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show7" position="right" mask-style="{{ maskStyle }}" effect="slide">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -227,13 +227,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow7" class="text">右方slide</ui-view>
+          <ui-view slot="content" bindtap="handleShow7" class="text">右方slide</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show8" position="left" mask-style="{{ maskStyle }}" effect="slide">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -259,7 +259,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow8" class="text">左方slide</ui-view>
+          <ui-view slot="content" bindtap="handleShow8" class="text">左方slide</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -267,7 +267,7 @@
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show9" mask-style="{{ maskStyle }}" effect="fade">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -293,13 +293,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow9" class="text">上方fade</ui-view>
+          <ui-view slot="content" bindtap="handleShow9" class="text">上方fade</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show10" position="bottom" mask-style="{{ maskStyle }}" effect="fade">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -325,14 +325,14 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow10" class="text">下方fade</ui-view>
+          <ui-view slot="content" bindtap="handleShow10" class="text">下方fade</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show11" position="right" mask-style="{{ maskStyle }}" effect="fade">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -358,13 +358,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow11" class="text">右方fade</ui-view>
+          <ui-view slot="content" bindtap="handleShow11" class="text">右方fade</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show12" position="left" mask-style="{{ maskStyle }}" effect="fade">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -390,7 +390,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow12" class="text">左方fade</ui-view>
+          <ui-view slot="content" bindtap="handleShow12" class="text">左方fade</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>

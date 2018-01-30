@@ -9,9 +9,7 @@
         height="300"
         is-animated="true"
         name-label="date"
-        value-label="value"
         grid="full"
-        color-schema="{{groupData.colorSchema}}"
         margin="{{groupData.margin}}"
         ></ui-grouped-bar>
         <ui-legend
@@ -20,8 +18,6 @@
         height="50"
         is-horizontal="true"
         is-animated="true"
-        text-size="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
     </ui-view>
@@ -35,10 +31,10 @@
         is-animated="true"
         color-schema="{{groupData.colorSchema}}"
         is-darker="true"
+        name-label="date"
         margin="{{groupData.margin}}"
-        bindcustomclick="custommove"
+        bindcustomclick="customclick"
         is-darker="true"
-        group-darker="true"
         ></ui-grouped-bar>
         <ui-legend
         value="{{legendData.legend}}"
@@ -46,8 +42,6 @@
         height="50"
         is-horizontal="true"
         is-animated="true"
-        text-size="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
         <ui-text block>{{clickText}}</ui-text>
@@ -60,6 +54,7 @@
         width="{{winWidth}}"
         height="300"
         is-animated="true"
+        name-label="date"
         color-schema="{{groupData.colorSchema}}"
         margin="{{groupData.margin}}"
         tooltip="true"
@@ -69,7 +64,6 @@
         tooltip-text-color="#fff"
         border-stroke-color="#fff"
         is-darker="true"
-        group-darker="true"
         ></ui-grouped-bar>
         <ui-legend
         value="{{legendData.legend}}"
@@ -77,8 +71,6 @@
         height="50"
         is-horizontal="true"
         is-animated="true"
-        text-size="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
     </ui-view>
@@ -91,9 +83,7 @@
         width="{{winWidth}}"
         height="300"
         is-animated="true"
-        groupLabel="group"
         name-label="date"
-        value-label="value"
         color-schema="{{groupData.colorSchema}}"
         is-horizontal="true"
         ></ui-grouped-bar>
@@ -103,8 +93,6 @@
         height="50"
         is-horizontal="true"
         is-animated="true"
-        text-size="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
     </ui-view>
@@ -116,13 +104,10 @@
         width="{{winWidth}}"
         height="300"
         is-animated="true"
-        groupLabel="group"
         name-label="date"
-        value-label="value"
         color-schema="{{groupData.colorSchema}}"
         is-horizontal="true"
         is-darker="true"
-        group-darker="true"
         tooltip="true"
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
@@ -136,8 +121,6 @@
         height="50"
         is-horizontal="true"
         is-animated="true"
-        text-size="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
     </ui-view>
@@ -149,14 +132,16 @@
         width="{{winWidth}}"
         height="300"
         is-animated="true"
-        groupLabel="group"
         name-label="date"
-        value-label="value"
         is-darker="true"
-        group-darker="true"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        tooltip-text-color="#fff"
+        border-stroke-color="#fff"
         color-schema="{{groupData.colorSchema}}"
         is-horizontal="true"
-        bindcustomclick="custommove2"
+        bindcustomclick="customclick2"
         ></ui-grouped-bar>
         <ui-legend
         value="{{legendData.legend}}"
@@ -165,7 +150,6 @@
         is-horizontal="true"
         is-animated="true"
         textSize="{{legendData.textSize}}"
-        text-letter-spacing ="0.5"
         color-schema="{{legendData.colorSchema}}"
       ></ui-legend>
         <ui-text style="height:50px;" block>{{clickText2}}</ui-text>

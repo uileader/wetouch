@@ -7,7 +7,7 @@ export default {
       clickText1: '',
       bar1: {
         margin: {
-          left: 90,
+          left: 60,
           right: 20,
           top: 20,
           bottom: 20
@@ -85,7 +85,6 @@ export default {
           top: 10,
           bottom: 20
         },
-        colorSchema: ['#70f0c7', '#41c4c9', '#fed009', '#fda71e', '#f65bb9']
       },
       legendData: {
         legend: [
@@ -119,8 +118,7 @@ export default {
             quantity: 341,
             name: '6月'
           }
-        ],
-        textSize: 16
+        ]
       },
       legendData2: {
         legend: [
@@ -149,21 +147,16 @@ export default {
             quantity: 432,
             name: '9-10分'
           }
-        ],
-        textSize: 16
+        ]
       }
     }
   },
   methods: {
-    movingLog (e) {
-    },
     customclick (e) {
       this.clickText = `点击的是${e.name},值为：${e.value}人`
-      // ui.showToast({ title: e.name + ':' + e.value })
     },
     customclick1 (e) {
       this.clickText1 = `点击的是${e.name},值为：${Math.round(e.value * 100)}%`
-      // ui.showToast({ title: e.name + ':' + e.value })
     }
   }
 }

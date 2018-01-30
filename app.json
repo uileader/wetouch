@@ -70,6 +70,7 @@
     "pages/componentDemo/sticky/sticky2",
     "pages/componentDemo/sticky/sticky3",
     "pages/componentDemo/sticky/sticky4",
+    "pages/componentDemo/sticky/sticky5",
     "pages/componentDemo/draggable/draggable",
     "pages/componentDemo/draggable/draggable2",
     "pages/componentDemo/draggable/draggable3",
@@ -99,6 +100,9 @@
     "pages/componentDemo/segment/segment",
     "pages/componentDemo/segment/segment2",
     "pages/componentDemo/accordion/accordion",
+    "pages/componentDemo/miniSwiper/miniSwiper",
+    "pages/componentDemo/miniSwiper/miniSwiper2",
+
 
 
     "pages/componentDemo/mask/iconNav",
@@ -110,6 +114,7 @@
     "pages/componentDemo/popover/popover",
     "pages/componentDemo/popover/popover2",
     "pages/componentDemo/popover/popover3",
+    "pages/componentDemo/popover/popover4",
     "pages/componentDemo/popicon/popicon",
     "pages/componentDemo/popicon/popicon2",
     "pages/componentDemo/popicon/popicon3",
@@ -312,6 +317,8 @@
     "pages/apiDemo/touchId/touchId",
     "pages/apiDemo/uploadDownload/uploadDownload",
     "pages/apiDemo/webSocket/webSocket",
+    "pages/apiDemo/customComp/customComp",
+    
 
 
     "pages/templeteDemo/friendCircle/friendCircle",

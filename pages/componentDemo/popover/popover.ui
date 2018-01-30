@@ -1,7 +1,7 @@
 <!--popover.ui-->
 <template>
   <ui-page>
-   
+
     <ui-divider>下方</ui-divider>
 
     <ui-row>
@@ -9,7 +9,7 @@
       </ui-col>
       <ui-col span="2">
         <ui-popover value="{{show3}}" position="bottom" bindhide="show3toggle('hide')" bindshow="show3toggle('show')">
-          <ui-view slot="overlay">
+          <ui-view>
               <ui-view class="popover_item">
                 <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                   <ui-col vertical-align="middle" align="center" width="30">
@@ -35,15 +35,15 @@
                 </ui-row>
               </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow3" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow3" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="4">
 
       </ui-col>
       <ui-col span="2">
-        <ui-popover value="{{show4}}" position="bottom" bindhide="show4toggle('hide')" bindshow="show4toggle('show')"> 
-          <ui-view slot="overlay">
+        <ui-popover value="{{show4}}" position="bottom" bindhide="show4toggle('hide')" bindshow="show4toggle('show')">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -69,7 +69,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow4" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow4" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2">
@@ -81,7 +81,7 @@
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show9" position="bottom">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -107,13 +107,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow9" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow9" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="8"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show10" position="bottom">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -139,7 +139,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow10" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow10" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -148,7 +148,7 @@
       <ui-col span="2"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show1">
-          <ui-view slot="overlay" >
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -174,13 +174,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow1" class="text">上方</ui-view>
+          <ui-view slot="content" bindtap="handleShow1" class="text">上方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="4"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show2">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -206,7 +206,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow2" class="text">上方</ui-view>
+          <ui-view slot="content" bindtap="handleShow2" class="text">上方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2">
@@ -219,7 +219,7 @@
       <ui-col span="4"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show5" position="left">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -245,13 +245,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow5" class="text">左方</ui-view>
+          <ui-view slot="content" bindtap="handleShow5" class="text">左方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="4"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show6" position="left">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -277,7 +277,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow6" class="text">左方</ui-view>
+          <ui-view slot="content" bindtap="handleShow6" class="text">左方</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -289,8 +289,7 @@
     <ui-row style="margin-bottom:20px;">
       <ui-col span="2">
         <ui-popover ui:model="show7" position="right">
-          <ui-view slot="overlay">
-            <!-- <ui-row-list border-indent>  -->
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -315,17 +314,15 @@
                 <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
               </ui-row>
             </ui-view>
-            <!-- </ui-row-list> -->
           </ui-view>
-          <ui-view bindtap="handleShow7" class="text">右方</ui-view>
+          <ui-view slot="content" bindtap="handleShow7" class="text">右方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="3">
       </ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show8" position="right">
-          <ui-view slot="overlay">
-            <!-- <ui-row-list border-indent>  -->
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -350,15 +347,12 @@
                 <ui-col vertical-align="middle" space-left="5">帮助</ui-col>
               </ui-row>
             </ui-view>
-            <!-- </ui-row-list> -->
           </ui-view>
-          <ui-view bindtap="handleShow8" class="text">右方</ui-view>
+          <ui-view slot="content" bindtap="handleShow8" class="text">右方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="5">
       </ui-col>
     </ui-row>
-
-
   </ui-page>
 </template>

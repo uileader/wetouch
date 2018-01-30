@@ -11,6 +11,9 @@ export default {
       ui.switchTab({
         url: '/pages/componentDemo/tabBar/tabBar1-1'
       })
+    },
+    navigateBack () {
+      ui.navigateBack()
     }
   },
   mounted () {

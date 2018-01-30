@@ -7,7 +7,7 @@ export default {
   data () {
     return {
       list00: ['中国', '美国', '日本', '巴西'],
-      value00: 1,
+      value: 1,
       list01: [{
         name: '中国',
         value: 'CN'

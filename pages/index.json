@@ -1,3 +1,4 @@
 {
-  "navigationBarVisible":false
+  "navigationBarVisible":false,
+  "statusBarColor":"white"
 }

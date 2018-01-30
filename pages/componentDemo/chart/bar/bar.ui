@@ -11,6 +11,7 @@
       between-bars-padding = 0.3
       color-schema="{{bar1.colorSchema}}"
       y-unit="/人"
+      margin="{{bar1.margin}}"
       ></ui-bar>
     </ui-view>
 
@@ -38,7 +39,7 @@
       is-animated="true"
       is-darker="true"
       between-bars-padding = 0.3
-      colorSchema="{{bar1.colorSchema}}"
+      color-schema="{{bar1.colorSchema}}"
       tooltip="true"
       body-fill-color="rgba(0,0,0,.7)"
       value-text-fill-color="#fff"
@@ -70,14 +71,14 @@
       is-animated="true"
       between-bars-padding = 0.3
       color-schema="{{bar2.colorSchema}}"
+      
       ></ui-bar>
       <ui-legend
       value="{{legendData.legend}}"
       width="{{width-100}}"
       height="300"
       is-animated="true"
-      textSize="{{legendData.textSize}}"
-      textLetterSpacing ="0.5"
+      number-format=".1f"
     ></ui-legend>
     </ui-view>
 
@@ -176,8 +177,7 @@
       width="{{width-100}}"
       height="200"
       is-animated="true"
-      textSize="{{legendData.textSize}}"
-      textLetterSpacing ="0.5"
+      number-format=".1f"
     ></ui-legend>
     </ui-view>
   </ui-page>

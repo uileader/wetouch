@@ -29,9 +29,9 @@
     height="180"
     color-schema="{{colorSchema}}"
     tooltip="{{true}}"
-    bodyFillColor="rgba(0,0,0,.7)"
-    valueTextFillColor="#fff"
-    nameTextFillColor="#fff"
+    body-fill-color="rgba(0,0,0,.7)"
+    value-text-fill-color="#fff"
+    name-text-fill-color="#fff"
     ></ui-step>
 
   </ui-page>

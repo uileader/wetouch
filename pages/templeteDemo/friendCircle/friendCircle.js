@@ -1,6 +1,7 @@
 const textUrl = '/touchui-backstage/insertCircle.do'
-const imageUrl = 'http://www.uileader.com/touchui-backstage/uploadImgSubmit.do'
-
+const imageUrl = 'http://www.uileader.com/touchui-backstage/uploadThumbnail.do'
+// const textUrl = 'http://192.168.1.109:8080/touchui-backstage/insertCircle.do'
+// const imageUrl = 'http://192.168.1.109:8080/touchui-backstage/uploadThumbnail.do'
 const sourceType = [['camera'], ['album'], ['camera', 'album']]
 const sizeType = [['compressed'], ['original'], ['compressed', 'original']]
 export default {
@@ -193,24 +194,31 @@ export default {
       })
     },
     // 点赞
-    popoverShow (index) {
-      this.popover = []
-      this.popover[index] = true
-      if (this.popoverText[index] === undefined) {
-        this.popoverText[index] = '赞'
-      }
+    popoverShow (e) {
+      console.log(e)
+      // this.popover = []
+      // this.popover[index] = true
+      // if (this.popoverText[index] === undefined) {
+      //   this.popoverText[index] = '赞'
+      // }
+      this.$refs.popover.showPopover({
+        el: e.target,
+        position: 'left',
+        effect: 'slide'
+      })
     },
     // 点赞后
     giveSupport (index) {
-      this.popover = []
-      this.support = []
-      if (!this.comment[index]) {
-        this.comment[index] = true
-        this.popoverText[index] = '取消'
-      } else {
-        this.comment[index] = false
-        this.popoverText[index] = '赞'
-      }
+      // this.popover = []
+      // this.support = []
+      // if (!this.comment[index]) {
+      //   this.comment[index] = true
+      //   this.popoverText[index] = '取消'
+      // } else {
+      //   this.comment[index] = false
+      //   this.popoverText[index] = '赞'
+      // }
+      
     },
     look () {
       let itemList = [
@@ -256,6 +264,7 @@ export default {
       this.config.reload = true
     },
     handleBegin ({ distance, direction }) {
+      console.log(123131)
       this.rotate = parseInt(distance * 5)
     },
     handleActive () {

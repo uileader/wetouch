@@ -9,6 +9,9 @@ export default {
       if (e === 2) {
         this.showBadge4 = false
       }
+    },
+    hideBadge4(){
+      this.showBadge4 = false
     }
   }
 }

@@ -6,8 +6,8 @@
         <ui-tab>选项卡二</ui-tab>
       </ui-tabs>
 
-      <ui-swiper class="content" touch-angle="{{15}}" index="{{ current1 }}" bindchange="handleContentChange($event, 'current1')">
-        <ui-swiper-item>
+      <ui-mini-swiper class="content" index="{{ current1 }}" bindchange="handleContentChange($event, 'current1')">
+        <ui-mini-swiper-item>
           <ui-view class="songList">
             <ui-view class="list_content">
               <ui-view ui:for="{{musicList}}">
@@ -28,8 +28,8 @@
               </ui-view>
             </ui-view>
           </ui-view>
-        </ui-swiper-item>
-        <ui-swiper-item>
+        </ui-mini-swiper-item>
+        <ui-mini-swiper-item>
           <ui-view class="songList">
             <ui-view class="list_content">
               <ui-view ui:for="{{musicList2}}">
@@ -50,8 +50,8 @@
               </ui-view>
             </ui-view>
           </ui-view>
-        </ui-swiper-item>
-      </ui-swiper>
+        </ui-mini-swiper-item>
+      </ui-mini-swiper>
 
 
     </ui-page>

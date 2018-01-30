@@ -1,0 +1,273 @@
+<template>
+  <ui-page>
+      <!-- 自定义标题栏 -->
+      <ui-nav-bar slot="nav-bar" class="ui-nav-bar">
+        <ui-row>
+          <ui-col width="60" align="left" space-left="10" class="nav-bar-left" bindtap="showIndeList">
+            <ui-text>
+              {{country}}<ui-icon name="arrow" size="12"></ui-icon>
+            </ui-text>
+          </ui-col>
+          <ui-col vertical-align="middle" space-left="10">
+            <ui-view class="searchbox">
+            <ui-text>
+              <ui-icon name="sousuo" size="12"></ui-icon>
+              华谊兄弟影院
+            </ui-text>
+            </ui-view>
+          </ui-col>
+          <ui-col width="60" bindtap="handleshow">
+            <ui-popover ui:model="show" position="bottom" mask-style="{{maskStyle}}">
+              <ui-view>
+                <ui-view class="popover_item">
+                  <ui-row height="35" border-bottom bindtap="handleHide('扫一扫')">
+                    <ui-col vertical-align="middle" align="center" width="20">
+                      <ui-icon name="richscan_icon" size="12"></ui-icon>
+                    </ui-col>
+                    <ui-col vertical-align="middle" space-left="5">扫一扫</ui-col>
+                  </ui-row>
+                </ui-view>
+                <ui-view class="popover_item">
+                  <ui-row height="35" border-bottom bindtap="handleHide('付款码')">
+                    <ui-col vertical-align="middle" align="center" width="20">
+                      <ui-icon name="erweima" size="12"></ui-icon>
+                    </ui-col>
+                    <ui-col vertical-align="middle" space-left="5">付款码</ui-col>
+                  </ui-row>
+                </ui-view>
+                <ui-view class="popover_item">
+                  <ui-row height="35" border-bottom bindtap="handleHide('开发票')">
+                    <ui-col vertical-align="middle" align="center" width="20">
+                      <ui-icon name="fapiao" size="12"></ui-icon>
+                    </ui-col>
+                    <ui-col vertical-align="middle" space-left="5">开发票</ui-col>
+                  </ui-row>
+                </ui-view>
+                <ui-view class="popover_item">
+                  <ui-row height="35" border-bottom bindtap="handleHide('骑单车')">
+                    <ui-col vertical-align="middle" align="center" width="20">
+                      <ui-icon name="danche" size="12"></ui-icon>
+                    </ui-col>
+                    <ui-col vertical-align="middle" space-left="5">骑单车</ui-col>
+                  </ui-row>
+                </ui-view>
+              </ui-view>
+              <ui-icon slot="content" name="untitled44" size="14"></ui-icon>
+            </ui-popover>
+          </ui-col>
+        </ui-row>
+      </ui-nav-bar>
+
+
+
+
+      <!-- 广告位 -->
+      <ui-view class="advertising">
+        <ui-row border-bottom>
+          <ui-col ui:for="{{guidedata}}" class="list" border-left>
+            <ui-text class="text_1">{{item.text}}</ui-text>
+            <ui-text class="text_2">{{item.smalltitle}}</ui-text>
+            <ui-view class="imgbox">
+              <ui-image src="{{item.imgsrc}}"></ui-image>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+
+        <ui-row border-bottom>
+          <ui-col ui:for="{{guidedata1}}" class="list" border-left>
+            <ui-text class="text_1">{{item.text}}</ui-text>
+            <ui-text class="text_2">{{item.smalltitle}}</ui-text>
+            <ui-view class="imgbox">
+              <ui-image src="{{item.imgsrc}}"></ui-image>
+            </ui-view>
+          </ui-col>
+        </ui-row>
+      </ui-view>
+
+      <!-- 猜你喜欢 -->
+      <ui-view class="guess-like">
+        <ui-text block class="title">- 猜你喜欢 -</ui-text>
+        <ui-sticky>
+          <ui-view style="width:250px;margin:0 auto;height:45px; line-height:45px;">
+            <ui-tabs class="type-center" width="250" index="{{index}}" bindchange="handleChange" ink-bar>
+            <!-- <ui-tabs class="type-center" index="{{index}}" bindchange="handleChange"> -->
+              <ui-tab>
+                <ui-view class="item">为你优选</ui-view>
+              </ui-tab>
+              <ui-tab>
+                <ui-view class="item">美食</ui-view>
+              </ui-tab>
+              <ui-tab>
+                <ui-view class="item">外卖</ui-view>
+              </ui-tab>
+            </ui-tabs>
+          </ui-view>
+          <ui-view slot="sticky">
+            <ui-view style="background-color:#fff">
+              <ui-view style="width:250px;margin:0 auto;height:45px; line-height:45px;">
+            <ui-tabs class="type-center" width="250" index="{{index}}" bindchange="handleChange" ink-bar>
+            <!-- <ui-tabs class="type-center" index="{{index}}" bindchange="handleChange"> -->
+              <ui-tab>
+                <ui-view class="item">为你优选</ui-view>
+              </ui-tab>
+              <ui-tab>
+                <ui-view class="item">美食</ui-view>
+              </ui-tab>
+              <ui-tab>
+                <ui-view class="item">外卖</ui-view>
+              </ui-tab>
+            </ui-tabs>
+          </ui-view>
+            </ui-view>
+          </ui-view>
+        </ui-sticky>
+        <!-- listview数据 -->
+        <ui-list-view config="{{config}}" enable-reach-bottom-load>
+          <template scope="props">
+            <ui-list-view-item>
+              <ui-row height="100" style="margin-top:10px;">
+          <ui-col space-left="10" class="colwidth">
+            <ui-image width="100%" src="{{props.item.imgsrc}}"></ui-image>
+          </ui-col>
+          <ui-col space-left="10">
+            <ui-row>
+              <ui-col>
+                <ui-row height="40">
+                  <ui-col>
+                    <ui-view class="title-name">{{props.item.titlename}}</ui-view>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col width="73" vertical-align="middel" space-right="10">
+                    <ui-mini-star value="3"></ui-mini-star>
+                  </ui-col>
+                  <ui-col vertical-align="middel" space-right="10">
+                    <ui-view class="original-price small-font">{{props.item.originalprice}}/人</ui-view>
+                  </ui-col>
+                  <ui-col vertical-align="middel" space-right="5" algin="right" >
+                    <ui-text class="adress">{{props.item.address}}</ui-text>
+                  </ui-col>
+                  <ui-col vertical-align="middel" width="45" algin="right" space-right="5">
+                    <ui-text class="title-info">{{props.item.already}}</ui-text>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col vertical-align="middel">
+                    <ui-view>
+                      <ui-text class="title-info">{{props.item.type}}</ui-text>
+                      <ui-text ui:for="{{props.item.smartTags}}" ui:for-item="smartTag" class="smarg-tags" style="{{{backgroundColor:smartTag.backgroundColor,color:smartTag.color}}}">{{smartTag.content}}</ui-text>
+                    </ui-view>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col vertical-align="middel">
+                    <ui-view class="inline-block extra-ervicebox">
+                      <ui-view ui:for="{{props.item.extraServiceTags}}" ui:for-item="extraServiceTag">
+                        <ui-text style="{{{color:extraServiceTag.color}}}" class="samll-font">{{extraServiceTag.content}}</ui-text>
+                        <ui-text class="vertical" style="{{{color:extraServiceTag.color}}}">|</ui-text>
+                      </ui-view>
+                    </ui-view>
+                  </ui-col>
+                </ui-row>
+              </ui-row>
+            </ui-row>
+          <!-- </ui-col>
+        </ui-row> -->
+        <ui-row>
+          <ui-col span="3">
+          </ui-col>
+          <ui-col>
+            <ui-view class="line"></ui-view>
+            <ui-row class="preferential discount-tuan">
+              <ui-col vertical-align="middel">
+                <ui-view class="preferential-text small-font">{{props.item.content1}}</ui-view>
+              </ui-col>
+            </ui-row>
+            <ui-row class="preferential discount-quan">
+              <ui-col vertical-align="middel">
+                <ui-view class="preferential-text small-font">{{props.item.content2}}</ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-col>
+
+        </ui-row>
+            </ui-list-view-item>
+          </template>
+        </ui-list-view>
+
+
+         <!-- <ui-row height="100" style="margin-top:10px;">
+          <ui-col space-left="10" class="colwidth">
+            <ui-image width="100%" src="http://p0.meituan.net/200.0/deal/1e257a1f5b0d974b292ac7bc9a3c21ad71414.jpg@100_0_600_600a%7C267h_267w_2e_90Q"></ui-image>
+          </ui-col>
+          <ui-col space-left="10">
+            <ui-row>
+              <ui-col>
+                <ui-row height="40">
+                  <ui-col>
+                    <ui-view class="title-name">旺顺阁鱼头泡饼</ui-view>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col width="73" vertical-align="middel" space-right="10">
+                    <ui-mini-star value="3"></ui-mini-star>
+                  </ui-col>
+                  <ui-col vertical-align="middel" space-right="10">
+                    <ui-view class="original-price">105/人</ui-view>
+                  </ui-col>
+                  <ui-col vertical-align="middel" space-right="5" algin="right" >
+                    <ui-text class="adress">马家堡</ui-text>
+                  </ui-col>
+                  <ui-col vertical-align="middel" width="45" algin="right" space-right="5">
+                    <ui-text class="title-info">677m</ui-text>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col vertical-align="middel">
+                    <ui-view>
+                      <ui-text class="title-info">家常菜</ui-text>
+                      <ui-text class="smarg-tags" style="background-color:#fbf4e4;color:#be9e4d;">回头客多</ui-text>
+                      <ui-text class="smarg-tags" style="background-color:#fbf4e4;color:#be9e4d;">量足</ui-text>
+                    </ui-view>
+                  </ui-col>
+                </ui-row>
+                <ui-row>
+                  <ui-col vertical-align="middel">
+                    <ui-view class="inline-block">
+                      <ui-view>
+                        <ui-text style="color:#01c7a6" class="samll-font">买单</ui-text>
+                        <ui-text style="color:#01c7a6">|</ui-text>
+                        <ui-text style="color:#01c7a6" class="samll-font">支持排队</ui-text>
+                        <ui-text style="color:#01c7a6">|</ui-tex>
+                        <ui-text style="color:#01c7a6" class="samll-font">预定</ui-text>
+                      </ui-view>
+                    </ui-view>
+                  </ui-col>
+                </ui-row>
+              </ui-row>
+            </ui-row>
+          </ui-col>
+        </ui-row>
+        <ui-row>
+          <ui-col span="3">
+
+          </ui-col>
+          <ui-col>
+            <ui-view class="line"></ui-view>
+            <ui-row class="preferential discount-tuan">
+              <ui-col vertical-align="middel">
+                <ui-view class="preferential-text">2-4人餐1元，单人餐38元，双人餐118元起，4人餐228元起，6人餐318元起，8人餐528元起</ui-view>
+              </ui-col>
+            </ui-row>
+            <ui-row class="preferential discount-quan">
+              <ui-col vertical-align="middel">
+                <ui-view class="preferential-text">10代100元，68代100元</ui-view>
+              </ui-col>
+            </ui-row>
+          </ui-col>
+
+        </ui-row> -->
+      </ui-view>
+
+  </ui-page>
+</template>

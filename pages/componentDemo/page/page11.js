@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     handleBegin ({ distance, direction }) {
+      console.log(1231231231)
       this.proportion = distance / 60
       // 拉满60px
       if (this.proportion >= 1) {

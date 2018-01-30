@@ -1,0 +1,54 @@
+<!--miniSwiper.ui-->
+<template>
+  <ui-page>
+    <ui-divider>默认效果</ui-divider>
+    <ui-mini-swiper bindchange="handleChange">
+      <ui-mini-swiper-item ui:for="{{items}}" ui:for-item="item">
+				<ui-image src="{{ item.src }}"></ui-image>
+			</ui-mini-swiper-item>
+    </ui-mini-swiper>
+
+
+
+    <ui-divider>分页圆点</ui-divider>
+    <ui-mini-swiper pagination class="two_swiper">
+      <ui-mini-swiper-item  ui:for="{{items}}" ui:for-item="item">
+        <ui-image src="{{ item.src }}"></ui-image>
+        <ui-text class="slide-title">{{ item.title }}</ui-text>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
+
+    <ui-divider>一次滚三个</ui-divider>
+    <ui-mini-swiper pagination class="three_swiper">
+      <ui-mini-swiper-item>
+        <ui-view class="swiper_item">
+          <ui-image src="{{ items2[0].src }}"></ui-image>
+          <ui-image src="{{ items2[1].src }}"></ui-image>
+          <ui-image src="{{ items2[2].src }}" ></ui-image>
+        </ui-view>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
+        <ui-view class="swiper_item">
+          <ui-image src="{{ items2[4].src }}"></ui-image>
+          <ui-image src="{{ items2[5].src }}"></ui-image>
+          <ui-image src="{{ items2[6].src }}" ></ui-image>
+        </ui-view>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
+        <ui-view class="swiper_item">
+          <ui-image src="{{ items2[6].src }}"></ui-image>
+          <ui-image src="{{ items2[7].src }}"></ui-image>
+          <ui-image src="{{ items2[8].src }}" ></ui-image>
+        </ui-view>
+      </ui-mini-swiper-item>
+      <ui-mini-swiper-item>
+        <ui-view class="swiper_item">
+          <ui-image src="{{ items2[9].src }}"></ui-image>
+          <ui-image src="{{ items2[10].src }}"></ui-image>
+          <ui-image src="{{ items2[11].src }}" ></ui-image>
+        </ui-view>
+      </ui-mini-swiper-item>
+    </ui-mini-swiper>
+
+  </ui-page>
+</template>

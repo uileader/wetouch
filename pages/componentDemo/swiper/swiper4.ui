@@ -24,7 +24,6 @@
         <ui-image src="{{ items[6].src }}"></ui-image>
         <ui-image src="{{ items[7].src }}"></ui-image>
         <ui-image src="{{ items[8].src }}"></ui-image>
-
       </ui-swiper-item>
       <ui-swiper-item>
         <ui-image src="{{ items[9].src }}" ></ui-image>

@@ -1,13 +1,13 @@
 <!--popover3.ui-->
 <template>
   <ui-page>
-    
+
     <ui-divider>自定义遮罩为透明</ui-divider>
     <ui-row>
       <ui-col span="2">
         <ui-popover ui:model="show3" position="bottom" mask-style="{{ maskStyle }}">
-          <ui-view slot="overlay">
-             
+          <ui-view>
+
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -33,13 +33,13 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow3" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow3" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="8"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show4" position="bottom" mask-style="{{ maskStyle }}">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -65,7 +65,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow4" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow4" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -75,7 +75,7 @@
       <ui-col span="10"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show6" position="bottom" mask-style="{{ maskStyle }}" class="custom">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="popover_item">
               <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                 <ui-col vertical-align="middle" align="center" width="30">
@@ -101,7 +101,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow6" class="text">下方</ui-view>
+          <ui-view slot="content" bindtap="handleShow6" class="text">下方</ui-view>
         </ui-popover>
       </ui-col>
     </ui-row>
@@ -111,7 +111,7 @@
       <ui-col span="8"></ui-col>
       <ui-col span="2">
         <ui-popover ui:model="show7" position="left" mask-style="{{ maskStyle }}" class="custom custom2" show-arrow="false" effect="slide">
-          <ui-view slot="overlay">
+          <ui-view>
             <ui-view class="custom2_content">
               <ui-row height="20">
                 <ui-col vertical-align="middle" align="center" bindtap="handleHide('赞')">
@@ -130,7 +130,7 @@
               </ui-row>
             </ui-view>
           </ui-view>
-          <ui-view bindtap="handleShow7" class="text">左方</ui-view>
+          <ui-view slot="content" bindtap="handleShow7" class="text">左方</ui-view>
         </ui-popover>
       </ui-col>
       <ui-col span="2"></ui-col>

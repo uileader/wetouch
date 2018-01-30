@@ -29,6 +29,13 @@ export default {
           ]
         },
         {
+          title: '轻量轮播 mini-swiper',
+          items: [
+            { title: '基本使用', link: '/pages/componentDemo/miniSwiper/miniSwiper' },
+            { title: '全屏swiper', link: '/pages/componentDemo/miniSwiper/miniSwiper2' }
+          ]
+        },
+        {
           title: '集成选项卡 tab-view',
           items: [
             { title: '典型示例', link: '/pages/componentDemo/tabView/tabView' },
@@ -44,9 +51,9 @@ export default {
             { title: '内容共用一个容器', link: '/pages/componentDemo/tabs/tabs3' },
             { title: '纵向锚点跳转：订餐列表', link: '/pages/componentDemo/tabs/tabs4' },
             { title: '纵向内容切换：商品分类', link: '/pages/componentDemo/tabs/tabs5' },
-            { title: '纵向数据切换：商品分类', link: '/pages/componentDemo/tabs/tabs6' }
-            // { title: '纵向+横向：商品详情', link: '/pages/componentDemo/tabs/tabs7' },
-            // { title: '商品详情测试1', link: '/pages/componentDemo/tabs/tabs8' }
+            { title: '纵向数据切换：商品分类', link: '/pages/componentDemo/tabs/tabs6' },
+            { title: '纵向+横向：商品详情', link: '/pages/componentDemo/tabs/tabs7' },
+            { title: '商品详情测试1', link: '/pages/componentDemo/tabs/tabs8' }
           ]
         },
         {

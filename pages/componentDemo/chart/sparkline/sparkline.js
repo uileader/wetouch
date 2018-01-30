@@ -31,12 +31,6 @@ export default {
           date: '2011-01-13T00:00:00Z'
         }
       ],
-      margin: {
-        left: 60,
-        right: 20,
-        top: 20,
-        bottom: 20
-      },
       miniCircular: 75,
       gradient: ['#62d7bd', '#F6FEFC']
     }

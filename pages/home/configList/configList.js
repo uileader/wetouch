@@ -30,6 +30,12 @@ export default {
             { title: 'loading样式库', link: '/pages/apiDemo/loadingStyle/loadingStyle' },
             { title: 'animate动画库', link: '/pages/apiDemo/animation/animation' }
           ]
+        },
+        {
+          title: '自定义组件',
+          items: [
+            { title: '基础示例', link: '/pages/apiDemo/customComp/customComp' }
+          ]
         }
       ]
     }

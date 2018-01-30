@@ -14,7 +14,7 @@
         <ui-col vertical-align="middle" align="center"  width="55" bindtap="handleShow10">
             <ui-view class="nav_right {{ className2 }}">
               <ui-popover ui:model="show10" effect="slide" position="bottom" mask-style="{{ maskStyle }}" bindhide="popoverHide" class="custom">
-                <ui-view slot="overlay">
+                <ui-view>
                   <ui-view class="popover_item">
                     <ui-row height="35" bindtap="handleHide('写评论')"  border-bottom>
                       <ui-col vertical-align="middle" align="center" width="30">
@@ -64,7 +64,7 @@
                     </ui-row>
                   </ui-view>
                 </ui-view>
-                <ui-icon name="plus3" size="24" color="#fff"></ui-icon>
+                <ui-icon slot="content" name="plus3" size="24" color="#fff"></ui-icon>
               </ui-popover>
                 
             </ui-view>

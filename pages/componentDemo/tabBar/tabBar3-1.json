@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "tab点击动画"
+  "navigationBarTitleText": "tab点击动画",
+  "navigationBarVisible": false
 }

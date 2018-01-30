@@ -64,15 +64,11 @@ export default {
       ui.setStorageSync('splash', 'show')
     },
     changeSwiper (e) {
-    },
-    swiperInit () {
     }
   },
   mounted () {
-
     let environment = ui.IS_APP
     if (environment) {
-      //首屏引导页
       var splashShow = ui.getStorageSync('splash')
       if (splashShow === 'show') {
         this.isSplashSwiper = false
@@ -80,22 +76,17 @@ export default {
         this.isSplashSwiper = true
       }
 
-      
-    let closeTime = ui.IS_IOS ? 1500 : 500
-    // 初始化完成后，关闭启动页面
-    window.setTimeout(() => {
-      ui.closeSplashscreen()
-    }, closeTime)
+      let closeTime = ui.IS_IOS ? 1000 : 500
 
-    window.setTimeout(() => {
-      ui.setStatusBarStyle({
-        style: 'light'
-      })
-    }, 3000)
-
+      // 初始化完成后，关闭启动页面
+      window.setTimeout(() => {
+        ui.closeSplashscreen()
+        ui.setStatusBarStyle({
+          style: 'light'
+        })
+      }, closeTime)
     } else {
       this.isSplashSwiper = false
     }
-    
   }
 }

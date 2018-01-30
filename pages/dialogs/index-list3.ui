@@ -17,7 +17,7 @@
     </ui-nav-bar>
     <ui-page class="ui-dialog-body">
       <ui-view>
-        <ui-index-list data="{{list}}" checkbox="{{isSelect}}" bindsingleSelect="singleselect" bindmultiSelect="multiselect"></ui-index-list>
+        <ui-index-list data="{{list}}" color="red" checkbox="{{isSelect}}" bindsingleSelect="singleselect" bindmultiSelect="multiselect"></ui-index-list>
       </ui-view>
     </ui-page>
   </ui-view>

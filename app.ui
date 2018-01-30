@@ -9,7 +9,7 @@
       <!-- 通用导航栏左侧图标区域 -->
       <ui-view class="nav-bar-left" slot="left">
         <span class="back" bindtap="handleBack" ui:show="showBack">
-          <ui-icon name="arrow-left" font-size="24"></ui-icon>返回
+          <ui-icon name="arrow-left" font-size="24"></ui-icon>{{ $t("back") }}
         </span>
       </ui-view>
       <!-- 通用导航栏右侧图标区域 -->

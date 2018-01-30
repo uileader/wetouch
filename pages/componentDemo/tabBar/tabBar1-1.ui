@@ -1,6 +1,19 @@
 <!--tabBar.ui-->
 <template>
   <ui-page>
+    <ui-nav-bar slot="nav-bar" class="nav_bar">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="left" width="40" space-left="10" bindtap="navigateBack">
+          <ui-icon name="arrow-left" size="20" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="title">基本标签栏</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="right" width="40">
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
     <ui-view class="content">
       <ui-text class="title">演示1-1</ui-text>
       <ui-button bindtap="tabresult">跳转到下一个标签</ui-button>

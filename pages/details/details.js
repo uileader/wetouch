@@ -44,9 +44,9 @@ export default {
       this.commentValue = ''
     },
     openPopup () {
-      // this.popupShow = true
+      this.popupShow = true
       // 这是调用全屏搜索的
-      ui.app.searchShow = true
+      // ui.app.searchShow = true
     },
     changeTextarea (e) {
       console.log(e)

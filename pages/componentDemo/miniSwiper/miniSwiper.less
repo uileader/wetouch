@@ -1,0 +1,40 @@
+// miniSwiper.less
+
+.ui-mini-swiper-item{
+  .ui-image {
+    width: 100%;
+  }
+  .slide-title {
+    color:#fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    background-color: rgba(51, 51, 51, .2);
+  }
+}
+.two_swiper{
+  .ui-mini-swiper-indicator{
+    bottom: 20px;
+  }
+}
+.three_swiper{
+  .swiper_item{
+    display: flex;
+    height: 200px;
+    .ui-image-container {
+      flex: 1;
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .ui-mini-swiper-indicator{
+    bottom: 0;
+  }
+}

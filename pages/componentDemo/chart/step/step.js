@@ -95,7 +95,6 @@ export default {
   methods: {
     customclick (e) {
       this.clickText = `点击的是${e.key},值为：${e.value}`
-      // ui.showToast({ title: e.name + ':' + e.value })
     }
   }
 }

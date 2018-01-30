@@ -44,13 +44,13 @@ export default {
             if (message.name === 'share') {
               var val = message.value
               ui.share({
-                  target: val.target,
-                  type: val.type,
-                  icon: val.icon,
-                  title: val.title,
-                  content: val.content,
-                  href: val.href
-                })
+                target: val.target,
+                type: val.type,
+                icon: val.icon,
+                title: val.title,
+                content: val.content,
+                href: val.href
+              })
             }
           })
         }
@@ -78,8 +78,8 @@ export default {
             if (message.name === 'link') {
               var url = message.value
               ui.navigateTo({
-                  url: url
-                })
+                url: url
+              })
             }
           })
         }

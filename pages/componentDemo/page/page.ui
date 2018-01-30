@@ -2,7 +2,8 @@
 <template>
     <ui-page
     enable-reach-bottom-load
-    on-load-more="{{ handleLoadMore }}">
+    on-load-more="{{ handleLoadMore }}"
+    page-load="{{ pageLoad }}">
     <ui-view class="content_list">
       <ui-view ui:for="{{ items }}" class="{{{'grey-bg': index % 2 == 0}}}">
         {{ item }}

@@ -161,7 +161,7 @@
         <ui-row height="46">
           <ui-col vertical-align="middle" align="center">
             <ui-view class="tabs_wrap">
-              <ui-tabs class="type-common" index="{{ current2 }}" bindchange="handleChange($event, 'current')">
+              <ui-tabs class="type-common" index="{{ current2 }}" bindchange="handleChange($event, 'current2')">
                 <ui-tab>
                   <ui-view class="item-list">
                       <ui-view class="">商品</ui-view>
@@ -187,8 +187,8 @@
         <ui-view class="" style="overflow: scroll;">
           <!-- <ui-view class="bottom_tip">↓下拉显示产品页</ui-view> -->
           
-          <ui-swiper class="content"  index="{{ current2 }}" touch-angle="15" bindchangeend="handleContentChange($event, 'current2')">
-            <ui-swiper-item>
+          <ui-mini-swiper class="content"  index="{{ current2 }}" bindchange="handleContentChange($event, 'current2')">
+            <ui-mini-swiper-item>
               <ui-scroll-view height="{{ contentHeight }}" scroll-y>
                 <ui-view class="details_img">
                   <ui-view ui:for="{{ detailsImg }}" ui:for-item="item">
@@ -206,8 +206,8 @@
                   </ui-view>
                 </ui-view>
               </ui-scroll-view>
-            </ui-swiper-item>
-            <ui-swiper-item>
+            </ui-mini-swiper-item>
+            <ui-mini-swiper-item>
               <!-- 详情 -->
               <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
                 <ui-row-list border-indent bordered class="shop_details">
@@ -222,8 +222,8 @@
                 </ui-row-list>
                 
               </ui-scroll-view>
-            </ui-swiper-item>
-            <ui-swiper-item>
+            </ui-mini-swiper-item>
+            <ui-mini-swiper-item>
               <!-- 评价 -->
               <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
                 <ui-view class="evaluate_wrap">
@@ -267,8 +267,8 @@
 
                 </ui-view>
               </ui-scroll-view>
-            </ui-swiper-item>
-          </ui-swiper>
+            </ui-mini-swiper-item>
+          </ui-mini-swiper>
 
            
         </ui-view>

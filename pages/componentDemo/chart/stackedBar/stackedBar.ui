@@ -3,11 +3,10 @@
   <ui-page>
     <ui-view class="sample_title">堆积柱状图：基本使用</ui-view>
     <ui-stacked-bar
-    value="{{stackedBarDataEn.data}}"
+    value="{{stackedBarData.data}}"
     width="{{winWidth}}"
     height="250"
     is-animated="{{true}}"
-    colorSchema="{{stackedBarData.colorSchema}}"
     ></ui-stacked-bar>
     <ui-legend
     value="{{legendData.legend}}"
@@ -15,7 +14,7 @@
     height="50"
     is-horizontal="{{true}}"
     is-animated="{{true}}"
-    colorSchema="{{legendData.colorSchema}}"
+    color-schema="{{legendData.colorSchema}}"
   ></ui-legend>
 
     <ui-view class="sample_title">堆积柱状图：点击事件</ui-view>
@@ -24,9 +23,9 @@
     width="{{winWidth}}"
     height="250"
     is-animated="{{true}}"
-    isDarker="{{true}}"
-    bindcustomclick="custommove"
-    colorSchema="{{stackedBarData.colorSchema}}"
+    is-darker="{{true}}"
+    bindcustomclick="customclick"
+    color-schema="{{stackedBarData.colorSchema}}"
     ></ui-stacked-bar>
     <ui-legend
     value="{{legendData.legend}}"
@@ -34,8 +33,7 @@
     height="50"
     is-horizontal="{{true}}"
     is-animated="{{true}}"
-    textLetterSpacing ="0.5"
-    colorSchema="{{legendData.colorSchema}}"
+    color-schema="{{legendData.colorSchema}}"
   ></ui-legend>
     <ui-text block>{{clickText}}</ui-text>
 
@@ -44,16 +42,16 @@
     value="{{stackedBarData.data}}"
     width="{{winWidth}}"
     height="250"
-    is-animated="{{true}}"
-    isDarker="{{true}}"
-    tooltip="{{true}}"
-    bodyFillColor="rgba(0,0,0,.7)"
-    tooltipWidth="150"
-    titleFillColor="#fff"
-    textFillColor="#fff"
-    tooltipTextColor="#fff"
-    borderStrokeColor="none"
-    colorSchema="{{stackedBarData.colorSchema}}"
+    is-animated="true"
+    is-darker="true"
+    tooltip="true"
+    body-fill-color="rgba(0,0,0,.7)"
+    tooltip-width="150"
+    title-fill-color="#fff"
+    text-fill-color="#fff"
+    tooltip-text-color="#fff"
+    border-stroke-color="none"
+    color-schema="{{stackedBarData.colorSchema}}"
     ></ui-stacked-bar>
     <ui-legend
     value="{{legendData.legend}}"
@@ -61,8 +59,7 @@
     height="50"
     is-horizontal="{{true}}"
     is-animated="{{true}}"
-    textLetterSpacing ="0.5"
-    colorSchema="{{legendDataEn.colorSchema}}"
+    color-schema="{{legendData.colorSchema}}"
   ></ui-legend>
 
 
@@ -73,13 +70,15 @@
     height="250"
     is-animated="{{true}}"
     nameLabel="date"
-    stackLabel="stack"
-    valueLabel="views"
-    colorSchema="{{stackedBarData2.colorSchema}}"
-    percentageAxisToMaxRatio=1.6
-    hasPercentage="{{true}}"
-    enablePercentageLabels="{{true}}"
-    valueLabelFormat="%"
+    tooltip="{{true}}"
+    body-fill-color="rgba(0,0,0,.7)"
+    tooltip-width="150"
+    title-fill-color="#fff"
+    text-fill-color="#fff"
+    tooltip-text-color="#fff"
+    border-stroke-color="none"
+    color-schema="{{stackedBarData2.colorSchema}}"
+    value-label-format="%"
     ></ui-stacked-bar>
     <ui-legend
     value="{{legendData.legend}}"
@@ -87,8 +86,7 @@
     height="50"
     is-horizontal="{{true}}"
     is-animated="{{true}}"
-    textLetterSpacing ="0.5"
-    colorSchema="{{legendData.colorSchema}}"
+    color-schema="{{legendData.colorSchema}}"
   ></ui-legend>
 
     
@@ -99,7 +97,7 @@
     height="150"
     is-animated="{{true}}"
     is-horizontal = "{{true}}"
-    colorSchema="{{stackedBarData.colorSchema}}"
+    color-schema="{{stackedBarData.colorSchema}}"
     margin="{{margin}}"
     ></ui-stacked-bar>
     <ui-legend
@@ -108,8 +106,7 @@
     height="50"
     is-horizontal="{{true}}"
     is-animated="{{true}}"
-    textLetterSpacing ="0.5"
-    colorSchema="{{legendData.colorSchema}}"
+    color-schema="{{legendData.colorSchema}}"
   ></ui-legend>
 
 
@@ -121,8 +118,8 @@
   is-animated="{{true}}"
   is-darker="{{true}}"
   is-horizontal = "{{true}}"
-  bindcustomover="custommove"
-  colorSchema="{{stackedBarData.colorSchema}}"
+  bindcustomclick="customclick2"
+  color-schema="{{stackedBarData.colorSchema}}"
   margin="{{margin}}"
   ></ui-stacked-bar>
   <ui-legend
@@ -131,10 +128,9 @@
   height="50"
   is-horizontal="{{true}}"
   is-animated="{{true}}"
-  textLetterSpacing ="0.5"
-  colorSchema="{{legendData.colorSchema}}"
+  color-schema="{{legendData.colorSchema}}"
 ></ui-legend>
-  <ui-text block>{{clickText}}</ui-text>
+  <ui-text block>{{clickText2}}</ui-text>
 
   <ui-view class="sample_title">堆积条形图：使用tootip</ui-view>
   <ui-stacked-bar
@@ -151,7 +147,7 @@
   textFillColor="#fff"
   tooltipTextColor="#fff"
   borderStrokeColor="none"
-  colorSchema="{{stackedBarData.colorSchema}}"
+  color-schema="{{stackedBarData.colorSchema}}"
   margin="{{margin}}"
   ></ui-stacked-bar>
   <ui-legend
@@ -160,8 +156,7 @@
   height="50"
   is-horizontal="{{true}}"
   is-animated="{{true}}"
-  textLetterSpacing ="0.5"
-  colorSchema="{{legendData.colorSchema}}"
+  color-schema="{{legendData.colorSchema}}"
 ></ui-legend>
 
 
@@ -172,15 +167,19 @@
   height="150"
   nameLabel="date"
   stackLabel="stack"
-  valueLabel="views"
   is-horizontal = "{{true}}"
   is-animated="{{true}}"
-  colorSchema="{{stackedBarData.colorSchema}}"
-  percentageAxisToMaxRatio=1.6
-  hasPercentage="{{true}}"
-  enablePercentageLabels="{{true}}"
+  color-schema="{{stackedBarData.colorSchema}}"
+  tooltip="{{true}}"
+  body-fill-color="rgba(0,0,0,.7)"
+  tooltip-width="150"
+  title-fill-color="#fff"
+  text-fill-color="#fff"
+  tooltip-text-color="#fff"
+  border-stroke-color="none"
+  is-darker="{{true}}"
   margin="{{margin}}"
-  valueLabelFormat="%"
+  value-label-format="%"
   ></ui-stacked-bar>
   <ui-legend
   value="{{legendData.legend}}"
@@ -188,8 +187,7 @@
   height="50"
   is-horizontal="{{true}}"
   is-animated="{{true}}"
-  textLetterSpacing ="0.5"
-  colorSchema="{{legendData.colorSchema}}"
+  color-schema="{{legendData.colorSchema}}"
 ></ui-legend>
 
   </ui-page>

@@ -23,7 +23,7 @@
 
     <ui-view class="sample_content" style="height:{{ height }}"></ui-view>
 
-    <ui-mask ui:model="showMask" class="mask" top="46" blur="light" hide-on-tap="false" bindhide="maskHide" animation>
+    <ui-mask ui:model="showMask" class="mask" top="46" blur="light" hide-on-tap="false" bindhide="maskHide">
       <!-- <ui-view class="content">
         <ui-button type="success" bindtap="handleShowMask(false)">关闭遮罩</ui-button>
       </ui-view> -->

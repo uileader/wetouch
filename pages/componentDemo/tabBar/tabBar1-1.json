@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "基本标签栏"
+  "navigationBarVisible": false,
+  "statusBarColor": "white",
+  "backgroundColor": "#F9F9F9"
 }

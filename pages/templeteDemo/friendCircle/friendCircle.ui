@@ -1,5 +1,5 @@
 <template>
-  <ui-page>
+  <ui-page  pull-down="{{ pullDown }}">
   <!-- 自定义nav-bar -->
   <ui-nav-bar class="nab_bar" slot="nav-bar">
       <ui-row height="46" >
@@ -112,24 +112,8 @@
                             <ui-col vertical-align="middle" align="left">
                                 <ui-view class="time">{{ getLocalTime(props.item.createTime) }}</ui-view>
                             </ui-col>
-                            <ui-col vertical-align="middle" align="right" width="40" bindtap="popoverShow(props.index)">
-                                <ui-popover hide-on-touch="true" ui:model="{{ popover[props.index] }}" position="left" mask-style="{{ maskStyle }}" class="custom">
-                                    <ui-view slot="overlay">
-                                        <ui-row height="30">
-                                        <ui-col border-right vertical-align="middle" align="center" bindtap="giveSupport(props.index)">
-                                            <ui-view>
-                                            <ui-icon name="praiseago" color="#fff" size="16"></ui-icon>{{ popoverText[props.index] }}
-                                            </ui-view>
-                                        </ui-col>
-                                        <ui-col vertical-align="middle" align="center">
-                                            <ui-view>
-                                            <ui-icon name="comment" color="#fff" size="17"></ui-icon>评论
-                                            </ui-view>
-                                        </ui-col>
-                                        </ui-row>
-                                    </ui-view>
-                                    <ui-icon name="review" size="16" color="#8599C5"></ui-icon>
-                                </ui-popover>
+                            <ui-col vertical-align="middle" align="right" width="40" bindtap="popoverShow">
+                                <ui-icon name="review" size="16" color="#8599C5"></ui-icon>
                             </ui-col>
                         </ui-row>
                     </ui-view>
@@ -145,6 +129,25 @@
             </ui-list-view-item>
         </template>
     </ui-list-view>
+
+    <!-- popover -->
+    <ui-popover hide-on-touch="true" ref="popover" mask-style="{{ maskStyle }}" class="custom">
+        <ui-view>
+            <ui-row height="30">
+            <ui-col border-right vertical-align="middle" align="center" bindtap="giveSupport">
+                <ui-view>
+                <ui-icon name="praiseago" color="#fff" size="16"></ui-icon>赞
+                </ui-view>
+            </ui-col>
+            <ui-col vertical-align="middle" align="center">
+                <ui-view>
+                <ui-icon name="comment" color="#fff" size="17"></ui-icon>评论
+                </ui-view>
+            </ui-col>
+            </ui-row>
+        </ui-view>
+    </ui-popover>
+
 
     <!-- 图片预览容器 -->
     <ui-previewer>

@@ -6,11 +6,13 @@ export default {
       donut: {
         data: [
           {
-            quantity: 14.4,
+            quantity: 144,
+            percentaged:10,
             name: '学生',
             id: 1
           }, {
             quantity: 35.9,
+            percentaged:10,
             name: '白领',
             id: 2
           }, {
@@ -25,17 +27,14 @@ export default {
         legend: [
           {
             id: 1,
-            quantity: 3,
             name: '学生'
           },
           {
             id: 2,
-            quantity: 3,
             name: '白领'
           },
           {
             id: 3,
-            quantity: 3,
             name: '其他'
           }
 

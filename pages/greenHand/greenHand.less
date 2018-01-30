@@ -1,0 +1,168 @@
+// greenHand.less
+.nav_bar{
+  background: linear-gradient(to right, #3C47FC, #3D66FC);
+  .title{
+    color: #fff;
+    font-size: 16px;
+  }
+}
+.top_tip{
+  background: linear-gradient(to right, #3C47FC, #3D66FC);
+  padding: 10px 0;
+  position: relative;
+  .title{
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+  .ui-row{
+    .ui-view{
+      font-size: 14px;
+      color: #fff;
+    }
+    .line{
+      height: 14px;
+      width: 1px;
+      background-color: #556bfd;
+    }
+  }
+  .close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+.wrap{
+  background-color: #fff;
+  padding-bottom: 90px;
+}
+.banner{
+  padding: 10px 0;
+  .ui-image{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.ui-row{
+  &.time{
+    .ui-view{
+      color: #F77323;
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .line{
+      height: 14px;
+      width: 1px;
+      background-color: #F77323;
+    }
+  }
+
+  &.time2{
+    .ui-text{
+      font-size: 14px;
+      color: #A2A2A2;
+    }
+    .ui-view{
+      font-size: 20px;
+      color: #A2A2A2;
+    }
+    .center_num{
+      color: #F77323;
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
+}
+.earnings{
+  color: #A2A2A2;
+  font-size: 14px;
+  text-align: center;
+}
+
+.exclusive{
+  color: #A2A2A2;
+  font-size: 14px;
+  text-align: center;
+  .ui-text{
+    display: inline-block;
+    padding: 0 3px;
+    line-height: 20px;
+    border: 1px solid #A2A2A2;
+    border-radius: 25px;
+  }
+}
+
+.ruler_wrap{
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+  .shift_to{
+    text-align: center;
+    font-size: 14px;
+    color: #969696;
+    margin-bottom: 50px;
+  }
+  .ruler_win{
+    .mix-1px(0, 0, 1, 0, #d6d6d6);
+  }
+  .ui-ruler{
+    margin-bottom: 20px;
+    .value {
+      top: -55px;
+      left: 50%;
+      transform: translate(-50%,0%);
+      display: inline-block;
+      font-size: 28px;
+      color: #F77323;
+      padding: 0 10px;
+      border-bottom: 1px dashed #A2A2A2;
+    }
+  }
+  .money{
+    font-size: 20px;
+    color: #385AFE;
+  }
+}
+.column{
+  padding-top: 20px;
+  .mix-1px(1, 0, 1, 0, #d6d6d6);
+  .ui-row{
+    
+    padding: 10px 0;
+    .ui-text{
+      color: #6F6F6F;
+      font-size: 14px;
+    }
+    .ui-view{
+      font-size: 14px;
+      color: #A7A7A7;
+    }
+    &:nth-child(even){
+      background:#F6F6F6;
+    }
+  }
+}
+.ui-summary .button{
+  .mix-1px(1, 0, 0, 0, #d6d6d6);
+}
+.ui-fixed-view{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  padding: 0 20px;
+  box-shadow: 0px 6px 23px 0px #a0a0a0;
+  .text{
+    font-size: 14px;
+    color: #A7A7A7;
+    line-height: 40px;
+    .ui-text{
+      color: #F76814;
+    }
+  }
+  .buy{
+    line-height: 50px;
+    background-color: #4174E9;
+    color: #fff;
+    font-size: 16px;
+  }
+}

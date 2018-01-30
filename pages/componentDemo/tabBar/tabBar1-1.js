@@ -8,9 +8,12 @@ export default {
   },
   methods: {
     tabresult () {
-      ui.switchTab({
-        url: '/pages/componentDemo/tabBar/tabBar1-2'
+      ui.navigateTo({
+        url: '/pages/componentDemo/tabBar/tabBar3-1'
       })
+    },
+    navigateBack () {
+      ui.navigateBack()
     }
   },
   mounted () {

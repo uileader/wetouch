@@ -11,55 +11,55 @@ export default {
             group: '北京',
             value: 3,
             date: '2011-01-05',
-            "color": "#3399ff"
+            color: "#3399ff"
           },
           {
             group: '上海',
             value: 23,
             date: '2011-01-05',
-            "color": "#54cd72"
+            color: "#54cd72"
           },
           {
             group: '深圳',
             value: 10,
             date: '2011-01-05',
-            "color": "#fdd210"
+            color: "#fdd210"
           },
           {
             group: '北京',
             value: 10,
             date: '2011-01-06',
-            "color": "#3399ff"
+            color: "#3399ff"
           },
           {
             group: '上海',
             value: 16,
             date: '2011-01-06',
-            "color": "#54cd72"
+            color: "#54cd72"
           },
           {
             group: '深圳',
             value: 20,
             date: '2011-01-06',
-            "color": "#fdd210"
+            color: "#fdd210"
           },
           {
             group: '北京',
             value: 16,
             date: '2011-01-07',
-            "color": "#3399ff"
+            color: "#3399ff"
           },
           {
             group: '上海',
             value: 10,
             date: '2011-01-07',
-            "color": "#54cd72"
+            color: "#54cd72"
           },
           {
             group: '深圳',
             value: 26,
             date: '2011-01-07',
-            "color": "#fdd210"
+            color: "#fdd210"
           },
           {
             group: '北京',
@@ -71,13 +71,13 @@ export default {
             group: '上海',
             value: 4,
             date: '2011-01-08',
-            "color": "#54cd72"
+            color: "#54cd72"
           },
           {
             group: '深圳',
             value: 33,
             date: '2011-01-08',
-            "color": "#fdd210"
+            color: "#fdd210"
           }
         ],
         colorSchema: ['#3399ff', '#54cd72', '#fdd210'],
@@ -112,7 +112,7 @@ export default {
     }
   },
   methods: {
-    custommove (dataPoint, topicColorMap, x, y) {
+    customclick (dataPoint) {
       let getValues = function (dataPoint) {
         let obj = {
           topicName: [],
@@ -129,7 +129,7 @@ export default {
 
       this.clickText = `点击的日期为${dataPoint.date},${getValues(dataPoint)}`
     },
-    custommove2 (dataPoint, topicColorMap, x, y) {
+    customclick2 (dataPoint) {
       let getValues = function (dataPoint) {
         let obj = {
           topicName: [],

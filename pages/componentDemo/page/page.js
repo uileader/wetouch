@@ -3,7 +3,17 @@ export default {
   data () {
     return {
       items: [],
-      bottom: 30
+      bottom: 30,
+      pageLoad: {
+        trigger: 'once',
+        handle: () => {
+          return new Promise((resolve) => {
+            window.setTimeout(() => {
+              resolve()
+            }, 3000)
+          })
+        }
+      }
     }
   },
   methods: {

@@ -20,7 +20,7 @@
         </ui-col>
         <ui-col width="40" bindtap="handleShow10">
           <ui-popover ui:model="show10" position="bottom">
-            <ui-view slot="overlay">
+            <ui-view>
               <ui-view class="popover_item">
                 <ui-row height="35" bindtap="handleHide('扫一扫')" border-bottom>
                   <ui-col vertical-align="middle" align="center" width="30">
@@ -46,7 +46,7 @@
                 </ui-row>
               </ui-view>
             </ui-view>
-            <ui-icon name="more" size="16" color="#39f"></ui-icon>
+            <ui-icon  slot="content" name="more" size="16" color="#39f"></ui-icon>
           </ui-popover>
           
         </ui-col>

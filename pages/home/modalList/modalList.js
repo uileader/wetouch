@@ -25,7 +25,8 @@ export default {
           items: [
             { title: '自定义方向', link: '/pages/componentDemo/popover/popover' },
             { title: '自定义动画', link: '/pages/componentDemo/popover/popover2' },
-            { title: '自定义样式', link: '/pages/componentDemo/popover/popover3' }
+            { title: '自定义样式', link: '/pages/componentDemo/popover/popover3' },
+            { title: '单例模式', link: '/pages/componentDemo/popover/popover4' }
           ]
         },
         {
