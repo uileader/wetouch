@@ -1,7 +1,7 @@
 <!--musicPlayer.ui-->
 <template>
   <ui-page>
-    <ui-view class="content">
+    <ui-view class="content" style="{{{ height: contentHeight+'px' }}}">
       <ui-view class="songImg">
         <ui-image src="{{ imgSrc }}" height="100%" mode="aspectFit"></ui-image>
       </ui-view>
@@ -50,38 +50,40 @@
         </ui-row>
       </ui-view>
       <ui-view class="songBar">
-        <ui-row class="bottom_bar">
-            <ui-col align="center" vertical-align="middle" bindtap="listShow">
-                <ui-view>
-                    <ui-icon name="playlist" size="24" color="#666666"></ui-icon>
-                    <ui-text block>曲单</ui-text>
-                </ui-view>
-            </ui-col>
-            <ui-col align="center" vertical-align="middle" bindtap="showToast('文稿功能未实现')" >
-                <ui-view >
-                    <ui-icon name="draft" size="24" color="#666666"></ui-icon>
-                    <ui-text block>文稿</ui-text>
-                </ui-view>
-            </ui-col>
-            <ui-col align="center" vertical-align="middle" bindtap="likeMusic">
-                <ui-view class="animated {{likeClass}}">
-                    <ui-icon name="{{praise}}" size="24" color="{{likeColor}}"></ui-icon>
-                    <ui-text block>{{likeNum}}</ui-text>
-                </ui-view>
-            </ui-col>
-            <ui-col align="center" vertical-align="middle" bindtap="showToast('下载功能未实现')">
-                <ui-view>
-                    <ui-icon name="playdown" size="24" color="#666666"></ui-icon>
-                    <ui-text block>下载</ui-text>
-                </ui-view>
-            </ui-col>
-            <ui-col align="center" vertical-align="middle" bindtap="showToast('更多功能未实现')">
-                <ui-view>
-                    <ui-icon name="more" size="24" color="#666666"></ui-icon>
-                    <ui-text block>更多</ui-text>
-                </ui-view>
-            </ui-col> 
-        </ui-row>
+        <ui-view class="songBar_content">
+            <ui-row class="bottom_bar">
+                <ui-col align="center" vertical-align="middle" bindtap="listShow">
+                    <ui-view>
+                        <ui-icon name="playlist" size="24" color="#666666"></ui-icon>
+                        <ui-text block>曲单</ui-text>
+                    </ui-view>
+                </ui-col>
+                <ui-col align="center" vertical-align="middle" bindtap="showToast('文稿功能未实现')" >
+                    <ui-view >
+                        <ui-icon name="draft" size="24" color="#666666"></ui-icon>
+                        <ui-text block>文稿</ui-text>
+                    </ui-view>
+                </ui-col>
+                <ui-col align="center" vertical-align="middle" bindtap="likeMusic">
+                    <ui-view class="animated {{likeClass}}">
+                        <ui-icon name="{{praise}}" size="24" color="{{likeColor}}"></ui-icon>
+                        <ui-text block>{{likeNum}}</ui-text>
+                    </ui-view>
+                </ui-col>
+                <ui-col align="center" vertical-align="middle" bindtap="showToast('下载功能未实现')">
+                    <ui-view>
+                        <ui-icon name="playdown" size="24" color="#666666"></ui-icon>
+                        <ui-text block>下载</ui-text>
+                    </ui-view>
+                </ui-col>
+                <ui-col align="center" vertical-align="middle" bindtap="showToast('更多功能未实现')">
+                    <ui-view>
+                        <ui-icon name="more" size="24" color="#666666"></ui-icon>
+                        <ui-text block>更多</ui-text>
+                    </ui-view>
+                </ui-col> 
+            </ui-row>
+        </ui-view>
       </ui-view>
       <!-- 音乐列表 -->
       <ui-popup ui:model="{{ show }}" position="bottom" width="100%" height="300" class="popup_win">

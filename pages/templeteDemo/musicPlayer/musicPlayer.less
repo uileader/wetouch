@@ -1,7 +1,5 @@
 // musicPlayer.less
-.ui-page-content, .content {
-  height: 100%;
-}
+
 .content{
   display:flex;
   flex-direction:column;
@@ -48,14 +46,17 @@
     line-height: 60px;
   }
 }
-
-.bottom_bar {
-  border-top: 1px solid #EBEBEB;
-  background-color: #FBF9FE;
-  height: 100%;
-  .ui-text{
-    font-size: 14px;
-    color: #A5A5A5;
+.songBar_content{
+  display:flex;
+  flex-direction:column;
+  .bottom_bar {
+    width:100%;
+    border-top: 1px solid #EBEBEB;
+    background-color: #FBF9FE;
+    .ui-text{
+      font-size: 14px;
+      color: #A5A5A5;
+    }
   }
 }
 

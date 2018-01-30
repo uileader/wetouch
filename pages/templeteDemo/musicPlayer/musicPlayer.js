@@ -3,6 +3,7 @@ var backgroundAudioManager
 export default {
   data () {
     return {
+      contentHeight: ui.DEFAULT_CONTENT_HEIGHT,
       imgSrc: null,
       songName: '',
       singerName: null,
