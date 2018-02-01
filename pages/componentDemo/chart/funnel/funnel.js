@@ -15,7 +15,7 @@ export default {
         color: '#FF5883'
       }, {
         value: 4200,
-        text: '试用',
+        text: '使用',
         color: '#FFAF4D'
       }, {
         value: 2000,

@@ -22,7 +22,7 @@ export default {
         {
           title: '表格 table',
           items: [
-            { title: '基本示例', link: '/pages/componentDemo/table/table' },
+            { title: '基础', link: '/pages/componentDemo/table/table' },
             { title: '单元格渲染', link: '/pages/componentDemo/table/table2' },
             { title: '服务器数据的读取', link: '/pages/componentDemo/table/table3' },
             // { title: '服务器数据的读取(布局二)', link: '/pages/componentDemo/table/table6' },

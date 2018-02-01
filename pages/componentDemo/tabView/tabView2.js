@@ -1,6 +1,7 @@
 export default {
   data () {
     return {
+      height:ui.DEFAULT_CONTENT_HEIGHT,
       items0: [],
       items1: [],
       items2: [],

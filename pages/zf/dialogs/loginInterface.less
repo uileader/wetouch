@@ -1,0 +1,58 @@
+// loginInterface.less
+.ui-nav-bar{
+  width: 100%;
+  background-color: #fff;
+}
+.nav_title {
+  color: #A5A5A5;
+  font-size: 16px;
+}
+.ui-dialog-header{
+  box-shadow: none;
+}
+.swiper_wrap{
+  height: 100%;
+  .ui-swiper-item{
+    position: relative
+  }
+}
+
+
+
+.login_wrap{
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+}
+.portrait{
+  .mix-flex-center();
+  // height: 350rpx;
+  flex: 0 0 200rpx;
+  // background: red;
+  .portrait_content{
+    width: 80px;
+    height: 80px;
+    // border-radius: 50%;
+    // background:url('~pages/images/logo.png') no-repeat center center;
+    background-size: 100%;
+  }
+}
+
+.login_content{
+  flex: 1;
+  background: #fff;
+  padding: 0 20px;
+  .ui-form{
+    .ui-input{
+      border: 0;
+      margin: 10px 0 5px 0;
+    }
+    .ui-view{
+      border-bottom: 1px solid #EBEBEB;
+    }
+  }
+  .submit{
+    margin-top: 70rpx;
+  }
+}
+

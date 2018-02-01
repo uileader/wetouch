@@ -24,7 +24,7 @@ export default {
       isfail: false,
       // 是否登录
       islogin: false,
-      // 下拉刷新时用来演示每次添加新的条目所使用的页码，实际开发中不需要
+      // 下拉刷新时用来设置每次添加新的条目所使用的页码，实际开发中不需要
       afterPageNo: 2,
       // 请求参数
       state: '',
@@ -44,8 +44,6 @@ export default {
       var self = this
       // 每次发送请求时，显示loading效果
       self.isloading = true
-      // 为了演示loading效果，加了1秒的延时，正常不需要settimeout
-      setTimeout(() => {
         ui.request({
           url: '/touchui-backstage/listInfo.do?state=' + this.state,
           data: {pageSize: 1, pageNo: 1},
@@ -75,9 +73,8 @@ export default {
             }
           }
         })
-      }, 1000)
     },
-    // 演示的请求失败函数
+    // 请求失败函数
     failedRequest () {
       this.initialize()
       var self = this

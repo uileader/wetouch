@@ -21,7 +21,7 @@ export default {
           items: [
             { title: '竖向时间轴', link: '/pages/componentDemo/timeline/timeline' },
             { title: '横向时间轴', link: '/pages/componentDemo/timeline/timeline2' },
-            { title: '时间轴综合示例', link: '/pages/componentDemo/timeline/timeline3' }
+            { title: '时间轴综合', link: '/pages/componentDemo/timeline/timeline3' }
           ]
         },
         {

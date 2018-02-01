@@ -4,7 +4,7 @@
       <ui-view class="content">
         <ui-row height="40">
           <ui-col width="100" vertical-align="middle">
-            示例文字：
+            这是一段文字：
           </ui-col>
           <ui-col>
               <ui-input value="{{exampleText}}" bindinput="handleInputChange"></ui-input>

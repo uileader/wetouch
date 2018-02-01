@@ -1,0 +1,277 @@
+// note.less
+.nav_bar {
+  background: linear-gradient(to right, #1F97FE, #126DFE);
+  .ui-view{
+    color: #fff;
+    font-size: 14px;
+  }
+  .ui-text{
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.form_content{
+  // padding: 15px 0;
+  .ui-row{
+    background: #fff;
+    .mix-1px(0, 0, 1, 0, #ccc);
+    .ui-view{
+      font-size: 14px;
+      color: #1A1E23;
+      &.right_column{
+        width: 100%;
+        height: 35px;
+        // padding: 0 10px;
+        // border: 1px solid #e7e7e7;
+        // border-radius: 4px;
+        line-height: 35px;
+      }
+    }
+    .ui-row{
+      width: 100%;
+      .right_column{
+        width: 95%;
+        // text-align: left;
+        font-size: 12px;
+      }
+      .ui-textarea-wrapper{
+        padding: 10px;
+      }
+    }
+    .weui-cell{
+      padding: 0;
+      .ui-picker-select{
+        // text-align: left!important;
+        font-size: 14px;
+      }
+    }
+    .ui-input{
+      border:0px;
+      padding: 0px;
+      .ui-input-inner{
+        height: 33px;
+        width: 100%;
+      }
+    }
+    
+  }
+}
+
+//出差地点popup
+.site_popup{
+  .weui-cell{
+    display: none;
+  }
+  .ui-view{
+    font-size: 14px;
+    color: #828282;
+    &.sure{
+      color: #3399ff;
+    }
+  }
+}
+
+.weui-cell__hd{
+  display: none;
+}
+
+// 报销明细
+.expense_wrap{
+  margin: 10px 0;
+  .expense_list{
+    margin-bottom: 10px;
+  }
+  .expense_title{
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+    // color: #848484;
+    color: #3399ff;
+    font-size: 16px;
+    .ui-view{
+      display: inline-block;
+      padding: 0 10px;
+      border-bottom: 2px solid #3399ff;
+    }
+  }
+  .add_bill{
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    .ui-view{
+      display: inline-block;
+      // width: 150px;
+      padding: 5px 20px;
+      color: #fff;
+      font-size: 14px;
+      background-color: #3399ff;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  }
+}
+.detail_content{
+  .title{
+    background-color: #F6F6F6;
+    font-size: 12px;
+    .ui-text{
+      color: #939599;
+      &.delete{
+        color: #2B81F8;
+      }
+    }
+    &:before{
+      border-bottom-width: 0!important;
+    }
+  }
+  .ui-row{
+    .mix-1px(0, 0, 1, 0, #ccc);
+    background-color: #fff;
+  }
+  .ui-input{
+    border: 0;
+    width: 100%;
+    .ui-input-inner{
+      text-align: right;
+    }
+  }
+  
+  .add_detail{
+    line-height: 40px;
+    text-align: center;
+    background: #fff;
+    padding: 5px 0;
+    .mix-1px(1, 0, 1, 0, #ccc);
+    .ui-view{
+      color: #3286F4;
+    }
+    .ui-icon{
+      margin-right: 5px;
+    }
+  }
+}
+.detail_description{
+  padding-bottom: 10px;
+  background: #fff;
+  .ui-text{
+    // width: 70px;
+    text-align: left;
+    line-height: 30px;
+    color: #1A1E23;
+    padding-left: 10px;
+  }
+  .ui-textarea-wrapper{
+    border: 0;
+    padding: 10px;
+  }
+}
+.recipients{
+  margin-top: 10px;
+  background-color: #fff;
+  .title{
+    text-align: left;
+    padding-left: 10px;
+    line-height: 40px;
+  }
+  .recipients_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 20px;
+    .recipients_list{
+      display: inline-flex;
+      text-align: center;
+      padding: 5px 15px;
+      .list_content{
+        position: relative;
+        .close{
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          z-index: 9;
+          background-color: #14171B;
+          line-height:13px;
+          font-size: 12px; 
+          color: #fff;
+        }
+        .ui-image{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+        }
+        .ui-text{
+          color: #060606;
+          font-size: 12px;
+        }
+      }
+      .add_recipients{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #F4F4F4;
+        line-height: 40px;
+        text-align: center;
+      }
+    }
+    
+  }
+}
+
+
+// 附件
+
+.accessory_wrap{
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+  .ui-text{
+    text-align: left;
+    line-height: 40px;
+    color: #1A1E23;
+  }
+  .accessory_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    .add_accessory{
+      display: inline-flex;
+      text-align: center;
+      .ui-view{
+        margin-right: 10px;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        background-color: #F4F4F4;
+        line-height: 60px;
+        text-align: center;
+      }
+    }
+    .accessory_list{
+      display: inline-flex;
+      margin-right: 5px;
+      position: relative;
+      .close{
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        z-index: 9;
+        background-color: #14171B;
+        line-height:15px;
+        text-align: center;
+        font-size: 12px; 
+        color: #fff;
+      }
+    }
+  }
+}

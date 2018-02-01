@@ -10,7 +10,7 @@
       自定义导航栏2
     </ui-nav-bar>
     <ui-view class="content">
-      <ui-text class="title">演示3-2</ui-text>
+      <ui-text class="title">3-2</ui-text>
     </ui-view>
   </ui-page>
 </template>

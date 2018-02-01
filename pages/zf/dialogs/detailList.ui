@@ -1,0 +1,50 @@
+<!--note.ui-->
+<template>
+<ui-view class="ui-dialog-content">
+  
+    <ui-row height="46" class="nav_bar">
+      <ui-col vertical-align="middle" align="left" space-left="10"  width="50" bindtap="cancel">
+        <ui-text>取消</ui-text>
+      </ui-col>
+      <ui-col vertical-align="middle" align="center">
+        <ui-view class="nav_title">明细列表</ui-view>
+      </ui-col>
+      <ui-col vertical-align="middle" align="center" width="50" bindtap="confirm">
+        <ui-text>完成</ui-text>
+      </ui-col>
+    </ui-row>
+    <ui-page>
+      <ui-checkbox-group bindchange="checkbox">
+        <ui-label class="info_list" ui:for="{{ infoList }}" ui:for-item="item">
+          <ui-row height="80" border-bottom>
+            <ui-col vertical-align="middle">
+              <ui-row height="80" class="top_tip">
+                <ui-col width="60" align="center" vertical-align="middle">
+                  <!-- <ui-view class="left_icon left_icon1" style=" background-color:#FCB300">
+                      <ui-icon name="currency02" color="#fff" size="16"></ui-icon>
+                  </ui-view> -->
+                  <ui-checkbox value="{{ index }}" color="#ffa42f" checked="{{ item.checked }}"></ui-checkbox>
+                </ui-col>
+                <ui-col class="text" align="left" vertical-align="middle" space="10">
+                  <ui-view style="width: 100%;">
+                    <ui-row height="30">
+                      <ui-col align="left" vertical-align="middle">
+                        <ui-text>{{ item.subject1 }}</ui-text>
+                      </ui-col>
+                      <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <ui-view>{{ getLocalTime(item.time) }}</ui-view>
+                      </ui-col>
+                    </ui-row>
+                    <ui-view>费用明细：{{ item.subject2 }}</ui-view>
+                    <ui-view>报销金额：{{ item.money }}</ui-view>
+                  </ui-view>
+                </ui-col>
+              </ui-row>
+            </ui-col>
+          </ui-row>
+        </ui-label>
+
+      </ui-checkbox-group>
+    </ui-page>
+  </ui-view>
+</template>

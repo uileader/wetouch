@@ -32,6 +32,7 @@ export default {
     },
     logOut () {
       let userinfo = ui.getStorageSync('userinfo')
+      console.log(userinfo)
       ui.request({
         url: logoutUrl,
         data: {
@@ -39,15 +40,22 @@ export default {
           tokenId: userinfo.tokenId
         },
         success: function (result) {
+          console.log(result)
           if (result.data.error_code === 0) {
+            console.log('0')
             ui.showToast({ title: '退出成功', icon: 'success' })
             ui.navigateBack()
-            ui.setStorageSync('userinfo', { 'tokenId': '' })
-          } else {
-            ui.showToast({ title: '参数不匹配' })
+            ui.clearStorage('userinfo')
+          } else if(result.data.error_code === 3002) {
+            console.log('3003')
+            ui.clearStorage('userinfo')
+          }else{
+            console.log('失败')
+            ui.showToast({ title: '退出失败' })
           }
         },
         fail: function ({ errMsg }) {
+          console.log(errMsg)
         }
       })
     },

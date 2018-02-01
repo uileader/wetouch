@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "tab-view典型示例"
+  "navigationBarTitleText": "tab-view",
+  "scrollType":"body"
 }

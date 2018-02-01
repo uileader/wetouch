@@ -39,7 +39,6 @@ export default {
   methods: {
     navigateBack () {
       ui.navigateBack()
-      ui.showToast({ title: '示例只是用于演示啦～' })
     },
     singleTap1 (opt) {
       this.tag1.forEach((item, index) => {

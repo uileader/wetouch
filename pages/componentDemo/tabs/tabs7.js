@@ -4,6 +4,9 @@ export default {
       current: 0,
       current2: 0,
       number: 1,
+      swiper1:true,
+      swiper2:false,
+      contentHeight: ui.DEFAULT_CONTENT_HEIGHT,
       height: ui.DEFAULT_CONTENT_HEIGHT - 46,
       shopName: '加厚提花丝光羊毛针织衫 4205',
       minImg: 'https://bfs.biyao.com/group1/M00/21/CD/rBACYVoDsu2AJ0x4AAFzfz0X8Zc330_400x400.jpg',
@@ -258,6 +261,24 @@ export default {
   },
   methods: {
     handleContentChange (index, key) {
+      console.log(index,key)
+      if(index === 1){
+        this.swiper2 = true
+        this.swiper1 = false
+      }else if(index === 0){
+        this.swiper1 = true
+        this.swiper2 = false
+      }
+      this[key] = index
+    },
+    handleContentChange1 (index, key) {
+      this[key] = index
+    },
+    // 回退处理
+    handleBack () {
+      ui.navigateBack()
+    },
+    handleChange (index, key) {
       this[key] = index
     }
   },

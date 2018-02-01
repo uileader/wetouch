@@ -1,3 +1,6 @@
+.ui-nav-bar{
+  .mix-1px(0, 0, 1, 0, #ccc);
+}
 .swiper-slide {
   overflow: scroll;
 }
@@ -179,6 +182,9 @@
   &.type-common {
     .swiper-slide {
       transition: color .1s;
+      &.active {
+        border:0;
+      }
     }
     .active {
       color: #333;
@@ -196,21 +202,24 @@
       position:relative;
     }
 
-    .tab-line{
-      width:100%;
-      height:2px;
-      background-color:#39f;
-      position:absolute;
-      bottom:5px;
-      display:none;
-      width:-webkit-fill-available;
-    }
-    .active .tab-line{
-      display: block
-    }
+    // .tab-line{
+    //   width:100%;
+    //   height:2px;
+    //   background-color:#39f;
+    //   position:absolute;
+    //   bottom:5px;
+    //   display:none;
+    //   width:-webkit-fill-available;
+    // }
+    // .active .tab-line{
+    //   display: block
+    // }
   }
 }
 
+.ui-tabs-ink-bar-inner{
+  width:50px;
+}
 .bottom_tip{
   text-align: center;
   line-height: 40px;

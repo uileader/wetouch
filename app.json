@@ -96,7 +96,6 @@
     "pages/componentDemo/tabs/tabs5",
     "pages/componentDemo/tabs/tabs6",
     "pages/componentDemo/tabs/tabs7",
-    "pages/componentDemo/tabs/tabs8",
     "pages/componentDemo/segment/segment",
     "pages/componentDemo/segment/segment2",
     "pages/componentDemo/accordion/accordion",
@@ -262,6 +261,7 @@
     "pages/apiDemo/bluetooth/bluetooth",
     "pages/apiDemo/browserAPP/browserAPP",
     "pages/apiDemo/browserUrl/browserUrl",
+    "pages/apiDemo/customComp/customComp",
     "pages/apiDemo/call/call",
     "pages/apiDemo/changeNavbar/changeNavbar",
     "pages/apiDemo/chooseLocation/chooseLocation",
@@ -317,7 +317,7 @@
     "pages/apiDemo/touchId/touchId",
     "pages/apiDemo/uploadDownload/uploadDownload",
     "pages/apiDemo/webSocket/webSocket",
-    "pages/apiDemo/customComp/customComp",
+    
     
 
 
@@ -340,6 +340,7 @@
     "theme-color": "#3399ff"
   },
   "window": {
+    "title":"TouchUI Pro",
     "navigationBarBackgroundGradient":"linear-gradient(45deg, #4364DF, #39A6ED)",
     "navigationBarTextColor": "white",
     "scrollType":"div"

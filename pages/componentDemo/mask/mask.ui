@@ -2,7 +2,7 @@
 <template>
   <ui-page>
     <ui-view>
-      <ui-view class="sample_title">基础示例</ui-view>
+      <ui-view class="sample_title">基础</ui-view>
       <ui-view class="sample_content">
         <ui-button type="primary" bindtap="handleShowMask1(true)">打开全屏遮罩</ui-button>
         <ui-button type="primary" bindtap="handleShowMask2(true)">遮罩导航栏以下的区域</ui-button>

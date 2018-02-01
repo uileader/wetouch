@@ -109,6 +109,118 @@ export default {
           }
         })
       }
+    },
+
+    login_qq(){
+      console.log('调用qq接口')
+      ui.login({
+        target: 'qq',
+        success: data => {
+          console.log('success', data.errMsg)
+          if(data.errMsg === "ok"){
+            this.checkOpenid(data.openid)
+          }else{
+            console.log('失败s')
+          }
+              
+        },
+        fail:data=>{
+          console.log('fail', data)
+        }
+      })
+    },
+    //验证openid是否绑定
+    checkOpenid(openid){
+      ui.request({
+        url: '/touchui-backstage/checkOpenid.do',
+        data: {
+          openid: openid,
+        },
+        success: function (data) {
+          console.log(data)
+          console.log(data.data.error_code,'checkOpenid,success')
+          //没有绑定
+          if(data.data.error_code === 0){
+            ui.hideDialog()
+            import(`#/pages/dialogs/tripartiteLogin.ui`).then((content) => {
+              ui.showDialog({
+                content: content,
+                statusBarColor: 'black',
+                // 向loginInterface.ui传入数据
+                data: {
+                  openid: openid,
+                  type:'qq'
+                },
+                // 接收ui.hideDialog回传的数据
+                onHide: (data) => {
+                }
+              })
+            })
+          }else if(data.data.error_code === 1){
+            ui.showToast({ title: '登录成功', icon: 'success' })
+            ui.hideDialog()
+            console.log(data.data.result)
+            ui.setStorageSync('userinfo', data.data.result)
+          }
+        },
+        fail: function (data) {
+          console.log(data,'checkOpenid,fail')
+        }
+      })
+    },
+    login_weixin(){
+      ui.login({
+        target: 'weixin',
+        success: data => {
+          console.log('success', data)
+          this.checkUnionid(data.unionid)
+          
+        },
+        fail:data=>{
+          console.log('fail', data)
+        }
+      })
+      
+    },
+    //验证微信Unionid
+    checkUnionid(unionid){
+      ui.request({
+        url: '/touchui-backstage/checkUnionid.do',
+        data: {
+          unionid: unionid,
+        },
+        success: function (data) {
+          console.log(data)
+          console.log(data.data.error_code,'checkUnionid,success')
+          //没有绑定
+          if(data.data.error_code === 0){
+            console.log('没有绑定')
+            ui.hideDialog()
+            import(`#/pages/dialogs/tripartiteLogin.ui`).then((content) => {
+              ui.showDialog({
+                content: content,
+                statusBarColor: 'black',
+                // 向loginInterface.ui传入数据
+                data: {
+                  unionid: unionid,
+                  type:'wx'
+                },
+                // 接收ui.hideDialog回传的数据
+                onHide: (data) => {
+                }
+              })
+            })
+          }else if(data.data.error_code === 1){
+            ui.showToast({ title: '登录成功', icon: 'success' })
+            ui.hideDialog()
+            console.log(data.data.result)
+            ui.setStorageSync('userinfo', data.data.result)
+          }
+        },
+        fail: function (data) {
+          console.log(data,'checkOpenid,fail')
+        }
+      })
     }
   },
   mounted () {

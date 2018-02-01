@@ -34,7 +34,7 @@ export default {
         {
           title: '自定义组件',
           items: [
-            { title: '基础示例', link: '/pages/apiDemo/customComp/customComp' }
+            { title: '基本', link: '/pages/apiDemo/customComp/customComp' }
           ]
         }
       ]

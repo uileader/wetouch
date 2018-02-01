@@ -12,7 +12,7 @@
         </ui-row>
     </ui-nav-bar>
     <ui-page>
-      <ui-swiper allow-touch-move="false" index="{{ currentNum }}" class="swiper_wrap" style="{{{ height : swiperHeight + 'px' }}}">
+      <ui-swiper speed="200" allow-touch-move="false" index="{{ currentNum }}" class="swiper_wrap" style="{{{ height : swiperHeight + 'px' }}}">
         <ui-swiper-item>
           <ui-view class="login_wrap">
             <!-- 1 -->

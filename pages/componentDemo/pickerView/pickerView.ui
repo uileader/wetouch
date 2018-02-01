@@ -9,13 +9,13 @@
   
     <ui-view class="sample_title">多列选择器</ui-view>
     <ui-view class="sample_content">
-      <ui-divider>不联动示例</ui-divider>
+      <ui-divider>不联动</ui-divider>
       <ui-picker-view mode="multiSelector" range="{{ phones }}" bindchange="handleChange1"></ui-picker-view>
       
-      <ui-divider>二级联动示例</ui-divider>
+      <ui-divider>二级联动</ui-divider>
       <ui-picker-view mode="multiSelector" is-chain value="{{ value2 }}" range="{{ departments }}" bindchange="handleChange2"></ui-picker-view>
       
-      <ui-divider>三级联动示例</ui-divider>
+      <ui-divider>三级联动</ui-divider>
       <ui-picker-view mode="multiSelector" is-chain value="{{ value3 }}" range="{{ relaxes }}" bindchange="handleChange3"></ui-picker-view>
     </ui-view>
     

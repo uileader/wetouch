@@ -1,6 +1,7 @@
 export default {
   data () {
     return {
+      height:ui.DEFAULT_CONTENT_HEIGHT,
       config1: {
         url: '/touchui-backstage/listNews.do?suffix=-推荐文章列表',
         type: 'get',
@@ -78,5 +79,6 @@ export default {
       }
     }
   },
-  methods: {}
+  mounted() {
+  }
 }

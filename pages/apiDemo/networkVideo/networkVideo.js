@@ -66,7 +66,7 @@ export default {
     },
     bindSendDanmu () {
       videoContext.sendDanmu({
-        text: '测试弹幕',
+        text: '弹幕',
         color: getRandomColor()
       })
     }

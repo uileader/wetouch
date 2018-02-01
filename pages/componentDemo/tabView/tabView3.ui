@@ -14,31 +14,31 @@
         <ui-tab-view-header>汽车</ui-tab-view-header>
       </template>
       <template slot="body">
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容1</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容2</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容3</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容4</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容5</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容6</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容7</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容8</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
             <ui-view class="tab-content">内容9</ui-view>
         </ui-tab-view-body>
       </template>
@@ -58,31 +58,31 @@
       <ui-tab-view-header>汽车</ui-tab-view-header>
     </template>
     <template slot="body">
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容1</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容2</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容3</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容4</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容5</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容6</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容7</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容8</ui-view>
       </ui-tab-view-body>
-      <ui-tab-view-body>
+      <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容9</ui-view>
       </ui-tab-view-body>
     </template>
@@ -268,16 +268,16 @@
     </ui-tab-view-header>
   </template>
   <template slot="body">
-    <ui-tab-view-body>
+    <ui-tab-view-body height="160">
       <ui-view class="tab-content">内容一</ui-view>
     </ui-tab-view-body>
-    <ui-tab-view-body>
+    <ui-tab-view-body height="160">
       <ui-view class="tab-content">内容二</ui-view>
     </ui-tab-view-body>
-    <ui-tab-view-body>
+    <ui-tab-view-body height="160">
       <ui-view class="tab-content">内容三</ui-view>
     </ui-tab-view-body>
-    <ui-tab-view-body>
+    <ui-tab-view-body height="160">
       <ui-view class="tab-content">内容四</ui-view>
     </ui-tab-view-body>
   </template>
@@ -303,13 +303,13 @@
       </ui-tab-view-header>
     </template>
     <template slot="body">
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容一</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容二</ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body>
+        <ui-tab-view-body height="160">
           <ui-view class="tab-content">内容三</ui-view>
         </ui-tab-view-body>
       </template>

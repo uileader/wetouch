@@ -75,6 +75,8 @@
           </ui-view>
         </ui-navigator>
       </ui-view>
+
+
     </ui-view>
   </ui-page>
 </template>

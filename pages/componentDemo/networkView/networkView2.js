@@ -64,7 +64,7 @@ export default {
       this.empty = false
       this.needLogin = false
       this.datalist = []
-      if (this.state === '5') { // 设定一个请求失败地址（这里用来演示请求失败的效果，实际使用时一般用不到）
+      if (this.state === '5') { // 设定一个请求失败地址（这里用来设置请求失败的效果，实际使用时一般用不到）
         this.requesturl = '/touchui-backstage/listMenu2.do'
       } else {
         this.requesturl = '/touchui-backstage/listMenu.do?state='
@@ -157,7 +157,7 @@ export default {
       this.needLogin = true
     } else if (this.state === '5') {
       // 将请求处理函数赋给requestval变量（networkview组件的request属性绑定了该变量），重新发起请求
-      // 这里用来演示请求失败的效果，实际使用时一般用不到
+      // 这里用来设置请求失败的效果，实际使用时一般用不到
       this.requestval = this.getPostList()
     } else {    // 正常发起请求
       // 将请求处理函数赋给requestval变量（networkview组件的request属性绑定了该变量），发起请求

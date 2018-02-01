@@ -52,7 +52,7 @@
                   </ui-row>
                 </ui-view>
               </ui-view>
-              <ui-icon slot="content" name="untitled44" size="14"></ui-icon>
+              <ui-icon slot="content" name="plus" size="14"></ui-icon>
             </ui-popover>
           </ui-col>
         </ui-row>
@@ -145,16 +145,16 @@
                     <ui-view class="original-price small-font">{{props.item.originalprice}}/人</ui-view>
                   </ui-col>
                   <ui-col vertical-align="middel" space-right="5" algin="right" >
-                    <ui-text class="adress">{{props.item.address}}</ui-text>
+                    <ui-text class="adress small-font">{{props.item.address}}</ui-text>
                   </ui-col>
                   <ui-col vertical-align="middel" width="45" algin="right" space-right="5">
-                    <ui-text class="title-info">{{props.item.already}}</ui-text>
+                    <ui-text class="title-info small-font">{{props.item.already}}</ui-text>
                   </ui-col>
                 </ui-row>
                 <ui-row>
                   <ui-col vertical-align="middel">
                     <ui-view>
-                      <ui-text class="title-info">{{props.item.type}}</ui-text>
+                      <ui-text class="title-info small-font">{{props.item.type}}</ui-text>
                       <ui-text ui:for="{{props.item.smartTags}}" ui:for-item="smartTag" class="smarg-tags" style="{{{backgroundColor:smartTag.backgroundColor,color:smartTag.color}}}">{{smartTag.content}}</ui-text>
                     </ui-view>
                   </ui-col>
@@ -194,79 +194,7 @@
             </ui-list-view-item>
           </template>
         </ui-list-view>
-
-
-         <!-- <ui-row height="100" style="margin-top:10px;">
-          <ui-col space-left="10" class="colwidth">
-            <ui-image width="100%" src="http://p0.meituan.net/200.0/deal/1e257a1f5b0d974b292ac7bc9a3c21ad71414.jpg@100_0_600_600a%7C267h_267w_2e_90Q"></ui-image>
-          </ui-col>
-          <ui-col space-left="10">
-            <ui-row>
-              <ui-col>
-                <ui-row height="40">
-                  <ui-col>
-                    <ui-view class="title-name">旺顺阁鱼头泡饼</ui-view>
-                  </ui-col>
-                </ui-row>
-                <ui-row>
-                  <ui-col width="73" vertical-align="middel" space-right="10">
-                    <ui-mini-star value="3"></ui-mini-star>
-                  </ui-col>
-                  <ui-col vertical-align="middel" space-right="10">
-                    <ui-view class="original-price">105/人</ui-view>
-                  </ui-col>
-                  <ui-col vertical-align="middel" space-right="5" algin="right" >
-                    <ui-text class="adress">马家堡</ui-text>
-                  </ui-col>
-                  <ui-col vertical-align="middel" width="45" algin="right" space-right="5">
-                    <ui-text class="title-info">677m</ui-text>
-                  </ui-col>
-                </ui-row>
-                <ui-row>
-                  <ui-col vertical-align="middel">
-                    <ui-view>
-                      <ui-text class="title-info">家常菜</ui-text>
-                      <ui-text class="smarg-tags" style="background-color:#fbf4e4;color:#be9e4d;">回头客多</ui-text>
-                      <ui-text class="smarg-tags" style="background-color:#fbf4e4;color:#be9e4d;">量足</ui-text>
-                    </ui-view>
-                  </ui-col>
-                </ui-row>
-                <ui-row>
-                  <ui-col vertical-align="middel">
-                    <ui-view class="inline-block">
-                      <ui-view>
-                        <ui-text style="color:#01c7a6" class="samll-font">买单</ui-text>
-                        <ui-text style="color:#01c7a6">|</ui-text>
-                        <ui-text style="color:#01c7a6" class="samll-font">支持排队</ui-text>
-                        <ui-text style="color:#01c7a6">|</ui-tex>
-                        <ui-text style="color:#01c7a6" class="samll-font">预定</ui-text>
-                      </ui-view>
-                    </ui-view>
-                  </ui-col>
-                </ui-row>
-              </ui-row>
-            </ui-row>
-          </ui-col>
-        </ui-row>
-        <ui-row>
-          <ui-col span="3">
-
-          </ui-col>
-          <ui-col>
-            <ui-view class="line"></ui-view>
-            <ui-row class="preferential discount-tuan">
-              <ui-col vertical-align="middel">
-                <ui-view class="preferential-text">2-4人餐1元，单人餐38元，双人餐118元起，4人餐228元起，6人餐318元起，8人餐528元起</ui-view>
-              </ui-col>
-            </ui-row>
-            <ui-row class="preferential discount-quan">
-              <ui-col vertical-align="middel">
-                <ui-view class="preferential-text">10代100元，68代100元</ui-view>
-              </ui-col>
-            </ui-row>
-          </ui-col>
-
-        </ui-row> -->
+         
       </ui-view>
 
   </ui-page>

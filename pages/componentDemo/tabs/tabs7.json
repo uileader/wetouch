@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "商品详情",
-  "disableScroll":true
+  "disableScroll":true,
+  "navigationBarVisible":false,
+  "statusBarColor":"black"
 }

@@ -1,6 +1,27 @@
 <!--tab-view2.ui-->
 <template>
   <ui-page>
+    <ui-nav-bar class="ui-nav-bar" slot="nav-bar" ui:show="{{swiper1}}">
+      <ui-row>
+        <ui-col width="40" bindtap="handleBack">
+          <ui-icon name="arrow-left" font-size="24"></ui-icon>{{ $t("back") }}
+        </ui-col>
+        <ui-col align="center">
+          <ui-text>商品详情</ui-text>
+        </ui-col>
+        <ui-col width="40"></ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-nav-bar class="ui-nav-bar" slot="nav-bar" ui:show="{{swiper2}}">
+      <ui-view style="width:150px;margin:0 auto;">
+        <ui-tabs class="type-common" ink-bar width="150" index="{{ current2 }}" bindchange="handleChange($event, 'current2')">
+          <ui-tab>商品</ui-tab>
+          <ui-tab>详情</ui-tab>
+          <ui-tab>评价</ui-tab>
+        </ui-tabs>
+      </ui-view>
+    </ui-nav-bar>
     <ui-swiper
     class="tab-content"
     style="height: {{ height }}px"
@@ -158,34 +179,12 @@
         </ui-view>
       </ui-swiper-item>
       <ui-swiper-item >
-        <!-- <ui-row height="46">
-            <ui-col vertical-align="middle" align="center">
-              <ui-view class="tabs_wrap">
-                <ui-tabs class="type-common" index="{{ current2 }}" bindchange="handleChange($event, 'current')">
-                  <ui-tab>
-                    <ui-view class="item-list">
-                        <ui-view class="">商品</ui-view>
-                        <ui-view class="tab-line"></ui-view>
-                    </ui-view>
-                  </ui-tab>
-                  <ui-tab>
-                      <ui-view class="item-list">
-                          <ui-view class="">详情</ui-view>
-                          <ui-view class="tab-line"></ui-view>
-                      </ui-view>
-                  </ui-tab>
-                  <ui-tab>
-                      <ui-view class="item-list">
-                          <ui-view class="">评价</ui-view>
-                          <ui-view class="tab-line"></ui-view>
-                      </ui-view>
-                  </ui-tab>
-                </ui-tabs>
-              </ui-view>
-            </ui-col>
-          </ui-row> -->
-        <ui-view class="" style="overflow: scroll;">
-           <ui-view class="bottom_tip">↓下拉显示产品页</ui-view>
+        <ui-view class="">
+          <!-- <ui-view class="bottom_tip">↓下拉显示产品页</ui-view> -->
+          
+          <ui-mini-swiper class="content"  index="{{ current2 }}" bindchange="handleContentChange1($event, 'current2')">
+            <ui-mini-swiper-item>
+              <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
                 <ui-view class="details_img">
                   <ui-view ui:for="{{ detailsImg }}" ui:for-item="item">
                     <ui-view class="title">{{ item.title }}</ui-view>
@@ -201,6 +200,72 @@
                     <ui-text block ui:for="{{ item.problem }}" ui:for-item="item2">{{ item2 }}</ui-text>
                   </ui-view>
                 </ui-view>
+                </ui-scroll-view>
+            </ui-mini-swiper-item>
+
+            <ui-mini-swiper-item>
+              <!-- 详情 -->
+              <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
+                <ui-row-list border-indent bordered class="shop_details">
+                  <ui-row ui:for="{{ details }}" ui:for-item="item">
+                    <ui-col vertical-align="middle" align="left" width="100">
+                      {{ item.name }}
+                    </ui-col>
+                    <ui-col vertical-align="middle" align="left">
+                      {{ item.content }}
+                    </ui-col>
+                  </ui-row>
+                </ui-row-list>
+                </ui-scroll-view>
+            </ui-mini-swiper-item>
+                
+            <ui-mini-swiper-item>
+              <!-- 评价 -->
+              <ui-scroll-view  height="{{ contentHeight }}"  scroll-y>
+                <ui-view class="evaluate_wrap">
+                  <ui-view class="title">
+                    <ui-row height="40">
+                      <ui-col vertical-align="middle" align="left" space-left="5">商品满意度</ui-col>
+                      <ui-col vertical-align="middle" align="right" space-right="5">4.9</ui-col>
+                    </ui-row>
+                    <ui-view class="all_shop">
+                      <ui-view>全部商品</ui-view>
+                    </ui-view>
+                  </ui-view>
+                  <ui-view class="evaluate_list" ui:for="{{ evaluate }}" ui:for-item="item">
+                    <ui-row height="40">
+                      <ui-col vertical-align="middle" align="center" width="40">
+                        <ui-image
+                        src="https://static.biyao.com/m/img/base/defult_userimg.png"
+                        width="30"
+                        height="30"
+                        ></ui-image>
+                      </ui-col>
+                      <ui-col vertical-align="middle" align="left">
+                        <ui-view>b***h</ui-view>
+                      </ui-col>
+                      <ui-col width="100" vertical-align="middle" align="right">
+                        <ui-view class="good_evaluate">
+                          <ui-icon name="phiz" size="24" color="#8243a3"></ui-icon>好评
+                        </ui-view>
+                      </ui-col>
+                    </ui-row>
+                    <ui-view class="center">{{ item.text }}</ui-view>
+                    <ui-row height="30" class="bottom">
+                      <ui-col vertical-align="middle" align="left">
+                        {{ item.size }}
+                      </ui-col>
+                      <ui-col vertical-align="middle" align="right">
+                        {{ item.time }}
+                      </ui-col>
+                    </ui-row>
+                  </ui-view>
+
+                </ui-view>
+                </ui-scroll-view>
+            </ui-mini-swiper-item>
+          </ui-mini-swiper>
+
            
         </ui-view>
       </ui-swiper-item>

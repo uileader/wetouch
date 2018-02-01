@@ -6,7 +6,7 @@ export default {
         {
           title: '导航',
           items: [
-            { title: '界面跳转示例', link: '/pages/apiDemo/navigate/navigate' },
+            { title: '界面跳转', link: '/pages/apiDemo/navigate/navigate' },
             { title: '参数传递', link: '/pages/apiDemo/parameter/parameter' }
           ]
         },

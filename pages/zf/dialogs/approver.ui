@@ -1,0 +1,38 @@
+<template>
+  <ui-view class="ui-dialog-content">
+    <ui-nav-bar >
+      <ui-row height="46" class="nav_bar">
+        <ui-col vertical-align="middle" align="left" space-left="10" width="50" bindtap="hideWindow">
+          <ui-view>
+            <ui-icon name="arrow-left" size="16" color="#3399ff"></ui-icon>返回
+          </ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center">
+          <ui-view class="nav_title">公司成员</ui-view>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="hideWindow">
+          <ui-view>取消</ui-view>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <ui-page>
+
+      <ui-view class="content" style="{{{ height:contentHeight+'px' }}}">
+        <ui-view class="member_list">
+          <ui-row height="50" ui:for="{{ memberList }}" ui:for-item="item" bindtap="choose(index)">
+            <ui-col vertical-align="middle" align="center" width="60">
+              <ui-image
+              src="{{ item.head }}"
+              ></ui-image>
+            </ui-col>
+            <ui-col vertical-align="middle" align="left">
+              <ui-view>{{ item.userName }}</ui-view>
+            </ui-col>
+
+          </ui-row>
+        </ui-view>
+      </ui-view>
+
+    </ui-page>
+  </ui-view>
+</template>

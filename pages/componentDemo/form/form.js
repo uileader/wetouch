@@ -8,7 +8,7 @@ export default {
   methods: {
     formSubmit (e) {
       ui.request({
-        url: 'test.php', // 仅为示例，并非真实的接口地址
+        url: 'test.php', // 并非真实的接口地址
         data: e,
         header: {
           'content-type': 'application/json'

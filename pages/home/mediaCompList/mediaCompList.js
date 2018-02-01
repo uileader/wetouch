@@ -27,22 +27,22 @@ export default {
         {
           title: '朦胧图 blur',
           items: [
-            { title: '基础示例', link: '/pages/componentDemo/blur/blur' },
-            { title: '应用示例1：影片选择', link: '/pages/componentDemo/blur/blur2' },
-            { title: '应用示例2：个人中心', link: '/pages/componentDemo/blur/blur3' }
+            { title: '基础', link: '/pages/componentDemo/blur/blur' },
+            { title: '影片选择', link: '/pages/componentDemo/blur/blur2' },
+            { title: '个人中心', link: '/pages/componentDemo/blur/blur3' }
           ]
         },
         {
           title: '音频 audio',
           items: [
-            { title: '基础示例', link: '/pages/componentDemo/audio/audio' },
-            { title: '应用示例：h5音乐播放器', link: '/pages/componentDemo/playaudio/playaudio' }
+            { title: '基础', link: '/pages/componentDemo/audio/audio' },
+            { title: 'h5音乐播放器', link: '/pages/componentDemo/playaudio/playaudio' }
           ]
         },
         {
           title: '视频 video',
           items: [
-            { title: '基础示例', link: '/pages/componentDemo/video/video' }
+            { title: '基础', link: '/pages/componentDemo/video/video' }
           ]
         }
       ]

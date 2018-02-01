@@ -57,7 +57,7 @@
         </ui-row>
       </ui-row-list>
 
-      <ui-view class="sample_title">完整示例</ui-view>
+      <ui-view class="sample_title">登录与注册</ui-view>
       <ui-view class="log_box">
         <ui-view>
           <ui-input type="number" placeholder="请输入手机号码"></ui-input>

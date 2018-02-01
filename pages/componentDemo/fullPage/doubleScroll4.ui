@@ -9,7 +9,7 @@
           <ui-icon name="arrow-left" size="18" color="#fff"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center" space="20">
-          <ui-view class="title">双滚动示例</ui-view>
+          <ui-view class="title">双滚动</ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="center" width="35"></ui-col>
       </ui-row>

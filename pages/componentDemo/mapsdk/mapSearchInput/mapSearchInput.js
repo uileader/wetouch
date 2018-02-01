@@ -53,7 +53,7 @@ export default {
       })
     },
     toast () {
-      ui.showToast({ title: '此示例用于演示地址逆向解析' })
+      ui.showToast({ title: '地址逆向解析' })
     }
   }
 }

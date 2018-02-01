@@ -1,0 +1,97 @@
+// loginInterface.less
+
+//登录页面
+.page{
+  top: 0!important;
+}
+.login_wrap{
+  display:flex;
+  width: 100%;
+  z-index: 999;
+  flex-direction:column;
+  background: linear-gradient(to bottom, #39AAFB, #2B8CE4);
+  // position: relative;
+  .logo{
+    flex: 0 0 400rpx;
+    .mix-flex-center();
+    .ui-image{
+      width: 80px;
+      height: 80px;
+      // margin
+    }
+    .ui-view{
+      color: #fff;
+      font-size: 14px;
+      text-align: center
+    }
+  }
+  .content{
+    flex: 1;
+    .input_box{
+      width: 85%;
+      background-color: #2F8EE6;
+      border-radius: 25px;
+      margin: 0 auto;
+      border: 1px solid transparent;
+      overflow:hidden;
+      &.active{
+        background-color: #438FE8;
+        border-color: #71BAF2;
+      }
+      .ui-view{
+        color: #fff;
+        font-size: 14px;
+      }
+      .line{
+        width:1px;
+        height: 16px;
+        background-color: #5CA9E7;
+      }
+      .ui-input{
+        border: 0;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        .weui-icon-clear{
+          color: #fff;
+        }
+        .ui-input-password-off{
+          color: #77b1e8;
+        }
+        .ui-input-password-on{
+          color: #fff;
+        }
+        .ui-input-inner:focus{
+          color:#fff;
+        }
+      }
+      &.submit{
+        border-color: #4FB1FB;
+        background-color: #35A4FA;
+        .ui-view{
+          color: #7AC5FB;
+        }
+        &.active{
+          border-color: #72C8FD;
+          background-color: #39ABFB;
+          .ui-view{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .wave_wrap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .ui-view{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+}

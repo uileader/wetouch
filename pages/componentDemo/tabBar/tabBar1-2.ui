@@ -14,7 +14,7 @@
       </ui-row>
     </ui-nav-bar>
     <ui-view class="content">
-      <ui-text class="title">演示1-2</ui-text>
+      <ui-text class="title">1-2</ui-text>
       <ui-button bindtap="tabresult">跳转到上一个标签</ui-button>
     </ui-view>
     <ui-view class="content_list">

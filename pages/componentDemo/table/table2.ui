@@ -1,6 +1,6 @@
 <template>
   <ui-page>
-    <ui-divider>示例1</ui-divider>
+    <ui-divider>table1</ui-divider>
     <ui-view class="demo2">
     <ui-table
     fixed-cell-height="false"
@@ -12,7 +12,7 @@
     ></ui-table>
     </ui-view>
 
-    <ui-divider>示例2</ui-divider>
+    <ui-divider>table2</ui-divider>
     <ui-view class="demo1">
     <ui-table
     header="{{thisHeader1}}"
@@ -23,7 +23,7 @@
     ></ui-table>
     </ui-view>
 
-    <ui-divider>示例3</ui-divider>
+    <ui-divider>table3</ui-divider>
     <ui-view class="demo3">
     <ui-table
     fixed-cell-height="false"
@@ -36,7 +36,7 @@
     ></ui-table>
     </ui-view>
 
-    <ui-divider>示例4</ui-divider>
+    <ui-divider>table4</ui-divider>
     <ui-view class="demo4">
       <ui-table
       header="{{thisHeader4}}"
@@ -45,7 +45,7 @@
       ></ui-table>
     </ui-view>
 
-    <ui-divider>示例5</ui-divider>
+    <ui-divider>table5</ui-divider>
     <ui-view class="demo5">
       <ui-table
       header="{{thisHeader5}}"

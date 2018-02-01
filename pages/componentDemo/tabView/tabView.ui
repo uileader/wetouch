@@ -10,7 +10,7 @@
           <ui-tab-view-header>社会</ui-tab-view-header>
         </template>
         <template slot="body">
-            <ui-tab-view-body show-loading-on-init="false"  enable-pull-down-refresh>
+            <ui-tab-view-body height="{{height-40}}" show-loading-on-init="true"  enable-pull-down-refresh>
                 <ui-list-view config="{{ config1 }}"
                 enable-reach-bottom-load>
                     <template scope="props">
@@ -149,7 +149,7 @@
                     </template>
                 </ui-list-view>
               </ui-tab-view-body >
-            <ui-tab-view-body show-loading-on-init="false"  enable-pull-down-refresh>
+            <ui-tab-view-body height="{{height-40}}" show-loading-on-init="true"  enable-pull-down-refresh>
                 <ui-list-view config="{{ config2 }}"
                 enable-reach-bottom-load>
                     <template scope="props">
@@ -288,7 +288,7 @@
                     </template>
                 </ui-list-view>
             </ui-tab-view-body>
-            <ui-tab-view-body show-loading-on-init="false" enable-pull-down-refresh>
+            <ui-tab-view-body height="{{height-40}}" show-loading-on-init="true" enable-pull-down-refresh>
                 <ui-list-view config="{{ config3 }}"
                 enable-reach-bottom-load>
                     <template scope="props">
@@ -427,7 +427,7 @@
                     </template>
                 </ui-list-view>
             </ui-tab-view-body>
-            <ui-tab-view-body show-loading-on-init="false" enable-pull-down-refresh>
+            <ui-tab-view-body height="{{height-40}}" show-loading-on-init="true" enable-pull-down-refresh>
                 <ui-list-view config="{{ config4 }}"
                 enable-reach-bottom-load>
                     <template scope="props">
@@ -566,7 +566,7 @@
                     </template>
                 </ui-list-view>
             </ui-tab-view-body>
-            <ui-tab-view-body show-loading-on-init="false" enable-pull-down-refresh>
+            <ui-tab-view-body height="{{height-40}}" show-loading-on-init="true" enable-pull-down-refresh>
                 <ui-list-view config="{{ config5 }}"
                 enable-reach-bottom-load>
                     <template scope="props">

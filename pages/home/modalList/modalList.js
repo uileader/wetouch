@@ -6,18 +6,18 @@ export default {
         {
           title: '背景遮罩 mask',
           items: [
-            { title: '基础示例', link: '/pages/componentDemo/mask/mask' },
-            { title: '应用场景1：图标导航', link: '/pages/componentDemo/mask/iconNav' },
-            { title: '应用场景2：弹出式提示', link: '/pages/componentDemo/mask/maskTip' },
-            { title: '应用场景3：操作引导示例一', link: '/pages/componentDemo/mask/maskGuide' },
-            { title: '应用场景4：操作引导示例二', link: '/pages/componentDemo/mask/maskGuide2' }
+            { title: '基础', link: '/pages/componentDemo/mask/mask' },
+            { title: '图标导航', link: '/pages/componentDemo/mask/iconNav' },
+            { title: '弹出式提示', link: '/pages/componentDemo/mask/maskTip' },
+            { title: '操作引导一', link: '/pages/componentDemo/mask/maskGuide' },
+            { title: '操作引导二', link: '/pages/componentDemo/mask/maskGuide2' }
 
           ]
         },
         {
           title: '模态层 popup',
           items: [
-            { title: '基础示例', link: '/pages/componentDemo/popup/popup' }
+            { title: '基础', link: '/pages/componentDemo/popup/popup' }
           ]
         },
         {

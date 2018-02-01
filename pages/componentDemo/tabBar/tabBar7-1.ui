@@ -2,7 +2,7 @@
 <template>
   <ui-page>
     <ui-view class="content">
-      <ui-text class="title">演示7-1</ui-text>
+      <ui-text class="title">7-1</ui-text>
     </ui-view>
   </ui-page>
 </template>

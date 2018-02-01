@@ -1,0 +1,110 @@
+// loginInterface.less
+.ui-nav-bar{
+  width: 100%;
+  background-color: #fff;
+}
+.nav_title {
+  color: #A5A5A5;
+  font-size: 16px;
+}
+.ui-dialog-header{
+  box-shadow: none;
+}
+.swiper_wrap{
+  height: 100%;
+  .ui-swiper-item{
+    position: relative
+  }
+}
+
+
+.login_content2{
+  padding: 50px 20px 0 20px;
+  .ui-input{
+    border: 0;
+  }
+  .submit{
+    margin-top: 50px;
+  }
+  .ui-row{
+    .ui-view{
+      color: #A5A5A5;
+    }
+  }
+  .have_account{
+    line-height: 30px;
+    // width: 100px;
+    display: inline-block;
+    color: #9C9C9C;
+  }
+}
+.ui-sms-code{
+  .cell-left{
+    display: none;
+  }
+}
+
+.login_wrap{
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+}
+.portrait{
+  .mix-flex-center();
+  height: 350rpx;
+}
+
+.login_content{
+  flex: 0 0 500rpx;
+  background: #fff;
+  padding: 0 20px;
+  margin-top:30px;
+  .ui-form{
+    .ui-input{
+      border: 0;
+      margin: 10px 0 5px 0;
+    }
+    .ui-view{
+      border-bottom: 1px solid #EBEBEB;
+    }
+  }
+  .submit{
+    margin-top: 100rpx;
+  }
+}
+.third_party_wrap{
+  flex: 0 0 300rpx;
+  // background: yellow;
+  // margin-top: 100rpx;
+  .third_party{
+    .ui-view{
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      // background-color: #6D6D6D;
+      border-radius: 50%;
+      &.weixin{
+        border: 1px solid #7ede40;
+      }
+      &.qq{
+        border: 1px solid #25A6F1;
+      }
+    }
+  }
+}
+
+.login_bottom{
+  flex: 0 0 80rpx;
+  // background: black;
+  width: 100%;
+  // position: absolute;
+  // bottom: 0;
+  .ui-view{
+    font-size: 14px;
+    color: #9C9C9C;
+  }
+  .forget_password{
+    color: #D4D4D4;
+  }
+}

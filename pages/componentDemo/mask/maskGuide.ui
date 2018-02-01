@@ -2,7 +2,7 @@
 <template>
   <ui-page>
     <ui-view class="sample_content">
-      <ui-button type="primary" bindtap="handleShowMask1(true)">功能引导示例</ui-button>
+      <ui-button type="primary" bindtap="handleShowMask1(true)">功能引导</ui-button>
     </ui-view>
 
     <ui-mask ui:model="showMask1" class="mask1" background="rgba(0, 0, 0, 0.8)" >

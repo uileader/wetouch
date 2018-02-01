@@ -29,7 +29,7 @@
         <ui-tab-view-header>体育</ui-tab-view-header>
       </template>
       <template slot="body">
-        <ui-tab-view-body enable-pull-down-refresh enable-reach-bottom-load on-load-more="{{ handleLoadMore }}">
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh enable-reach-bottom-load on-load-more="{{ handleLoadMore }}">
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items0 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -38,7 +38,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items1 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -47,7 +47,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items2 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -56,7 +56,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items3 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -65,7 +65,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items4 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -74,7 +74,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items5 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -83,7 +83,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items6 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -92,7 +92,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items7 }}" :class="{'grey-bg': index % 2 == 0}">
@@ -101,7 +101,7 @@
             </ui-view>
           </ui-view>
         </ui-tab-view-body>
-        <ui-tab-view-body enable-pull-down-refresh>
+        <ui-tab-view-body height="{{height-40}}" enable-pull-down-refresh>
           <ui-view>
             <ui-view class="content_list">
               <ui-view ui:for="{{ items8 }}" :class="{'grey-bg': index % 2 == 0}">

@@ -1,7 +1,7 @@
 <!--transfer.ui-->
 <template>
   <ui-page>
-    <ui-view class="sample_title">传参示例</ui-view>
+    <ui-view class="sample_title">传参</ui-view>
     <ui-view class="sample_content">
       <ui-navigator url="/pages/apiDemo/parameter/parameterNew?name=TOUCH UI&id=1">
         <ui-button type="primary" plain="{{true}}">

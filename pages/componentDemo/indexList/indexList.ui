@@ -1,38 +1,38 @@
 <!--indexList.ui-->
 <template>
   <ui-page>
-    <ui-scroll-view>
+    <!-- <ui-scroll-view> -->
         <ui-view class="sample_title">
           城市选择（单选，不含图标）
         </ui-view>
         <ui-view class="sample_content" bindtap="showIndexList1()">
-          <ui-text style="font-size: 14px;">{{country1}}</ui-text> 
+          <ui-text style="font-size: 14px;">{{country1}}</ui-text>
           <ui-icon name="arrow-down"><ui-icon>
         </ui-view>
-  
+
         <ui-view class="sample_title">
           汽车品牌选择（单选，含图标）
         </ui-view>
         <ui-view class="sample_content" bindtap="showIndexList2">
-          <ui-text style="font-size: 14px;">{{country2}}</ui-text> 
+          <ui-text style="font-size: 14px;">{{country2}}</ui-text>
           <ui-icon name="arrow-down"><ui-icon>
         </ui-view>
-  
+
         <ui-view class="sample_title">
           仿微信通讯录（可切换单选与多选）
         </ui-view>
         <ui-view class="sample_content" bindtap="showIndexList3">
-          <ui-text style="font-size: 14px;">{{country3}}</ui-text> 
+          <ui-text style="font-size: 14px;">{{country3}}</ui-text>
           <ui-icon name="arrow-down"><ui-icon>
         </ui-view>
-  
+
         <ui-view class="sample_title">
           仿支付宝通讯录（单选多选均可用）
         </ui-view>
         <ui-view class="sample_content" bindtap="showIndexList4">
           <ui-button>从通讯录添加好友</ui-button>
         </ui-view>
-  
-    </ui-scroll-view>
+
+    <!-- </ui-scroll-view> -->
   </ui-page>
 </template>
