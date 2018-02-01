@@ -1,4 +1,4 @@
-这是TouchUI示例工程，包含300多个示例，充分展示TouchUI的组件和API功能。
+这是TouchUI Pro示例工程，包含300多个示例，充分展示TouchUI Pro的组件和API功能。
 
 请配合VSCode的touchui插件使用。详见开发文档。
 
