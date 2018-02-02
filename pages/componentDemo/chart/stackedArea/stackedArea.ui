@@ -4,6 +4,7 @@
   
     <ui-view class="sample_title">折面图</ui-view>
     <ui-stacked-area
+    class="stackedarea1"
     value="{{areaChartData.data}}"
     width="{{winWidth}}"
     height="300"
@@ -21,6 +22,7 @@
 
     <ui-view class="sample_title">渐变折面图</ui-view>
     <ui-stacked-area
+    class="stackedarea2"
     value="{{areaChartData2.data}}"
     width="{{winWidth}}"
     height="300"
@@ -39,6 +41,7 @@
 
     <ui-view class="sample_title">曲面图</ui-view>
     <ui-stacked-area
+    class="stackedarea3"
     value="{{areaChartData3.data}}"
     width="{{winWidth}}"
     height="300"
@@ -58,6 +61,7 @@
 
     <ui-view class="sample_title">堆叠面积图</ui-view>
     <ui-stacked-area
+    class="stackedarea4"
     value="{{areaChartData4.data}}"
     width="{{winWidth}}"
     height="300"
@@ -75,6 +79,7 @@
 
     <ui-view class="sample_title">使用图例控制显隐</ui-view>
     <ui-stacked-area
+    class="stackedarea5"
     value="{{tempAreaData}}"
     width="{{winWidth}}"
     height="300"

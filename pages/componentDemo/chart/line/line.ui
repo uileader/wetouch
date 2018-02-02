@@ -19,7 +19,7 @@
         tooltip-text-color="#fff"
         border-stroke-color="none"
         x-axis-format="custom"
-        x-axis-custom-format="%d日"
+        x-axis-custom-format="%m月"
         x-ticks="{{8}}"
         ></ui-line>
       </ui-view>

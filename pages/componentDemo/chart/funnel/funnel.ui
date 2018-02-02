@@ -28,6 +28,7 @@
       line-length="94"
       show-legend
       value="{{funnelValue}}"
+      bindchange="sliderchange"
     ></ui-funnel>
 
     <ui-view class="sample_title">金字塔</ui-view>

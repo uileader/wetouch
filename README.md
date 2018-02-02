@@ -10,9 +10,9 @@
 
 ##### web访问：
 
- <img src="http://images.uileader.com/20180116/95611b08-f421-4741-8ce6-1c3cc529a0dd.png" />
+ <img src="http://images.uileader.com/20180201/ed2ac937-dddd-4dfe-9ae0-6060a44cad41.png" />
 
-<a href="http://static.uileader.com/touchui_webapp/index.html" target="_blank">http://static.uileader.com/touchui_webapp/index.html</a>
+<a href="http://static.uileader.com/touchui_webapp/index.html"  target="_blank">http://www.uileader.com/touchui_webapp/index.html</a>
 
 在PC端打开时请开启chrome的手机浏览模式。
 
