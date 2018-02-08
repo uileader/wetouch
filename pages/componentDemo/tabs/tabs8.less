@@ -177,10 +177,18 @@
   display: inline-block;
 }
 .ui-tabs {
-  height:44px;
+  padding-bottom: 1px;
 
   &.type-common {
-    
+    .swiper-slide {
+      transition: color .1s;
+      &.active {
+        border:0;
+      }
+    }
+    .active {
+      color: #333;
+    }
 
     .ui-icon {
       margin: 0 5px;

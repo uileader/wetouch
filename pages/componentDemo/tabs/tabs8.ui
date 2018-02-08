@@ -20,7 +20,7 @@
         </ui-col>
         <ui-col align="center">
          <ui-view style="width:150px;margin:0 auto;">
-            <ui-tabs class="type-common" width="150" index="{{ current2 }}" bindchange="handleChange($event, 'current2')" ink-bar>
+            <ui-tabs class="type-common" ink-bar width="150" index="{{ current2 }}" bindchange="handleChange($event, 'current2')">
               <ui-tab>商品</ui-tab>
               <ui-tab>详情</ui-tab>
               <ui-tab>评价</ui-tab>
@@ -30,17 +30,23 @@
         <ui-col width="40"></ui-col>
       </ui-row>
     </ui-nav-bar>
-
+   
     <ui-swiper
     class="tab-content"
     style="height: {{ height }}px"
-    boundary-swipe
     vertical
     bindchange="handleContentChange($event, 'current')"
+    allow-touch-move="false"
     index="{{ current }}"
     >
       <ui-swiper-item >
-        <ui-view class="" style="overflow: scroll;">
+        <!-- <ui-view class="" style="overflow: scroll;"> -->
+        <ui-scroll-view 
+        scroll-top="{{ scrollTop }}"
+        height="{{ contentHeight-46 }}" 
+        scroll-y
+        pull-up="{{ pullUp }}"
+        >
           <ui-swiper pagination="{{ paginationFraction }}"  class="products_img">
             <ui-swiper-item ui:for="{{ products }}" ui:for-item="item">
               <ui-image
@@ -186,13 +192,34 @@
               </ui-view>
             </ui-scroll-view>
           </ui-view>
-          <ui-view class="bottom_tip">↑上拉显示详情页</ui-view>
-        </ui-view>
+           <ui-view slot="pull-up">
+           
+            <ui-view ui:show="state === 0" style="text-align:center;height:40px;line-height:40px;">上拉查看详情</ui-view>
+            <ui-view ui:show="state === 1" style="text-align:center;height:40px;line-height:40px;">↑上拉查看详情</ui-view>
+            <ui-view ui:show="state === 2" style="text-align:center;height:40px;line-height:40px;">↓释放查看详情</ui-view>
+            <ui-view ui:show="state === 3" style="text-align:center;"></ui-view>
+           
+           </ui-view>
+          <!-- <ui-view class="bottom_tip">↑上拉显示详情页</ui-view> -->
+        </ui-scroll-view>
+        <!-- </ui-view> -->
       </ui-swiper-item>
       <ui-swiper-item>
         <ui-view class="">
-          <ui-mini-swiper height="{{ contentHeight }}" class="content"  index="{{ current2 }}" bindbeforechange="handleContentChange1($event, 'current2')">
+        
+          <!-- <ui-view class="bottom_tip">↓下拉显示产品页</ui-view> -->
+          
+          <ui-mini-swiper class="content"  index="{{ current2 }}" bindchange="handleContentChange1($event, 'current2')">
             <ui-mini-swiper-item>
+              <ui-scroll-view  height="{{ contentHeight }}" scroll-y
+              pull-down="{{ pullDown }}"
+              >
+              <ui-view slot="pull-down" style="margin-top:-40px">
+                <ui-view ui:show="state === 0" style="text-align:center;height:40px;line-height:40px;">下拉查看商品</ui-view>
+                <ui-view ui:show="state === 1" style="text-align:center;height:40px;line-height:40px;">↓下拉查看商品</ui-view>
+                <ui-view ui:show="state === 2" style="text-align:center;height:40px;line-height:40px;">↑释放查看商品</ui-view>
+                <ui-view ui:show="state === 3" style="text-align:center;"></ui-view>
+              </ui-view>
                 <ui-view class="details_img">
                   <ui-view ui:for="{{ detailsImg }}" ui:for-item="item">
                     <ui-view class="title">{{ item.title }}</ui-view>
@@ -208,10 +235,20 @@
                     <ui-text block ui:for="{{ item.problem }}" ui:for-item="item2">{{ item2 }}</ui-text>
                   </ui-view>
                 </ui-view>
+                </ui-scroll-view>
             </ui-mini-swiper-item>
 
             <ui-mini-swiper-item>
               <!-- 详情 -->
+               <ui-scroll-view  height="{{ contentHeight }}" scroll-y
+              pull-down="{{ pullDown }}"
+              >
+              <ui-view slot="pull-down" style="margin-top:-40px">
+                <ui-view ui:show="state === 0" style="text-align:center;height:40px;line-height:40px;">下拉查看商品</ui-view>
+                <ui-view ui:show="state === 1" style="text-align:center;height:40px;line-height:40px;">↓下拉查看商品</ui-view>
+                <ui-view ui:show="state === 2" style="text-align:center;height:40px;line-height:40px;">↑释放查看商品</ui-view>
+                <ui-view ui:show="state === 3" style="text-align:center;"></ui-view>
+              </ui-view>
                 <ui-row-list border-indent bordered class="shop_details">
                   <ui-row ui:for="{{ details }}" ui:for-item="item">
                     <ui-col vertical-align="middle" align="left" width="100">
@@ -222,10 +259,20 @@
                     </ui-col>
                   </ui-row>
                 </ui-row-list>
+                </ui-scroll-view>
             </ui-mini-swiper-item>
                 
             <ui-mini-swiper-item>
               <!-- 评价 -->
+               <ui-scroll-view  height="{{ contentHeight }}" scroll-y
+              pull-down="{{ pullDown }}"
+              >
+              <ui-view slot="pull-down" style="margin-top:-40px">
+                <ui-view ui:show="state === 0" style="text-align:center;height:40px;line-height:40px;">下拉查看商品</ui-view>
+                <ui-view ui:show="state === 1" style="text-align:center;height:40px;line-height:40px;">↓下拉查看商品</ui-view>
+                <ui-view ui:show="state === 2" style="text-align:center;height:40px;line-height:40px;">↑释放查看商品</ui-view>
+                <ui-view ui:show="state === 3" style="text-align:center;"></ui-view>
+              </ui-view>
                 <ui-view class="evaluate_wrap">
                   <ui-view class="title">
                     <ui-row height="40">
@@ -266,6 +313,7 @@
                   </ui-view>
 
                 </ui-view>
+                </ui-scroll-view>
             </ui-mini-swiper-item>
           </ui-mini-swiper>
 

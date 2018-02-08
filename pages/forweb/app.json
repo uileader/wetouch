@@ -329,5 +329,137 @@
         "text": "模板"
       }
     ]
-  }
+  },
+  "pageTabBars": [
+    {
+      "color": "#555",
+      "selectedColor": "#de3029",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar1-1",
+          "iconName": "api-network",
+          "text": "演示1-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar1-2",
+          "iconName": "setting",
+          "text": "演示1-2"
+        }
+      ]
+    },
+    {
+      "color": "#555",
+      "selectedColor": "#3399ff",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar2-1",
+          "iconPath": "images/icon_API.png",
+          "selectedIconPath": "images/icon_API_HL.png",
+          "text": "演示2-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar2-2",
+          "iconPath": "images/icon_component.png",
+          "selectedIconPath": "images/icon_component_HL.png",
+          "text": "演示2-2"
+        }
+      ]
+    },
+    {
+      "id": "tab-bar-3",
+      "color": "#555",
+      "selectedColor": "#3399ff",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar3-1",
+          "iconName": "api-network",
+          "text": "演示3-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar3-2",
+          "iconName": "setting",
+          "text": "演示3-2"
+        }
+      ]
+    },
+    {
+      "id": "tab-bar-4",
+      "color": "#555",
+      "selectedColor": "#3399ff",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar4-1",
+          "iconName": "api-network",
+          "text": "演示4-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar4-2",
+          "iconName": "setting",
+          "text": "演示4-2"
+        }
+      ]
+    },
+    {
+      "id": "tab-bar-5",
+      "color": "#555",
+      "selectedColor": "#3399ff",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar5-1",
+          "iconName": "api-network",
+          "text": "演示5-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar5-2",
+          "iconName": "mail",
+          "text": "演示5-2"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar5-3",
+          "iconName": "plus",
+          "text": "发布"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar5-4",
+          "iconName": "api-frame",
+          "text": "演示5-4"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar5-5",
+          "iconName": "jd-user",
+          "text": "演示5-5"
+        }
+      ]
+    },
+    {
+      "color": "#555",
+      "selectedColor": "#3399ff",
+      "borderColor": "rgba(231, 231, 231, 0.6)",
+      "backgroundColor": "#fff",
+      "list": [
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar6-1",
+          "iconName": "qn-addressbook",
+          "selectedIconName": "qn-addressbook_fill",
+          "text": "演示6-1"
+        },
+        {
+          "pagePath": "pages/componentDemo/tabBar/tabBar6-2",
+          "iconName": "qn-activity",
+          "selectedIconName": "qn-activity_fill",
+          "text": "演示6-2"
+        }
+      ]
+    }
+  ]
 }

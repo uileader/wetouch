@@ -3,13 +3,12 @@
       <ui-view class="sample_title">折线图（含圆点）</ui-view>
       <ui-view style="text-align: center;">
         <ui-line
-        id="line1"
         value="{{data}}"
         width="{{winWidth}}"
         height="250"
         circle-joint-radius="{{2}}"
         is-animated="true"
-        color-schema = "{{['#8d7fff']}}"
+        color-schema = "{{['purple']}}"
         grid="full"
         line-width = "2"
         body-fill-color="rgba(0,0,0,.7)"
@@ -38,10 +37,10 @@
         tooltip-width="150"
         title-fill-color="#fff"
         text-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="none"
+        x-ticks="{{8}}"
         ></ui-line>
-      </ui-view>  
+      </ui-view>
 
       <ui-view class="sample_title">多条折线图（不含tootip）</ui-view>
       <ui-view style="text-align: center;">
@@ -54,9 +53,14 @@
         grid="full"
         line-width = "1"
         tooltip = "false"
+        body-fill-color="rgba(0,0,0,.7)"
+        tooltip-width="150"
+        title-fill-color="#fff"
+        text-fill-color="#fff"
+        border-stroke-color="none"
+        x-ticks="{{8}}"
         ></ui-line>
       </ui-view>
-
 
       <ui-view class="sample_title">多条曲线图</ui-view>
       <ui-view style="text-align: center;">
@@ -72,9 +76,9 @@
         tooltip-width="150"
         title-fill-color="#fff"
         text-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="none"
         line-curve="basis"
+        x-ticks="{{8}}"
         ></ui-line>
       </ui-view>
 
@@ -92,9 +96,9 @@
         tooltip-width="150"
         title-fill-color="#fff"
         text-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="none"
         line-curve="step"
+        x-ticks="{{8}}"
         ></ui-line>
       </ui-view>
 
@@ -112,8 +116,8 @@
           body-fill-color="rgba(0,0,0,.7)"
           tooltip-width="150"
           title-fill-color="#fff"
-          tooltip-text-color="#fff"
           border-stroke-color="#fff"
+          x-ticks="{{8}}"
           ></ui-line>
         <ui-legend
         value="{{legendData.legend}}"
@@ -125,7 +129,6 @@
       ></ui-legend>
     </ui-view>
 
-
     <ui-view class="sample_title">使用图例控制显隐</ui-view>
         <ui-line
         value="{{newLineData2}}"
@@ -136,9 +139,9 @@
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="#fff"
         line-width = "1"
+        x-ticks="{{8}}"
         ></ui-line>
       <ui-view style="padding-left:10px">
         <ui-tags
@@ -160,10 +163,9 @@
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="#fff"
-        line-curve="basis"
         line-width = "1"
+        x-ticks="{{8}}"
         ></ui-line>
         <ui-brush
         value="{{brushDataAdapter(lineData1.data)}}"

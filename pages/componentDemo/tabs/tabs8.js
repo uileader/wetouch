@@ -1,13 +1,11 @@
-import { setTimeout } from 'timers'
-
 export default {
   data () {
     return {
       current: 0,
       current2: 0,
       number: 1,
-      swiper1: true,
-      swiper2: false,
+      swiper1:true,
+      swiper2:false,
       contentHeight: ui.DEFAULT_CONTENT_HEIGHT,
       height: ui.DEFAULT_CONTENT_HEIGHT - 46,
       shopName: '加厚提花丝光羊毛针织衫 4205',
@@ -257,26 +255,39 @@ export default {
           size: '颜色：藏青；尺寸：XL',
           time: '2017-12-5'
         }
-      ]
+      ],
+      pullUp: {
+        distance: 40,
+        onBegin: this.handleBegin,
+        onActive: this.handleActive,
+        onAfter: this.handlePullUpAfter
+      },
+      state: 0,
+      proportion: 0,
+      pullDown:{
+        distance: 60,
+        onBegin: this.handleBegin2,
+        onActive: this.handleActive2,
+        onAfter: this.handlePullDownAfter
+      },
+      scrollTop:0
 
     }
   },
   methods: {
     handleContentChange (index, key) {
-      console.log(index, key)
-      if (index === 1) {
+      console.log(index,key)
+      if(index === 1){
         this.swiper2 = true
         this.swiper1 = false
-      } else if (index === 0) {
+      }else if(index === 0){
         this.swiper1 = true
         this.swiper2 = false
       }
       this[key] = index
     },
     handleContentChange1 (index, key) {
-      setTimeout(() => {
-        this[key] = index
-      }, 100)
+      this[key] = index
     },
     // 回退处理
     handleBack () {
@@ -286,8 +297,46 @@ export default {
       this[key] = index
     },
 
-    backTop () {
-      this.current = 0
+
+    handleBegin ({ distance, direction }) {
+      this.proportion = Math.abs(distance) / 50
+      this.state = 1
+      if (this.proportion >= 1) {
+        this.state = 2
+      }
+    },
+    handlePullUpAfter(){
+      this.state = 0
+    },
+    handleActive () {
+      this.state = 3
+      this.current=1
+    },
+
+
+    handleBegin2 ({ distance, direction }) {
+      this.proportion = distance / 60
+      // 拉满60px
+      if (this.proportion >= 1) {
+        if (this.state === 1 && direction === 'down') {
+          // 释放刷新
+          this.state = 2
+        }
+      } else {
+        this.state = 1
+      }
+    },
+    handlePullDownAfter(){
+      this.proportion = 0
+      this.state = 1
+    },
+    handleActive2 () {
+      this.state = 3
+      this.current=0
+    },
+    backTop(){
+      this.current=0
+      this.scrollTop=0
     }
   },
   mounted () {

@@ -5,7 +5,7 @@ export default {
       items: [],
       bottom: 30,
       pullDown: {
-        distance: 400
+        distance: 150
       }
     }
   },

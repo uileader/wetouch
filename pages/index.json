@@ -1,4 +1,5 @@
-{
-  "navigationBarVisible":false,
-  "statusBarColor":"white"
-}
+  {
+    "navigationBarVisible":false,
+    "statusBarColor":"white",
+    "touchSlideMenu": true
+  }

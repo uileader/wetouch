@@ -61,7 +61,6 @@
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="#fff"
         is-darker="true"
         ></ui-grouped-bar>
@@ -112,7 +111,6 @@
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="#fff"
         ></ui-grouped-bar>
         <ui-legend
@@ -137,7 +135,6 @@
         body-fill-color="rgba(0,0,0,.7)"
         tooltip-width="150"
         title-fill-color="#fff"
-        tooltip-text-color="#fff"
         border-stroke-color="#fff"
         color-schema="{{groupData.colorSchema}}"
         is-horizontal="true"

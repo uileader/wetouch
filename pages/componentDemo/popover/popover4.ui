@@ -14,14 +14,14 @@
           </ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="right" space-right="10" width="70">
-          
+
         </ui-col>
       </ui-row>
     </ui-nav-bar>
 
-    <ui-row height="70" class="list" space-bottom="1" tap-effect bindlongtap="popoverShow" ui:for="{{item}}">
+    <ui-row height="70" class="list" space-bottom="1" tap-effect bindlongtap="popoverShow($event,index)" ui:for="{{item}}" >
         <ui-col vertical-align="middle" align="center" width="70">
-            <ui-image 
+            <ui-image
                 src="{{ item.head }}"
                 width="50"
                 height="50"
@@ -41,10 +41,10 @@
             </ui-view>
         </ui-col>
     </ui-row>
-   
+
 
     <!-- popover -->
-    <ui-popover hide-on-touch="true" ref="popover" show-arrow="false" mask-style="{{ maskStyle }}" class="custom">
+    <ui-popover hide-on-touch="true" ref="popover" show-arrow="false" height="135" mask-style="{{ maskStyle }}" class="custom">
         <ui-view bindtap="showTitle('标为未读')" hover-class="touch_end">标为未读</ui-view>
         <ui-view bindtap="showTitle('置顶聊天')" hover-class="touch_end">置顶聊天</ui-view>
         <ui-view bindtap="showTitle('删除该聊天')" hover-class="touch_end">删除该聊天</ui-view>

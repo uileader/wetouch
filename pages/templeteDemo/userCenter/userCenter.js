@@ -28,10 +28,7 @@ export default {
         }
       },
       pullDown: {
-        distance: 200,
-        onBegin: () => { },
-        onActive: () => { },
-        onAfter: () => { }
+        distance: 100
       }
     }
   },

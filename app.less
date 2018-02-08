@@ -351,3 +351,65 @@ textarea {
     -webkit-transform: scaleY(1.0);
   }
 }
+
+
+
+//侧滑菜单内容
+.menu{
+  height:100%;
+  text-align:center;
+  padding:10px;
+  // background-color: #3399ff;
+  background:linear-gradient(45deg, #4364DF, #39A6ED);
+  position:relative;
+  .slide_top{
+    .ui-image-container{
+      display:inline-block;
+      margin-top:10px;
+    }
+    .ui-view,
+    .ui-text{
+      color: #fff;
+      font-size:16px;
+      margin-top:10px;
+    }
+    .ui-text{
+      // width:80px;
+      font-size:12px;
+      background: rgba(0, 0, 0, 0.1);
+      line-height:16px;
+      display:inline-block;
+      border-radius:25px;
+      padding:5px 15px;
+      margin-bottom:50px;
+    }
+  }
+  .slide_content{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius:5px;
+    padding-bottom:10px;
+    margin-top:10px;
+    .ui-view{
+      font-size:14px;
+    }
+  }
+  .slide_bottom{
+  width:100%;
+  position:absolute;
+  left:0;
+  bottom:5px;
+  .ui-view{
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    margin:0px auto;
+    .ui-image {
+      width:20px;
+      height:20px; 
+      margin:10px auto;
+    }
+  }
+}
+}
+

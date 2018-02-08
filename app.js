@@ -28,6 +28,8 @@ export default {
       height: ui.DEFAULT_CONTENT_HEIGHT,
       searchValue: '',
       historyContent: [],
+      showSlideMenu: false,
+      slideMenuControl: false,
       hotList: [
         { text: '收纳', tagClass: 'tag-before' },
         {text: '热卖爆款', tagClass: 'tag-before', hot: 'hot'},
@@ -269,8 +271,20 @@ export default {
       ui.showToast({
         title: this.historyContent[index]
       })
-    }
+    },
+    handleNavIconTap () {
+      this.showSlideMenu = !this.showSlideMenu
+    },
 
+    // 关闭侧滑菜单
+    closeMenu (val) {
+      this.showSlideMenu = false
+      if (val !== 'close') {
+        ui.navigateTo({
+          url: '/pages/templeteDemo/userCenter/userCenter'
+        })
+      }
+    }
   },
   mounted () {
 

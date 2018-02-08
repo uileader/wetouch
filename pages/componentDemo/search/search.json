@@ -1,4 +1,5 @@
 {
   "navigationBarVisible": false,
-  "statusBarColor": "white"
+  "statusBarColor": "white",
+  "scrollType":"body"
 }

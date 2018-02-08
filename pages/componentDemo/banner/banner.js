@@ -4,7 +4,7 @@ export default {
     return {
       contentHeight: ui.DEFAULT_CONTENT_HEIGHT,
       pullDown: {
-        distance: 200
+        distance: 100
       }
     }
   },

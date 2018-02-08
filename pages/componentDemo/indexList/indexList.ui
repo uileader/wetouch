@@ -1,7 +1,6 @@
 <!--indexList.ui-->
 <template>
   <ui-page>
-    <!-- <ui-scroll-view> -->
         <ui-view class="sample_title">
           城市选择（单选，不含图标）
         </ui-view>
@@ -33,6 +32,5 @@
           <ui-button>从通讯录添加好友</ui-button>
         </ui-view>
 
-    <!-- </ui-scroll-view> -->
   </ui-page>
 </template>

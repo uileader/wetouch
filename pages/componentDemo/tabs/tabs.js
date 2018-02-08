@@ -32,7 +32,7 @@ export default {
       }
     },
     handleContentChange (index, key) {
-      console.log(index, key)
+      // console.log(index, key)
       this[key] = index
       if(key==="current4"){
         this.showBadge3 = false

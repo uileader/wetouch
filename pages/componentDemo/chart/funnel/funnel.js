@@ -28,7 +28,8 @@ export default {
     callback (e) {
       console.log(e)
     },
-    sliderchange(e){
+    sliderchange (e) {
+      console.log(e)
       ui.showToast({ title: `${e.value}` })
     }
   }

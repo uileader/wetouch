@@ -28,7 +28,7 @@
         <ui-view class="yun5"></ui-view>
         <ui-view class="yun6"></ui-view>
         <ui-view class="top_text">
-          <ui-text block> TOUCH UI提供了上百种控件</ui-text>
+          <ui-text block> TouchUI Pro提供了上百种控件</ui-text>
           <ui-text block>让你用搭积木的方式快速开发移动应用</ui-text>
         </ui-view>
         <ui-row height='30' class="top_bottom">

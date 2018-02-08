@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "模板",
-  "statusBarColor": "white"
+  "statusBarColor": "white",
+  "touchSlideMenu": true,
+  "backgroundColor":"#fff"
 }

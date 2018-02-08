@@ -42,78 +42,62 @@
 
     </ui-nav-bar>
 
-    <ui-mini-swiper  class="content" index="{{ current }}" bindchange="handleContentChange($event, 'current')">
+    <ui-mini-swiper height="{{ contentHeight }}" class="content" index="{{ current }}" bindchange="handleContentChange($event, 'current')">
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items0 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items1 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items2 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items3 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items4 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items5 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items6 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
       <ui-mini-swiper-item>
-        <ui-scroll-view height="{{ contentHeight }}" scroll-y>
           <ui-view class="content_list">
             <ui-view ui:for="{{ items7 }}" class="{{{'grey-bg': index % 2 == 0}}}">
               {{ item }}
             </ui-view>
           </ui-view>
-        </ui-scroll-view>
       </ui-mini-swiper-item>
 
     </ui-mini-swiper>

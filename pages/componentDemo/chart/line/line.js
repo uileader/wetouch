@@ -15,36 +15,36 @@ export default {
               {
                 date: '2017-01-01',
                 value: 21
-              },{
-                date: '2017-02-02',
+              }, {
+                date: '2017-02-01',
                 value: 21
               },
               {
-                date: '2017-03-03',
+                date: '2017-03-01',
                 value: 23
               },
               {
-                date: '2017-04-04',
+                date: '2017-04-01',
                 value: 22
               },
               {
-                date: '2017-05-05',
+                date: '2017-05-01',
                 value: 23
               },
               {
-                date: '2017-06-06',
+                date: '2017-06-01',
                 value: 21
               },
               {
-                date: '2017-07-07',
+                date: '2017-07-01',
                 value: 25
               },
               {
-                date: '2017-08-08',
+                date: '2017-08-01',
                 value: 23
               }
             ]
-          } 
+          }
         ],
         colorSchema: ['#e60012']
       },
@@ -55,43 +55,43 @@ export default {
             topic: 123,
             dates: [
               {
-                date: '2017-01-16',
+                date: '2017-01-16T00:00:00',
                 value: 2234
               },
               {
-                date: '2017-01-17',
+                date: '2017-01-17T00:00:00',
                 value: 1342
               },
               {
-                date: '2017-01-18',
+                date: '2017-01-18T00:00:00',
                 value: 2345
               },
               {
-                date: '2017-01-19',
+                date: '2017-01-19T00:00:00',
                 value: 3225
               },
               {
-                date: '2017-01-20',
+                date: '2017-01-20T00:00:00',
                 value: 2435
               },
               {
-                date: '2017-01-21',
+                date: '2017-01-21T00:00:00',
                 value: 2977
               },
               {
-                date: '2017-01-22',
+                date: '2017-01-22T00:00:00',
                 value: 4532
               },
               {
-                date: '2017-01-23',
+                date: '2017-01-23T00:00:00',
                 value: 5323
               },
               {
-                date: '2017-01-24',
+                date: '2017-01-24T00:00:00',
                 value: 3564
               },
               {
-                date: '2017-01-25',
+                date: '2017-01-25T00:00:00',
                 value: 6532
               }
             ]
@@ -100,43 +100,43 @@ export default {
             topic: 345,
             dates: [
               {
-                date: '2017-01-16',
+                date: '2017-01-16T00:00:00',
                 value: 4832
               },
               {
-                date: '2017-01-17',
+                date: '2017-01-17T00:00:00',
                 value: 6453
               },
               {
-                date: '2017-01-18',
+                date: '2017-01-18T00:00:00',
                 value: 5342
               },
               {
-                date: '2017-01-19',
+                date: '2017-01-19T00:00:00',
                 value: 7565
               },
               {
-                date: '2017-01-20',
+                date: '2017-01-20T00:00:00',
                 value: 6767
               },
               {
-                date: '2017-01-21',
+                date: '2017-01-21T00:00:00',
                 value: 7867
               },
               {
-                date: '2017-01-22',
+                date: '2017-01-22T00:00:00',
                 value: 8675
               },
               {
-                date: '2017-01-23',
+                date: '2017-01-23T00:00:00',
                 value: 7434
               },
               {
-                date: '2017-01-24',
+                date: '2017-01-24T00:00:00',
                 value: 8973
               },
               {
-                date: '2017-01-25',
+                date: '2017-01-25T00:00:00',
                 value: 9874
               }
             ]
@@ -165,7 +165,8 @@ export default {
           dataByTopic: [
             {
               topicName: '帕丁顿熊2',
-              topic: 1,
+              topic: 0,
+              color: '#ef3d36',
               dates: [
                 {
                   date: '2017-01-01',
@@ -265,7 +266,8 @@ export default {
             },
             {
               topicName: '怪兽大学',
-              topic: 2,
+              topic: 1,
+              color: '#39f',
               dates: [
                 {
                   date: '2017-01-01',
@@ -365,7 +367,8 @@ export default {
             },
             {
               topicName: '父子雄兵',
-              topic: 3,
+              topic: 2,
+              color: '#2ec7ff',
               dates: [
                 {
                   date: '2017-01-01',
@@ -465,7 +468,8 @@ export default {
             },
             {
               topicName: '绝世高手',
-              topic: 5,
+              topic: 3,
+              color: '#23d8dc',
               dates: [
                 {
                   date: '2017-01-01',
@@ -565,7 +569,8 @@ export default {
             },
             {
               topicName: '奇门遁甲',
-              topic: 6,
+              topic: 4,
+              color: '#36cd6a',
               dates: [
                 {
                   date: '2017-01-01',
@@ -2074,10 +2079,9 @@ export default {
                 }
               ]
             }
-          ],
+          ]
         }
-      },
-
+      }
 
     }
   },
@@ -2085,29 +2089,29 @@ export default {
     multipleTap1 (opt) {
       this.list4[opt].checked = !this.list4[opt].checked
       this.newLineData2 = JSON.parse(JSON.stringify(this.newLineData2))
-      //取消选中
-      if(!this.list4[opt].checked){
-        if(this.count===1){
+      // 取消选中
+      if (!this.list4[opt].checked) {
+        if (this.count === 1) {
           console.log('不能再取消了')
           this.list4[opt].checked = true
           return false
-        }else if(this.count > 1){
+        } else if (this.count > 1) {
           this.count--
-          //循环数据。
-          for(var i = 0;i<this.newLineData2.dataByTopic.length;i++){
-            //判断当前点击的是折线图中的哪一条。
-            if(this.newLineData2.dataByTopic[i].topic === opt){
+          // 循环数据。
+          for (var i = 0; i < this.newLineData2.dataByTopic.length; i++) {
+            // 判断当前点击的是折线图中的哪一条。
+            if (this.newLineData2.dataByTopic[i].topic === opt) {
               this.newLineData2.dataByTopic.splice(i, 1)
               this.newLineData2 = JSON.parse(JSON.stringify(this.newLineData2))
               console.log(this.newLineData2)
             }
           }
         }
-      }else if(this.list4[opt].checked){
+      } else if (this.list4[opt].checked) {
         this.count++
         // 循环原来的数据
-        for(var i = 0;i<this.lineData2.data.dataByTopic.length;i++){
-          if(this.lineData2.data.dataByTopic[i].topic === opt){
+        for (var i = 0; i < this.lineData2.data.dataByTopic.length; i++) {
+          if (this.lineData2.data.dataByTopic[i].topic === opt) {
             this.newLineData2.dataByTopic.push(this.lineData2.data.dataByTopic[i])
             this.newLineData2 = JSON.parse(JSON.stringify(this.newLineData2))
             console.log(this.newLineData2)
@@ -2148,6 +2152,8 @@ export default {
   mounted () {
     this.newLineData = this.lineData1.data
     this.newLineData2 = this.lineData2.data
+    console.log(this.lineData1)
+    console.log(this.lineData2)
     this.count = this.lineData2.data.dataByTopic.length
   }
 }

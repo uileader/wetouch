@@ -71,7 +71,6 @@
     tooltip-width="150"
     title-fill-color="#fff"
     text-fill-color="#fff"
-    tooltip-text-color="#fff"
     border-strokeColor="#fff"
     curve="true"
     ></ui-stacked-area>
@@ -88,7 +87,6 @@
     tooltip-width="150"
     title-fill-color="#fff"
     text-fill-color="#fff"
-    tooltip-text-color="#fff"
     border-strokeColor="#fff"
     curve="true"
     ></ui-stacked-area>
