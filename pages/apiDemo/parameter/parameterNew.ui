@@ -1,9 +1,0 @@
-<!--transferNew.ui-->
-<template>
-    <ui-page>
-       <ui-view class="sample_title">接收参数</ui-view>
-       <ui-view class="sample_content">
-         <ui-button bindtap="navigateBack" type="primary" plain="{{true}}">返回上一页</ui-button>
-       </ui-view>
-    </ui-page>
-   </template>

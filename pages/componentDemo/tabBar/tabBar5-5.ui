@@ -1,8 +1,0 @@
-<!--tabBar5-5.ui-->
-<template>
-  <ui-page>
-    <ui-view class="content">
-      <ui-text class="title">5-5</ui-text>
-    </ui-view>
-  </ui-page>
-</template>

@@ -1,0 +1,37 @@
+<!--countUp.ui-->
+<template>
+  <ui-page>
+    <ui-view class="sample_title">基本使用</ui-view>
+    <ui-view class="sample_content">
+        <ui-count-up from="1" to="100"></ui-count-up>
+    </ui-view>
+
+    <ui-view class="sample_title">渐变颜色</ui-view>
+    <ui-view class="sample_content">
+        <ui-count-up from=1 to=100 from-color="#FA7474" to-color="#3399ff"></ui-count-up>
+    </ui-view>
+
+    <ui-view class="sample_title">持续时间</ui-view>
+    <ui-view class="sample_content">
+        <ui-count-up from=1 to=100 duration="5000"></ui-count-up>
+    </ui-view>
+  </ui-page>
+</template>
+
+
+<script>
+export default {
+  config: {
+    "navigationBarTitleText": "数字动画"
+  },
+  data () {
+    return {}
+  },
+  methods: {}
+}
+
+</script>
+
+<style lang="less">
+    
+</style>

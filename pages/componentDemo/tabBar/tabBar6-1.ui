@@ -1,8 +1,0 @@
-<!--tabBar6-1.ui-->
-<template>
-  <ui-page>
-    <ui-view class="content">
-      <ui-text class="title">6-1</ui-text>
-    </ui-view>
-  </ui-page>
-</template>

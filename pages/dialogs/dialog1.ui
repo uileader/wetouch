@@ -1,11 +1,9 @@
 <template>
-<ui-page top="0">
-  <ui-view class="ui-dialog-content">
+<ui-page>
     <ui-check-list title="基本使用" max="1" options="{{ countryList }}" type="plain" label-position="left" ui:model="{{ checklist }}" bindchange="changeCountry"></ui-check-list>
     <ui-view class="btn_win">
         <ui-button type="success" bindtap="confirmSelect">确定选择</ui-button>
     </ui-view>
-  </ui-view>
   </ui-page>
 </template>
 <script>

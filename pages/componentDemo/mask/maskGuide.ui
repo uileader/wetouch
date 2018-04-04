@@ -9,10 +9,10 @@
       <ui-view class="finger-swiper" bindtap="handleShowMask1(false)">
         <ui-row>
           <ui-col space-right="10">
-            <ui-icon name="one-finger-swipe-lef" size="36" color="#fff" align="right"></ui-icon>
+            <ui-icon type="one-finger-swipe-lef" size="36" color="#fff" align="right"></ui-icon>
           </ui-col>
           <ui-col space-left="10">
-            <ui-icon name="one-finger-swipe-rig" size="36" color="#fff" align="left"></ui-icon>
+            <ui-icon type="one-finger-swipe-rig" size="36" color="#fff" align="left"></ui-icon>
           </ui-col>
         </ui-row>
         <ui-view>左右滑屏，查看上/下一个案例</ui-view>
@@ -22,3 +22,40 @@
     
   </ui-page>
 </template>
+
+
+<script>
+  // maskGuide.js
+export default {
+  config: {
+    "navigationBarTitleText": "操作引导"
+  },
+  data () {
+    return {
+      showMask1: true
+    }
+  },
+  methods: {
+    handleShowMask1 (show) {
+      this.showMask1 = show
+    }
+  }
+}
+
+</script>
+
+<style lang="less">
+  // maskGuide.less
+.mask1{
+  .mix-flex-center();
+  .finger-swiper{
+    color: #fff;
+    text-align: center;
+  }
+  .know{
+    color: #d6545d;
+    text-decoration: underline;
+  }
+}
+
+</style>

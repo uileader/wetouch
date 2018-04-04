@@ -41,7 +41,9 @@
     "ui.table.offline": "网络无法连接，请检查您的网络",
     "ui.table.empty": "结果为空",
     "ui.table.need_login": "请先登录",
-    "ui.table.loading": "正在加载..."
+    "ui.table.loading": "正在加载...",
+    "ui.cascader.select": "请选择",
+    "ui.calendar.head": "日 一 二 三 四 五 六"
   },
   "en": {
     "ui.alert.button_text": "OK",
@@ -65,7 +67,7 @@
     "ui.requeststatus.error": "Request failed, tap to refresh",
     "ui.requeststatus.empty": "No data, tap to refresh",
     "ui.pulldownrefresh.pull": "Pull refresh",
-    "ui.pulldownrefresh.release": "Relase to refresh",
+    "ui.pulldownrefresh.release": "Release to refresh",
     "ui.pulldownrefresh.refreshing": "Refreshing...",
     "ui.pulldownrefresh.success": "Refresh success",
     "ui.pulldownrefresh.cancel": "Cancel pull",
@@ -85,6 +87,9 @@
     "ui.table.offline": "Can't connect to network",
     "ui.table.empty": "No results",
     "ui.table.need_login": "Please login first",
-    "ui.table.loading": "Loading..."
+    "ui.table.loading": "Loading...",
+    "ui.cascader.select": "Please Select",
+    "ui.calendar.head": "Sun Mon Tue Wen Thu Fri Sat"
+
   }
 }

@@ -1,8 +1,0 @@
-<!--statusBarClick.ui-->
-<template>
-  <ui-page>
-    <ui-view class="content">
-      请点击状态栏查看效果（仅支持iOS）
-    </ui-view>
-  </ui-page>
-</template>

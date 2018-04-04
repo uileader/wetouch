@@ -15,3 +15,58 @@
     </ui-view>
   </ui-page>
 </template>
+
+<script>
+  // image3.js
+export default {
+  config: {
+    "navigationBarTitleText": "懒加载blur效果"
+  },
+  data () {
+    return {
+      list: [
+        {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        },
+        {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        },
+        {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        },
+        {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+        }, {
+          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+        }
+      ]
+    }
+  },
+  methods: {}
+}
+
+</script>
+
+<style lang="less">
+.img{
+  margin: 0 auto;
+}
+.custom-placeholder{
+  height: 100%;
+  background-color: #CCC;
+}
+</style>

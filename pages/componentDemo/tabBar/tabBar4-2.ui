@@ -1,8 +1,0 @@
-<!--tabBar8.ui-->
-<template>
-  <ui-page>
-    <ui-view class="content">
-      <ui-text class="title">4-2</ui-text>
-    </ui-view>
-  </ui-page>
-</template>

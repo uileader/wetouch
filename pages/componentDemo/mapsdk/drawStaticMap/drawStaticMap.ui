@@ -1,8 +1,0 @@
-<!--drawStaticMap.ui-->
-<template>
-  <ui-page>
-    <ui-view class="img_box">
-      <ui-image src="{{src}}"></ui-image>
-    </ui-view>
-  </ui-page>
-</template>

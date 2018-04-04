@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "自定义下拉与上拉",
-  "disableScroll":true,
-  "navigationBarBorderColor": "rgba(231, 231, 231, 0.6)",
-  "navigationBarBackgroundColor":"#FFFFFF",
-  "navigationBarTextColor":"black",
-  "statusBarColor":"black"
-}

@@ -1,8 +1,0 @@
-<!--noScroll.ui-->
-<template>
-  <ui-page>
-      <ui-view class="title">
-        通过配置文件来设置不允许滚动，用于某些特殊的场合，比如：音乐播放器或游戏类。
-      </ui-view>
-  </ui-page>
-</template>

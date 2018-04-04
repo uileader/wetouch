@@ -1,7 +1,0 @@
-<template>
-  <ui-page>
-    <ui-view class="content">
-      <ui-text class="title">不建议使用图片作为tab的图标</ui-text>
-    </ui-view>
-  </ui-page>
-</template>

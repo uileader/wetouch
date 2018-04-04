@@ -4,7 +4,7 @@
     <ui-nav-bar slot="nav-bar"  class="nav_bar">
       <ui-row height="46">
         <ui-col vertical-align="middle" align="left" space-left="10" width="50"bindtap="navigateBack">
-          <ui-icon name="arrow-left" size="16" color="#fff"></ui-icon>
+          <ui-icon type="arrow-left" size="16" color="#fff"></ui-icon>
         </ui-col>
         <ui-col vertical-align="middle" align="center">
           <ui-view class="nav_title">设置</ui-view>
@@ -46,3 +46,61 @@
 
   </ui-page>
 </template>
+
+<script>
+  // commonUse.js
+export default {
+  config: {
+    navigationStyle: 'custom',
+    backgroundColor: '#F2F2F2',
+    delay:false
+  },
+  data () {
+    return {
+      imageQuality: '普通'
+    }
+  },
+  methods: {
+    navigateBack () {
+      ui.navigateBack()
+    },
+    clearCache () {
+      ui.showToast({ title: '缓存清除', icon: 'success' })
+    },
+    imgQuality () {
+      let itemList = [
+        '普通',
+        '高清'
+      ]
+      ui.showActionSheet({
+        itemList: itemList,
+        success: (index) => {
+          // ui.showToast({
+          //   title: `index: ${index}`
+          // })
+          this.imageQuality = itemList[index]
+        }
+      })
+    }
+  }
+}
+
+</script>
+
+<style lang="less">
+  // commonUse.less
+.nav_bar{
+  background: linear-gradient(to right, #1F97FE, #126DFE); 
+  .nav_title{
+    color: #fff;
+  }
+}
+.user_content_list{
+  background-color: #fff;
+}
+.user_content_list2{
+  background-color: #fff;
+  .mix-1px(0, 0, 1, 0, #ccc);
+}
+
+</style>
