@@ -18,6 +18,7 @@
           <ui-view class="btn-area">
             <ui-button type="primary" bindtap="getLocation">获取位置</ui-button>
             <ui-button bindtap="clear">清空</ui-button>
+            <ui-view>在浏览器中使用GPS需要通过https访问webApp</ui-view>
           </ui-view>
         </ui-view>
       </ui-view>

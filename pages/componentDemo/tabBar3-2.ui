@@ -1,14 +1,6 @@
 <!--tabBar6.ui-->
 <template>
   <ui-page>
-    <ui-nav-bar slot="nav-bar" style="{{{ 'background-color': '#fff', color: '#39f' }}}">
-      <ui-view class="nav-bar-left" slot="left">
-        <span class="back" bindtap="handleBack">
-          <ui-icon type="arrow-left" font-size="24"></ui-icon>返回
-        </span>
-      </ui-view>
-      自定义导航栏2
-    </ui-nav-bar>
     <ui-view class="content">
       <ui-text class="title">3-2</ui-text>
     </ui-view>
@@ -20,15 +12,12 @@
 export default {
   config: {
     "navigationBarTitleText": "tab点击动画",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   data () {
     return {}
   },
   methods: {
-    handleBack () {
-      ui.navigateBack()
-    }
   }
 }
 

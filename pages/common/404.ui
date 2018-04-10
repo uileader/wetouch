@@ -1,5 +1,5 @@
 <template>
-  <ui-page class="ui-404">
+  <ui-page class="ui-404" style="height:{{height}}px">
     <ui-view class="ui-404-inner">
       <ui-image src="{{ img }}" width="150" height="97"></ui-image>
       <ui-view class="tip">路径错误或没有在配置项中注册</ui-view>
@@ -12,10 +12,12 @@
 export default {
   config: {
     "navigationBarTitleText": "404",
-    "delay":false
+    "delay":false,
+    "disableScroll":true
   },
   data () {
     return {
+      height:ui.WIN_HEIGHT,
       img: require('../../images/404.png')
     }
   },

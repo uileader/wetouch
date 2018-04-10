@@ -14,7 +14,7 @@
               <ui-row height="27" border-bottom="true" style="padding-bottom:10px">
                 <ui-col align="left">{{rangestart}}</ui-col>
                 <ui-col width="35" align="center">
-                  <ui-text class="smalltitle2" ui:show="{{differShow}}">{{differ}}晚</ui-text>
+                  <ui-text class="smalltitle2" ui:if="{{differShow}}">{{differ}}晚</ui-text>
                 </ui-col>
               </ui-row>
             </ui-col>
@@ -48,10 +48,12 @@
                 height="{{height - headerHeight}}"
                 select-range-mode="{{true}}"
                 max-range="{{30}}"
+
                 bindselectedstart="selectedStartHandler"
                 bindselectedend="selectedEndHandler"
                 bindfailed="failedHandler"
                 disable-past-days="true"
+                value = "{{rangeDate}}"
               ></ui-v-calendar>
               </ui-view>
           </ui-popup>
@@ -168,10 +170,6 @@
                 <ui-button class="btnyd">立即预订</ui-button>
               </ui-row>
           </ui-view>
-  
-          
-          
-  
         
     </ui-page>
   </template>
@@ -200,7 +198,7 @@
         rangeCalendarDefault: false,
         // 时间差
         differ: '',
-        differ2: '',
+        differ2: '2',
         differShow: false,
         rangeDate: '',
         rangeDate2: '',
@@ -215,7 +213,8 @@
       radioinit (thisdate) {
         this.dateobj.radioDate = thisdate
         this.dateobj.radioDate = thisdate.split('/')
-        this.radioDate = this.dateobj.radioDate
+        // this.radioDate = this.dateobj.radioDate
+        console.log('radioinit',this.dateobj,this.radioDate)
         this.radioMonth = this.dateobj.radioDate[1]
         this.radioDay = this.dateobj.radioDate[2]
       },
@@ -231,25 +230,27 @@
         this.rangeend = `${end[1]}月${end[2]}日`
       },
       rangeinit2 (thisdate) {
-        console.log('rangeinit2')
         let start, end
         this.dateobj.rangestart2 = thisdate.rangedate2[0]
         this.dateobj.rangeend2 = thisdate.rangedate2[1]
         start = this.dateobj.rangestart2.split('/')
         end = this.dateobj.rangeend2.split('/')
-        this.rangestart2 = `${start[1]}月${start[2]}日`
-        this.rangeend2 = `${end[1]}月${end[2]}日`
+        this.rangestart2 = `${start[1]}-${start[2]}`
+        this.rangeend2 = `${end[1]}-${end[2]}`
       },
       selectedChange (e) {
+        this.radioDate = e
         this.radioinit(e)
+        console.log(this.radioCalendar)
         setTimeout(() => {
           this.radioCalendar = false
         }, 200)
       },
       selectedStartHandler (e) {
-        this.rangeDate = e
+       
       },
       selectedEndHandler (e) {
+        this.rangeDate = e
         this.dateobj.rangedate = e
         setTimeout(() => {
           this.rangeCalendar = false
@@ -264,17 +265,15 @@
       },
       selectedStartHandler2 (e) {
         console.log('开始',e)
-        this.rangeDate2 = e
       },
       selectedEndHandler2 (e) {
-        console.log('selectedEndHandler2结束',e)
+        this.rangeDate2 = e
+        this.defaultMonthrange = e
         this.dateobj.rangedate2 = e
         setTimeout(() => {
           this.rangeCalendarDefault = false
-          // ui.setStatusBarStyle({style: 'light'})
         }, 200)
         this.calculationDays2()
-        console.log(this.dateobj)
         this.rangeinit2(this.dateobj)
       },
       failedHandler2 (err) {
@@ -291,24 +290,17 @@
       },
       radioCalendaropen () {
         this.radioCalendar = true
-        // ui.setStatusBarStyle({style: 'light'})
       },
       // 双选打开
       rangeCalendaropen (state) {
         this.rangeCalendar = true
-        // ui.setStatusBarStyle({ style: 'dark' })
       },
       rangeCalendarDefaultOpen () {
         this.rangeCalendarDefault = true
-        // ui.setStatusBarStyle({ style: 'dark' })
+        this.defaultMonthrangeChange = true
       },
       handleSelect (key) {
         this[key] = false
-        // if (key === 'rangeCalendar') {
-        //   ui.setStatusBarStyle({style: 'light'})
-        // } else if (key === 'rangeCalendarDefault') {
-        //   ui.setStatusBarStyle({style: 'light'})
-        // }
       },
       radioSave () {
         this.radioDate = Date.parse(new Date(this.radioDate))
@@ -329,21 +321,23 @@
         this.differ2 = Math.floor((end - start) / (24 * 3600 * 1000))
       }
     },
-    created () {
-      // 计算时间范围
+    mounted () {
       let radiodate = new Date()
-      let rangedate = new Date()
-      let rangedate2 = new Date()
       this.radioDate = this.format(Date.parse(radiodate))
+      let rangedate2 = new Date()
       let defaultStart, defaultEnd
       defaultStart = this.format(rangedate2.setDate(new Date().getDate()))
       defaultEnd = this.format(rangedate2.setDate(new Date().getDate() + 2))
       this.defaultMonthrange.push(defaultStart, defaultEnd)
-    },
-    mounted () {
+      let start, end
+      this.dateobj.rangestart2 = this.defaultMonthrange[0]
+      this.dateobj.rangeend2 = this.defaultMonthrange[1]
+      start = this.dateobj.rangestart2.split('/')
+      end = this.dateobj.rangeend2.split('/')
+      this.rangestart2 = `${start[1]}月${start[2]}日`
+      this.rangeend2 = `${end[1]}月${end[2]}日`
       let date = new Date()
       this.radioinit(this.format(date))
-      console.log(this.date)
     }
   }
   

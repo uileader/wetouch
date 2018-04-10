@@ -6,7 +6,7 @@
             <ui-icon type="arrow-left" size="16" color="#fff"></ui-icon>
         </ui-col>
         <ui-col align="center">
-          <ui-view>{{dateDay}}</ui-view>
+          <ui-view>{{dataMonth}}</ui-view>
         </ui-col>
         <ui-col vertical-align="middle" align="center" width="60">
         </ui-col>
@@ -14,6 +14,7 @@
     </ui-nav-bar>
     <ui-view class="bg-blue">
         <ui-w-calendar
+        bindweekchange="weekHandler"
         value="{{date}}"
         bindchanged="selectedHandler($event)"
       ></ui-w-calendar>
@@ -35,11 +36,20 @@ export default {
     return {
       date: '',
       dateDay: '',
-      dateObj: {}
+      dateObj: {},
+      dataMonth:''
     }
   },
   methods: {
+    weekHandler(e){
+      console.log(e,'weekHandler')
+      let dataMonth = e.substring(0,7)
+      dataMonth = dataMonth.split('/')
+      console.log(dataMonth)
+      this.dataMonth = `${dataMonth[0]}年${dataMonth[1]}月`
+    },
     selectedHandler (e) {
+      console.log(e)
       this.dateObj = e.split('/')
       this.dateDay = `${this.dateObj[0]}年${this.dateObj[1]}月${this.dateObj[2]}日`
     },
@@ -61,7 +71,7 @@ export default {
     this.date = date
     this.dateObj = this.date.split('/')
     this.dateDay = `${this.dateObj[0]}年${this.dateObj[1]}月${this.dateObj[2]}日`
-
+    this.dataMonth = `${this.dateObj[0]}年${this.dateObj[1]}月`
   }
 }
 

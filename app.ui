@@ -469,16 +469,13 @@ export default {
       "pages/componentDemo/map/getLocation",
       "pages/componentDemo/map/map",
       "pages/componentDemo/map/mapDemo",
-      "pages/componentDemo/mapService/googlemap",
       "pages/componentDemo/map/mapDraw",
-      "pages/componentDemo/mapService/tencentmap",
       "pages/componentDemo/map/trajectory",
       "pages/componentDemo/mapsdk/distanceCalculation",
       "pages/componentDemo/mapsdk/drawStaticMap",
       "pages/componentDemo/mapsdk/interestPointAroud",
       "pages/componentDemo/mapsdk/mapComprehensive",
       "pages/componentDemo/mapsdk/mapComprehensiveDetail",
-      "pages/componentDemo/mapService/mapSearchInput",
       "pages/componentDemo/mapsdk/mapSearchTips",
       "pages/componentDemo/mapsdk/reverseAddressResolution",
       "pages/componentDemo/mapsdk/routePlanning",
@@ -563,6 +560,9 @@ export default {
       "pages/templeteDemo/O2O/hotelDetails",
       "pages/templeteDemo/videoTemplete/videoTemplete",
       "pages/templeteDemo/videoTemplete/videoList"
+      // "pages/componentDemo/mapService/googlemap",
+      // "pages/componentDemo/mapService/mapSearchInput",
+      // "pages/componentDemo/mapService/tencentmap",
       // "pages/home/mediaList",
       // "pages/home/accessList",
       // "pages/home/browserList",
@@ -613,7 +613,7 @@ export default {
       "theme-color": "#39f"
     },
     "window": {
-    "scrollType": "div",
+    "scrollType": "body",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
       "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)"

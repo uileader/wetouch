@@ -43,7 +43,9 @@
     "ui.table.need_login": "请先登录",
     "ui.table.loading": "正在加载...",
     "ui.cascader.select": "请选择",
-    "ui.calendar.head": "日 一 二 三 四 五 六"
+    "ui.calendar.head": "日 一 二 三 四 五 六",
+    "ui.calendar.yearsplit": "年",
+    "ui.calendar.monthsplit": "月"
   },
   "en": {
     "ui.alert.button_text": "OK",
@@ -89,7 +91,8 @@
     "ui.table.need_login": "Please login first",
     "ui.table.loading": "Loading...",
     "ui.cascader.select": "Please Select",
-    "ui.calendar.head": "Sun Mon Tue Wen Thu Fri Sat"
-
+    "ui.calendar.head": "Sun Mon Tue Wen Thu Fri Sat",
+    "ui.calendar.yearsplit": "/",
+    "ui.calendar.monthsplit": ""
   }
 }

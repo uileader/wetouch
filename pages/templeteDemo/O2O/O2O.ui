@@ -231,6 +231,7 @@
           </ui-col>
         </ui-row>
         <ui-v-calendar
+        ui:if="{{rangeCalendarDefault}}"
         height="{{height - headerHeight}}"
         select-range-mode="{{true}}"
         show-month-range="{{monthrange}}"
@@ -239,9 +240,6 @@
         bindselectedstart="selectedStartHandler2($event)"
         bindselectedend="selectedEndHandler2($event)"
         bindfailed="failedHandler2($event)"
-        start-range-color="#125cbc"
-        end-range-color="#125cbc"
-        range-color="#125cbc"
       ></ui-v-calendar>
       </ui-view>
     </ui-popup>
@@ -282,7 +280,7 @@
           unlimited="{{true}}"
           max="500"
           key-scale-line="100"
-          active-color="#00c8b2"
+          active-color="#39f"
           slider-weight="4"
           thumb-style="{{tbObj6}}"
           step="100"
@@ -426,9 +424,9 @@ export default {
     },
     selectedEndHandler2 (e) {
       this.dateobj.rangedate2 = e
+      this.defaultMonthrange = e
       setTimeout(() => {
         this.rangeCalendarDefault = false
-        // ui.setStatusBarStyle({style: 'light'})
       }, 500)
       this.calculationDays2()
       this.rangeinit2(this.dateobj)
@@ -488,26 +486,24 @@ export default {
       })
     }
   },
-  created () {
-    // 计算时间范围
-    let radiodate = new Date()
-    let rangedate = new Date()
-    let rangedate2 = new Date()
-    this.radioDate = this.format(Date.parse(radiodate))
-    let start, end, defaultStart, defaultEnd
-    start = this.format(rangedate.setMonth(new Date().getMonth()))
-    end = this.format(rangedate.setMonth(new Date().getMonth() + 6))
-    start = start.substring(0, 7)
-    end = end.substring(0, 7)
-    this.monthrange.push(start, end)
-    defaultStart = this.format(rangedate2.setDate(new Date().getDate()))
-    defaultEnd = this.format(rangedate2.setDate(new Date().getDate() + 2))
-    this.defaultMonthrange.push(defaultStart, defaultEnd)
-  },
+ 
   mounted () {
     // let people=ui.getStorageSync('people')
     this.people='2成人 0儿童'
     this.current=1
+
+    let rangedate2 = new Date()
+    let defaultStart, defaultEnd
+    defaultStart = this.format(rangedate2.setDate(new Date().getDate()))
+    defaultEnd = this.format(rangedate2.setDate(new Date().getDate() + 2))
+    this.defaultMonthrange.push(defaultStart, defaultEnd)
+    let start, end
+    this.dateobj.rangestart2 = this.defaultMonthrange[0]
+    this.dateobj.rangeend2 = this.defaultMonthrange[1]
+    start = this.dateobj.rangestart2.split('/')
+    end = this.dateobj.rangeend2.split('/')
+    this.rangestart2 = `${start[1]}月${start[2]}日`
+    this.rangeend2 = `${end[1]}月${end[2]}日`
   }
 }
 </script>
@@ -614,8 +610,8 @@ export default {
 }
 
 .select-class2 {
-  border: 1px solid #54d09f;
-  background: #54d09f;
+  border: 1px solid #39f;
+  background: #39f;
   color: #fff;
 }
 
@@ -646,7 +642,7 @@ export default {
 .finish{
   border: 0;
   color: #fff;
-  background-color: #2CB69E;
+  background-color: #39f;
 }
 
 

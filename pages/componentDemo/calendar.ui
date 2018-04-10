@@ -37,7 +37,6 @@
         ui:model="{{date}}"
         max-range="60"
         date-page="{{datePage}}"
-        date-range="{{monthrange}}"
         bindselectedstart="bindselectedstart"
         bindselectedend="bindselectedend"
       ></ui-calendar>
