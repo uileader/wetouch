@@ -14,7 +14,13 @@
         </ui-view>
         <ui-row-list bordered>
           <ui-row url="{{ link }}" hover-class="touchui-hover">
-            <ui-col>使用浏览器打开网址</ui-col>
+            <ui-col>使用内置浏览器打开网址</ui-col>
+            <ui-col align="right" width="30">
+                <ui-icon type="arrow-right" size="18" color="#C5C5C5"></ui-icon>
+            </ui-col>
+          </ui-row>
+          <ui-row url="{{ link2 }}" hover-class="touchui-hover">
+            <ui-col>使用外置浏览器打开网址</ui-col>
             <ui-col align="right" width="30">
                 <ui-icon type="arrow-right" size="18" color="#C5C5C5"></ui-icon>
             </ui-col>
@@ -49,6 +55,7 @@ export default {
   data () {
     return {
       link: '/pages/apiDemo/browserUrl',
+      link2: '/pages/apiDemo/browserUrl2',
       url: 'http://www.uileader.com/bridgeDemo/index.html?time='+ timestamp,
       url2: 'http://www.uileader.com/bridgeDemo/index2.html?time='+ timestamp,
       collect_press: require('#/images/browser/topbar_white_collect_press.png'),

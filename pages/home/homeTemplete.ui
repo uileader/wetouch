@@ -15,7 +15,24 @@
     </ui-nav-bar> -->
 
     <ui-view class="template_content">
-     
+      <!-- <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/musicPlayer">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/template_01.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">音乐播放器</ui-view>
+            <ui-view class="list_text">
+              涵盖了音频播放控制、滑动条控制、曲目管理、系统的音频面板控制等功能点
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view> -->
 
       <ui-view class="template_list">
         <ui-navigator url="/pages/templeteDemo/friendCircle">
@@ -35,6 +52,44 @@
           </ui-view>
         </ui-navigator>
       </ui-view>
+
+      <!-- <ui-view class="template_list" bindtap="loginInterface">
+        <ui-view class="list_top">
+          <ui-image 
+          src="{{ require('#/images/template_03.jpg') }}"
+          mode="aspectFit"
+          width="100%"
+          load-effect="fade"
+          ></ui-image>
+        </ui-view>
+        <ui-view class="list_bottom">
+          <ui-view class="list_title">登录／注册</ui-view>
+          <ui-view class="list_text">
+            完整展示了登录与注册所涉及的各种功能点
+          </ui-view>
+        </ui-view>
+      </ui-view>
+
+      <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/userCenter/userCenter">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/template_04.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">用户中心</ui-view>
+            <ui-view class="list_text">
+              涵盖了用户中心界面布局、头像上传、客服、通讯录调用、位置调用等功能点
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view> -->
+
+      
 
       <ui-view class="template_list">
         <ui-navigator url="/pages/templeteDemo/form/payment">
@@ -131,7 +186,44 @@
         </ui-navigator>
       </ui-view>
 
-      
+      <ui-view class="template_list">
+        <ui-navigator url="/pages/templeteDemo/audioTemplete/audioTemplete">
+          <ui-view class="list_top">
+            <ui-image 
+            src="{{ require('#/images/pay.jpg') }}"
+            mode="aspectFit"
+            width="100%"
+            load-effect="fade"
+            ></ui-image>
+          </ui-view>
+          <ui-view class="list_bottom">
+            <ui-view class="list_title">音频播放模板</ui-view>
+            <ui-view class="list_text">
+              以一个知识付费场景为例，涵盖了课程列表，音频播放所涉及的功能点。
+            </ui-view>
+          </ui-view>
+        </ui-navigator>
+      </ui-view>
+
+
+      <ui-view class="template_list">
+          <ui-navigator url="/pages/apiDemo/bluetooth3">
+            <ui-view class="list_top">
+              <ui-image 
+              src="{{ require('#/images/zhineng.jpg') }}"
+              mode="aspectFit"
+              width="100%"
+              load-effect="fade"
+              ></ui-image>
+            </ui-view>
+            <ui-view class="list_bottom">
+              <ui-view class="list_title">智能硬件</ui-view>
+              <ui-view class="list_text">
+                以蓝牙控制智能小车的场景为例，涵盖了蓝牙开发所涉及的知识点。
+              </ui-view>
+            </ui-view>
+          </ui-navigator>
+        </ui-view>
 
         <ui-view class="template_list">
         <ui-navigator url="/pages/templeteDemo/store/sort">

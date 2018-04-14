@@ -1,7 +1,7 @@
 <!--accordion.ui-->
 <template>
   <ui-page>
-    <ui-accordion bindchange="slide" ui:for="{{ accordion }}">
+    <ui-accordion header-height="50" bindchange="slide" ui:for="{{ accordion }}">
       <ui-view slot="header">
         <ui-row height="50" border-bottom class="title">
           <ui-col vertical-align="middle" align="left" space-left="10">
@@ -123,14 +123,14 @@ export default {
 
 <style lang="less">
   // accordion.less
-.ui-accordion {
+/* .ui-accordion {
   .header{
     .arrow{
       right: 8px;
       top: 10px;
     }
   } 
-}
+} */
 .title{
   width: 100%;
   background-color: #fff;

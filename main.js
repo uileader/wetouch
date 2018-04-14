@@ -1,7 +1,9 @@
+import app from './app.ui'
 let options = {
+  app: app,
   i18n: {
     locale: 'zh-cn',
-    components: require('#/i18n/components.json'),
+    components: require('./i18n/components.json'),
     messages: {
       'zh-cn': require('./i18n/zh-cn.json'),
       'en': require('./i18n/en.json')
@@ -10,7 +12,6 @@ let options = {
 }
 
 ui.start(options)
-
 ui.preloadDialogs([
   require('#/pages/dialogs/loginInterface.ui')
 ])

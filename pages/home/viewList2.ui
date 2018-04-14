@@ -63,6 +63,15 @@ export default {
               link: '/pages/componentDemo/summary'
             }
           ]
+        },
+        {
+          title: '可拖拽容器 draggable-area',
+          items: [
+            { title: '列表纵向拖拽排序', link: '/pages/componentDemo/draggable' },
+            { title: '滑动菜单容器纵向拖拽排序', link: '/pages/componentDemo/draggable3' },
+            { title: '仿支付宝：动态添加可拖拽元素', link: '/pages/componentDemo/draggable5' },
+            { title: '仿桌面：两区域间拖拽+拖放事件', link: '/pages/componentDemo/draggable4' }
+          ]
         }
 
       ]

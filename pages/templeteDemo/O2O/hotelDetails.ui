@@ -101,7 +101,7 @@
 
 
 
-          <ui-accordion class="hotels" ui:for="{{ accordion }}">
+          <ui-accordion class="hotels" ui:for="{{ accordion }}" header-height="100">
             <ui-view slot="header">
               <ui-row height="100" border-bottom>
                 <ui-col vertical-align="middle" align="left" width="100" space-left="10">

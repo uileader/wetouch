@@ -25,7 +25,7 @@
         </ui-col>
         <ui-col vertical-align="middle" align="left">
           <ui-view class="title">界面</ui-view>
-          <ui-text class="small-title">包含交互反馈类API和导航栏控制API</ui-text>
+          <ui-text class="small-title">包含交互反馈类API和状态栏、导航栏控制API</ui-text>
         </ui-col>
       </ui-row>
       <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/configList">
@@ -49,7 +49,7 @@
         </ui-col>
         <ui-col vertical-align="middle" align="left">
           <ui-view class="title">设备</ui-view>
-          <ui-text class="small-title">包含系统信息、打电话API示例</ui-text>
+          <ui-text class="small-title">包含加速计、罗盘、电话、扫码、蓝牙等手机设备相关API示例</ui-text>
         </ui-col>
       </ui-row>
       <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/networkList">
@@ -61,10 +61,33 @@
         </ui-col>
         <ui-col vertical-align="middle" align="left">
           <ui-view class="title">网络与数据</ui-view>
-          <ui-text class="small-title">包含界面跳转、数据缓存、网络请求等API示例</ui-text>
+          <ui-text class="small-title">包含界面跳转、数据缓存、网络请求、文件操作等API示例</ui-text>
         </ui-col>
       </ui-row>
-     
+      <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/browserList">
+        <ui-col vertical-align="middle" align="left" width="150" space-right="10">
+          <ui-image
+            src="{{ require('#/images/liulanqi.png') }}"
+            width="100%"
+          ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="title">内置浏览器</ui-view>
+          <ui-text class="small-title">包含浏览器与APP交互的API示例</ui-text>
+        </ui-col>
+      </ui-row>
+      <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/mediaList">
+        <ui-col vertical-align="middle" align="left" width="150" space-right="10">
+          <ui-image
+            src="{{ require('#/images/meiti.png') }}"
+            width="100%"
+          ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="title">媒体</ui-view>
+          <ui-text class="small-title">包含相册、语音、音频管理、相机等相关API示例</ui-text>
+        </ui-col>
+      </ui-row>
       <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/positionList">
         <ui-col vertical-align="middle" align="left" width="150" space-right="10">
           <ui-image
@@ -77,7 +100,18 @@
           <ui-text class="small-title">包含获取、查看、选择位置的API示例</ui-text>
         </ui-col>
       </ui-row>
-     
+      <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20" url="/pages/home/accessList">
+        <ui-col vertical-align="middle" align="left" width="150" space-right="10">
+          <ui-image
+            src="{{ require('#/images/jieru.png') }}"
+            width="100%"
+          ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left">
+          <ui-view class="title">接入</ui-view>
+          <ui-text class="small-title">包含分享、推送、客服、微信/QQ登录、支付等接入第三方SDK示例</ui-text>
+        </ui-col>
+      </ui-row>
       <ui-row class="class-item2" hover-class="touchui-hover" space-bottom="20"bindtap="popupshow">
         <ui-col vertical-align="middle" align="left" width="150" space-right="10">
           <ui-image

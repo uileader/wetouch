@@ -48,6 +48,7 @@ export default {
         {
           title: '头部控制',
           items: [
+            { title: '系统状态栏样式 statusBar', link: '/pages/apiDemo/statusBar' },
             { title: '导航栏控制 navBar', link: '/pages/apiDemo/changeNavbar' }
           ]
         }

@@ -37,7 +37,25 @@ export default {
           title: '设备',
           items: [
             { title: '系统信息', link: '/pages/apiDemo/systemInformation' },
-            { title: '拨打电话', link: '/pages/apiDemo/call' }
+            { title: '设备信息', link: '/pages/apiDemo/deviceInformation' },
+            { title: '网络状态', link: '/pages/apiDemo/networkState' },
+            { title: '加速度计', link: '/pages/apiDemo/accelerometer' },
+            { title: '罗盘', link: '/pages/apiDemo/compass' },
+            { title: '拨打电话', link: '/pages/apiDemo/call' },
+            { title: '扫码', link: '/pages/apiDemo/scanCode' },
+            { title: '剪贴板', link: '/pages/apiDemo/clipboard' },
+            { title: '指纹识别', link: '/pages/apiDemo/touchId' },
+            { title: '屏幕亮度', link: '/pages/apiDemo/screenBrightness' },
+            { title: '用户截屏事件', link: '/pages/apiDemo/screenShot' },
+            { title: '振动', link: '/pages/apiDemo/shock' },
+            { title: '添加到通讯录', link: '/pages/apiDemo/addressList' },
+            { title: '获取联系人信息', link: '/pages/apiDemo/getaddressBook' },
+            { title: '监听状态栏点击事件', link: '/pages/apiDemo/statusBarClick' },
+            { title: '监听返回按钮点击事件', link: '/pages/apiDemo/back' },
+            { title: '控制侧滑页面手势', link: '/pages/apiDemo/popGesture' },
+            { title: '授权管理', link: '/pages/apiDemo/setting' },
+            { title: '自定义授权通知', link: '/pages/apiDemo/setting2' },
+            { title: '蓝牙', link: '/pages/apiDemo/bluetooth' }
           ]
         }
       ]

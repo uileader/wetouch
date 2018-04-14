@@ -310,7 +310,7 @@ export default {
 <style lang="less">
   // userCenter.less
 .nav_bar {
-    // background: linear-gradient(to right, #1F97FE, #126DFE);
+    background: linear-gradient(to right, #1F97FE, #126DFE);
     .nav_title {
       color: #fff;
     }

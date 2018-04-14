@@ -2,11 +2,11 @@
     <ui-page>
         <ui-nav-bar slot="nav-bar" class="ui-nav-bar">
           <ui-row>
-            <ui-col align="left" space-left="10" bindtap="back">
-              <ui-text style="color:#fff">
-                  <ui-icon name="arrow-left" font-size="24" color="#fff"></ui-icon>返回
-              </ui-text>
+            <ui-col vertical-align="middle" align="center" width="60" bindtap="back">
+              <ui-icon type="arrow-left" size="24" color="#fff"></ui-icon>
             </ui-col>
+            <ui-col></ui-col>
+            <ui-col width="60"></ui-col>
           </ui-row>
         </ui-nav-bar>
         <ui-view class="imgbox">

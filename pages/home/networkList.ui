@@ -52,6 +52,12 @@ export default {
             { title: '发起请求', link: '/pages/apiDemo/request' },
             { title: 'WebSocket', link: '/pages/apiDemo/webSocket' }
           ]
+        },
+        {
+          title: '文件',
+          items: [
+            { title: '文件的下载、保存与移除', link: '/pages/apiDemo/fileUpDownload' }
+          ]
         }
       ]
     }

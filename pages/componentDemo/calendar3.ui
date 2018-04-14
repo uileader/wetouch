@@ -34,28 +34,33 @@ export default {
   },
   data () {
     return {
+      // 周日历绑定的日期
       date: '',
+      // 天
       dateDay: '',
+      // 时间对象，存储临时变化的时间
       dateObj: {},
+      // 月
       dataMonth:''
     }
   },
   methods: {
+    // 周日历滑时出发，获取滑动后的日期。并赋值给nav-bar上
     weekHandler(e){
-      console.log(e,'weekHandler')
       let dataMonth = e.substring(0,7)
       dataMonth = dataMonth.split('/')
-      console.log(dataMonth)
       this.dataMonth = `${dataMonth[0]}年${dataMonth[1]}月`
     },
+    // 选择日期时触发。将选择后的日期格式化后显示出来
     selectedHandler (e) {
-      console.log(e)
       this.dateObj = e.split('/')
       this.dateDay = `${this.dateObj[0]}年${this.dateObj[1]}月${this.dateObj[2]}日`
     },
+    // 返回
     navigateBack () {
       ui.navigateBack()
     },
+    // 将日期格式化成 "年/月/日" 格式
     format (obj) {
       var date = new Date(obj)
       var y = 1900 + date.getYear()
@@ -65,10 +70,12 @@ export default {
     }
   },
   mounted () {
+    // 获取今天的时间
     let date = new Date()
-    date = Date.parse(date)
     date = this.format(date)
     this.date = date
+
+    // 在初始化时，获取当天日期，并显示出来。
     this.dateObj = this.date.split('/')
     this.dateDay = `${this.dateObj[0]}年${this.dateObj[1]}月${this.dateObj[2]}日`
     this.dataMonth = `${this.dateObj[0]}年${this.dateObj[1]}月`

@@ -9,6 +9,8 @@
           src="{{ require('#/images/logo-white.png') }}"
           width="100%"
           ></ui-image>
+          <!-- <ui-view>TouchUI Pro</ui-view>
+          <ui-text>标准版</ui-text> -->
         </ui-view>
 
         <ui-view class="slide_top slide_content" bindtap="closeMenu">
@@ -158,7 +160,7 @@
     </ui-fixed-view>
     <ui-fixed-view bottom="25" left="0" right="0" style="{{fixedzindex}}">
       <ui-view class="{{togglestyle}}" style="text-align:center;width:35px;height:35px;margin:0 auto" bindtap="hidepopicon($event)">
-        <!-- <ui-icon type="plus" color="#555" size="24"></ui-icon> -->
+        <ui-icon type="plus" color="#555" size="24"></ui-icon>
       </ui-view>
     </ui-fixed-view>
 
@@ -237,6 +239,157 @@
     </ui-mask>
 
 
+    <!-- 音频播放 -->
+    <ui-fixed-view class="audio_bottom {{ fixedClassName }}" ui:if="{{ globalData.audioShow }}">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" width="{{ leftPanelWidth }}" class="{{ leftPanelClass }}" bindtap="audioPanelHide">
+          <ui-icon type="error" size="18" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="30">
+          <ui-image
+            src="{{ require('#/images/indexList/t4.png') }}"
+            width="30"
+            height="30"
+          ></ui-image>
+        </ui-col>
+        <ui-col vertical-align="middle" align="left" space-left="5" bindtap="audioPopupShow">
+          <ui-view>{{ songName }}</ui-view>
+          <ui-text>{{ maxFormat(sliderMax) }}</ui-text>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="30" bindtap="audioPopupShow">
+          <ui-icon type="arrow-up" size="18" color="#fff"></ui-icon>
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" width="50" bindtap="playOff">
+          <ui-icon type="{{ playAudioIcon }}" size="16" color="#fff" class="paly_icon"></ui-icon>
+          <ui-circular
+          radius="15"
+          top="15"
+          left="15"
+          color="#FF9900"
+          line-cap="round"
+          value="{{ 100 / sliderMax * sliderValue }}"
+          line-width="2"
+          ></ui-circular>
+        </ui-col>
+      </ui-row>
+    </ui-fixed-view>
+
+    <!--音频播放模版 -->
+    <ui-popup height="100%" ui:model="{{ audioPopup }}">
+      <ui-view class="audio_content" style="{{{ height: contentHeight+barHeight+46+'px' }}}">
+        <ui-view class="audio_head" style="{{{ 'padding-top':barHeight+'px' }}}" bindtap="audioPopupHide">
+          <ui-icon type="arrow-down" color="#666666" size="24"></ui-icon>
+        </ui-view>
+        <ui-view class="songImg" ui:if="{{audioPopup}}">
+          <ui-image src="{{ imgSrc }}" height="100%" mode="aspectFit"></ui-image>
+        </ui-view>
+        <ui-view class="songText">
+          <ui-view class="song_title">
+            <ui-text block class="text text1">{{songName}}</ui-text>
+            <ui-text block class="text">{{singerName}}</ui-text>
+          </ui-view>
+        </ui-view>
+        <ui-view class="songText2">
+          <ui-view class="control">
+            <ui-slider style="margin:0 auto" value-pos="left" show-max-value="true" show-value="true" value="{{sliderValue}}" 
+              max-format="{{maxFormat}}"
+              value-format="{{valueFormat}}"
+              tooltip-format="{{tooltipFormat}}"
+              width="{{winWidth-50}}"
+              thumb-style="{{thumbStyle}}"
+              thumb-down-style="{{thumbDownStyle}}"
+              background-color="#E4E4E4" 
+              active-color="#FF9D1F" 
+              slider-weight="2"
+              min="{{sliderMin}}" 
+              max="{{sliderMax}}"
+              bindchange="sliderChange"
+              >
+            </ui-slider>
+          </ui-view>
+        </ui-view>
+        <ui-view class="songPlay">
+          <ui-row class="play_win">
+              <ui-col span='2' align="center" bindtap="rewind">
+                  <ui-icon type="rewind" size="24" color="#666666" ></ui-icon>
+              </ui-col>
+              <ui-col span='2' align="center" bindtap="onPrev">
+                  <ui-icon type="presong" size="24" color="#666666"></ui-icon>
+              </ui-col>
+              <ui-col span='4' align="center" bindtap="playMusic">
+                  <!-- <ui-icon name="{{play}}" size="60" symbol></ui-icon> -->
+                  <ui-image src="{{ svgSrc }}" width="50"></ui-image>
+              </ui-col>
+              <ui-col span='2' align="center" bindtap="onNext">
+                  <ui-icon type="nextsong" size="24" color="#666666"></ui-icon>
+              </ui-col>
+              <ui-col span='2' align="center" bindtap="fastForward">
+                  <ui-icon type="fastforward" size="24" color="#666666" ></ui-icon>
+              </ui-col>
+          </ui-row>
+        </ui-view>
+        <ui-view class="songBar">
+          <ui-view class="songBar_content">
+              <ui-row class="bottom_bar">
+                  <ui-col align="center" vertical-align="middle" bindtap="listShow">
+                      <ui-view>
+                          <ui-icon type="playlist" size="24" color="#666666"></ui-icon>
+                          <ui-text block>曲单</ui-text>
+                      </ui-view>
+                  </ui-col>
+                  <ui-col align="center" vertical-align="middle" bindtap="showToast('文稿功能未实现')" >
+                      <ui-view >
+                          <ui-icon type="draft" size="24" color="#666666"></ui-icon>
+                          <ui-text block>文稿</ui-text>
+                      </ui-view>
+                  </ui-col>
+                  <ui-col align="center" vertical-align="middle" bindtap="likeMusic">
+                      <ui-view class="animated {{likeClass}}">
+                          <ui-icon type="{{praise}}" size="24" color="{{likeColor}}"></ui-icon>
+                          <ui-text block>{{likeNum}}</ui-text>
+                      </ui-view>
+                  </ui-col>
+                  <ui-col align="center" vertical-align="middle" bindtap="showToast('下载功能未实现')">
+                      <ui-view>
+                          <ui-icon type="playdown" size="24" color="#666666"></ui-icon>
+                          <ui-text block>下载</ui-text>
+                      </ui-view>
+                  </ui-col>
+                  <ui-col align="center" vertical-align="middle" bindtap="showToast('更多功能未实现')">
+                      <ui-view>
+                          <ui-icon type="more" size="24" color="#666666"></ui-icon>
+                          <ui-text block>更多</ui-text>
+                      </ui-view>
+                  </ui-col> 
+              </ui-row>
+          </ui-view>
+        </ui-view>
+        <!-- 音乐列表 -->
+        <ui-popup ui:model="{{ show }}" position="bottom" width="100%" height="300" class="audio_play_list">
+          <ui-view class="audio_play_list_wrap">
+              <ui-row height="50" border-bottom="{{true}}" class="list_title">
+                  <ui-col align="left" vertical-align="middle" space-left="10">
+                      <ui-text> 音频列表 </ui-text>
+                  </ui-col>
+                  <ui-col align="right" vertical-align="middle" space-right="10" bindtap="listShow">
+                      <ui-icon  type="x" ></ui-icon>
+                  </ui-col>
+              </ui-row>
+              <ui-view class="list_content">
+                  <ui-view>
+                      <ui-view ui:for="{{musicList}}">
+                          <ui-view class="song_name" bindtap="listPlay(index)" :class="{nowSong:index===curIndex}">
+                              <ui-text class="songname">{{musicList[index].epname}}</ui-text>
+                              <ui-text class="singername">{{musicList[index].singer}}</ui-text>
+                          </ui-view>
+                      </ui-view>
+                  </ui-view>
+              </ui-view>
+          </ui-view>
+        </ui-popup>
+      </ui-view>
+    </ui-popup>
+
   </ui-view>
 
 </template>
@@ -246,6 +399,8 @@ export default {
   config: {
     "pages": [
       "pages/index",
+      "pages/home/accessList",
+      "pages/home/browserList",
       "pages/home/changeList",
       "pages/home/configList",
       "pages/home/dataList",
@@ -267,6 +422,7 @@ export default {
       "pages/home/mapList3",
       "pages/home/mediaCompList",
       "pages/home/mediaCompList2",
+      "pages/home/mediaList",
       "pages/home/modalList",
       "pages/home/networkList",
       "pages/home/optimizeList",
@@ -323,6 +479,11 @@ export default {
       "pages/componentDemo/sticky2",
       "pages/componentDemo/sticky3",
       "pages/componentDemo/sticky5",
+      "pages/componentDemo/draggable",
+      "pages/componentDemo/draggable2",
+      "pages/componentDemo/draggable3",
+      "pages/componentDemo/draggable4",
+      "pages/componentDemo/draggable5",
 
       "pages/componentDemo/ex-swiper",
       "pages/componentDemo/ex-swiper2",
@@ -469,13 +630,16 @@ export default {
       "pages/componentDemo/map/getLocation",
       "pages/componentDemo/map/map",
       "pages/componentDemo/map/mapDemo",
+      "pages/componentDemo/mapService/googlemap",
       "pages/componentDemo/map/mapDraw",
+      "pages/componentDemo/mapService/tencentmap",
       "pages/componentDemo/map/trajectory",
       "pages/componentDemo/mapsdk/distanceCalculation",
       "pages/componentDemo/mapsdk/drawStaticMap",
       "pages/componentDemo/mapsdk/interestPointAroud",
       "pages/componentDemo/mapsdk/mapComprehensive",
       "pages/componentDemo/mapsdk/mapComprehensiveDetail",
+      "pages/componentDemo/mapService/mapSearchInput",
       "pages/componentDemo/mapsdk/mapSearchTips",
       "pages/componentDemo/mapsdk/reverseAddressResolution",
       "pages/componentDemo/mapsdk/routePlanning",
@@ -489,17 +653,30 @@ export default {
       "pages/componentDemo/fullPage/videoBanner",
 
 
-      
+      "pages/apiDemo/accelerometer",
+      "pages/apiDemo/addressList",
       "pages/apiDemo/animation",
+      "pages/apiDemo/back",
       "pages/apiDemo/backgroundColor",
+      "pages/apiDemo/bgAudio",
       "pages/apiDemo/bindData",
+      "pages/apiDemo/bluetooth",
+      "pages/apiDemo/bluetooth3",
+
+      "pages/apiDemo/browserAPP",
+      "pages/apiDemo/browserUrl",
+      "pages/apiDemo/browserUrl2",
       "pages/apiDemo/call",
       "pages/apiDemo/changeNavbar",
+      "pages/apiDemo/clipboard",
+      "pages/apiDemo/compass",
       "pages/apiDemo/constant",
       "pages/apiDemo/customComp",
       "pages/apiDemo/chooseLocation",
+      "pages/apiDemo/fileUpDownload",
       "pages/apiDemo/for",
       "pages/apiDemo/getLocation",
+      "pages/apiDemo/getaddressBook",
       "pages/apiDemo/hideNavbar",
       "pages/apiDemo/if",
       "pages/apiDemo/loadingStyle",
@@ -507,12 +684,28 @@ export default {
       "pages/apiDemo/model",
       "pages/apiDemo/navigate",
       "pages/apiDemo/navigateNew",
+      "pages/apiDemo/networkPictures",
+      "pages/apiDemo/networkState",
+      "pages/apiDemo/networkVideo",
+      "pages/apiDemo/previewImage",
       "pages/apiDemo/noScroll",
       "pages/apiDemo/openLocation",
       "pages/apiDemo/parameter",
+      "pages/apiDemo/playRecord",
       "pages/apiDemo/parameterNew",
       "pages/apiDemo/placeholderImage",
+      "pages/apiDemo/playSound",
+      "pages/apiDemo/popGesture",
+      "pages/apiDemo/pushinfo",
       "pages/apiDemo/request",
+      "pages/apiDemo/scanCode",
+      "pages/apiDemo/screenBrightness",
+      "pages/apiDemo/screenShot",
+      "pages/apiDemo/setting",
+      "pages/apiDemo/setting2",
+      "pages/apiDemo/share",
+      "pages/apiDemo/shock",
+      "pages/apiDemo/shootVideo",
       "pages/apiDemo/showActionSheet",
       "pages/apiDemo/showAlert",
       "pages/apiDemo/showConfirm",
@@ -521,9 +714,15 @@ export default {
       "pages/apiDemo/showPrompt",
       "pages/apiDemo/showToast",
       "pages/apiDemo/slideGestures",
+      "pages/apiDemo/statusBar",
+      "pages/apiDemo/statusBarClick",
       "pages/apiDemo/styleLib",
       "pages/apiDemo/systemInformation",
+      "pages/apiDemo/deviceInformation",
+      "pages/apiDemo/takePictures",
       "pages/apiDemo/touchEvent",
+      "pages/apiDemo/touchId",
+      "pages/apiDemo/uploadDownload",
       "pages/apiDemo/webSocket",
 
       "pages/templeteDemo/friendCircle",
@@ -558,62 +757,17 @@ export default {
       "pages/templeteDemo/O2O/mapDetails",
       "pages/templeteDemo/O2O/hotel",
       "pages/templeteDemo/O2O/hotelDetails",
+      "pages/templeteDemo/audioTemplete/audioTemplete",
+      "pages/templeteDemo/audioTemplete/details",
       "pages/templeteDemo/videoTemplete/videoTemplete",
       "pages/templeteDemo/videoTemplete/videoList"
-      // "pages/componentDemo/mapService/googlemap",
-      // "pages/componentDemo/mapService/mapSearchInput",
-      // "pages/componentDemo/mapService/tencentmap",
-      // "pages/home/mediaList",
-      // "pages/home/accessList",
-      // "pages/home/browserList",
-      // "pages/componentDemo/draggable",
-      // "pages/componentDemo/draggable2",
-      // "pages/componentDemo/draggable3",
-      // "pages/componentDemo/draggable4",
-      // "pages/componentDemo/draggable5",
-      // "pages/apiDemo/accelerometer",
-      // "pages/apiDemo/addressList",
-      // "pages/apiDemo/back",
-      // "pages/apiDemo/bgAudio",
-      // "pages/apiDemo/bluetooth",
-      // "pages/apiDemo/bluetooth3",
-      // "pages/apiDemo/browserAPP",
-      // "pages/apiDemo/browserUrl",
-      // "pages/apiDemo/clipboard",
-      // "pages/apiDemo/compass",
-      // "pages/apiDemo/fileUpDownload",
-      // "pages/apiDemo/getaddressBook",
-      // "pages/apiDemo/networkPictures",
-      // "pages/apiDemo/networkState",
-      // "pages/apiDemo/networkVideo",
-      // "pages/apiDemo/previewImage",
-      // "pages/apiDemo/playRecord",
-      // "pages/apiDemo/playSound",
-      // "pages/apiDemo/popGesture",
-      // "pages/apiDemo/pushinfo",
-      // "pages/apiDemo/scanCode",
-      // "pages/apiDemo/screenBrightness",
-      // "pages/apiDemo/screenShot",
-      // "pages/apiDemo/setting",
-      // "pages/apiDemo/setting2",
-      // "pages/apiDemo/share",
-      // "pages/apiDemo/shock",
-      // "pages/apiDemo/shootVideo",
-      // "pages/apiDemo/statusBar",
-      // "pages/apiDemo/statusBarClick",
-      // "pages/apiDemo/deviceInformation",
-      // "pages/apiDemo/takePictures",
-      // "pages/apiDemo/touchId",
-      // "pages/apiDemo/uploadDownload",
-      // "pages/templeteDemo/audioTemplete/audioTemplete",
-      // "pages/templeteDemo/audioTemplete/details",
       
     ],
     "theme": {
       "theme-color": "#39f"
     },
     "window": {
-    "scrollType": "body",
+    "scrollType": "div",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
       "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)"
@@ -867,7 +1021,70 @@ export default {
       type: 'link',
       icon: 'http://images.uileader.com/20180116/96d4b45d-4765-41fd-bc29-85919ddb4057.png',
       title: '高仿京东金融',
-      content: '官方推出的TOUCH UI应用案例'
+      content: '官方推出的TOUCH UI应用案例',
+
+
+      // 音频模块
+      fixedClassName: '',
+      thumbStyle:{
+        'width': '15px!important',
+        'height': '15px!important',
+        'top': '7px!important',
+        'left':'13px!important',
+        'background-color':'#FF9D1F!important'
+      },
+      thumbDownStyle:{
+        'width': '20px !important',
+        'height': '20px !important',
+        'top': '4px !important',
+        'left': '10px !important'
+      },
+
+      //音频展开内容
+      contentHeight: ui.DEFAULT_CONTENT_HEIGHT,
+      imgSrc: null,
+      songName: '',
+      singerName: null,
+      songDuration: null,
+      sliderValue: 0,
+      sliderChanging: false,
+      currentValue: 0,
+      bufferValue: 0,
+      play: 'playmusic',
+      praise: 'praiseago',
+      svgSrc: require('#/images/play.svg'),
+
+      isPaly: false,
+      likeSwitch: false,
+      sliderMax: 0,
+      sliderMin: 0,
+      startTime: '',
+      endTime: '',
+      index: 0,
+      firstStart: true,
+      musicList: [],
+      show: false,
+      likeColor: '#666666',
+      likeClass: 'animated',
+      likeNum: 175,
+      isPlaying: false,
+      interval: null,
+      curIndex: 0,
+      maxFormat: function (num) {
+        return parseInt(num / 60) + ':' + parseInt((num % 60 >= 10 ? '' : '00') + (num % 60))
+      },
+      valueFormat: function (num) {
+        return parseInt(num / 60) + ':' + parseInt((num % 60 >= 10 ? '' : '00') + (num % 60))
+      },
+      tooltipFormat: function (num) {
+        return parseInt(num / 60) + ':' + (num % 60 >= 10 ? '' : '0') + (num % 60)
+      },
+      
+      //外部控制面板
+      playAudioIcon: 'playaudio',
+      audioPopup: false,
+      leftPanelWidth:35,
+      leftPanelClass:''
     }
   },
   computed: {
@@ -1140,11 +1357,283 @@ export default {
       this.className = 'hideActive'
       this.animationDuration=this.hideTime
       this.globalData.shareMask = false
-    }
+    },
 
 
 
-    
+    // 音频播放模版内容js
+
+    log (str) {
+    },
+    handleShow (key) {
+      this[key] = false
+    },
+    listShow () {
+      if (this.show) {
+        this.show = false
+      } else {
+        this.show = true
+      }
+    },
+    sliderChange (e) {
+      this.sliderChanging = true
+      this.sliderValue = e
+      if (this.sliderValue >= parseInt(this.musicList[this.curIndex].duration)) {
+        this.sliderValue = parseInt(this.musicList[this.curIndex].duration) - 1
+      }
+      this.currentValue = this.sliderValue
+      if (this.firstStart) {
+        this.playMusic()
+        this.seekBackgroundAudio()
+      } else {
+        this.seekBackgroundAudio()
+      }
+    },
+    showToast (text) {
+      ui.showToast({
+        title: text
+      })
+    },
+    // 喜欢
+    likeMusic () {
+      if (this.likeSwitch) {
+        this.praise = 'praiseago'
+        this.likeSwitch = false
+        this.likeColor = '#666666'
+        this.likeClass = 'animated'
+        this.likeNum--
+      } else {
+        this.praise = 'praiseafter'
+        this.likeSwitch = true
+        this.likeColor = '#FF9D1F'
+        this.likeClass = 'animated bounceIn'
+        this.likeNum++
+      }
+    },
+    resetSlider () {
+      this.sliderValue = 0
+      this.currentValue = 0
+    },
+    onLoad () {
+      // 获取全局唯一的背景音频管理器
+      backgroundAudioManager = ui.getBackgroundAudioManager()
+      var that = this
+      this.startTime = 0
+      this.endTime = 0
+
+      if(this.musicList.length>0){
+        this.songName = this.musicList[this.curIndex].epname
+        this.singerName = this.musicList[this.curIndex].singer
+        this.imgSrc = this.musicList[this.curIndex].coverImgUrl
+        this.sliderMax = this.musicList[this.curIndex].duration
+        console.log(this.sliderMax,'sliderMaxsliderMaxsliderMaxsliderMax')
+      }
+      // 背景音频播放进度更新事件
+      backgroundAudioManager.onTimeUpdate(function (e) {
+        // that.sliderValue =10
+        if (!that.sliderChanging) {
+          var val = parseInt(backgroundAudioManager.currentTime)
+          that.sliderValue = val
+          that.currentValue = val
+        }
+
+        // 播放到结尾
+        if (parseInt(backgroundAudioManager.currentTime) === parseInt(that.musicList[that.curIndex].duration)) {
+          // 播放下一首或者停止（如果是最后一首）
+          that.nextAndStop()
+        }
+      })
+      // 用户在系统音乐播放面板点击上一曲事件
+      backgroundAudioManager.onPrev(function (e) {
+        that.onPrev()
+      })
+      // 用户在系统音乐播放面板点击下一曲事件
+      backgroundAudioManager.onNext(function (e) {
+        that.onNext()
+      })
+
+     // 监听音乐播放。
+      ui.onBackgroundAudioPlay(function () {
+        that.svgSrc = require('#/images/pause.svg')
+        that.isPaly = true
+        //外部控制面板图标
+        that.playAudioIcon = 'pauseaudio'
+
+        //左侧控制面板宽度改变
+        that.leftPanelWidth = 10
+        that.leftPanelClass = 'active'
+      })
+      // 监听音乐暂停。
+      ui.onBackgroundAudioPause(function () {
+        that.svgSrc = require('#/images/play.svg')
+        that.isPaly = false
+
+        that.playAudioIcon='playaudio'
+
+        that.leftPanelWidth = 35
+        that.leftPanelClass = ''
+      })
+       // 监听音乐停止。
+      ui.onBackgroundAudioStop(function () {
+        that.svgSrc = require('#/images/play.svg')
+        that.isPaly = false
+        that.resetSlider()
+        that.firstStart = true
+
+        that.playAudioIcon='playaudio'
+
+        that.leftPanelWidth = 35
+        that.leftPanelClass = ''
+      })
+    },
+    nextAndStop () {
+       // 如果不是最后一首
+      if (this.curIndex < this.musicList.length - 1) {
+        // 切换到下一首
+        this.sliderValue = 0
+        this.currentValue = 0
+        this.curIndex ++
+        this.setInfo(this.curIndex)
+      } else { // 如果是最后一首并且没有播放
+        // 停止播放
+        this.curIndex = this.musicList.length - 1
+        ui.showToast({
+          title: '最后一首了'
+        })
+        backgroundAudioManager.stop()
+      }
+    },
+    // 播放/暂停
+    playMusic () {
+      console.log(this.isPaly,'playMusic')
+      if (this.isPaly) {
+        backgroundAudioManager.pause()
+        console.log('1')
+      } else {
+        console.log('2')
+        if (this.firstStart) {
+          this.setInfo(this.curIndex)
+          this.firstStart = false
+        } else {
+          backgroundAudioManager.play()
+        }
+      }
+    },
+    // 点击下一首按钮
+    onNext () {
+      // 不是最后一首时
+      if (this.curIndex < this.musicList.length - 1) {
+        this.sliderValue = 0
+        this.currentValue = 0
+        this.curIndex ++
+        this.setInfo(this.curIndex)
+      } else { // 如果是最后一首并且正在播放则不做处理
+        this.curIndex = this.musicList.length - 1
+        ui.showToast({
+          title: '最后一首了'
+        })
+      }
+    },
+    // 上一首
+    onPrev () {
+      if (this.curIndex > 0) {
+        this.sliderValue = 0
+        this.currentValue = 0
+        this.curIndex --
+        this.setInfo(this.curIndex)
+      } else {
+        this.curIndex = 0
+        ui.showToast({
+          title: '这是第一首'
+        })
+      }
+    },
+    // 快进
+    fastForward () {
+      if (this.firstStart) { return }
+      this.currentValue = this.currentValue + 15
+      if (this.currentValue > this.musicList[this.curIndex].duration) {
+        this.nextAndStop()
+      }
+      this.seekBackgroundAudio()
+    },
+    // 快退
+    rewind () {
+      if (this.firstStart) { return }
+      this.currentValue = this.currentValue - 15
+      if (this.currentValue < 0) {
+        this.sliderValue = 0
+        this.currentValue = 0
+      }
+      this.seekBackgroundAudio()
+    },
+    // 列表播放
+    listPlay (songIndex) {
+      this.setInfo(songIndex)
+      this.show = false
+    },
+
+    // 控制音乐播放进度
+    seekBackgroundAudio: function () {
+      var that = this
+      if (!that.isPaly) {
+        backgroundAudioManager.play()
+      }
+      ui.seekBackgroundAudio({
+        position: that.currentValue,
+        success: res => {
+          that.sliderChanging = false
+        },
+        fail: e => {
+        }
+      })
+    },
+    // 暂停播放音乐
+    pauseBackgroundAudio () {
+      ui.pauseBackgroundAudio()
+    },
+    getBackgroundAudioManager: function () {
+      var propertys = ['duration', 'currentTime', 'paused', 'src', 'startTime', 'buffered', 'title', 'epname', 'singer', 'coverImgUrl', 'webUrl']
+      propertys.forEach(property => {
+        this.info = property + ':' + backgroundAudioManager[property]
+      })
+    },
+    setInfo: function (songindex) {
+      this.firstStart = false
+      this.songName = this.musicList[songindex].epname
+      this.singerName = this.musicList[songindex].singer
+      this.imgSrc = this.musicList[songindex].coverImgUrl
+      this.sliderMax = this.musicList[songindex].duration
+      this.curIndex = songindex
+      backgroundAudioManager.src = this.musicList[songindex].src
+      backgroundAudioManager.startTime = this.musicList[songindex].startTime
+      backgroundAudioManager.coverImgUrl = this.musicList[songindex].coverImgUrl
+      backgroundAudioManager.epname = this.musicList[songindex].epname
+      backgroundAudioManager.singer = this.musicList[songindex].singer
+    },
+    // 点击音频内容消失
+    audioPopupHide(){
+      this.audioPopup=false
+      this.fixedClassName=""
+    },
+    audioPopupShow(){
+      this.audioPopup=true
+      this.fixedClassName="active"
+    },
+
+    // 点击底部播放模版播放
+
+    playOff(){
+      this.playMusic()
+    },
+    //点击隐藏底部播放模版
+    audioPanelHide(){
+      this.fixedClassName = 'active'
+      setTimeout(() => {
+        this.globalData.audioShow = false
+        this.fixedClassName = ''
+      }, 600);
+    },
   },
   mounted () {
   }

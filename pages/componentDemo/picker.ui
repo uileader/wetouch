@@ -171,7 +171,7 @@ export default {
   },
   methods: {
     resetPicker00 () {
-      this.value00 = 0
+      this.value = 0
     },
     resetPicker01 () {
       this.value01 = 0
