@@ -40,5 +40,5 @@
 
 ##### 实际效果截图:
 
- <img src="http://images.uileader.com/20180420/f114b9ac-0c65-441e-9365-086962b00b9c.png" />
+ <img src="http://www.touchui.io/img/banner2.png" />
 
