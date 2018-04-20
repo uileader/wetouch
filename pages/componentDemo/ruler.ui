@@ -14,10 +14,9 @@
         number-size="12"
         line-width="1"
         step-width='5'
-        color="#E0E0E0"
         pointer-width="1"
-        number-color="#E0E0E0"
         number-padding="20"
+        value-style="{{valueStyle}}"
       ></ui-ruler>
     </ui-view>
 
@@ -36,11 +35,11 @@
         number-size="12"
         line-width="1"
         step-width='10'
-        color="#E0E0E0"
         pointer-width="1"
-        number-color="#E0E0E0"
         number-padding="20"
         mode="top"
+        value-style="{{valueStyle}}"
+        bindchange="handleChange"
       ></ui-ruler>
     </ui-view>
     
@@ -56,6 +55,15 @@ export default {
   },
   data () {
     return {
+      valueStyle:{
+        color:'#F6620F',
+        fontSize:'28px',
+        top:'-54px',
+        borderBottom: '1px dashed #E0E0E0',
+        padding:'0 10px',
+        left:'50%',
+        transform: 'translate(-50%, 0%)'
+      }
     }
   },
   methods: {
@@ -81,27 +89,6 @@ export default {
     font-size: 14px;
     color: #969696;
     margin-bottom: 50px;
-  }
-  .ui-ruler{
-    border-bottom: 1px solid #E0E0E0;
-    .value {
-      top: 130px;
-      left: 50%;
-      transform: translate(-50%,0%);
-      display: inline-block;
-      font-size: 28px;
-      color: #F6620F;
-      padding: 0 10px;
-      border-bottom: 1px dashed #E0E0E0;
-    }
-  }
-
-
-  &.ruler_wrap2{
-    .ui-ruler{
-      border-top: 1px solid #E0E0E0;
-      border-bottom: 0;
-    }
   }
 }
 </style>

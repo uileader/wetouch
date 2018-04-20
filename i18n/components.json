@@ -13,7 +13,6 @@
     "ui.cascader.please_select": "请选择",
     "ui.keyboard.space_text": "空格",
     "ui.keyboard.complete_text": "完成",
-    "ui.countdown.done_text": "已结束",
     "ui.requeststatus.loading": "加载中...",
     "ui.requeststatus.nomore": "没有更多了...",
     "ui.requeststatus.offline": "网络异常，点击刷新",
@@ -45,7 +44,8 @@
     "ui.cascader.select": "请选择",
     "ui.calendar.head": "日 一 二 三 四 五 六",
     "ui.calendar.yearsplit": "年",
-    "ui.calendar.monthsplit": "月"
+    "ui.calendar.monthsplit": "月",
+    "ui.countdown.over": "已结束"
   },
   "en": {
     "ui.alert.button_text": "OK",
@@ -61,7 +61,6 @@
     "ui.cascader.please_select": "Please select",
     "ui.keyboard.space_text": "Space",
     "ui.keyboard.complete_text": "Complete",
-    "ui.countdown.done_text": "Done",
     "ui.requeststatus.loading": "Loading...",
     "ui.requeststatus.nomore": "No more data...",
     "ui.requeststatus.offline": "Network error, tap to refresh",
@@ -93,6 +92,7 @@
     "ui.cascader.select": "Please Select",
     "ui.calendar.head": "Sun Mon Tue Wen Thu Fri Sat",
     "ui.calendar.yearsplit": "/",
-    "ui.calendar.monthsplit": ""
+    "ui.calendar.monthsplit": "",
+    "ui.countdown.over": "Done"
   }
 }

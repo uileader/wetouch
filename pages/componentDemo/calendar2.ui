@@ -50,7 +50,6 @@
                 max-range="{{30}}"
                 bindselectedend="selectedEndHandler"
                 bindfailed="failedHandler"
-                disable-past-days="true"
                 value = "{{rangeDate}}"
               ></ui-v-calendar>
               </ui-view>
@@ -102,7 +101,6 @@
               </ui-row>
               <ui-v-calendar
               ui:if="{{ rangeCalendarDefault }}"
-              disable-past-days="true"
               height="{{height - headerHeight}}"
               select-range-mode="{{true}}"
               max-range="{{30}}"
@@ -151,7 +149,6 @@
               </ui-row>
               <ui-v-calendar
               ui:if="{{ radioCalendar }}"
-              disable-past-days="true"
               select-range-mode="{{false}}"
               header-height="30"
               height="319"

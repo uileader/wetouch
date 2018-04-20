@@ -6,27 +6,27 @@
       <ui-tab>今天11-22</ui-tab>
       <ui-tab>
         <ui-view class="markicon">
-            明天11-23 <ui-text style="background-color:#fbb966;width:20px;border-radius:3px;color:#fff;display:inline">惠</ui-text>
+            明天11-23 <ui-badge custom-style="{{customStyle2}}" text="惠"></ui-badge>
         </ui-view>
       </ui-tab>
       <ui-tab>
           <ui-view class="markicon">
-              后天11-24 <ui-text style="background-color:#fbb966;width:20px;border-radius:3px;color:#fff;display:inline">惠</ui-text>
+              后天11-24 <ui-badge custom-style="{{customStyle2}}" text="惠"></ui-badge>
           </ui-view>
       </ui-tab>
       <ui-tab>
           <ui-view class="markicon">
-            周六11-25 <ui-text style="background-color:#fbb966;width:20px;border-radius:3px;color:#fff;display:inline">惠</ui-text>
+            周六11-25 <ui-badge custom-style="{{customStyle2}}" text="惠"></ui-badge>
           </ui-view>
       </ui-tab>
       <ui-tab>
           <ui-view class="markicon">
-              周日11-26 <ui-text style="background-color:#fbb966;width:20px;border-radius:3px;color:#fff;display:inline">惠</ui-text>
+              周日11-26 <ui-badge custom-style="{{customStyle2}}" text="惠"></ui-badge>
           </ui-view>
       </ui-tab>
       <ui-tab>
           <ui-view class="markicon">
-              周一11-27 <ui-text style="background-color:#fbb966;width:20px;border-radius:3px;color:#fff;display:inline">惠</ui-text>
+              周一11-27 <ui-badge custom-style="{{customStyle2}}" text="惠"></ui-badge>
           </ui-view>
       </ui-tab>
     </ui-tabs>
@@ -294,6 +294,12 @@ export default {
       isnull: false,
       isflag: 0,
       ratate: 0,
+      customStyle2:{
+        'background-color': '#fbb966',
+        'border-radius': '3px',
+        'font-size':'14px',
+        'padding':'0'
+      },
       films: [
         {
           film: ''

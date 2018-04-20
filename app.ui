@@ -699,6 +699,7 @@ export default {
       "pages/apiDemo/pushinfo",
       "pages/apiDemo/request",
       "pages/apiDemo/scanCode",
+      "pages/apiDemo/speech",
       "pages/apiDemo/screenBrightness",
       "pages/apiDemo/screenShot",
       "pages/apiDemo/setting",
@@ -767,7 +768,7 @@ export default {
       "theme-color": "#39f"
     },
     "window": {
-    "scrollType": "div",
+    "scrollType": "body",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
       "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)"
