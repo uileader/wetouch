@@ -68,7 +68,8 @@ export default {
     "navigationStyle": "custom",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F9F9F9",
-    "disableScroll":true
+    "disableScroll":true,
+    "scrollType": "div",
   },
   data () {
     return {

@@ -12,7 +12,7 @@
 
  <img src="http://images.uileader.com/20180201/ed2ac937-dddd-4dfe-9ae0-6060a44cad41.png" />
 
-<a href="http://static.uileader.com/touchui_webapp/index.html"  target="_blank">http://www.uileader.com/touchui_webapp/index.html</a>
+或<a href="http://www.uileader.com/touchui_webapp/index.html">点击这里</a>用浏览器查看
 
 在PC端打开时请开启chrome的手机浏览模式。
 
@@ -40,5 +40,5 @@
 
 ##### 实际效果截图:
 
- <img src="http://images.uileader.com/20180114/61fe18d1-aa86-46fd-a699-88f54d322602.png" />
+ <img src="http://images.uileader.com/20180420/f114b9ac-0c65-441e-9365-086962b00b9c.png" />
 
