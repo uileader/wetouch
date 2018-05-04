@@ -432,7 +432,119 @@ export default {
       ui.setStorageSync('splash', 'show')
     },
     changeSwiper (e) {
+    },
+
+    
+    // 获取当前版本号
+    gegetAppInfo(){
+      console.log('获取当前版本号')
+      ui.getAppInfo({
+        success: res => {
+          console.log(res,'gegetAppInfo获取当前版本号')
+          this.thisVer = res.version
+          console.log(this.thisVer,'gegetAppInfo获取当前版本号')
+          this.comparison()
+        }
+      })
+    },
+
+    // 下载安装包
+
+    downFile(downUrl){
+      console.log('进入下载',downUrl)
+      ui.showLoading({
+        text: '正在下载'
+      })
+      ui.downloadFile({
+        url:downUrl,
+        success: res=> {
+          console.log(res,'下载安装包成功')
+          ui.hideLoading()
+          this.installFile(res.tempFilePath)
+        }
+      })
+    },
+    // 安装安装包
+    installFile(filePath){
+      let IS_IOS 
+      console.log('进入安装过程',filePath)
+      ui.showLoading({
+        text: '正在安装'
+      })
+      ui.installPackage({
+        src:filePath,
+        success:res=>{
+          console.log(res,'安装安装包成功')
+          ui.hideLoading()
+          IS_IOS = ui.IS_IOS
+          if(IS_IOS){
+            ui.showConfirm({
+              content: '更新成功。点击确认关闭应用。然后重新打开',
+              confirmButtonText: '确认',
+              cancelButtonText: '取消',
+              success:res=> {
+                console.log(res)
+                if(res.confirm){
+                  //关闭应用
+                  ui.closeApp()
+                }
+              }
+            })
+          }else{
+            ui.showConfirm({
+              content: '更新成功。点击确认重新启动',
+              confirmButtonText: '确认',
+              cancelButtonText: '取消',
+              success:res=> {
+                console.log(res)
+                if(res.confirm){
+                  //重启应用
+                  ui.restartApp()
+                }
+              }
+            })
+          }
+        }
+      })
+    },
+
+    // 对比版本号及安装
+    comparison(){
+      let downUrl
+      ui.request({
+        url: '/touchui-backstage/QuickUIView.do', //仅为示例，并非真实的接口地址
+        data: {version:this.thisVer},
+        success: res=> {
+          console.log(res.data)
+          if(res.data.code === 1){
+            console.log('不需要下载')
+            return false
+          }else if(res.data.code === 0){
+            console.log('需要下载')
+            downUrl = res.data.data.url
+            // let result = ui.compareVersions(this.thisVer,res.data.data.version)
+            // console.log(result,downUrl)
+            ui.showConfirm({
+                content: '检查到有新的应用更新，是否现在更新？',
+                confirmButtonText: '去更新',
+                cancelButtonText: '取消',
+                success:res=>{
+                  console.log(res,'点击showConfirm')
+                  if(res.confirm){
+                    console.log('点击了区更新',downUrl)
+                    // 下载并安装 
+                    this.downFile(downUrl)
+                  }
+
+                }
+              })
+          } 
+          
+
+        }
+      })
     }
+
   },
   mounted () {
     let environment = ui.IS_APP
@@ -456,6 +568,8 @@ export default {
     } else {
       this.isSplashSwiper = false
     }
+
+    this.gegetAppInfo()
   }
 }
 </script>
