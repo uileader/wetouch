@@ -256,13 +256,7 @@ export default {
       ui.login({
         target: 'qq',
         success: data => {
-          console.log('success', data.errMsg)
-          if(data.errMsg === "ok"){
-            this.checkOpenid(data.openid)
-          }else{
-            console.log('失败s')
-          }
-              
+          this.checkOpenid(data.openid)
         },
         fail:data=>{
           console.log('fail', data)
@@ -303,9 +297,7 @@ export default {
       ui.login({
         target: 'weixin',
         success: data => {
-          console.log('success', data)
           this.checkUnionid(data.unionid)
-          
         },
         fail:data=>{
           console.log('fail', data)
@@ -471,13 +463,10 @@ export default {
 
 .login_wrap{
   height: 100%;
-  display:flex;
-  flex-direction:column;
 }
 .portrait{
   .mix-flex-center();
-  height: 350rpx;
-  flex: 1;
+  height: 100px;
 }
 
 .login_content{
@@ -498,7 +487,9 @@ export default {
   }
 }
 .third_party_wrap{
-  flex: 0 0 300rpx;
+  position:absolute;
+  bottom:90px;
+  // flex: 0 0 300rpx;
   // background: yellow;
   // margin-top: 100rpx;
   .third_party{
@@ -520,11 +511,10 @@ export default {
 }
 
 .login_bottom{
-  flex: 0 0 80rpx;
   // background: black;
   width: 100%;
-  // position: absolute;
-  // bottom: 0;
+  position: absolute;
+  bottom: 30px;
   .ui-view{
     font-size: 14px;
     color: #9C9C9C;

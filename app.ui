@@ -761,14 +761,16 @@ export default {
       "pages/templeteDemo/audioTemplete/audioTemplete",
       "pages/templeteDemo/audioTemplete/details",
       "pages/templeteDemo/videoTemplete/videoTemplete",
-      "pages/templeteDemo/videoTemplete/videoList"
+      "pages/templeteDemo/videoTemplete/videoList",
+      "pages/templeteDemo/stock/kl",
+      "pages/templeteDemo/stock/ts"
       
     ],
     "theme": {
       "theme-color": "#39f"
     },
     "window": {
-    "scrollType": "div",
+    "scrollType": "body",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
       "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)"
@@ -928,6 +930,26 @@ export default {
             "iconName": "qn-activity",
             "selectedIconName": "qn-activity_fill",
             "text": "演示6-2"
+          }
+        ]
+      },
+      {
+        "color": "#fff",
+        "selectedColor": "#3399ff",
+        "borderColor":"#252924",
+        "backgroundColor": "#252924",
+        "list": [
+          {
+            "pagePath": "pages/templeteDemo/stock/ts",
+            "iconName": "qn-activity",
+            "selectedIconName": "qn-activity_fill",
+            "text": "分时图"
+          },
+          {
+            "pagePath": "pages/templeteDemo/stock/kl",
+            "iconName": "qn-addressbook",
+            "selectedIconName": "qn-addressbook_fill",
+            "text": "k线图"
           }
         ]
       }
