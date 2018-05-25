@@ -265,7 +265,7 @@
 
 
       <ui-view class="template_list">
-        <ui-navigator url="/pages/templeteDemo/stock/ts">
+        <ui-navigator url="/pages/templeteDemo/stock/kl">
           <ui-view class="list_top">
             <ui-image 
             src="{{ require('#/images/template_38.jpg') }}"

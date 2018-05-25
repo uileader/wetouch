@@ -2,10 +2,6 @@
 <template>
   <ui-page page-load="{{ pageLoad }}" style="background-color: #1C1F27">
     <ui-view class="container">
-        <ui-tabs class="tab">
-            <ui-tab data-type="ts">分时</ui-tab>
-            <ui-tab data-type="ts5">五日</ui-tab>
-        </ui-tabs>
         <ui-view class="content tab-content" wx:if="{{tabName == 'ts'}}">
             <ui-view class="stock">
                 <ui-text>股票：{{stock}} - {{code}}</ui-text>
@@ -73,8 +69,8 @@ var getOptionTimeSharing1 = function (type, width) {
         axis: {
             row: 4,
             col: 4,
-            paddingTop: 0,
-            paddingBottom: 0,
+            paddingTop: 10,
+            paddingBottom: 10,
             paddingLeft: 0,
             paddingRight: 0,
             color: '#cdcdcd'
@@ -114,8 +110,8 @@ var getOptionTimeSharing2 = function (type, width) {
             showEdg: true,
             showX: true,
             showY: true,
-            paddingTop: 5,
-            paddingBottom: 14,
+            paddingTop: 10,
+            paddingBottom: 24,
             paddingLeft: 0,
             paddingRight: 0,
             color: '#cdcdcd'
@@ -159,56 +155,32 @@ export default {
       dataIndex: 0,
       ts1RenderTime: 0,
       ts2RenderTime: 0,
-      timerIndex: 4,
+      timerIndex: 0,
       timerArray: ['50ms', '100ms', '200ms', '500ms', '1000ms'],
       pageLoad: {
-        trigger: 'always',
-        pageLoad: {
-        trigger: 'always',
-        handle:()=>{
-          window.__tsVm = this
-
-          var tsData = storage.getTsData();
-          var ts5Data = storage.getTs5Data();
-          this.setData({
-              dataIndex: 0,
-              ts: tsData,
-              ts5: ts5Data
-          });
-          var data = this['ts'];
-          this.setData({
-              tabName: 'ts',
-              stock: data.name,
-              code: data.code,
-              time: data.info.time,
-              yc: data.info.yc
-          });
-          setTimeout(() => {
+        trigger: 'once',
+        handle:() =>{
+        window.__tsVm = this
+        var tsData = storage.getTsData();
+        var ts5Data = storage.getTs5Data();
+        this.dataIndex = 0
+        this.ts = tsData
+        this.ts5 = ts5Data
+        var data = this['ts'];
+        this.tabName = 'ts'
+        this.stock = data.name
+        this.code = data.code
+        this.time = data.info.time
+        this.yc = data.info.yc
+          this.$nextTick(() => {
             this['init-ts']();
-          }, 2000)
+          })
         }
-      }
       }
     }
   },
   mounted () {
-    window.__tsVm = this
 
-    var tsData = storage.getTsData();
-    var ts5Data = storage.getTs5Data();
-    this.setData({
-        dataIndex: 0,
-        ts: tsData,
-        ts5: ts5Data
-    });
-    var data = this['ts'];
-    this.setData({
-        tabName: 'ts',
-        stock: data.name,
-        code: data.code,
-        time: data.info.time,
-        yc: data.info.yc
-    });
     // this.tabChart({
     //     target: {
     //         dataset: {
@@ -216,9 +188,9 @@ export default {
     //         }
     //     }
     // });
-    setTimeout(() => {
-      this['init-ts']();
-    }, 2000)
+    // setTimeout(() => {
+    //   this['init-ts']();
+    // }, 4000)
 
   },
   destroyed () {

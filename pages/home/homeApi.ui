@@ -21,6 +21,7 @@
           <ui-image
             src="{{ require('#/images/jiemian.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -33,6 +34,7 @@
           <ui-image
             src="{{ require('#/images/kuangjia.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -45,6 +47,7 @@
           <ui-image
             src="{{ require('#/images/shebei.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -57,6 +60,7 @@
           <ui-image
             src="{{ require('#/images/wangluo.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -69,6 +73,7 @@
           <ui-image
             src="{{ require('#/images/liulanqi.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -81,6 +86,7 @@
           <ui-image
             src="{{ require('#/images/meiti.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -93,6 +99,7 @@
           <ui-image
             src="{{ require('#/images/weizhi.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -105,6 +112,7 @@
           <ui-image
             src="{{ require('#/images/jieru.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">
@@ -117,6 +125,7 @@
           <ui-image
             src="{{ require('#/images/tabBar.png') }}"
             width="100%"
+            load-effect="fade"
           ></ui-image>
         </ui-col>
         <ui-col vertical-align="middle" align="left">

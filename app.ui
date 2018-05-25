@@ -115,8 +115,10 @@
       </ui-nav-bar>
 
       <!-- 页面路由 -->
-      <router-view class="router-view">
-      </router-view>
+      <keep-alive>
+        <router-view ui:if="{{ !isApp && pageConfig.cache }}" class="router-view"></router-view>
+      </keep-alive>
+      <router-view ui:if="{{ isApp || !pageConfig.cache }}" class="router-view"></router-view>
 
       <!-- 底部标签栏 -->
       <ui-tab-bar
@@ -643,6 +645,8 @@ export default {
       "pages/componentDemo/mapsdk/mapSearchTips",
       "pages/componentDemo/mapsdk/reverseAddressResolution",
       "pages/componentDemo/mapsdk/routePlanning",
+      "pages/componentDemo/mapService/bMap",
+      "pages/componentDemo/mapService/aMap",
 
 
       "pages/componentDemo/fullPage/doubleScroll",
@@ -725,6 +729,7 @@ export default {
       "pages/apiDemo/touchId",
       "pages/apiDemo/uploadDownload",
       "pages/apiDemo/webSocket",
+      "pages/apiDemo/weixin",
 
       "pages/templeteDemo/friendCircle",
       "pages/templeteDemo/register",
@@ -770,10 +775,11 @@ export default {
       "theme-color": "#39f"
     },
     "window": {
-    "scrollType": "body",
+      "scrollType": "div",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
-      "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)"
+      "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)",
+      "delay":false
     },
     "tabBar": {
       "color": "#7a7e83",
@@ -804,6 +810,7 @@ export default {
     },
     "pageTabBars": [
       {
+        "id": "tab-bar-1",
         "color": "#555",
         "selectedColor": "#de3029",
         "borderColor": "rgba(231, 231, 231, 0.6)",
@@ -822,6 +829,7 @@ export default {
         ]
       },
       {
+        "id": "tab-bar-2",
         "color": "#555",
         "selectedColor": "#3399ff",
         "borderColor": "rgba(231, 231, 231, 0.6)",
@@ -914,6 +922,7 @@ export default {
         ]
       },
       {
+        "id": "tab-bar-6",
         "color": "#555",
         "selectedColor": "#3399ff",
         "borderColor": "rgba(231, 231, 231, 0.6)",
@@ -940,16 +949,16 @@ export default {
         "backgroundColor": "#252924",
         "list": [
           {
-            "pagePath": "pages/templeteDemo/stock/ts",
-            "iconName": "qn-activity",
-            "selectedIconName": "qn-activity_fill",
-            "text": "分时图"
-          },
-          {
             "pagePath": "pages/templeteDemo/stock/kl",
             "iconName": "qn-addressbook",
             "selectedIconName": "qn-addressbook_fill",
             "text": "k线图"
+          },
+          {
+            "pagePath": "pages/templeteDemo/stock/ts",
+            "iconName": "qn-activity",
+            "selectedIconName": "qn-activity_fill",
+            "text": "分时图"
           }
         ]
       }

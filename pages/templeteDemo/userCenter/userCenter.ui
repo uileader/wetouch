@@ -196,7 +196,7 @@ export default {
   methods: {
     handleOpenBrowser(){
       ui.openBrowser({
-        url: 'https://itunes.apple.com/cn/app/uileader商城/id1377514585?mt=8',
+        url: 'https://itunes.apple.com/cn/app/uileader%E5%95%86%E5%9F%8E/id1377514585?mt=8',
         system:true
       })
     },

@@ -47,7 +47,7 @@ var getOptionKline1 = function (type) {
       showX: false,
       showY: true,
       showEdg: true,
-      paddingTop: 0,
+      paddingTop: 12,
       paddingBottom: 1,
       paddingLeft: 0,
       paddingRight: 0,
@@ -121,19 +121,15 @@ export default {
       pageLoad: {
         trigger: 'always',
         handle:()=>{
-          setTimeout(() => {
+          this.$nextTick(() => {
             this.handleChange(0)
-          }, 1000)
+          })
         }
       }
     }
   },
   mounted() {
-    //默认切换到日K
     window.__klVm = this
-    setTimeout(() => {
-      this.handleChange(0)
-    }, 1000)
   },
   methods: {
     handleChange: function (e) {
