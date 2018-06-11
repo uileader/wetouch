@@ -27,7 +27,7 @@
 
     <ui-view class="sample_title">等宽标签</ui-view>
     <ui-view style="padding: 10px 5px">
-     <ui-tags 
+     <ui-tags
         data="{{list8}}" 
         fixed-width
         col-number="3"
@@ -452,16 +452,18 @@ export default {
     }
   },
   methods: {
-    singleTap (opt) {
+    singleTap (e) {
+      let opt = e.index
       ui.showToast({
-        title: this.list00[opt].text
+        title: e.current.text
       })
       this.list00.forEach((item, index) => {
         item.checked = (index === opt)
       })
     },
-    multipleTap (opt) {
-      this.list2[opt].checked = !this.list2[opt].checked
+    multipleTap (e) {
+      let opt = e.index
+      e.current.checked = !e.current.checked
     },
     sure () {
       var a = this.list2.filter((item, index) => {
@@ -480,7 +482,8 @@ export default {
         item.checked = false
       })
     },
-    delate (opt) {
+    delate (e) {
+      let opt = e.index
       this.list3 = this.list3.filter((item, index) => {
         return index != opt
       })
@@ -491,31 +494,38 @@ export default {
         title: str ? `还剩：` + str : '该组已经没有标签'
       })
     },
-    multipleTap1 (opt) {
-      this.list4[opt].checked = !this.list4[opt].checked
+    multipleTap1 (e) {
+      let opt = e.index
+      e.current.checked = !e.current.checked
     },
-    multipleTap2 (index) {
-      this.list8[index].checked = !this.list8[index].checked
+    multipleTap2 (e) {
+      let opt = e.index
+      e.current.checked = !e.current.checked
     },
-    multipleTap3 (opt) {
-      this.list9[opt].checked = !this.list9[opt].checked
+    multipleTap3 (e) {
+      let opt = e.index
+      e.current.checked = !e.current.checked
     },
-    singleTap1 (opt) {
+    singleTap1 (e) {
+      let opt = e.index
       this.list5.forEach((item, index) => {
         item.checked = (index === opt)
       })
     },
-    singleTap2 (opt) {
+    singleTap2 (e) {
+      let opt = e.index
       this.list6.forEach((item, index) => {
         item.checked = (index === opt)
       })
     },
-    singleTap3 (opt) {
+    singleTap3 (e) {
+      let opt = e.index
       this.list7.forEach((item, index) => {
         item.checked = (index === opt)
       })
     },
-    singleTap4 (opt) {
+    singleTap4 (e) {
+      let opt = e.index
       this.list10.forEach((item, index) => {
         item.checked = (index === opt)
       })

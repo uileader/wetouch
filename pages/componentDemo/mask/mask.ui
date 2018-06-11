@@ -15,7 +15,7 @@
         <ui-button type="primary" bindtap="handleShowMask8(true)">黑色毛玻璃效果（仅IOS）</ui-button>
       </ui-view>
     </ui-view>
-    <ui-mask ui:model="showMask1" hide-delay="500" disable-ios-gesture>
+    <ui-mask ui:model="showMask1" disable-ios-gesture>
       <ui-view class="content">
         <ui-button type="success" bindtap="handleShowMask1(false)">关闭遮罩</ui-button>
       </ui-view>

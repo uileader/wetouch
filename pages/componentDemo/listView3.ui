@@ -232,7 +232,7 @@
       isflag: true,
       config: {
         url: '/touchui-backstage/listNews.do',
-        type: 'get',
+        method: 'get',
         pageSize: {
           key: 'pageSize',
           value: 5

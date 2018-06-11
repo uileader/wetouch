@@ -1,36 +1,54 @@
 <!--table3.ui-->
 <template>
-  <ui-view>
-      <ui-page show-loading="{{false}}" pull-down="{{ pullDown }}">
-        <ui-image  width="100%" src="http://images.uileader.com/20171110/e5b64484-b5e0-472a-bf52-ac95fb5685d3.jpg"></ui-image>        
-            <ui-view class="demo1">
-            <ui-table
-            startRefresh.sync ="{{startRefresh}}"
-            url="http://www.uileader.com/touchui-backstage/listUser.do" 
-            header="{{thisHeader}}"
-            sort-name="id"
-            sort-order="desc"
-            ui:model="thisData"
-            page-size="10"
-            bindrowtap="showname"
-            alternating-row="true"
-            is-login="true"
-            sticky="true"
-            tap-effect
-            ></ui-table>
-            </ui-view>
-        </ui-page>
-      </ui-view>
+  <ui-page show-loading="{{false}}" pull-down="{{ pullDown }}">
+    <ui-nav-bar slot="nav-bar" custom-style="{{ {'border-bottom':'1px solid rgba(231, 231, 231, 0.6)','background-color':'#fff'} }}">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+          <ui-view class="nav_left">
+              <ui-icon type="arrow-left" size="16" color="#333"></ui-icon>
+          </ui-view>
+         
+        </ui-col>
+        <ui-col vertical-align="middle" align="center" space-right="20">
+          <!-- <ui-view class="nav_title">服务器数据的读取，排序，分页</ui-view> -->
+          <ui-form style="width:100%;" action="/search" bindsubmit="handleSearch"> 
+            <ui-input placeholder="搜索表格数据" type="search" ></ui-input>
+          </ui-form>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+
+    <ui-image  width="100%" src="http://images.uileader.com/20171110/e5b64484-b5e0-472a-bf52-ac95fb5685d3.jpg"></ui-image>        
+      <ui-view class="demo1">
+        <ui-table
+          startRefresh.sync ="{{startRefresh}}"
+          url="{{url+search}}"
+          header="{{thisHeader}}"
+          sort-name="id"
+          sort-order="desc"
+          ui:model="thisData"
+          page-size="10"
+          bindrowtap="showname"
+          alternating-row="true"
+          is-login="true"
+          sticky="true"
+          tap-effect
+          ></ui-table>
+        </ui-view>
+    </ui-page>
 </template>
 
 <script>
 // table3.js
 export default {
   config: {
+    "navigationStyle": 'custom',
     "navigationBarTitleText": "服务器数据的读取，排序，分页"
   },
   data () {
     return {
+      url:'http://www.uileader.com/touchui-backstage/listUser.do?search=',
+      search:'',
       offsetTop: ui.DEFAULT_HEADER_HEIGHT,
       startRefresh: false,
       thisHeader: [{
@@ -84,8 +102,13 @@ export default {
     },
     handleActive () {
       this.startRefresh = true
+    },
+    handleSearch(){
+      this.search="111"
+    },
+    navigateBack () {
+      ui.navigateBack()
     }
-
   }
 }
 
@@ -94,5 +117,9 @@ export default {
 <style lang="less">
   .test{
     .mix-text-overflow();
+  }
+  .ui-input{
+    height: 30px;
+    overflow: hidden;
   }
 </style>

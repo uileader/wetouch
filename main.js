@@ -11,6 +11,12 @@ let options = {
   }
 }
 
+ui.extend({
+  sayHello:function(){
+    console.log('hello')
+  }
+})
+
 ui.start(options)
 ui.preloadDialogs([
   require('#/pages/dialogs/loginInterface.ui')

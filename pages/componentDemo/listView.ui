@@ -123,7 +123,7 @@
       isflag: true,
       config: {
         url: '/touchui-backstage/listStore.do',
-        type: 'get',
+        method: 'get',
         pageSize: {
           key: 'pageSize',
           value: 10

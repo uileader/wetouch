@@ -215,7 +215,7 @@
       ],
       config: {
         url: '/touchui-backstage/listNews.do?suffix=',
-        type: 'get',
+        method: 'get',
         pageSize: {
           key: 'pageSize',
           value: 5
