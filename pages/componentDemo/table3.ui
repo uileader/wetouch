@@ -47,7 +47,7 @@ export default {
   },
   data () {
     return {
-      url:'http://www.uileader.com/touchui-backstage/listUser.do?search=',
+      url:'https://www.uileader.com/touchui-backstage/listUser.do?search=',
       search:'',
       offsetTop: ui.DEFAULT_HEADER_HEIGHT,
       startRefresh: false,
