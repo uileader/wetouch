@@ -775,7 +775,7 @@ export default {
       "theme-color": "#39f"
     },
     "window": {
-      "scrollType": "body",
+      "scrollType": "div",
       "navigationBarBackgroundColor":"#ffffff",
       "navigationBarTextStyle":"black",
       "navigationBarBorderColor":"rgba(231, 231, 231, 0.6)",
