@@ -618,7 +618,7 @@ export default {
       this.isSplashSwiper = false
     }
     window.setTimeout(() => {
-      this.gegetAppInfo()
+      //this.gegetAppInfo()
     }, 2000)
 
     ui.onNetworkStatusChange(function (res) {
